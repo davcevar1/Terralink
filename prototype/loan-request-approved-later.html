@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Terrabank</title>
+
+  <!-- To disable compatibility mode in Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Mobile tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="themes/mainstreet.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f8f8;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    .btn.btn-link {
+      color: #990000;
+    }
+
+    .btn.btn-default {
+      border-color: #990000;
+      color: #990000;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-primary:hover {
+      background-color: #990000;
+      border-color: #990000;
+      color: #FFF;
+    }
+
+    .btn.btn-primary:hover {
+      border-color: #4e0000;
+    }
+
+    .form-control:focus {
+      border-color: #848484;
+      box-shadow: 0 0 0;
+    }
+
+    #navigation>.wf-content .wf-inbox,
+    #navigation>.wf-content .wf-navigation-wrapper {
+      background-color: #565656;
+    }
+
+    #navigation>.wf-content .list-group>.list-group-heading {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus,
+    .dropdown-menu>li>a:active,
+    .list-group .list-group-item:hover,
+    .list-group .list-group-item:focus,
+    .list-group .list-group-item.active,
+    #navigation>.wf-content>.list-group a:hover,
+    #navigation>.wf-content .btn-link:hover {
+      background-color: #990000;
+      color: #FFF;
+    }
+
+    #navigation>.wf-content .list-group>.wf-logo {
+      background-color: #990000;
+    }
+
+    .wf-title,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #990000;
+    }
+
+    .wf-steps-2 li.active,
+    .wf-steps-2 li.active::before {
+      background: #900;
+      border-color: #CCC;
+      color: #FFF;
+    }
+
+    .wf-steps-2 li:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .wf-steps-2 li:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .form-control[disabled],
+    fieldset[disabled] .form-control {
+      background: #f5f5f5;
+      border-color: #CCC;
+    }
+
+    fieldset[disabled] .control-label {
+      color: #CCC;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    var toggleVisible = function(e, selector) {
+        $(selector).prop('disabled', e.target.value != 'other');
+      },
+      setAgreeDisclaimer = function() {
+        $('[name="agree-disclaimer"]').prop('checked', true);
+      },
+      addOwner = function() {
+        var html = $('.owner-form').first().clone()[0].outerHTML,
+          index = ($('.owner-form').length + 1);
+        html = html.replace(/owner1/g, 'owner' + index);
+        html = html.replace(/Owner 1/g, 'Owner ' + index);
+        $('.owner-form .panel-collapse').collapse('hide');
+        $(html).insertAfter($('.owner-form').last()).find('.panel-collapse').collapse('show');
+        $("html, body").animate({
+          scrollTop: (44 * index) + 40
+        }, 'slower');
+      };
+    $(window).on('load resize scroll touchstart touchmove mousewheel', function() {
+      $(".dropdown-toggle").each(function() {
+        par = $(this).parents('.btn-group');
+        dropl = par.find('ul');
+        otop = $(this).offset().top + $(this).height() - $(window).scrollTop();
+        ulh = dropl.height();
+        obot = $(window).height() - $(this).height() - $(this).offset().top + $(window).scrollTop();
+        if ((obot < ulh) && (otop > ulh)) {
+          par.addClass('dropup');
+        } else {
+          par.removeClass('dropup');
+        }
+      });
+    });
+  </script>
+</head>
+
+<body class="wf-shell">
+  <div id="shell" class="wf-view">
+    <div class="wf-content wf-fixed-top" style="padding-top:0;">
+      <div id="main-content" style="max-width:750px;">
+        <p><img src="images/logo_terrabank.png" class="img-responsive" style="max-height: 35px;" /></p>
+        <form class="wf-fixed-bottom">
+          <div class="wf-flex wf-gutters wf-middle" style="margin-top: 50px;">
+            <div style="font-size:64px;" class="fa fa-check-circle text-success"></div>
+            <div>
+              <p class="lead">You can upload the documents when you have them available using the following link:</p>
+              <p><a href="#" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 500px;">http://52.55.177.169:9080/loan-application?token=ZTQwZTQ1M2YwZWE4YTUwYjlkNmU3MzJkMDFmMzM4NTcwOGNmMDBlOTVhZGM2NWEyMDlkZDkxNTQ2MGM4NGQwZQ</a></p>
+              <p>You can also find the link in the email that was previously sent to you.</p>
+            </div>
+          </div>
+
+          <hr style="margin-top:50px;" />
+
+          <p>Should you have any questions about your loan inquiry, please contact us at 1-800-448-4898.</p>
+          <p>Thank you for choosing <a href="https://www.terrabank.com/" style="font-weight:bold;">Terrabank, N.A.</a> for your financial needs.</p>
+
+          <p class="small text-muted">Notice: The Federal Equal Credit Opportunity Act prohibits creditors from discriminating against credit applicants on the basis of race, color, religion, national origin, sex, marital
+            status, age (provided the applicant has the capacity to enter into a binding contract); because all or part of the applicant's income derives from any public assistance program; or
+            because the applicant has in good faith exercised any right under the Consumer Credit Protection Act. The Federal agency that administers compliance with this law concerning this
+            creditor is: Office of the Comptroller of the Currency, Customer Assistance Group, 1301 McKinney Avenue, Suite 3450, Houston, TX 77010.</p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

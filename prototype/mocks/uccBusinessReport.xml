@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><UCCReport2ResponseEx><response><Header><TransactionId>103543700R209491</TransactionId>
+ <Status>0</Status>
+</Header>
+<UCCFilings>
+ <UCCFiling>
+  <OriginFilingDate>
+   <Day>21</Day>
+   <Month>11</Month>
+   <Year>1990</Year>
+  </OriginFilingDate>
+  <OriginFilingNumber>B9044007</OriginFilingNumber>
+  <Filings>
+   <Filing>
+    <Type>INITIAL FILING</Type>
+    <VendorUpdateDate>
+     <Year>1990</Year>
+    </VendorUpdateDate>
+    <Number>B9044007</Number>
+    <Date>
+     <Day>21</Day>
+     <Month>11</Month>
+     <Year>1990</Year>
+    </Date>
+    <Time>0000</Time>
+    <VendorEntryDate>
+     <Day>19</Day>
+     <Month>12</Month>
+     <Year>1990</Year>
+    </VendorEntryDate>
+   </Filing>
+  </Filings>
+  <FilingJurisdiction>AL</FilingJurisdiction>
+  <Secureds>
+   <Secured>
+    <Addresses>
+     <Address>
+      <StreetAddress2>MOUS CABINS, AL 96884</StreetAddress2>
+      <Zip5>96884</Zip5>
+      <Zip4>2007</Zip4>
+      <City>MOUS CABINS</City>
+      <State>AL</State>
+     </Address>
+    </Addresses>
+    <ParsedParties>
+     <Party>
+      <BusinessIds>
+       <UltID>0</UltID>
+       <POWID>0</POWID>
+       <OrgID>0</OrgID>
+       <ProxID>0</ProxID>
+       <EmpID>0</EmpID>
+       <DotID>0</DotID>
+       <SeleID>0</SeleID>
+      </BusinessIds>
+      <BusinessId>999900074587</BusinessId>
+     </Party>
+    </ParsedParties>
+    <OriginName>ROZWALL BANK</OriginName>
+   </Secured>
+  </Secureds>
+  <Collaterals>
+   <Collateral>
+    <Description>11/21/1990 B9044007 - FIXTURES SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;CONTRACT RIGHTS SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;EQUIPMENT SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;ACCOUNTS RECEIVABLE SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;INVENTORY SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;ACCOUNT(S) SPECIFIED INCLUDING PROCEEDS AND PRODUCTS</Description>
+   </Collateral>
+  </Collaterals>
+  <FilingJurisdictionName>ALABAMA</FilingJurisdictionName>
+  <FilingOffices>
+   <Office>
+    <Address>
+     <Zip5>36130</Zip5>
+     <StreetAddress1>STATE CAPITOL</StreetAddress1>
+     <City>MONTGOMERY</City>
+     <State>AL</State>
+    </Address>
+    <FilingAgency>SECRETARY OF STATE/UCC DIVISION</FilingAgency>
+   </Office>
+  </FilingOffices>
+  <TMSId>DNBB904200719901126</TMSId>
+ </UCCFiling>
+</UCCFilings>
+</response></UCCReport2ResponseEx>

@@ -1,0 +1,17 @@
+:host {
+  transition: border-color .3s;
+  &:hover {
+    border-color: #0056b3;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.image {
+  height:232px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

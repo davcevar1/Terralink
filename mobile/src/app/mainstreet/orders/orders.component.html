@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-primary sticky-top">
+  <span class="navbar-brand mr-auto">
+    Historial de órdenes
+  </span>
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a [routerLink]="['/catalog']" class="nav-link">
+        <svg class="icon"><use xlink:href="assets/factoricons-regular.svg#plus" /></svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="container pt-3">
+  <div class="list-group">
+    <a [routerLink]="['/orders/'+order.number]" class="list-group-item d-flex" *ngFor="let order of orders">
+      <div class="w-100">
+        <div>{{ order.name }}</div>
+        <div class="text-muted small">#{{ order.number }}</div>
+      </div>
+      <div class="w-100 text-right">
+        <div>{{ order.total | currency }} USD</div>
+        <div class="badge badge-success">{{ order.status }}</div>
+      </div>
+    </a>
+  </div>
+</div>

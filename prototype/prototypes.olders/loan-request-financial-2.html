@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Loan request - Financial information</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var bankruptcyDate = function(e) {
+                if (e.target.checked) {
+                    $('#bankruptcy-date').removeClass('hidden');
+                }else{
+                    $('#bankruptcy-date').addClass('hidden');
+                }
+            },
+            contingentlyLiableAmount = function(e) {
+                if (e.target.checked) {
+                    $('#contingently-liable-amount').removeClass('hidden');
+                }else{
+                    $('#contingently-liable-amount').addClass('hidden');
+                }
+            },
+            atmMachine = function(e) {
+                if (e.target.checked) {
+                    $('#atm-machine').removeClass('hidden');
+                }else{
+                    $('#atm-machine').addClass('hidden');
+                }
+            };
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div id="main-content">
+                <form class="wf-fixed-bottom">
+                    <ul class="wf-steps-2">
+                        <li class="active wf-flex wf-middle wf-center wf-gutters-tiny">
+                            <div>Business <span class="hidden-xs">information</span></div>
+                            <a href="loan-request-business-2.html" title="Some fields are incorrect or not filled" class="label label-danger">2</a> 
+                        </li>
+                        <li class="active wf-flex wf-middle wf-center wf-gutters-tiny">
+                            <div>Owners <span class="hidden-xs">information</span></div>
+                            <a href="loan-request-owner-2.html" title="Some fields are incorrect or not filled" class="label label-danger">2</a> 
+                        </li>
+                        <li class="active">Legal <span class="hidden-xs">information</span></li>
+                    </ul>
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="padding:30px;">
+                            <div class="form-group">
+                                <label class="control-label">Do any of the following apply to either the Business?</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Currently involved with any legal claims
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" onclick="bankruptcyDate(event);" /> Declared bankruptcy
+                                    </label>
+                                </div>
+                                <div class="form-group hidden" id="bankruptcy-date">
+                                    <input type="date" class="form-control" style="width:155px;" />
+                                    <div class="small text-muted">Date of your bankruptcy</div>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Is party to any judgements and/or liens?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Does / will your business perform any of the following services?</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Issue or sell money orders
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Issue or sell traveler's checks
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Sell or provide prepaid access cards
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Exchange foreign currency or monetary instruments
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Provide money transfer services
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> ATM contractor services
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Have you or an immediate family member or close associate held any of the following positions?</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Current or former senior foreign political figure: a foreign senior official in the executive, legislative, administrative, military or judicial branches of a foreign government, whether elected or not?
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="yes" /> Current or former senior foreign official of a major political party or a senior executive of a foreign government-owned commercial enterprise, including a corporation, business or other entity formed by or for the benefit of such an individual?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label style="font-weight:bold;">
+                                        <input type="checkbox" value="yes" onclick="atmMachine(event);" /> Is there an ATM Machine located at your place of business?
+                                    </label>
+                                </div>
+                                <div id="atm-machine" class="hidden">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="yes" /> Does / will your business own, operate or service ATMs?
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="yes" /> Is the ATM located at your business leased?
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="yes" /> Do you rent space in your Business to an ATM Contractor?
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wf-toolbar wf-toolbar-bottom wf-center">
+                        <div class="wf-actions wf-flex wf-gutters wf-center wf-grow">
+                            <a href="loan-request-owner-2.html" class="btn btn-default wf-grow-sm-down"><span class="fa fa-angle-left"></span> Back</a>
+                            <button class="btn btn-default">Save for later</button>
+                            <a href="#" class="btn btn-primary wf-grow-sm-down">Submit <span class="fa fa-angle-right"></span></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Loan request - Financial information</div>
+        </div>
+    </div>
+</body>
+
+</html>

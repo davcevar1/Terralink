@@ -1,0 +1,32 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.number-stepper {
+  icon {
+    font-size: 24px;
+  }
+}
+.k-input {
+  .text-right & {
+    text-align: right;
+  }
+}
+.container {
+  min-height: calc(100vh - 67px - 75px - 1.5rem);
+}
+.dropdown-button {
+  &::after {
+    display: none;
+  }
+}

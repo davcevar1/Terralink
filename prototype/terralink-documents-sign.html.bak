@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Terrabank</title>
+
+  <!-- To disable compatibility mode in Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Mobile tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="libraries/misc/dropzone.css" />
+  <link rel="stylesheet" href="themes/mainstreet.css" />
+  <style>
+    ng-cloak {
+      display: none;
+    }
+    .dropzone {
+      min-height: inherit;
+    }
+
+    .dropzone .dz-message {
+      display: none;
+    }
+
+    .dropzone.dz-drag-hover {
+      box-shadow: 0 0 0 2px inset #9a211e;
+      z-index: 2;
+    }
+
+    .dropzone.dz-started .wf-note {
+      display: none;
+    }
+
+    body {
+      background-color: #f8f8f8;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    .btn.btn-link {
+      color: #990000;
+    }
+
+    .btn.btn-default {
+      border-color: #990000;
+      color: #990000;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-primary:hover {
+      background-color: #990000;
+      border-color: #990000;
+      color: #FFF;
+    }
+
+    .btn.btn-primary:hover {
+      border-color: #4e0000;
+    }
+
+    .form-control:focus {
+      border-color: #848484;
+      box-shadow: 0 0 0;
+    }
+
+    #navigation>.wf-content .wf-inbox,
+    #navigation>.wf-content .wf-navigation-wrapper {
+      background-color: #565656;
+    }
+
+    #navigation>.wf-content .list-group>.list-group-heading {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus,
+    .dropdown-menu>li>a:active,
+    .list-group .list-group-item:hover,
+    .list-group .list-group-item:focus,
+    .list-group .list-group-item.active,
+    #navigation>.wf-content>.list-group a:hover,
+    #navigation>.wf-content .btn-link:hover {
+      background-color: #f5f5f5;
+    }
+
+    #navigation>.wf-content .list-group>.wf-logo {
+      background-color: #990000;
+    }
+
+    .wf-title,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #990000;
+    }
+
+    .wf-steps-2 li.active,
+    .wf-steps-2 li.active::before {
+      background: #900;
+      border-color: #CCC;
+      color: #FFF;
+    }
+
+    .wf-steps-2 li:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .wf-steps-2 li:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .form-control[disabled],
+    fieldset[disabled] .form-control {
+      background: #f5f5f5;
+      border-color: #CCC;
+    }
+
+    fieldset[disabled] .control-label {
+      color: #CCC;
+    }
+  </style>
+</head>
+
+<body class="wf-shell" ng-controller="controller">
+  <div id="shell" class="wf-view" ng-cloak>
+    <div class="wf-content wf-fixed-top" style="padding-top:0;">
+      <div id="main-content">
+        <form class="wf-fixed-bottom">
+          <p><img src="images/logo_terrabank.png" class="img-responsive" style="max-width: 300px;" /></p>
+
+          <hr />
+          <p>In order to complete your request, we need to download the following document:</p>
+          <ul><li><a href="#">Banking Contract</a> (Download)</li></ul>
+          <p>And upload it to us with your signature, in the following form:</p>
+
+          <div class="panel panel-default">
+            <div class="list-group">
+              <div class="list-group-item dropzone wf-required dz-clickable">
+                <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                  <div>
+                    <span class="fa fa-file-text-o fa-2x"></span>
+                  </div>
+                  <div class="wf-grow">
+                    <div class="wf-label">Banking Contract Signed</div>
+                    <div class="text-muted small">This file(s) is mandatory</div>
+                  </div>
+                  <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                </div>
+                <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center wf-actions" style="margin-bottom:20px;">
+            <a href="terralink-documents-confirm.html" class="btn btn-primary">Submit Uploaded Documents</a>
+          </div>
+
+          <p>Should you have any questions about your account inquiry, please feel free to contact us at <a href="tel:1-855-837-7225" style="font-weight:bold;">1-855-TERRABK (855-837-7225)</a>.</p>
+          <p>Thank you for choosing <a href="https://www.terrabank.com/" style="font-weight:bold;">Terrabank, N.A.</a> for your financial needs.</p>
+
+          <p class="small text-muted">Notice: The Federal Equal Credit Opportunity Act prohibits creditors from discriminating against credit applicants on the basis of race, color, religion, national origin, sex, marital status, age (provided the applicant has the capacity to enter
+            into a binding contract); because all or part of the applicant's income derives from any public assistance program; or because the applicant has in good faith exercised any right under the Consumer Credit Protection Act. The Federal agency
+            that administers compliance with this law concerning this creditor is: Office of the Comptroller of the Currency, Customer Assistance Group, 1301 McKinney Avenue, Suite 3450, Houston, TX 77010.</p>
+
+            <div class="wf-flex" style="border-top: 1px solid #DDD; padding-top: 15px; margin-top: 30px;">
+              <div class="wf-grow">
+                <a href="https://www.fdic.gov/" target="_blank" title="Federal Deposit Insurance Corporation"><img src="images/logo-fdic.svg" style="height:25px;" /></a>
+              </div>
+              <div>
+                <a href="https://www.fdic.gov/regulations/laws/rules/2000-6000.html" target="_blank" title="Equal Housing Lender"><img src="images/logo-ehl.svg" style="height:25px;width:118px;" /></a>
+              </div>
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    var librariesUrl = 'libraries/';
+  </script>
+  <script src="libraries/require.config.js"></script>
+  <script data-main="terralink-request" src="libraries/require/require.js"></script>
+</body>
+
+</html>

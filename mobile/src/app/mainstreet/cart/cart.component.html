@@ -1,0 +1,45 @@
+<nav class="navbar navbar-dark bg-primary sticky-top">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a [routerLink]="['/catalog']" class="nav-link">
+        <svg class="icon"><use xlink:href="assets/factoricons-regular.svg#angle-left" /></svg>
+      </a>
+    </li>
+  </ul>
+  <span class="navbar-brand mx-auto">
+    Orden #089-2345
+  </span>
+</nav>
+<div class="container pt-3">
+  <ul class="list-group">
+    <li class="list-group-item d-flex align-items-center" *ngFor="let product of products">
+      <img style="max-height:50px;" [src]="product.image">
+      <div class="w-100">
+        <div>{{ product.name }}</div>
+        <div class="text-muted small">{{ product.quantity }}x{{ product.price | currency }} USD</div>
+      </div>
+      <div class="w-100 text-right">
+        <div class="btn-group" *ngIf="!product.editing">
+          <button class="btn btn-outline-primary" (click)="toggleEditing(product)">
+            <svg class="icon"><use xlink:href="assets/factoricons-regular.svg#pencil-square" /></svg>
+          </button>
+          <button class="btn btn-outline-primary">
+            <svg class="icon"><use xlink:href="assets/factoricons-regular.svg#close" /></svg>
+          </button>
+        </div>
+        <div class="btn-group" *ngIf="product.editing">
+          <div class="input-group">
+            <input type="number" class="form-control text-right" style="width:56px;" [(ngModel)]="product.quantity" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" (click)="toggleEditing(product)" title="Aceptar"><svg class="icon"><use xlink:href="assets/factoricons-regular.svg#check" /></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav class="navbar navbar-light bg-light fixed-bottom">
+  <a [routerLink]="['/info']" class="btn btn-success px-4">Procesar</a>
+  <div>Total {{ getTotal() | currency }} USD</div>
+</nav>

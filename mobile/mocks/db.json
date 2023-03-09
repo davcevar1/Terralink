@@ -1,0 +1,8 @@
+{
+  "users": [
+    {"id":"me", "first_name":"Juan Carlos", "last_name":"Altamirano"}
+  ],
+  "_oauth": {
+    "access_token": "1"
+  }
+}

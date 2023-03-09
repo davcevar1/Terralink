@@ -1,0 +1,162 @@
+.wf-flex {
+    .display(flex);
+    &-sm-down {
+        @media (max-width: (@screen-sm - 1)) {
+            .display(flex);
+        }
+    }
+    &-md-down {
+        @media (max-width: (@screen-md - 1)) {
+            .display(flex);
+        }
+    }
+    &-lg-down {
+        @media (max-width: (@screen-lg - 1)) {
+            .display(flex);
+        }
+    }
+    &-sm-up {
+        @media (min-width: @screen-sm) {
+            .display(flex);
+        }
+    }
+    &-md-up {
+        @media (min-width: @screen-md) {
+            .display(flex);
+        }
+    }
+    &-lg-up {
+        @media (min-width: @screen-lg) {
+            .display(flex);
+        }
+    }
+}
+.wf-column-rules {
+    &-sm-up {
+        @media (min-width: @screen-sm) {
+            > div {
+                &:not(:first-child) {
+                    padding-left:30px;
+                    border-left:1px solid #CCC;
+                }
+                &:not(:last-child) {
+                    padding-right:30px;
+                }
+            }
+        }
+    }
+    &-md-up {
+        @media (min-width: @screen-md) {
+            > div {
+                &:not(:first-child) {
+                    padding-left:30px;
+                    border-left:1px solid #CCC;
+                }
+                &:not(:last-child) {
+                    padding-right:30px;
+                }
+            }
+        }
+    }
+}
+.wf-gutters {
+    > * {
+        margin-right: @flex-gutter;
+        &:last-child {
+            margin-right:0;
+        }
+    }
+    &-tiny {
+        > * {
+            margin-right: @flex-gutter/2;
+            &:last-child {
+                margin-right:0;
+            }
+        }
+    }
+    &-2x {
+        > * {
+            margin-right: @flex-gutter*2;
+            &:last-child {
+                margin-right:0;
+            }
+        }
+    }
+}
+.wf-grow {
+    .flex(1);
+    &-sm-down {
+        @media (max-width: (@screen-sm - 1)) {
+            .flex(1);
+        }
+    }
+    &-md-down {
+        @media (max-width: (@screen-md - 1)) {
+            .flex(1);
+        }
+    }
+    &-lg-down {
+        @media (max-width: (@screen-lg - 1)) {
+            .flex(1);
+        }
+    }
+    &-sm-up {
+        @media (min-width: @screen-sm) {
+            .flex(1);
+        }
+    }
+    &-md-up {
+        @media (min-width: @screen-md) {
+            .flex(1);
+        }
+    }
+    &-lg-up {
+        @media (min-width: @screen-lg) {
+            .flex(1);
+        }
+    }
+}
+.wf-top {
+    .align-items(flex-start);    
+}
+.wf-middle {
+    .align-items(center);    
+}
+.wf-bottom {
+    .align-items(flex-end);    
+}
+.wf-left {
+    .justify-content(flex-start);    
+}
+.wf-center {
+    .justify-content(center);    
+}
+.wf-space-around {
+    .justify-content(space-around);
+}
+.wf-right {
+    .justify-content(flex-end);    
+}
+.wf-self-top {
+    .align-self(flex-start);    
+}
+.wf-self-middle {
+    .align-self(center);    
+}
+.wf-self-bottom {
+    .align-self(flex-end);    
+}
+.wf-column {
+    .flex-direction(column);
+	//Issue Firefox no muestra scroll
+	> .wf-grow {
+		height: 0px;
+		flex: 1 1 auto;
+	}
+}
+.wf-wrap {
+    .flex-wrap(wrap);
+}
+.wf-fixed-bottom {
+    padding-bottom: 60px;
+}

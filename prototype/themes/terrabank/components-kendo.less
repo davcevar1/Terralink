@@ -1,0 +1,65 @@
+/* CONTROLS KENDO */
+
+/* KENDO OVERRIDES */  
+/* Hay una incompatibilidad con la propiedad box-sizing entre kendoui y bootstrap esto lo corrije */
+.k-window-content .form-horizontal,
+.k-window-content .row, 
+.container .form-horizontal,
+.container .row {
+    [class*="col-"], [class*="col-"]:before, [class*="col-"]:after {
+        .box-sizing(border-box);
+    }
+}
+.k-widget {
+    &[class*="col-"], 
+    .form-control, 
+    .form-group, 
+    .well,  
+    .row, 
+    .btn {
+        .box-sizing(border-box);
+		text-overflow:clip
+    }
+}
+.k-input[disabled],
+.k-button[disabled] {
+    background-color: #EEE; 
+}
+
+/* KENDO CONTROLS */
+td.k-state-focused,
+td.k-state-selected.k-state-focused {
+    box-shadow: inset 0 0 0 1px @theme-primary-color;
+}
+.k-dropdown-wrap,
+.k-numeric-wrap,
+.k-picker-wrap {
+    border-radius: 2px;
+    input {
+        border-radius: 0;
+    }
+    &.k-state-focused {
+        border-color: @focus-color;
+        .box-shadow(inset 0 1px 1px rgba(0,0,0,.075),0 0 8px fade(@focus-color, 60%));
+    }
+    .has-error &.k-state-default {
+        border-color: @status-red-color; 
+        &,
+        input {
+            background-color: @state-danger-bg;
+        }
+    }
+    .input-group & {
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+.k-textbox,
+.k-textbox:hover {
+    .has-error & {
+        border-color: @status-red-color;
+        background-color: @state-danger-bg;
+    }
+}    

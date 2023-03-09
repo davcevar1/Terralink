@@ -1,0 +1,16 @@
+[{
+    "id": 1,
+    "name": "Maquinaria Agricultura",
+    "slug": "maquinaria-agricola"
+  },
+  {
+    "id": 2,
+    "name": "Maquinaria Industrial",
+    "slug": "maquinaria-industrial"
+  },
+  {
+    "id": 3,
+    "name": "Material de oficina",
+    "slug": "material-oficina"
+  }
+]

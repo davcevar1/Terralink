@@ -1,0 +1,4726 @@
+/*<#ftl attributes={"content_type": "text/css; charset=UTF-8"} />*/
+
+
+/*@font-face {
+  font-family: opensans-regular;
+  font-style: normal;
+/*src: url('../../../../styles/themes/bgeneral/font/ufonts.com_min-one.eot');
+  src: url('../../../../styles/themes/bgeneral/font/ufonts.com_min-one.eot#iefix') format('embedded-opentype'),
+       url('../../../../styles/themes/bgeneral/font/ufonts.com_min-one.woff') format('woff'),
+       url('../../../../styles/themes/bgeneral/font/ufonts.com_min-one.ttf') format('truetype');
+ src: url('../../../../styles/themes/bgeneral/font/OpenSans-Regular.eot?') format('embedded-opentype');
+ src: url('../../../../styles/themes/bgeneral/font/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../../../../styles/themes/bgeneral/font/OpenSans-Regular.woff2') format('woff'),
+      url('../../../../styles/themes/bgeneral/font/OpenSans-Regular.ttf') format('truetype'),
+      url('../../../../styles/themes/bgeneral/font/OpenSans-Regular.woff') format('woff');
+
+}
+*/
+
+
+/*******************************************************
+        Cambio de estilo en campos invalidos
+*******************************************************/
+
+input.k-invalid {
+    background-color: #F6FAE0;
+}
+.k-widget.k-invalid .k-input,
+.k-widget.k-invalid > .k-state-default,
+.k-widget.k-invalid > input.k-state-default,
+.k-widget.k-invalid > span > input.k-state-default,
+.k-widget.k-invalid > span > input.ng-invalid {
+    background-color: #F6FAE0;
+}
+.k-select {
+    background-color: white;
+}
+.ng-invalid[type='radio'] {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #6D6D63;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 2px 0px #969696 inset;
+}
+
+/*******************************************************
+        Fin Cambio de estilo en campos invalidos
+*******************************************************/
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('themes/bgeneral/fonts/OpenSans.eot?#iefix') format('embedded-opentype'), url('themes/bgeneral/fonts/OpenSans.woff') format('woff'), url('themes/bgeneral/fonts/OpenSans.ttf') format('truetype'), url('themes/bgeneral/fonts/OpenSans.svg#OpenSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.cb-view-container-root {
+    padding: 0px !important;
+}
+
+/* 2014-10-05 */
+
+.cb-validation-ok {
+    color: #4dc076;
+    height: 20px;
+    width: 20px;
+}
+.cb-validation-fail {
+    color: #d1021b;
+    height: 20px;
+    width: 20px;
+}
+.cb-validation-warning {
+    color: #d1021b;
+    height: 20px;
+    width: 20px;
+}
+
+/*.k-dropdown-wrap.k-state-default {
+  width: 80px!important;
+}*/
+
+.glyphicon-refresh:hover,
+.glyphicon-chevron-up:hover,
+.glyphicon-chevron-down:hover {
+    color: #4d93de !important;
+}
+
+/*
+.tab-content{
+	width: 550px;
+}
+*/
+
+.breadcrumb>li+li:before {
+    color: #fff !important;
+    content: "\003e"!important;
+    font-size: 10px;
+    font-weight: bold;
+}
+.container.cb-content {
+    display: block;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    width: 756px !important;
+}
+.cb-breadcrumb-fixed-top > .cb-form-header > .breadcrumb,
+.cb-breadcrumb-fixed-top > .breadcrumb {
+    background: #4d93de;
+    background: -moz-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #4d92de), color-stop(100%, #357ecd));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, #4d93de 0%, #357ecd 100%);
+    /* W3C */
+    border-bottom-width: 0;
+    border-radius: 0;
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4d92de', endColorstr='#357ecd', GradientType=1);
+    /* IE6-9 */
+    left: 0;
+    padding: 10px 30px 10px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+.cb-breadcrumb-fixed-top > .cb-form-header > .breadcrumb,
+.cb-breadcrumb-fixed-top > .breadcrumb {
+    border-bottom: 0;
+    border-bottom-style: dotted;
+    /*background: #4d93de;*/
+}
+.breadcrumb li span {
+    color: #B7D3F1;
+}
+.cb-form-header > div > div > div > div.simpleGroup {
+    border-top: 1px solid #6CA2DE;
+}
+.cb-form-header > div > div > div > div.simpleGroup > div > div > div > div > div > label.ng-binding.cb-text-xl {
+    font-size: 26px !important;
+    /*padding: 25px 0 16px 0 !important;*/
+}
+ol.breadcrumb {
+    /*width: 756px;
+  display: inline;
+  border: 1px solid white;*/
+    padding: 10px 0;
+    margin: 0;
+}
+.breadcrumb {
+    background-color: transparent !important;
+    border-radius: 0px !important;
+    list-style: none;
+    margin-bottom: 0px !important;
+    padding: 8px 0px !important;
+}
+.cb-breadcrumb-fixed-top {
+    margin-top: 0px;
+}
+.cb-breadcrumb {
+    color: rgb(255, 255, 255) !important;
+    border-bottom: 0px solid rgb(36, 86, 130) !important;
+    background: linear-gradient(to right, rgb(77, 147, 222) 0%, rgb(53, 126, 205) 100%) !important;
+}
+fieldset.vc.viewState.GR_VOBLIGCION91_06.style {
+    margin-bottom: 0px;
+}
+
+/*
+.modal-content {
+padding: 0 0 30px 0 !important;
+}
+*/
+
+label#VA_VDTALECTCI5512_0000333 {
+    padding-top: 10px;
+    color: #8C8B8B;
+}
+div label.cb-text-sm.d-simple-label {
+    margin: 0px;
+    padding: 0px!important;
+    font-size: 14px !important;
+    color: #b2b2b3;
+}
+
+.bg-header {
+    padding: 20px 0 10px 0;
+}
+.bg-header-ce {
+    /*padding-left: 70px;
+    padding-right: 70px;*/
+    padding: 0 !important;
+}
+.cb-form-header {}
+.cb-form-header .form-group > button {
+    /*padding: 10px 10px 10px auto;*/
+    /*margin: -18px 0 0 -50px;
+    display: block;
+    /*width: 150px;*/
+    /*width: auto;*/
+}
+
+/*
+.cb-form-header .form-group > button:before {
+    margin: 0 0 0 -5px;
+    display: block;
+    float: left;
+}
+*/
+
+.k-tabstrip-wrapper {
+    width: 756px;
+    margin: 0 auto;
+}
+.glyphicon-remove:before {
+    margin: 0 0;
+    width: 100%;
+    display: block;
+}
+
+/*
+#VC_AOOLS03_GNOBR_230 {
+  padding-top: 90px;
+}
+*/
+
+.bg-pr-cliente-paso1 {
+    height: 127px;
+    border-bottom: 1px solid #E1E1E2;
+    background: #F7F7F8 url('themes/bgeneral/images/nav_g_clientes_paso1.png') center no-repeat;
+    /*margin: 60px 100px 20px -30px;
+display: block;
+padding: 0 0 150px 0;
+border-bottom: 1px solid #d4d4d5;*/
+    /*width: 810px;*/
+    /*border-right: 1px solid #c8c9cb;*/
+}
+.bg-pr-cliente-paso2 {
+    height: 127px;
+    padding-top: 127px;
+    border-bottom: 1px solid #E1E1E2;
+    background-color: #F7F7F8;
+    background-image: url('themes/bgeneral/images/nav_g_clientes_paso2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    /*
+  margin: 60px 100px 20px -30px;
+display: block;*/
+    /*padding: 0 0 150px 0;
+border-bottom: 1px solid #d4d4d5;*/
+}
+
+/*KTA #VC_AOOLS03_GSNRE_754 {*/
+
+
+/*#VC_AOOLS03_GNOBR_230_VAL{*/
+
+#G_VDATOSLTNC_284T49 {
+    height: 127px;
+    padding-top: 127px;
+    border-bottom: 1px solid #E1E1E2;
+    background-color: #F7F7F8;
+    background-image: url('themes/bgeneral/images/nav_g_clientes_paso2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    /*
+   margin: 60px 100px 20px -30px;
+   display: block;*/
+    /*padding: 0 0 150px 0;
+   border-bottom: 1px solid #d4d4d5;*/
+}
+div.cb-form-header {
+    border: none;
+    /*height: 37px !important;*/
+    /* background-image: none; */
+    background-color: transparent;
+}
+.modal-content {
+    padding: 40px;
+    border-radius: 3px;
+}
+.modal-title {
+    margin-bottom: 15px;
+    line-height: 22px;
+    border-bottom: 1px solid #1b2b36;
+    color: #1b2b36;
+    font-size: 20px;
+    padding-bottom: 12px;
+}
+.modal-header .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    line-height: 13px;
+    margin: 0;
+}
+.close {
+    float: right;
+    font-size: 24px !important;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .4;
+}
+.modal-header {
+    /*min-height: 16.43px;*/
+    padding: 0px;
+    border-bottom: 0;
+}
+
+/*
+h4, .h4 {
+font-size: 24px;
+border-bottom: 2px solid #959ca1;
+padding: 0 0 10px 0;
+}
+*/
+
+.modal-body {
+    position: relative;
+    padding: 0;
+}
+.modal-body .container-fluid,
+.modal-body .container {
+    padding: 0;
+    width: 100%;
+}
+.modal-body .cb-control-bar {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.row.cb-col-container.ng-scope {}
+
+/*MCA- Se comenta porque esta dando estilo
+a vistas dentro del grid de comunicaciones lo que hace
+que este se salga del espacio destinado para templates*/
+
+
+/*.col-xs-12.col-sm-6.col-md-6.col-lg-6 {
+  margin: 0;
+  padding: 0 2px;
+}*/
+
+.modal-dialog {
+    width: 540px !important;
+    margin: 30px auto;
+}
+fieldset > legend {
+    color: #A6A8A4;
+    border-bottom: 1px solid #1b2b36 !important;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: normal;
+    padding-bottom: 15px;
+}
+fieldset.noBorderPersonalLoan legend {
+    font-size: 14px;
+    padding: 5px 0 10px 0 !important;
+}
+
+/*
+.form-horizontal > .row.col-container > [class*="col-"] > .form-group, 
+.form-horizontal > .row.cb-col-container > [class*="col-"] > .form-group {
+    margin: 0 !important;
+}
+*/
+
+.form-vertical > .row.cb-col-container > [class*="col-"] > .form-group {
+    margin-bottom: 30px;
+}
+
+/*
+fieldset > legend > span {
+    font-size: 14px;
+    /*border-bottom: 2px solid #959ca1;
+    padding: 30px 0 10px 0;
+    display: block;
+}
+*/
+
+input .form-control .ng-valid .cedulaDigitos .ng-dirty {
+    margin-left: -31px;
+    display: block;
+    float: left;
+}
+
+/*
+#GR_VDATOSALUD32_15_VAL {
+display: block;
+float:left;
+width: 100%;
+background: #ecf3fb;
+border: 1px solid #337ccb;
+padding: 18px;
+text-align: justify;
+}
+
+div#GR_VDATOSALUD32_15_VAL div > div > div > label.control-label.ng-binding {
+  font-size: 18px !important;
+  width: 100%;
+  color: #1361b3;
+}
+fieldset.panel3.NoBorderBottom.k-gridPadding > legend > span.group-title.ng-binding {
+  padding: 28px 0 0px 0 !important;
+display: block;
+height: 50px;
+}
+*/
+
+
+/* 2014-10-05 */
+
+.form-group.cb-required > .control-label:after {
+    content: none;
+}
+
+/* Generated by less 1.7.5 */
+
+body {
+    /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    font-family: OpenSans;
+    font-style: normal;
+    background: #f7f7f8;
+    /*line-height: 2.4285!important; COMENTADO APRA ALINEAR TEXLINK*/
+}
+.k-tabstrip-items .k-state-default .k-link {
+    color: #1b2b36;
+}
+.k-tabstrip-items .k-item .cb-validation-fail {
+    background: transparent;
+    color: #d1021b;
+    font-size: 14px;
+}
+.k-tabstrip-items .k-item .cb-validation-fail:before {
+    color: #d1021b;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-size: 14px;
+    content: "\e014";
+}
+.k-tabstrip-items .k-item .cb-validation-success {
+    background: transparent;
+    color: #4dc076;
+}
+
+/*.k-grid .k-grid-header .k-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #aaaaaa;
+}
+.k-grid tr td {
+  background: #FFF;
+  border-width: 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.k-grid tr:last-child td {
+  border: 0;
+}*/
+
+#VA_VNOEALUCIO0504_OMTI481_DIV > label.control-label {
+    font-size: 14px!important;
+    color: #000000;
+}
+div#VA_VCOMISIOES3808_TMES006_DIV {
+    margin-top: -17px;
+}
+div#VC_TMPAT29_RIMBR_559 {
+    width: 100%;
+}
+#VA_VXCECIONES8705_BACE599_DIV > label.control-label {
+    font-size: 14px!important;
+    color: #000000;
+}
+.form-group .control-label {
+    font-weight: bold;
+    //text-transform: uppercase;
+    color: #A6A8A4;
+}
+fieldset > .cb-form-list-wb fieldset > .cb-form-list {
+    margin-top: -11px;
+}
+.cb-form-list .form-group {
+    background: #fcfcfc;
+}
+.cb-form-list-wb .form-group {
+    background: white;
+}
+.cb-form-list .form-group,
+.cb-form-list-wb .form-group {
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    display: table;
+    margin: 0;
+    margin-top: -1px;
+}
+.cb-form-list .form-group > .control-label,
+.cb-form-list-wb .form-group > .control-label {
+    text-align: left;
+    margin: 0;
+}
+
+/*
+.cb-form-list-wb .form-group > label,
+.cb-form-list .form-group > label,
+.cb-form-list-wb .form-group > div,
+.cb-form-list .form-group > div {
+  display: table-cell;
+  padding: 10px 15px;
+}
+*/
+
+.cb-form-list-wb .form-group:first-child,
+.cb-form-list .form-group:first-child {
+    margin-top: 0;
+}
+
+/**/
+
+.c_grid_base > .k-toolbar {
+    background: none !important;
+    padding: 10px;
+    vertical-align: middle;
+}
+.c_grid_base > .k-grid-content table {
+    border-left: .1em #D4D6D9 solid !important;
+    border-right: .1em #D4D6D9 solid !important;
+}
+.c_grid_base_sc .k-grid-header,
+.c_grid_base_sc > .k-grid-header {
+    display: none;
+}
+
+/*.c_grid_base_sc > .k-grid-toolbar {
+   background: none !important;
+    padding: 10px;
+    vertical-align: middle;
+}*/
+
+.c_grid_base_st > .k-grid-toolbar {
+    display: none;
+}
+.c_grid_base_st > .k-grid-content {
+    border-bottom: 0px;
+    background-color: none;
+}
+.c_grid_base_stc > .k-grid-toolbar {
+    display: none;
+}
+.c_grid_base_stc .k-grid-header,
+.c_grid_base_stc > .k-grid-header {
+    display: none;
+}
+.bg-header-ce .form-group > .control-label {
+    text-transform: uppercase;
+}
+.bg-header-ce .cb-text-xl {
+    padding-bottom: 10px;
+}
+.bg-header-ce .form-group button {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+    /*margin-top: -25px;*/
+}
+.extendButton-left {
+    top: 0px;
+    right: -31px;
+}
+.extendButton-left-tc {
+    top: 0px;
+    right: -35px;
+}
+.bg-seccion-cliente {
+    border-bottom: 1px #b3b3b3 solid;
+    text-align: right;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 14px;
+}
+.bg-seccion-cliente .form-group {
+    min-height: 30px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.bg-seccion-cliente .form-group > .control-label {
+    display: none;
+}
+.bg-header-ce .form-group a {
+    padding-bottom: 5px;
+    display: inline;
+}
+.bg-seccion-cliente .form-group a {
+    text-decoration: underline;
+    color: #000000;
+    padding: 5px;
+    display: inline;
+}
+.bg-seccion-cliente .cb-text-xl {
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+.bg-seccion-cliente .row {
+    margin-top: 0px;
+    min-height: 0px;
+    margin-bottom: 4px;
+}
+
+/*MCA - Se comenta puesto que al momento la pantalla se genera
+  con el espcio adecuado para la cabecera*/
+
+.bg-seccion-cotizacion {
+    /*margin-top: 25px;*/
+}
+.bg-seccion-cotizacion .form-group a {
+    text-decoration: underline;
+    color: #000000;
+    background: none;
+    box-shadow: none;
+    padding: 5px;
+    display: inline;
+}
+.bg-seccion-cotizacion .form-group > .control-label {
+    text-transform: uppercase;
+}
+.bg-seccion-resumen {
+    min-height: 390px;
+}
+.bg-global-cotizacion hr {
+    display: none;
+}
+.bg-tab-cotizacion .form-group > .control-label {
+    text-transform: uppercase;
+}
+.bg-tab-cotizacion1 > div .ng-scope [class*="col-xs" && ng-show=""] {
+    padding: 0px;
+}
+.cedulaContainer {
+    padding-left: 10px;
+    padding-right: 15px;
+}
+.cedulaContainer .row [class*="col-"],
+.container .row [class*="col-"]:before,
+.container .row [class*="col-"]:after {
+    padding-left: 5px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+}
+.camposCedulaMargen2 {
+    margin-top: 1px!important;
+}
+#GR_VDTOPERSON24_15_VAL .row [class*="col-"] input {
+    padding-left: 0px;
+}
+#GR_VDTOPERSON24_15_VAL .row [class*="col-"]:nth-child(4) {
+    width: 40px;
+    margin-top: 5px;
+}
+#GR_VDTOPERSON24_15_VAL .row [class*="col-"]:nth-child(5) {
+    width: 60px;
+    margin-top: 5px;
+}
+#GR_VDTOPERSON24_15_VAL .row [class*="col-"]:nth-child(6) {
+    width: 75px;
+    margin-top: 5px;
+}
+#VA_VDTOPERSON2410_EDAD679_DIV {
+    margin-top: 10px;
+}
+#GR_VDOUMENTOS52_10_VAL {
+    margin-top: -35px;
+    margin-bottom: -5px;
+}
+#GR_VDOUMENTOS52_10 {
+    margin-top: 0px;
+}
+#GR_VDTOPERSON24_15_VAL .row [class*="col-"]:nth-child(2) {
+    display: none;
+}
+#VA_VDTOPERSON2415_DTCN882_DIV {
+    width: 139px;
+}
+.cedulaDigitos {
+    /* padding: 1px 1px !important; */
+    /* text-indent: .2em !important; */
+}
+.sinEspacio {
+    margin: 0 0 0 -6px !important;
+    display: block !important
+}
+.NoInternalPadding {
+    padding-left: 3px !important;
+    text-indent: .2em !important
+}
+.NoLeftMargin {
+    margin-left: -15px !important
+}
+.NoLeftMargin5 {
+    margin-left: -5px !important;
+    padding: 0;
+}
+.NoRightMargin {
+    margin-right: -15px !important
+}
+.title_header {
+    font-size: 30px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+.title_header_without_capitalizable {
+    font-size: 30px;
+    font-weight: normal;
+}
+.position_title_header {
+    font-size: 20pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: white;
+    margin-left: -65px;
+}
+.panel1 {
+    padding-top: 30px;
+    /*padding-bottom: 10px;*/
+}
+.panel2 {
+    height: 40px;
+    margin-top: -8px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+    background-color: white;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.panel3 {
+    background-color: white;
+    /*margin-top: -15px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;*/
+    border: 1px solid #DFE1E3;
+    padding: 20px;
+    padding-top: 59px;
+    position: relative;
+    border-radius: 2px;
+}
+.panel3 > legend {
+    padding-top: 35px;
+    margin-top: 20px;
+    font-size: 14px;
+    position: absolute;
+    margin: 0;
+    width: auto;
+    top: 20px;
+}
+.panel3 > legend > .group-title {
+    white-space: nowrap;
+    padding: 0 !important;
+}
+.panel3 .k-grid {
+    margin-top: 0 !important;
+}
+
+/*
+fieldset legend {
+    // border: none !important;
+	padding: 0px;
+}
+*/
+
+.cb-title {
+    /*font-size: 14pt;*/
+    font-weight: bolder;
+    letter-spacing: 0px !important;
+    text-transform: capitalize;
+    color: black;
+}
+.c_header {
+    height: 170px;
+}
+.iconColumn {
+    font: normal normal normal 1px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 25px;
+    vertical-align: middle;
+}
+.bg-est-ok-active,
+.bg-est-fail-active {
+    color: transparent;
+    margin-left: 10px;
+    font-size: 0px;
+}
+.bg-est-cot-cotizacion:before,
+.bg-est-cot-evaluacion:before,
+.bg-est-cot-formalizacion:before,
+.bg-est-cot-desembolso:before,
+.bg-est-cot-desestimado:before,
+.bg-obl-buena,
+.bg-obl-regular,
+.bg-obl-mala,
+.bg-obl-cancelada,
+.bg-obl-mayor {
+    font: normal normal normal 1px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 25px;
+    vertical-align: middle;
+    font-size: 9px;
+    display: inline-block;
+    content: "\f111";
+}
+.bg-est-cot-cotizacion:before {
+    color: #D8D8D8;
+}
+.bg-est-cot-evaluacion:before {
+    color: #F6AE39;
+}
+.bg-est-cot-formalizacion:before,
+.bg-est-cot-desembolso:before {
+    color: #4DC076;
+}
+.bg-est-cot-desestimado:before {
+    color: #D20F27;
+}
+.bg-obl-buena:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #46BE71;
+    content: "\f111";
+}
+.bg-obl-regular:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #F5A623;
+    content: "\f111";
+}
+.bg-obl-mala:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #dbdbd4;
+    content: "\f111";
+}
+.bg-obl-mayor:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #B90D43;
+    content: "\f111";
+}
+.gr-datos-personales-01 {
+    background-color: #f7f7f8;
+    height: 128px;
+    background-image: url(../images/Nav01_01.png);
+    margin-bottom: -20px;
+}
+.bg-bgcolor-gray {
+    background-color: #D8D8D8;
+}
+.bg-est-ok-active:before {
+    font-size: 14px;
+    display: inline-block;
+    content: "\f00c";
+    color: #4DC076;
+}
+.bg-est-ok-inactive:before {
+    font-size: 14px;
+    display: inline-block;
+    content: "\f00c";
+    color: #D8D8D8;
+}
+.bg-est-remove-active {
+    font-size: 14px;
+    display: inline-block;
+    content: "\f1f8";
+    color: #4DC076;
+}
+.bg-est-fail-active:before {
+    font-size: 14px;
+    display: inline-block;
+    content: "\f00d";
+    color: #D20F27;
+}
+.btn-primary {
+    color: white;
+}
+.bg-text-bold {
+    font-weight: bold;
+}
+.bg-text-cursive {
+    font-style: italic;
+}
+.bg-dividendos-baja {
+    width: 10px;
+    background-color: #9AA6A6;
+    color: #030303 !important;
+    border-color: #718CA5 !important;
+}
+.bg-dividendos-media {
+    width: 10px;
+    background-color: #1EA94F;
+    color: #030303 !important;
+    border-color: #718CA5 !important;
+}
+.bg-dividendos-buena {
+    width: 10px;
+    background-color: #ECDA22;
+    color: #030303 !important;
+    border-color: #718CA5 !important;
+}
+.bg-dividendos-regular {
+    width: 10px;
+    background-color: #FCC2B1;
+    color: #030303 !important;
+    border-color: #C56B4F !important;
+}
+.bg-dividendos-mala {
+    width: 10px;
+    background-color: #DF4B1E;
+    color: #FFFFFF !important;
+    border-color: #C56B4F !important;
+}
+.bg-dividendos-negativa {
+    width: 10px;
+    background-color: #C73A28;
+    color: #030303 !important;
+    border-color: #A01200 !important;
+}
+.bg-dividendos-negativa a,
+.bg-dividendos-negativa a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos individuales*/
+
+
+/*
+#VA_CAECESOLUD4404_TIPO032_DIV label,
+#VA_CAECESOLUD4404_CDGO462_DIV label {
+    display: none;
+}
+#VA_CAECESOLUD4404_ESDO194_DIV label,
+#VA_CAECESOLUD4404_UOAD728_DIV label,
+#VA_CAECESOLUD4404_XPCS416_DIV label {
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#VA_VCSAOACIES2507_0000148_DIV label {
+ display: none;
+}
+*/
+
+
+/* Estilo para la división del grupo */
+
+#VC_ONUAC54_RUSNO_092 hr {
+    padding-top: 5px;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+/*Por remover */
+
+.title_header2_old {
+    font-size: 20pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+}
+.bg-text-gris {
+    color: #979797;
+}
+.bg-width-column {
+    width: 127px;
+}
+.k-grid {
+    box-shadow: none;
+    border: none;
+}
+.k-grid .k-grid-content {}
+.k-grid .k-alt {
+    background-color: white;
+}
+.k-grid .k-state-selected,
+.k-grid .k-alt .k-state-selected {
+    background-color: #ECF3FB;
+    border-color: #ECF3FB;
+    color: inherit;
+}
+.k-grid .k-grid-header {
+    color: #979797;
+    background-color: #EBECED;
+    border: .1em #D4D6D9 solid;
+}
+.k-grid .k-grid-content {
+    border-top: .1em #D4D6D9 solid;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.k-grid .k-grid-content table {
+    border: none;
+    box-shadow: none;
+    //margin-top: -1px;
+}
+.k-grid tr {
+    min-height: 30px;
+}
+.k-grid tr td {
+    border: none;
+    border-bottom: .1em #D4D6D9 solid;
+}
+.k-grid tr td a {
+    float: right;
+}
+.k-grid .k-grid-header .k-header {
+    border-top: 1px solid #d4d6d9;
+    border-bottom: 1px solid #d4d6d9;
+}
+.k-grid .k-grid-header .k-header:first-child {
+    border-left: 1px solid #d4d6d9;
+}
+.k-grid .k-grid-header .k-header:last-child {
+    border-right: 1px solid #d4d6d9;
+}
+.k-grid .k-grid-header .k-header .k-link {
+    margin: -5px;
+    padding: .6em;
+}
+.k-grid .k-grid-header .k-header,
+.k-grid .k-grid-header .k-header .k-link {
+    color: #979797;
+    background-color: #EBECED;
+    font-size: 12px;
+}
+.k-grid .k-edit-cell {
+    padding: 0px;
+}
+.k-grid .k-pager-wrap {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0;
+    padding: 0;
+    margin-top: 20px;
+}
+.k-grid .k-pager-wrap .k-pager-numbers .k-state-selected {
+    box-shadow: 0 0;
+    border-color: #CCC;
+    border-right: 0;
+}
+.cb-breadcrumb-fixed-top > .cb-form-header-process > .breadcrumb {
+    background: #428bca;
+    border-color: #92bce0;
+}
+.cb-title-popover {
+    border-bottom: 1px solid;
+    border-bottom-color: white;
+    width: 90%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+/*
+.contenedor-azul {
+    background-color: #ECF3FB;
+    margin: -8px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    padding: 15px;
+}
+*/
+
+.contenedor-azul {
+    background-color: #ECF3FB;
+    margin-right: -32px;
+    padding: 15px;
+    position: relative;
+}
+.contenedor-azul hr {
+    display: none;
+}
+.contenedor-azul .k-grid tr td {
+    text-align: center !important;
+}
+.contenedor-sin-hr hr {
+    display: none;
+}
+.botones {
+    width: 200px;
+}
+.bg-cumple {}
+.bg-no-cumple:before,
+.bg-cumple:before {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    padding-right: 5px;
+}
+.bg-no-cumple {}
+.bg-cumple:before {
+    color: #249D26;
+    content: "\e013";
+}
+.bg-no-cumple:before {
+    color: #d1021b;
+    content: "\e014";
+}
+.estiloRecargo {
+    visibility: hidden;
+}
+.k-tooltip-button {
+    display: none;
+}
+.bg-etiqueta {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 14px;
+}
+.k-widget.k-tooltip {
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px #2C2C2C;
+}
+
+.k-tooltip-content .btn-primary {
+    background-color: transparent;
+    border-color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 15px;
+}
+
+/*.form-horizontal .control-label {
+text-align: left !important;
+}*/
+
+.form-horizontal > .row.col-container > [class*="col-"] > .form-group .control-label,
+.form-horizontal > .row.cb-col-container > [class*="col-"] > .form-group .control-label {
+    overflow: visible !important;
+}
+.bg-linetittlefalse {
+    border-bottom: 0px solid #959ca1 !important;
+}
+.cobisspacer label,
+.cobisspacer-h label,
+.checkbox-inline label {
+    font-weight: bold;
+    color: #aaaaaa;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+.form-control.cb-without-border {
+    border: none;
+    box-shadow: none;
+    padding: inherit;
+    /*color: inherit;*/
+    background-color: inherit;
+}
+.form-control.cb-no-border {
+    border: none;
+    box-shadow: none;
+    padding: inherit;
+    background-color: inherit;
+}
+.bg-linkpadiz {
+    border: 0px;
+    padding-left: 0px;
+}
+.bg-linkspadde {
+    border: 0px;
+    padding-right: 0px;
+    color: black;
+}
+.bg-linkbtn {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+td > a[class*="btn"] .glyphicon {
+    font-size: inherit;
+}
+td > a .glyphicon {
+    font-size: large !important;
+}
+.k-grid-footer {
+    padding-right: 0px !important;
+}
+.cb-container-header {
+    border-bottom: 0px solid #245682;
+    color: #FFF;
+    margin: 0px;
+    /* inicio degrade en background */
+    background: #4d93de;
+    background: -moz-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #4d93de), color-stop(100%, #357ecd));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, #4d93de 0%, #357ecd 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4d92de', endColorstr='#357ecd', GradientType=1);
+    /* IE6-9 */
+}
+.cb-container-header .cb-form-header {
+    background: none;
+    width: 756px;
+    margin: 0 auto;
+    padding: 0px;
+    background: url('themes/bgeneral/images/logoGeneral.png') top right no-repeat;
+    background-position-y: -18px;
+}
+.cb-grupo {
+    height: 60px;
+}
+.cb-grupo .form-group label {
+    display: none;
+}
+.cb-grupo .form-group {
+    min-height: 5px !important;
+    height: 20px;
+    padding: 0px;
+    margin: 0px;
+}
+.cb-grupo [class*="col-xs"] {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+.cb-grupo .btn {
+    font-size: 12px;
+}
+.cb-grupo .label {
+    font-size: 12px;
+}
+
+/*boton tipo link para añadir obligacion - cotizacion*/
+
+.btn.btn-default.btn-block.bg-btn-link {
+    background: none;
+    padding: 0px;
+    border: none;
+    color: #4d93de;
+    margin-left: 0.2px;
+}
+
+/*boton tipo link:hover para añadir obligacion - cotizacion */
+
+.btn.btn-default.btn-block.bg-btn-link:focus,
+.btn.btn-default.btn-block.bg-btn-link:hover {
+    border: none;
+    background: none;
+    padding: 0px;
+    color: #4d93de;
+}
+
+/* Border rojo controles requeridos que estan vacios */
+
+.control-vacio {
+    border: 1px #cc3f0b solid !important
+}
+.bg-btn-obligacion {
+    width: 20px;
+    margin-left: -50px;
+}
+.bg-lbl-act {
+    width: 145px;
+    margin-left: -126px;
+}
+.bg-btn-refresh {
+    width: 20px;
+    margin-left: -95px;
+    padding: 10px 0 0 0 !important;
+}
+.bg-btn-refreshTC {
+    width: 20px;
+    margin-left: -60px;
+    padding: 10px 0 0 0 !important;
+}
+.bg-btn-activas {
+    width: 65px;
+    margin-left: -25px !important;
+    border-right: #B3B3B3;
+    border-right-style: solid;
+    border-radius: 0px;
+    height: 22px;
+}
+.bg-btn-activas-TC {
+    width: 65px;
+    margin-left: 80px !important;
+    border-right: #B3B3B3;
+    border-right-style: solid;
+    border-radius: 0px;
+    height: 22px;
+}
+.gb-btncbxbuscar {
+    width: 108px !important;
+}
+.bg-btn-todas {
+    width: 60px;
+    margin-left: -25px !important;
+}
+.bg-btn-todas-TC {
+    width: 60px;
+    margin-left: 20px !important;
+}
+.bg-grp-cab {
+    padding-top: 60px;
+}
+.bg-lbl-aux {
+    color: #aaaaaa;
+    padding-top: 24px;
+    margin-left: -67px;
+}
+.k-grid-content .k-hierarchy-cell {
+    border-left: .1em #D4D6D9 solid !important;
+}
+
+/*
+#GR_VDTOPERSON24_18_VAL .container-fluid {
+	padding: 0px;
+	margin-left: -7px;
+	margin-right: -7px;
+}
+#GR_ALABOAIENT49_17_VAL .container-fluid {
+	padding: 0px;
+	margin-left: -7px;
+	margin-right: -7px;
+}
+*/
+
+
+/*
+#GR_VDEROLSTAM17_09_VAL .row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+*/
+
+#GR_VDTALECTCI55_07_VAL {
+    margin-top: -10px;
+}
+#GR_VDTALECTCI55_07_VAL [class*="col-xs"] {
+    height: 33px;
+}
+#GR_VDTALECTCI55_07_VAL .form-group {
+    border: none;
+    border-top: .1em #D4D6D9 solid;
+    border-bottom: .1em #D4D6D9 solid;
+}
+#GR_VDTALECTCI55_07_VAL .form-group > .control-label {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6em;
+    padding-top: 5px;
+    font-weight: normal;
+}
+.cb-align-right_col {
+    padding-right: 0px;
+}
+.cb-align-right_col #VA_TESCBOTIZA4604_PIAA375_DIV label {
+    padding-left: 5px;
+}
+.cb-align-left_col {
+    padding-left: 0px;
+}
+
+/**para taller bgral*/
+
+
+/**
+div#GR_TESCBOTIZA46_04_VAL {
+    text-transform: uppercase !important;
+}
+
+.interno {
+    padding-right: 1px;
+}
+
+div#VA_TESCBOTIZA4604_FECI923_DIV > input{
+    padding-right: 1px;
+}
+
+div#VA_TESCBOTIZA4604_PIAA375_DIV > input{
+    padding-right: 1px;
+}
+
+div#VA_TESCBOTIZA4604_OION859_DIV > input{
+    padding-right: 1px;
+}
+button#VA_CAECESOLUD4404_0000864, button#VA_CAECESOLUD4405_0000680{
+    visibility: hidden;
+}
+
+a#VA_CAECESOLUD4404_UOAD728, a#VA_CAECESOLUD4404_XPCS416{
+    visibility: hidden;
+}
+*/
+
+.bg-btnicono {
+    border: none;
+    background: none;
+    color: inherit !important;
+    background-color: transparent !important;
+}
+.bg-colgridcolor {
+    background: #EFEFEF !important;
+}
+.bg-colgridcolor-col {
+    background: linear-gradient(to right, #d4e4ef 0%, #86aecc 73%, #86aecc 100%);
+}
+div#GR_VBOTONESSB09_04_VAL {
+    padding-top: 0%;
+}
+
+/*estilo en el campo cotizacion - tasa*/
+
+.bg-alignrightTasa {
+    /*padding-left: 3px !important;
+	text-indent: 1.2em !important;
+	width: 50px;*/
+    text-align: center !important;
+}
+
+/*color tipo boton sin fondo, Cotizacion -> Activas/todas*/
+
+.bg-textlinksinfondo {
+    background: none;
+    box-shadow: none;
+    color: #428bca !important;
+    text-decoration: underline;
+}
+.bg-textlinksinfondo:hover {
+    color: #1c5ca2 !important;
+}
+.bg-btnpopup {
+    margin: 50px auto auto 0px !important;
+}
+
+/*formato para cotizaciones recientes, retira la barra de navegación y espacios en blanco*/
+
+#QV_COIRL3731_29 > .k-pager-wrap,
+#QV_COIRL3731_29 > .k-grid-toolbar,
+#VA_VCTIZPOINE3006_0000992_DIV > label {
+    display: none;
+}
+.bg-alignleftfeci {
+    margin-left: -5px !important;
+    padding: 0;
+    width: 35px;
+}
+.bg-fontMsjRev {
+    line-height: 1.4285!important;
+    font-size: 15px;
+}
+
+/*Estilo de botones*/
+
+button#VA_VOBLIGCION9107_0000695[disabled] {
+    background-color: rgba(242, 245, 247, 0)!important;
+    margin-left: 90px!important;
+    margin: -6px 90px 10px 90px;
+    border-color: rgba(216, 225, 235, 0)!important;
+    color: #428bca !important;
+}
+.btn-default {
+    background-color: #337ccb;
+    border-color: #337ccb;
+    color: #ffffff;
+}
+.btn-default:hover,
+.btn-default:focus {
+    background-color: #1c5ca2;
+    border-color: #1c5ca2;
+    color: #ffffff;
+}
+.btn-default:active {
+    border: none;
+}
+.btn-default[disabled] {
+    background-color: #428bca !important;
+    border-color: #357ebd !important;
+}
+.btn-defaultBG {
+    background-color: #337ccb;
+    border-color: #337ccb;
+    color: #ffffff;
+}
+.btn-defaultBG:hover,
+.btn-defaultBG:focus {
+    background-color: #1c5ca2;
+    border-color: #1c5ca2;
+    color: #ffffff;
+}
+.btn-defaultBG:active {
+    border: none;
+}
+.btn-secondaryBG {
+    background-color: transparent;
+    border-color: #337ccb;
+    color: #337ccb;
+}
+.btn-secondaryBG:hover,
+.btn-secondaryBG:focus {
+    background-color: #337ccb;
+    border-color: #337ccb;
+    color: #ffffff;
+}
+.btn-secondaryBG:active {
+    border: none;
+}
+.btn-secondaryBG[disabled] {
+    background-color: #fff !important;
+    border-color: #ccc !important;
+}
+.btn-secondaryBG-ALT {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.btn-secondaryBG-ALT:hover,
+.btn-secondaryBG-ALT:focus {
+    background-color: #1c5ca2;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.btn-secondaryBG-ALT:active {
+    border: none;
+}
+.btn-dangerBG {
+    background: #b90b43;
+    border-color: #85022a;
+    color: #ffffff;
+}
+.btn-dangerBG:hover,
+.btn-dangerBG:focus {
+    background-color: #85022a;
+    border-color: #85022a;
+    color: #ffffff;
+}
+.btn-dangerBG:active {
+    border: none;
+}
+.bg-grpPasprtbusqcli {
+    margin-top: -2px;
+}
+.bg-grpCedbusqcli {
+    margin-top: -1px;
+}
+
+/*cambia a color azul el text link de datos laborales*/
+
+#VA_ALABOAIENT4914_ORAB191 {
+    color: #428bca;
+    margin-bottom: 35px;
+}
+
+/*cambia a color azul el text link de datos laborales*/
+
+#VA_ALABOAIENT4912_0000785 {
+    color: #428bca;
+}
+
+/*fondo gris y alineado a la derecha el total de datos salariales*/
+
+#VA_VDETLETBAO2505_TOAL252 {
+    background-color: #F2F2F2;
+    text-align: right;
+    vertical-align: middle;
+}
+
+/*fondo gris y alineado a la derecha el total de renta*/
+
+#VA_VDETLETBAO2506_EACA258 {
+    background-color: #F2F2F2;
+    text-align: right;
+}
+
+/*fondo gris y alineado a la derecha el total de utilidad*/
+
+#VA_VDETLETBAO2507_EACA394 {
+    background-color: #F2F2F2;
+    text-align: right;
+}
+label#VA_VTICVEMPEO7405_0000399 {
+    margin-bottom: 10px;
+}
+label#VA_VTICVEMPEO7405_0000048 {
+    margin-bottom: 10px;
+}
+
+/*Estilo para el mensaje de la vista de dar baja el empleo*/
+
+#VA_VTICVEMPEO7407_0000134 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #c10000;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*Estilo para el mensaje de la vista de dar baja el empleo*/
+
+#VA_VTICVEMPEO7407_0000016 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #c10000;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*Estilo para mensaje de Mercado indefinido no revisado*/
+
+#VA_VDETLETBAO2504_TBLD173 {
+    font-weight: normal;
+    font-size: 12px;
+    color: #478eda;
+    margin: 0px;
+    border: #8cb5f9 1px solid;
+    width: 50%;
+    padding: 0px;
+    background-color: #d6e4f5;
+}
+
+/*Centrar campo cumpleEstabilidad*/
+
+#VA_VDETLETBAO2504_EDBA226,
+#VA_VDETLETBAO2504_0000466 {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+/*quitar espacio de alguno no es un trabajo actual?*/
+
+#VA_ALABOAIENT4914_ORAB191_DIV {
+    margin-top: 0px !important;
+}
+#VA_ALABOAIENT4914_ORAB191_DIV>label {
+    height: 0px;
+    display: none;
+}
+
+/*quitar espacio de alguno es un trabajo actual?*/
+
+#VA_ALABOAIENT4912_0000785_DIV {
+    margin-top: 0px !important;
+}
+#VA_ALABOAIENT4912_0000785_DIV>label {
+    height: 0px;
+    display: none;
+}
+.bg-btnbuscarCli {
+    margin-top: -4px;
+}
+.bg-espaciowidthCli {
+    width: 11.25em;
+}
+.bg-espaciowidthCli-col {
+    width: 11.25em;
+}
+
+/*Alinea text link de cálculo comisiones con su etiqueta*/
+
+
+/*#VA_VCOMISIOES3807_CCOO550{
+	margin-top: 7px;
+	padding-left: 10px !important;
+}
+
+label#VA_VCOMISIOES3807_CCOO550{
+	margin-top: 7px;
+	padding-left: 10px !important;
+	color: #ED1818;
+}*/
+
+
+/*Alinea combobox de cálculo comisiones con su etiqueta*/
+
+#GR_VCOMISIOES38_07_VAL div div.col-xs-8 {
+    width: 290px;
+}
+#GR_VCOMISIOES38_07_VAL div div.col-xs-4 {
+    padding: 0;
+    margin-top: -10px;
+}
+#VA_VCOMISIOES3807_DGON509 {
+    font-size: 14px !important;
+}
+#VA_VCOMISIOES3807_CCOO550_DIV {
+    min-height: 0px;
+}
+#VA_VCOMISIOES3807_CCOO550_DIV > label.control-label {
+    height: 0px;
+}
+.bg-tmp-buscar {}
+.bg-tmp-buscar-col {
+    height: 82px;
+}
+
+/*Iconos alado de los label Cotizacion*/
+
+.glyphicon.glyphicon-exclamation-sign {
+    color: #d1021b;
+}
+.glyphicon.glyphicon-ok-circle {
+    color: #4dc076;
+}
+.glyphicon.glyphicon-info-sign {
+    color: #337ccb;
+}
+#VA_VCTIZPOINE3004_EAE1112_DIV > label {
+    display: none;
+}
+
+/*tamaño fijo para un textbox, aplica en cotizacion/plazos*/
+
+#VA_DTLLECTACN4008_LAZO498_DIV {
+    border: 50px;
+    width: 50px;
+}
+
+/*estilo temporal para el combo box de busqueda del cliente*/
+
+#GR_BUQUELIENE03_09_VAL [class*="col-xs-12 col-sm-12 col-md-4 col-lg-4"] {
+    /*height : 75px;*/
+    line-height: 1.4285;
+}
+#VA_REIDOCENTE1004_0000302_DIV>label {
+    display: none;
+}
+#QV_COBLC9807_84 .bg-colgridcolor {
+    /*background-color: #49a5bf;*/
+}
+#GR_VUEVOTRABJ85_06_VAL {
+    margin-bottom: 10px;
+}
+
+/*texto centrado Cotizacion*/
+
+.bg-textocentro {
+    text-align: center;
+}
+
+/*MCA - Se comenta debido a que el estilo con esta regla puede variar, se añade estilos en base a los ID de las  obligaciones*/
+
+
+/*tamaño en el campo Obligaciones en Cotizacion*/
+
+
+/*#GR_VTRAEXANEI46_03_VAL>div>div[class$="col-xs-2 col-sm-2 col-md-2 col-lg-2"]>div>label:first-child{
+	font-size: 16px;
+	margin-bottom: 0px;
+}
+/*tamaño y color para label Actualizadas hace*/
+
+
+/*#GR_VTRAEXANEI46_03_VAL>div>div[class="col-xs-4 col-sm-4 col-md-4 col-lg-4"]>div	>label:first-child{
+	font-size: 12px;
+	color: #A6A8A4;
+	padding: 10px 0 0 0;
+}*/
+
+
+/*corrige los bordes del combobox en la pantalla de añadir Compania*/
+
+#VA_VUEVOTRABJ8507_AAOA591_DIV> span> span>input {
+    padding: 1px;
+}
+
+/*Coloca a la izq el total en pantalla de Comisiones*/
+
+#VA_VCOMISIOES3810_0000946 {
+    padding: 10px 0px 2px 50px;
+}
+
+/*Coloca estilo personalizado para pantalla de comisiones*/
+
+#GR_VCOMISIOES38_10_VAL {
+    border: Solid #ccc 1px;
+    background: #eee;
+    height: 40px;
+}
+
+/*Coloca estilo para el label de total en pantalla de comisiones*/
+
+#VA_VCOMISIOES3810_0000431 {
+    font-size: 12px;
+    padding: 10px 0px 10px 0px;
+}
+
+/*Coloca estilo personalizado para pantalla modal genérica*/
+
+#GR_SNDATOSGUD86_06_VAL {
+    margin-bottom: -30px;
+    margin-top: -10px;
+}
+
+/*estilo para fix en IE9 pantalla prestamos personales */
+
+#GR_VCSAOACIES25_06_VAL>div>div>div[class="form-group"] {
+    min-height: 57px!important;
+}
+#VA_VCSAOACIES2506_ID2N485_DIV,
+#VA_VCSAOACIES2506_ID3D732_DIV,
+#VA_VCSAOACIES2506_ID4W941_DIV {
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+/*labels de viabilidad y resultado - cotizacion*/
+
+#GR_VDTALECTCI55_13>div>div>div>div>div>label,
+
+/*#GR_VDTALECTCI55_44>div>div>div>div>div>label,*/
+
+#GR_VDTALECTCI55_11>div>div>div>div>div>label {
+    text-transform: uppercase;
+}
+
+/*linea margen de la grilla de gastos - cotizacion*/
+
+
+/*
+#QV_CGAST2789_53{
+	margin-top: -10px;
+}
+*/
+
+
+/*textos de viabilidad y resultado - cotizacion*/
+
+#GR_VDTALECTCI55_13>div>div>div>div>div>div,
+#GR_VDTALECTCI55_13>div>div>div>div>div>div,
+#GR_VDTALECTCI55_44>div>div>div>div>div>div,
+#GR_VDTALECTCI55_44>div>div>div>div>div>div,
+#GR_VDTALECTCI55_11>div>div>div>div>div>div,
+#GR_VDTALECTCI55_11>div>div>div>div>div>div {
+    font-weight: bold;
+}
+
+/*posicion del campo mensualidad - cotizacion*/
+
+#GR_VDTALECTCI55_44>div>div>div>div>div>div,
+#GR_VDTALECTCI55_13>div>div>div>div>div>div,
+#GR_VDTALECTCI55_44>div>div>div>div>div>div,
+#GR_VDTALECTCI55_11>div>div>div>div>div>div {
+    padding: 1px;
+    margin: 0px 0px 0px -14px;
+}
+#GR_VDTALECTCI55_44>div>div>div>div>div>div {
+    margin: 0px 0px 0px -14px;
+}
+
+/*posicion del campo mensualidad anterior  - cotizacion */
+
+
+/*#GR_VDTALECTCI55_44>div>div>div>div[class$="col-xs-12 col-sm-12 col-md-8 col-lg-8"] {	*/
+
+#VA_VDTALECTCI5544_LIDD828_DIV {
+    padding-right: 70px;
+}
+
+/*posicion, color tachado de mensualidad anterior - cotizacion */
+
+#VA_VDTALECTCI5544_LIDD828 {
+    width: 170px !important;
+    text-decoration: line-through;
+    color: #A6A8AC;
+    height: 19px;
+}
+
+/*borde de mensualidad - cotizacion*/
+
+#VA_VDTALECTCI5544_0000031_DIV {
+    border-left-width: 0px;
+    margin: 0 0 0 -15px !important;
+    width: 106px !important;
+}
+
+/*posicion del texto mensualidad - cotizacion*/
+
+#VA_VDTALECTCI5544_0000031 {
+    margin-left: -130px;
+    width: 190px;
+}
+#VA_VDTALECTCI5544_0000031_DIV>div>label {
+    padding-right: 0px;
+    padding-left: 0px;
+    height: 24px;
+    width: 15px;
+    color: black;
+}
+
+/* fix ventana modal */
+
+.modal-backdrop.fade.in {
+    margin-bottom: -100% !important;
+}
+
+/* fix ventana modal */
+
+#VA_VDTALAPATD7902_PNEG613_DIV > label span [class="k-widget k-combobox k-header ng-pristine ng-valid estiloRecargo"] {
+    background-color: #eee;
+}
+
+/*Icono colocado en boton, sin evento, cotizacion - marca APC*/
+
+
+/*.btniconoxl{
+	height: 50px;
+	width: 50px;
+	font-size: 180px;
+	color: antiquewhite !important;
+	background-color: transparent;
+	border-color: transparent;
+	margin-top: -45px;
+}
+.btn.btn-default.btn-block.ng-scope.btniconoxl:hover,
+.btn.btn-default.btn-block.ng-scope.btniconoxl:focus{
+	background-color: transparent;
+	border-color: transparent;
+}*/
+
+
+/*cambio del estilo para boton de icono cotizacion - APC*/
+
+#VA_VOBLIGCION9108_CVAS045 {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/*ajustes de tamaño y color para el icono de mensaje APC - cotizacion*/
+
+#VA_VOBLIGCION9108_CVAS045>span {
+    height: 188px;
+    width: 186px;
+    font-size: 180px;
+    color: #F2D2DC;
+    /*eb7d6f;/*antiquewhite !important;*/
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: -60px;
+    margin-top: -30px;
+}
+
+/*MCA - Estilo para separar la grilla de cotizaciones recientes del título*/
+
+#VA_VCTIZPOINE3004_EAE1112_DIV {
+    margin-bottom: 20px;
+}
+
+/*texto popover mensaje*/
+
+.bg-txtpopovmsj {
+    width: 179px;
+    font-size: 11px;
+}
+
+/*grupo de botones popover*/
+
+
+/*
+.bg-grpbtnpopov{
+	padding: 25px 0 0 0px;
+	margin: 0 0 0 -10px;
+}
+*/
+
+#GR_VDETALEBCO99_04_VAL {
+    margin-bottom: 20px;
+}
+
+/* COTIZACION - CABECERA - Poner Fija Cabecera  */
+
+div#GR_CAECESOLUD44_06_VAL {
+    /*margin-top:36px; 
+    position:fixed; 
+    z-index:999; 
+    width:100%; 
+    left:0; */
+    background: linear-gradient(to right, #4d93de 0%, #357ecd 100%);
+    /*height:155px;*/
+}
+#GR_CAECESOLUD44_06_VAL .form-vertical,
+#GR_CAECESOLUD44_06_VAL .form-group {
+    margin-bottom: 0;
+}
+div#GR_CAECESOLUD44_07_VAL {
+    width: 756px;
+    margin: auto;
+    /*padding-left:30px !important; padding-right:0px !important*/
+}
+div#VC_TMPAT29_GPNNE_840_VAL.bg-grp-cab {
+    /*margin-top: 76px;*/
+    width: 756px;
+    padding-top: 10px;
+}
+button#VA_CAECESOLUD4404_0000864 {
+    border-left-width: 0;
+    margin-left: -24px
+}
+
+/*#VC_TMPAT29_RUPIN_875_VAL{margin-top:-30px;}*/
+
+
+/* COTIZACIONTC - CABECERA - Poner Fija Cabecera  */
+
+div#GR_VABERLITUC25_04_VAL {
+    z-index: 999;
+    /* position:fixed;*/
+}
+div#GR_VABERLITUC25_05_VAL {
+    width: 756px;
+    margin: 0px auto 0 auto;
+    padding-left: 20px !important;
+    padding-right: 0px !important
+}
+div#VC_IOTTC07_IITDN_299_VAL.bg-grp-cab {
+    margin-top: -50px;
+    width: 756px;
+    margin-left: -15px
+}
+button#VA_VABERLITUC2507_ZAXO573 {
+    border-left-width: 0
+}
+
+/*borde para vista Obligacion y mensaje APC - cotizacion*/
+
+.bg-borde-voblig {
+    border: 2px;
+    border-style: ridge;
+    padding: 10px 0px 0px 10px;
+}
+
+/*separacion entre Obligacion y monto - cotizacion*/
+
+
+/*#VC_TMPAT29_NECOR_907{
+	padding-top: 35px;
+}*/
+
+
+/*borde derecho en los tab de la tarea de cotizacion*/
+
+#VC_TMPAT29_RUPIN_875_tab>ul>li {
+    border-right: 1px;
+    border-style: outset;
+}
+
+/*Estilo para el contenido del tab cliente*/
+
+div#VC_TMPAT29_RUPIN_875_tab-2.k-content.k-state-active {
+    display: block !important;
+}
+
+/*Estilo para reciente en pantalla detalle de obligaciones*/
+
+#VA_VDETALEBCO9911_0000108 {
+    color: #A6A8A4;
+    margin-left: 215px;
+    font-size: 12px;
+}
+
+/*Estilo para antiguo en pantalla detalle de obligaciones*/
+
+#VA_VDETALEBCO9911_0000066 {
+    color: #A6A8A4;
+    font-size: 12px;
+}
+#VA_BUQUELIENE0306_0000450:after {
+    content: 'Buscar';
+    color: #ffffff;
+    margin-left: 3px;
+    font-weight: 100;
+}
+button#VA_VCSAOACIES2506_0000606:after {
+    content: 'Buscar';
+    color: #fffff0;
+    margin-left: 3px;
+    font-weight: 100;
+}
+
+/*
+#VA_VCSAOACIES2506_0000606  span:after{
+  content: 'Buscar';
+  color: #fffff0;
+  margin-left: 3px;
+  font-weight: 100;
+}
+*/
+
+
+/*Coloca la palabra opcional al campo Segundo nombre de Datos personales*/
+
+#VA_VDTOPERSON2410_EONE509_DIV > .control-label:after {
+    content: ' opcional';
+    color: #CDC9C9;
+    /*margin-left: 3px;*/
+}
+
+/*Alineación de texto centrado para la tabla total obligaciones - cotizacion*/
+
+#QV_CTTOL3178_97 table>thead>tr>th,
+#QV_CTTOL3178_97 table>tbody>tr>td {
+    text-align: center !important;
+    text-transform: capitalize;
+    background-color: #DBE5F1;
+}
+input.k-input {
+    height: 2em!important;
+}
+input.k-formatted-value.ng-pristine.ng-untouched.ng-valid.ng-valid-maxlength.k-input {
+    height: 2.3em!important;
+}
+#GR_VCOMISIOES38_09_VAL div.form-vertical {
+    margin-bottom: -20px;
+}
+
+/*estilo para segundo año en pantalla de comisiones*/
+
+
+/*Se reduce el tamaño de la letra en la pantalla de comisiones para que se pueda visualizar hasta 2 decimales*/
+
+#GR_VCOMISIOES38_05_VAL {
+    padding: 5px 0px 5px 0px;
+    font-size: 80%;
+    text-align: center;
+}
+
+/*Alinea a la izquierda los años de la pantalla de comisiones*/
+
+#GR_VCOMISIOES38_05_VAL>div>div:first-child {
+    text-align: left;
+    margin-bottom: -15px;
+}
+
+/*Alinea a la izquierda los años de la pantalla de comisiones*/
+
+#GR_VCOMISIOES38_05_VAL div div hr {
+    margin: 0px 0px 20px 0px !important;
+}
+
+/*Se reduce el tamaño de la letra en la pantalla de comisiones para que se pueda visualizar hasta 2 decimales*/
+
+#GR_VCOMISIOES38_06_VAL {
+    padding: 0px 0px 0px 0px;
+    font-size: 80%;
+    text-align: center;
+}
+
+/*Alinea a la izquierda los años de la pantalla de comisiones*/
+
+#GR_VCOMISIOES38_06_VAL div div hr {
+    margin: 0px 0px 20px 0px !important;
+}
+
+/*Alinea a la izquierda los años de la pantalla de comisiones*/
+
+#GR_VCOMISIOES38_06_VAL>div>div:first-child {
+    text-align: left;
+    margin-bottom: -15px;
+}
+
+/*Se reduce aumenta el tamaño de la letra en pantalla de comisiones para el label del año 1*/
+
+#VA_VCOMISIOES3806_ANIO924 {
+    font-size: 18px;
+}
+
+/*Se reduce aumenta el tamaño de la letra en pantalla de comisiones para el label del año 2*/
+
+#VA_VCOMISIOES3805_ANIO110 {
+    font-size: 18px;
+}
+
+/*MCA - Se añade estilo para título obligaciones*/
+
+#VA_VOBLIGCION9106_0000307 {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+/*MCA - Se añade estilo para Pantalla Obligaciones - Actualizada hace 3 días*/
+
+#VA_VOBLIGCION9106_0000721,
+#VA_VTRAEXANEI4605_0000176 {
+    font-size: 12px;
+    color: #A6A8A4;
+    padding: 10px;
+}
+
+/*JRU - Se añade estilo para Pantalla TARJETAS DE CREDITO - Actualizada hace 3 días*/
+
+#VA_VOBLIACINC9309_MNAJ952 {
+    font-size: 12px;
+    color: #A6A8A4;
+    padding: 10px 0 0 0;
+}
+
+/*Coloca la palabra opcional a cualquier campo*/
+
+.cb-optional::after {
+    content: 'opcional';
+    color: #CDC9C9;
+    right: 0px;
+    position: absolute;
+}
+
+/*MCA - en la pantalla de cotización el ícono de Pantallazo a la izquierda y pegado al nombre del cliente*/
+
+#VA_VCSITUDCEN2103_0000404 {
+    padding: 0px;
+    width: 0px;
+    margin-bottom: -40px;
+}
+
+/* Estilos que viniero del BGRAL3.css INICIO */
+
+.cajaMensaje {
+    display: block;
+    float: left;
+    width: auto;
+    background: #ecf3fb !important;
+    border: 1px solid #337ccb;
+    padding: 18px 18px 0px 18px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Estilos que viniero del BGRAL3.css INICIO */
+
+.cajaMensaje4 {
+    display: block;
+    float: left;
+    width: 482px;
+    background: #ecf3fb !important;
+    border: 1px solid #337ccb;
+    padding: 18px 11px 0px 18px;
+    margin-bottom: 20px;
+    text-align: justify;
+    height: 68px;
+}
+div.cajaMensaje div > div > div > label.control-label.ng-binding {
+    font-size: 16px !important;
+    width: 100%;
+    color: #1361b3;
+}
+div.cajaMensaje4 div > div > div > label.control-label.ng-binding {
+    font-size: 16px !important;
+    width: 100%;
+    color: #1361b3;
+}
+
+/* para mensaje de visita medica en cotizacion*/
+
+div.mensajes {
+    margin-top: 120px !important;
+    margin-left: -350px !important;
+}
+
+/*div#GR_VDATOSALUD32_14_VAL > div > div > div{
+    width: 50px;
+	
+}*/
+
+div#GR_VDATOSALUD32_14_VAL > div > div > div:nth-child(6) {
+    float: right;
+}
+div#GR_VDATOSALUD32_14_VAL #VA_VDATOSALUD3214_CROR110 {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-top: -10px;
+    margin-left: -28.5px;
+}
+
+/*Se añade estilos para ubicar correctamente las cajas de texto de recargos
+ en la vista de salud*/
+
+#VA_VDATOSALUD3214_CROR110_DIV>div[class$="col-sm-10"],
+#VA_VDATOSALUD3214_0000821_DIV>div[class$="col-sm-10"] {
+    padding: 0 0px 0 50px;
+    margin: 10px 0px 10px -14px;
+}
+
+/*SALUD/RECARGO A COBRAR*/
+
+#VA_VDATOSALUD3214_MDES181 {
+    text-align: right;
+    width: 116px;
+    font-weight: bold;
+}
+
+/*Glyphicons*/
+
+div.msgBoxInfo {
+    background: #ecf3fb !important;
+    border: 2px solid #8eb6e2;
+    padding: 0 0 0 8px;
+    border-radius: 2px;
+    margin: 3px 0
+}
+div.msgBoxInfo div > div > div > label {
+    font-weight: inherit;
+    color: #5693d4;
+    margin: 0;
+}
+div.msgBoxWarning {
+    background: #F4FFCD !important;
+    border: 2px solid #CFC962;
+    padding: 0 0 0 8px;
+    border-radius: 2px;
+    margin: 3px 0
+}
+div.msgBoxWarning div > div > div > label {
+    font-weight: inherit;
+    color: #B33B07;
+    margin: 0;
+}
+div.msgBoxError {
+    background: #FAD8DC !important;
+    border: 2px solid #F98CB5;
+    padding: 0 0 0 8px;
+    border-radius: 2px;
+    margin: 3px 0
+}
+div.msgBoxError div > div > div > label {
+    font-weight: inherit;
+    color: #FF0000;
+    margin: 0;
+}
+div.exclamation-sign div > div > div > label:before {
+    font-family: 'Glyphicons Halflings';
+    padding-right: 10px;
+    content: "\e101";
+}
+div.remove-circle div > div > div > label:before {
+    font-family: 'Glyphicons Halflings';
+    padding-right: 10px;
+    content: "\e088";
+}
+div.ban-circle div > div > div > label:before {
+    font-family: 'Glyphicons Halflings';
+    padding-right: 10px;
+    content: "\e090";
+}
+div.warning-sign div > div > div > label:before {
+    font-family: 'Glyphicons Halflings';
+    padding-right: 10px;
+    content: "\e107";
+}
+div.group-ok-green div > div > div > label:before {
+    font-family: 'Glyphicons Halflings';
+    padding-right: 5px;
+    content: "\e013";
+    color: #4aba73;
+}
+div.group-remove-red div > div > div > label:before {
+    font-family: 'Glyphicons Halflings';
+    padding-right: 5px;
+    content: "\e014";
+    color: #ff0000;
+}
+div.group-question-orange div > div > div > label:before {
+    font-size: large;
+    padding-right: 7px;
+    content: "?";
+    color: #ffaf22;
+}
+div.attribute-ok-green:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+    color: #4aba73;
+}
+div.attribute-remove-red:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e014";
+    color: #ff0000;
+}
+div.cajaMensaje3 {
+    background: #ecf3fb !important;
+    border: 2px solid #8eb6e2 !important;
+    padding: 4px 0 0 8px !important;
+    border-radius: 2px;
+    color: #5693d4;
+}
+.cajaMensaje2 {
+    background: #ecf3fb !important;
+    border: 2px solid #8eb6e2 !important;
+    padding: 4px 0 0 8px !important;
+    border-radius: 2px;
+    color: #5693d4!important;
+}
+.cajaMensaje2:before {
+    font-family: 'Glyphicons Halflings';
+    padding-right: 10px;
+    content: "\e101";
+}
+div.total div > div > div > div > div > div > span > span.k-numeric-wrap.k-expand-padding.k-state-disabled {
+    width: 70px;
+}
+fieldset.NoBorderBottom legend {
+    border-bottom-width: 0px !important;
+    padding: 0px !important;
+    margin-top: -7px;
+}
+.k-gridPadding td {
+    padding: 1.0em .6em !important;
+}
+.reduceEspacioGrupoDocumentos {
+    margin-top: 10px;
+}
+.historialFecha {
+    background: #a6b3c3 !important;
+    padding: 2px 10px;
+    color: #ffffff;
+    border-radius: 3px;
+    width: 50px;
+    margin: auto;
+}
+.historialImagenBox {
+    width: 85px;
+    margin: auto;
+}
+.historialImagen {
+    background: #f3f3f3 !important;
+    padding: 1px;
+    border-radius: 55px;
+    width: 90px;
+    height: 90px;
+    border: 1px solid #a6b3c3;
+}
+.historialVinieta {
+    color: #eeeeee;
+    position: relative;
+    left: -10px;
+    top: 70px;
+}
+.historialFlujo {
+    background: #fdfdfd !important;
+    border: 2px solid #eeeeee;
+    padding: 18px;
+    text-align: justify;
+    margin: 10px 5px 30px 0;
+    border-radius: 4px;
+}
+.historialFlujoBox {
+    background: #f3f3f3 !important;
+    border: 2px solid #e7e7e7;
+    padding: 3px 15px;
+    margin: 0;
+    border-radius: 3px;
+}
+.historialNuevo {
+    background: #ecf3fb !important;
+    border: 1px solid #c2ccd8;
+    padding: 18px;
+}
+.historialOficial {
+    color: #5385ba;
+}
+
+/*Estilo para comision y tasa en la pantalla de cambio - JRU*/
+
+.controlOculto {
+    visibility: hidden !important;
+    height: 0;
+    display: none
+}
+.cambioPorcentaje {
+    visibility: hidden !important;
+    display: none
+}
+
+/*Titulo del Popover*/
+
+div.fieldsetPopOverTitulo {
+    margin-top: -15px;
+    /*margin: 10px -15px 20px; width:120%;*/
+}
+div.fieldsetPopOverTitulo div div div label {
+    padding-left: 0
+}
+div.fieldsetPopOverTitulo div div div div div {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+div.fieldsetPopOverTituloLine {
+    /*-moz-box-shadow: inset 0px -2px 2px -1px #dedede !important;
+    box-shadow: inset 0px -2px 2px -1px #dedede !important;*/
+    border-bottom: 1px solid #dedede;
+}
+div.fieldsetPopOverTituloLineCapEnd {
+    -moz-box-shadow: inset 0px -2px 2px -1px #FFFFFF !important;
+    box-shadow: inset 0px -2px 2px -1px #FFFFFF !important;
+}
+div.fieldsetPopOverTituloText {
+    color: #ffffff !important;
+    text-align: right;
+    font-size: inherit;
+}
+div.fieldsetPopOverPieText {
+    color: #A6A8A4 !important;
+    font-size: 12px;
+    text-align: right;
+    font-weight: bold;
+}
+div.fieldsetPopOverTituloTextUsuario div label {
+    color: #ff0000 !important;
+    text-align: right;
+    font-size: inherit;
+    font-weight: 900 !important;
+}
+
+/*Campos del Popover - Sin Detalle*/
+
+div.fieldsetPopOver div div div {
+    /*height: 25px; width: 110%; padding-left:0;*/
+    font-size: small;
+    color: #aaaaaa;
+}
+div.fieldsetPopOverLabel div div div label {
+    display: none !important;
+}
+
+/*
+div.fieldsetPopOverLine{ width:93% !important; box-shadow: inset 0px -2px 2px -1px #dedede !important; -moz-box-shadow: inset 0px -2px 2px -1px #dedede !important}
+*/
+
+
+/*Campos del Popover - Con Detalle*/
+
+
+/*div.fieldsetPopOverDetalle{ /*margin: 10px -15px 20px; width:120%;}*/
+
+
+/*div.fieldsetPopOverDetalle>div div { height: 20px; min-height:20px}*/
+
+
+/*div.fieldsetPopOverDetalle  div div div label { padding-left:0}
+div.fieldsetPopOverDetalle  div div div div div{ padding-left:0px; padding-right:0px; }*/
+
+
+/*campos del Popover - cabecera*/
+
+
+/*
+div.fieldsetPopOverDetalleCab>div div { height: 30px;min-height:25px}
+div.fieldsetPopOverDetalleCab  div div div label { padding-left:0}
+div.fieldsetPopOverDetalleCab  div div div div div{ padding-left:0px; padding-right:0px; }
+*/
+
+
+/*Campos del Popover - pie*/
+
+
+/*div.fieldsetPopOverPie{ margin-bottom: 103px;}*/
+
+
+/*
+div.fieldsetPopOverPie>div div{height: 20px;min-height:20px}
+div.fieldsetPopOverPie>div div div label { padding-left:0}
+div.fieldsetPopOverPie>div div div div div{ padding-left:0px; padding-right:0px; }
+*/
+
+
+/*RadioButtons del popover*/
+
+div#VA_VPOPOVERPX7604_ITE1392_DIV > label {
+    display: none !important;
+}
+
+/*Menu del popover*/
+
+
+/*div.menuBotonesPopOver  div div div div { width: 100%; padding: 0 0 0 4px; height: 45px; }
+div.menuBotonesPopOver > div > div > div { padding-top: 15px; margin: 0 -10px 0 -30px; }*/
+
+div.menuBotonesPopOver div div div label {
+    display: none !important;
+}
+div.menuBotonesPopOver div div div a {
+    background: transparent;
+    border-bottom: #000000 solid 1px;
+    color: #dedede;
+    padding-left: 10px !important;
+    text-decoration: none;
+    padding-top: 2px;
+    margin-left: -13px;
+    width: 115%;
+    box-shadow: inset -1px -2px 1px -2px #dedede;
+    -moz-box-shadow: -1px -2px 1px -2px #dedede;
+}
+div.menuBotonesPopOver div div div a:hover,
+
+/*MCA.btn-block { display: block; width: auto;}*/
+
+div.menuBotonesPopOver div div div a:focus {
+    border-bottom: #dedede solid 2px;
+    padding-top: 3px;
+    color: #ffffff;
+}
+
+/*Barra de Botones del popover*/
+
+
+/*div#GR_VPOPOVERPX76_07_VAL {width: 100%;}*/
+
+
+/*div#GR_VPOPOVERPX76_07_VAL > div div:first-child {padding:0px 5px; width: auto;  display: inline-block;}*/
+
+
+/*div#GR_VPOPOVERPX76_07_VAL > div.cb-col-container:first-child,
+div#GR_VPOPOVERPX76_07_VAL > div.cb-col-container:last-child {
+  width: auto;
+  margin: 0 -70px;
+}
+div#GR_VPOPOVERPX76_07_VAL > div.cb-col-container {display:block;}
+/*Estilo para centrado de APLICA FECI- POPOVER tasa y comision*/
+
+
+/*.col-xs-6 .col-sm-6 .col-md-6 .col-lg-6 {
+display: block;
+width: 110%;
+}
+div.form-group button#VA_VPOPOVERPX7607_0000331 {
+display: block;
+width: auto;
+/*margin: 0 50px;*/
+
+
+/*}
+/* palabra APLICA FECI*/
+
+
+/*.col-xs-12 .col-sm-12 .col-md-12 .col-lg-12 {
+display: block;
+width: 100%;
+}*/
+
+
+/*
+div#VA_VPOPOVERPX7604_TLB4957_DIV {
+display: block;
+width: auto;
+margin: 0 auto;
+}
+*/
+
+
+/*.bg_popUpFECI {text-align: center!important; width: 100%}*/
+
+
+/*div#VA_VPOPOVERPX7604_TAB6296_DIV{
+ position: absolute; 
+     width: 50%;
+     height: 10px;
+     left: 85px;
+     top: 5px;
+}*/
+
+.modificaParaFECI {
+    position: absolute;
+    /*width: 50%;
+     height: 10px;
+     left: 85px;
+     top: 5px;*/
+}
+div.form-group button#VA_VPOPOVERPX7607_0000075 {
+    position: absolute;
+    width: 120%;
+    height: 30px;
+    left: 50px;
+    top: 15px;
+}
+
+/*Datos Personales - Poner espacio entre titulo de grupo y grid*/
+
+fieldset#GR_VDTOPERSON24_12 > legend {
+    padding-top: 20px;
+    margin-bottom: 40px
+}
+fieldset#GR_VDEROLSTAM17_21 > legend {
+    padding-top: 20px;
+    margin-bottom: 40px
+}
+fieldset#GR_VDEROLSTAM17_75 > legend {
+    padding-top: 20px;
+    margin-bottom: 40px
+}
+
+/*Para Alinear a la derecha los textos dentro de un grupo*/
+
+fieldset.textGroupAlignRight > div > div > div {
+    text-align: right;
+}
+
+/*COTIZACION RESUMEN*/
+
+div#VA_VDTALECTCI5513_APRA224_DIV > label {
+    z-index: 10
+}
+
+/*Viabilidad - Para desbloquear un labelComand horizontal y poder dar click*/
+
+a.linkGrid {
+    text-decoration: underline;
+    color: inherit;
+    cursor: pointer
+}
+
+/*Gastos - Link de Póliza de Vida*/
+
+div#QV_CGAST2789_53 [class="k-grid-content"] > table > tbody > tr.ng-scope > td[ng-class="vc.viewState.QV_CGAST2789_53.column.nombre.style"] {
+    color: #A6A8A4
+}
+
+/*Gastos - Para Color de los textos*/
+
+div.c_grid_celeste {
+    background-color: #C0D6EE;
+}
+div.c_grid_celeste > div,
+div.c_grid_celeste > div > div > table > thead > tr > th.k-header.ng-scope.k-with-icon {
+    background-color: #C0D6EE;
+    color: black;
+}
+#VC_TMPAT29_PNBRE_971_tab > .col-xs-9 {
+    padding-right: 0;
+}
+#VC_TMPAT29_PNBRE_971_tab > div.col-xs-3 {
+    max-width: 166px;
+    padding-left: 4px;
+}
+
+/*
+.col-xs-9
+{
+   padding: 0px;
+}
+*/
+
+.tabs-left>li {
+    margin-right: -1px;
+    border: 1px solid #e8e9eb !important;
+    border-bottom: none !important;
+    background-color: #F7F7F8;
+}
+.tabs-left>li.active,
+.tabs-left>li.active>a,
+.tabs-left>li.active>a:hover,
+.tabs-left>li.active>a:focus {
+    background-color: #A5B3C2;
+    border-radius: 0;
+    border: 1px #A5B3C2 solid !important;
+}
+.tabs-left>li>a>.cb-title {
+    color: #4f6471;
+}
+.tabs-left>li.active>a>.cb-title {
+    color: #FFF;
+}
+div.menuComisionesPopOver > div > div > div > div > div > div > div {
+    padding-top: 15px;
+    padding-left: 45px;
+}
+div.menuComisionesPopOver label {
+    color: #000000 !important;
+    font-size: 22px!important;
+    line-height: 2.5;
+}
+div.menuComisionesPopOver a {
+    background: transparent;
+    border-bottom: #000000 solid 0px;
+    padding-left: 3px !important;
+    text-decoration: underline;
+    box-shadow: inset -10px -20px 10px -20px #FFFFFF !important;
+    -moz-box-shadow: -1px -2px 1px -2px #dedede !important;
+    color: #428bca !important;
+    font-size: 22px;
+    box-sizing: 0px !important;
+}
+div.menuComisionesPopOver a:hover,
+div.menuComisionesPopOver a:focus {
+    border-bottom: #dedede solid 0px!important;
+    color: inherent;
+    border-bottom: #000000 solid 0px;
+}
+
+/* Estilos que viniero del BGRAL3.css FIN */
+
+
+/* Ancho del combo estado en Cotización de Crédito*/
+
+#VA_VCSAOACIES2506_ESAO628_DIV {
+    width: 160px;
+}
+
+/*MCA - Estilo para bajar el tamaño de la letra de Actividad económica*
+  en pantalla de compañias*/
+
+#VA_VUEVOTRABJ8507_AAOA591_DIV>div>span>span>input {
+    font-size: 13px;
+}
+
+/*ECO - Texto anios diabetes*/
+
+#VA_VDATOSALUD3204_ODBS399_DIV > div > span > span > input {
+    /*padding: 1px 0px 4px 0px !important;*/
+    text-indent: .2em !important;
+}
+
+/*Coloca el color similar en el historial de obligaciones*/
+
+#GR_VDETALEBCO99_08>legend {
+    color: #A6A8A4;
+}
+
+/*MCA - Quita el ícono para ordenar en la grilla de Resumen de Obligaciones*/
+
+#QV_CTTOL3178_97 a.k-header-column-menu {
+    display: none;
+}
+
+/*MCA - Quita el ícono para ordenar en la grilla de Obligaciones*/
+
+#QV_COBLC9807_84 a.k-header-column-menu {
+    display: none;
+}
+#VA_VCSITUDCEN2104_0000426_DIV {
+    margin: 0;
+    margin-top: -10px;
+    /*display: inline-block;*/
+    float: right;
+}
+#VA_VCSITUDCEN2104_0000426_DIV > label,
+#VA_VCSITUDCEN2104_0000426_DIV > div {
+    width: auto;
+    display: inline;
+    padding: 1px !important;
+}
+#VA_VCSITUDCEN2104_0000426_DIV >div>div>div>a {
+    padding-right: 0px !important;
+}
+
+/*ECO para boton anadir obligacion*/
+
+button#VA_VOBLIGCION9107_0000450 {
+    width: 123px;
+    margin: 0px 0px 0px 25px;
+}
+
+/*MCA - Coloca en una sola línea el nombre*/
+
+
+/*
+#VA_VCSITUDCEN2104_NOMR924{
+	width: 185%;
+	margin: -15px -15px;
+}
+*/
+
+
+/*ECO ancho para cajas de salud preguntas si/no*/
+
+#VA_VDATOSALUD3209_AZDA418_DIV >div,
+#VA_VDATOSALUD3204_MRZC614_DIV >div {
+    width: 116px;
+}
+/*
+fieldset {
+    margin-top: 10px;
+}
+*/
+
+/*ECO color titulos grupos salud */
+
+#GR_VDATOSALUD32_10 > legend,
+#GR_VDATOSALUD32_11 >legend {
+    color: #A6A8A4;
+}
+
+/*JRU checker's de otras circunstancias de salud*/
+
+#QV_TRSSA8598_21>div>table>tbody>tr>td {
+    text-align: left !important;
+}
+
+/*Estilo para aumentar tamaño de letra en datos cliente*/
+
+#VC_AOOLS03_GNOBR_230>div>fieldset:first-child>legend>span {
+    font-size: 22px;
+}
+#VC_AOOLS03_GNOBR_230>div>fieldset:first-child>div[kendo-validator="GR_ALABOAIENT49_09"] {
+    margin-top: 20px;
+    color: #959ca1;
+}
+
+/*Datos personales, laborales, salud, referencias,cominicación*/
+
+#VC_TMPAT29_GNNME_535>div>fieldset:first-child>legend>span,
+#GR_VDTOPERSON24_11_VAL>div>div>fieldset:first-child>legend>span,
+#VC_TMPAT29_RPOBE_070>div>fieldset:first-child>legend>span,
+#VC_TMPAT29_RIMBR_559>div>fieldset:first-child>legend>span,
+#VC_TMPAT29_UPIME_833>div>fieldset:first-child>legend>span {
+    font-size: 22px;
+}
+
+/*Separando "seleccione" del titulo*/
+
+#VC_TMPAT29_GNNME_535>div>fieldset:first-child>div[kendo-validator="GR_ALABOAIENT49_09"] {
+    margin-top: 15px;
+    color: #A6A8A4;
+}
+
+/*MCA- Estilo para popUp de usuario en el label Asignado a:*/
+
+.bg_PopUpTituloUsuario {
+    text-align: left !important;
+    margin-left: -65px;
+}
+
+/*MCA- Estilo para popUp de usuario en el label Asignado a:*/
+
+.bg_PopUpTituloCargo {
+    margin-top: -12px;
+}
+
+/*estilos para tasa*/
+
+
+/* (separador: k-tick)*/
+
+.k-slider-horizontal .k-tick {
+    background-image: none;
+}
+
+/* k-label son las etiquetas */
+
+.k-slider-horizontal .k-label {
+    bottom: 2em;
+}
+
+/*Color de la barra seleccionada - MCA
+.k-slider-selection {
+           background-color: #059BD8;
+       }
+ */
+
+
+/*Color del círculo del slider -MCA*/
+
+.k-slider .k-draghandle {
+    background-color: #0378A8;
+}
+
+/*para mensaje APC - revision y difunto*/
+
+div#VA_VOBLIGCION9108_0000667 {
+    width: 450px;
+    border: 0;
+    text-align: justify;
+}
+
+/* estilo para circulo de tasa y comision*/
+
+.k-draghandle,
+.k-draghandle.k-state-focused.k-state-selected {
+    background-color: #428bca;
+    border-color: #fff;
+    box-shadow: 0 0 0 1px #c4c4c4;
+}
+
+/*reduce el tamano de la columna del grid de trabajo principal*/
+
+td[ng-class="vc.viewState.QV_CRAOC6535_74.column.trabajoPrincipal.style"],
+td[ng-class="vc.viewState.QV_CRAOC6535_81.column.trabajoPrincipal.style"] {
+    width: 10px
+}
+#QV_COBLC9807_84 .k-grid-header th.k-header {
+    text-align: center!important;
+}
+
+/*Alinea los vistos en las pestañas de la cotización - MCA*/
+
+.k-tabstrip-items > .k-item > .k-link > .cb-title {
+    margin: 0px 15px 0px 15px;
+}
+
+/*MCA- Cambia el color de la cabecera resumen*/
+
+#QV_CTTOL3178_97 table>thead>tr>th {
+    background-color: #C5D9F1;
+    color: black;
+}
+
+/*MCA- Coloca el texto en mayúscula*/
+
+.textoMayusculas {
+    text-transform: uppercase;
+}
+
+/*MCA*/
+
+.kiui-notification-content>div {
+    word-wrap: break-word;
+}
+
+/*aumenta el tamaño para un spacer en detalle datos laborales del campo comisiones*/
+
+#VA_VDETLETBAO2505_IION236_DIV>label {
+    line-height: 11px !important;
+}
+#VA_VDETLETBAO2505_IION236_DIV>div>div>div>button>span.glyphicon.glyphicon-align-justify:before {
+    content: "\e032" !important;
+}
+#VA_SNDATOSGUD8605_TXLL045_DIV>label {
+    display: none;
+}
+
+/************************************/
+
+
+/******PROTOTIPO TARJETAS***********/
+
+
+/*INICIO PRO-texto cabecera cliente TC*/
+
+.cb-text-mas {
+    font-size: 21px;
+    color: #6E6E6E;
+}
+.boton-azul {
+    color: #3071a9;
+}
+#VA_ABELICDLIT7002_NASI671_DIV > label {
+    display: inline;
+    padding: 4px 38px;
+}
+#VA_ABELICDLIT7002_NASI671_DIV {
+    padding-top: 15px;
+}
+.bg-header-tc {
+    padding: 0px 0 10px 0;
+    border-top: 1px solid #6CA2DE;
+}
+#GR_VABERLITUC25_06_VAL .form-horizontal > .row.cb-col-container {
+    margin-right: 12px;
+    margin-left: -10px;
+}
+
+/*#GR_VDATOSALUD32_14_VAL .form-horizontal > .row.cb-col-container {
+  margin-right: 12px;
+  margin-left: -10px;
+}*/
+
+.btnInfo {
+    margin-left: -28px;
+    font-size: 20px;
+}
+.estilosObligacion {
+    margin-top: -40px;
+}
+.lblConBackground {
+    text-align: right;
+    padding-top: 6px !important;
+    background-color: #F0F0F0 !important;
+    padding-right: 12px !important;
+}
+#VC_IOTTC07_XPCNT_879 {
+    padding-top: 20px;
+}
+#VA_EXANCTROBL9005_0000343 {
+    font-size: 12px;
+    color: #A6A8A4;
+    padding: 10px 0 0 0;
+}
+#VA_EXANCTROBL9004_0000443 {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+#VA_EXANCTROBL9005_0000531 {
+    padding-top: 10px;
+    margin-left: -90px;
+}
+#VA_EXANCTROBL9006_MNAJ649 {
+    font-size: 15px;
+    padding-top: 10px;
+}
+#VA_EXANCTROBL9006_TOAS223 {
+    margin-left: 35px !important;
+}
+#VC_IOTTC07_BLIGO_481 {
+    margin-top: -25px
+}
+td.k-hierarchy-cell {
+    width: 20px;
+}
+#GR_ESUMECOTTC16_63>div>div>div>div>div>div[class^="col-sm-8"],
+#GR_ESUMECOTTC16_04>div>div>div>div>div>div[class^="col-sm-8"],
+#GR_ESUMECOTTC16_05>div>div>div>div>div>div[class^="col-sm-8"],
+#GR_ESUMECOTTC16_06>div>div>div>div>div>div[class^="col-sm-8"] {
+    font-weight: bold;
+    text-align: right;
+}
+fieldset#GR_ESUMECOTTC16_05 a {
+    background-color: transparent;
+    border: none;
+    padding-right: 0px;
+    box-shadow: none;
+}
+div#GR_VTARJETAFD57_04_VAL thead {
+    display: none;
+}
+div#GR_VTARJETAFD57_04_VAL .k-header.k-grid-toolbar.ng-scope {
+    display: none;
+}
+div#GR_VTARJETAFD57_08_VAL thead {
+    display: none;
+}
+div#GR_VTARJETAFD57_08_VAL .k-header.k-grid-toolbar.ng-scope {
+    display: none;
+}
+#VA_VTARJETAFD5707_COLN288 {
+    font-size: 12px;
+    color: #A6A8A4;
+    padding: 10px 0 0 0;
+}
+#VC_IOTTC07_GRARE_479 span.group-title.ng-binding {
+    font-size: 16px;
+}
+div#VA_VTARJETAFD5709_ENEM187_DIV label {
+    display: inline;
+    padding-right: 50px;
+}
+div#QV_ARPAN4101_26 {
+    border-left: .1em #D4D6D9 solid;
+    border-right: .1em #D4D6D9 solid;
+}
+.filaTipoParticipacion {
+    color: #A6A8A4;
+    font-size: 13px;
+}
+#VA_VTARJETAFD5711_FORG152_DIV label.d-radio-block.ng-binding.ng-scope {
+    padding-bottom: 30px;
+    margin-top: -20px;
+}
+#VA_VTARJETAFD5711_CUNT742_DIV label.d-radio-block.ng-binding.ng-scope {
+    padding-bottom: 10px;
+}
+#QV_CNSAC2124_48 thead {
+    display: none;
+}
+
+/*Oculto head del grid de las obligaciones de cada participante*/
+
+#QV_CINES6075_42 thead {
+    display: none;
+}
+#QV_COBLC9807_84 thead {
+    display: table-header-group;
+}
+#QV_BIGCI1885_23 thead {
+    display: table-header-group;
+}
+#QV_CTTOL3178_97 thead {
+    display: table-header-group;
+}
+#QV_CXCEC6591_15 thead {
+    display: none;
+}
+#QV_CINES6075_42 .k-header.k-grid-toolbar {
+    display: none;
+}
+#QV_CNSAC2124_48 tr {
+    height: 60px;
+}
+.nombreCompleto {
+    font-weight: 700;
+    font-size: 15px;
+}
+#QV_CNSAC2124_48 {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+#QV_CNSAC2124_48 .k-header {
+    /* border-bottom: antiquewhite; */
+    border-bottom: .1em #D4D6D9 solid;
+}
+#VA_CNSIIPANTS0004_OCON165 {
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+#QV_CNSAC2124_48 table tbody tr:first-child td a .glyphicon-trash {
+    display: none;
+}
+#QV_CNSAC2124_48 table tbody tr td.k-hierarchy-cell {
+    border-left: none !important;
+}
+#QV_CDCNL6000_28 table tbody tr td.k-detail-cell {
+    width: 100%;
+}
+#VC_TEAPR72_GRTSG_196_VAL {
+    margin-left: -20px;
+    margin-right: -65px;
+}
+a#CEQV_201_QV_CNSAC2124_48_170 {
+    padding-left: 20px
+}
+#QV_CINES6075_42 .ocultarCabecera thead {
+    display: none;
+}
+.ocultar {
+    display: none;
+}
+#VA_VABEERBIIN4203_MNAJ309 {
+    font-size: 12px;
+    color: #A6A8A4;
+    padding: 10px 0 0 0;
+}
+a#VA_VABEERBIIN4203_TOAS615 {
+    margin-left: 30px !important;
+    margin-top: -10px;
+}
+a#VA_VABEERBIIN4203_CVAS479 {
+    margin-left: 85px !important;
+    margin-top: -10px;
+}
+div#GR_VABEERBIIN42_03_VAL .form-group .control-label {
+    display: none;
+}
+button#VA_VABEERBIIN4203_0000774 {
+    margin-left: -65px;
+    margin-top: -5px;
+}
+.modificaLblOblg {
+    padding-left: 20px;
+    margin-top: -10px;
+}
+.modificaBtnOblg {
+    margin-top: -15px !important;
+}
+
+/*div#VC_DEAET96_CNTDO_942_VAL {
+  height: 290px;
+}*/
+
+button#VA_VABEERBIIN4204_CVAS715 {
+    margin-top: -30px;
+}
+div#GR_VABEERBIIN42_03_VAL {
+    margin-top: -45px;
+}
+div#GR_VTARJETAFD57_14_VAL .form-group .control-label {
+    display: none;
+}
+div#GR_VTARJETAFD57_18_VAL .form-group .control-label {
+    display: none;
+}
+div#VA_VTARJETAFD5714_FORG935_DIV label {
+    padding-top: 15px;
+}
+div#GR_VTARJETAFD57_14_VAL {
+    margin-top: -20px;
+}
+div#GR_VTARJETAFD57_15_VAL {
+    margin-top: -20px;
+}
+div#VA_EXECIONETC6205_ECOP279_DIV label {
+    font-size: 14px!important;
+    color: #000000;
+}
+
+/* TEMPORAL PARA PROPUESTA COTIZACION*/
+
+div#GR_VABERLITUC25_04_VAL {
+    z-index: 999;
+    /* position:fixed;*/
+}
+div#GR_VABERLITUC25_05_VAL {
+    width: 756px;
+    margin: 0px auto 0 auto;
+    padding-left: 20px !important;
+    padding-right: 0px !important
+}
+div#VC_IOTTC07_IITDN_299_VAL.bg-grp-cab {
+    margin-top: -50px;
+    width: 756px;
+    margin-left: -15px
+}
+
+/*Para alinear radio buttons de genero*/
+
+
+/*
+#VA_VDTOPERSON2410_SEXO575_DIV label.radio-inline.ng-binding.ng-scope {
+	margin-left:0px !important
+}
+*/
+
+button#VA_CAECESOLUD4405_0000680 {
+    /*margin-left: 31px;*/
+    margin-top: -1px;
+}
+#VA_VPOPOVERPX7605_MEN1579.form-control[disabled],
+#VA_VPOPOVERPX7605_ENU2169.form-control[disabled] {
+    cursor: not-allowed;
+    background-color: #2C2C2C;
+    opacity: 1;
+}
+
+/**SECCION PARA ESTILOS DE SEMAFOROS INDICADORES**/
+
+.indicador-verde,
+.indicador-amarillo,
+.indicador-gris,
+.indicador-rojo {
+    font: normal normal normal 1px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 25px;
+    /*vertical-align: middle;*/
+    font-size: 9px;
+    /*display: inline-block;*/
+    content: "\f111";
+    padding-right: 4px;
+}
+#QV_COIZI8153_32 .indicador-verde,
+.indicador-amarillo,
+.indicador-gris,
+.indicador-rojo {
+    font-size: 14px;
+}
+.indicador-verde:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #46BE71;
+    content: "\f111";
+}
+.indicador-amarillo:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #F5A623;
+    content: "\f111";
+}
+.indicador-gris:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #dbdbd4;
+    content: "\f111";
+}
+.indicador-rojo:before {
+    font-size: 10px;
+    display: inline-block;
+    color: #f60505;
+    content: "\f111";
+}
+
+/**FIN SECCION PARA ESTILOS DE SEMAFOROS INDICADORES*/
+
+
+/*****SECCION ESTILOS PARA COLORES DEL HISTORIAL DE UNA OBLIGACION****/
+
+.bg-dividendos-gris {
+    width: 8px;
+    background-color: #9AA6A6;
+    color: #030303 !important;
+    border-color: #718CA5 !important;
+}
+.bg-dividendos-verde {
+    width: 8px;
+    background-color: #1EA94F;
+    color: #030303 !important;
+    border-color: #718CA5 !important;
+}
+.bg-dividendos-amarillo {
+    width: 8px;
+    background-color: #ECDA22;
+    color: #030303 !important;
+    border-color: #718CA5 !important;
+}
+.bg-dividendos-rojo {
+    width: 8px;
+    background-color: #DF4B1E;
+    color: #FFFFFF !important;
+    border-color: #C56B4F !important;
+}
+.bg-dividendos-naranja {
+    width: 8px;
+    background-color: #C73A28;
+    color: #030303 !important;
+    border-color: #A01200 !important;
+}
+.bg-dividendos-naranja a,
+.bg-dividendos-naranja a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/*****FIN SECCION ESTILOS PARA COLORES DEL HISTORIAL DE UNA OBLIGACION****/
+
+
+/*ESTILOS PARA VISTA POPUP*/
+
+#QV_CCATL1179_01 thead.k-grid-header {
+    display: none;
+}
+#QV_CCATL1179_01 > .k-grid-toolbar,
+#QV_CTTOL3178_97 > .k-grid-toolbar {
+    display: none;
+}
+#QV_CCATL1179_01 tr {
+    background-color: #2C2C2C;
+    color: #aaaaaa;
+}
+#QV_CCATL1179_01 tr.ng-scope.k-state-selected {
+    background-color: #383838;
+}
+
+/*LASES PARA INDICAR CORRECTOS O INCORRECTO*/
+
+.correcto {
+    background: transparent;
+    color: #4dc076;
+}
+.incorrecto {
+    background: transparent;
+    color: #d1021b;
+}
+.ubicacionEnlinea {
+    display: inline;
+}
+
+/*FIN ESTILOS PARA VISTA POPUP*/
+
+#QV_COBLC9807_84 .k-state-selected .glyphicon {
+    color: #585858;
+}
+.chevron-down-obligaciones {
+    font-size: 10px;
+    color: \#585858;
+}
+.etiqueta-grid-borde {
+    border: .1em #D4D6D9 solid;
+    border-radius: 2px;
+    padding-left: 50px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 8px;
+}
+
+/*ESTILO PARA BOTON ELIMINAR*/
+
+.imageButtonSinRelleno {
+    color: #337ccb !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    font-size: 18px;
+}
+
+/*ESTILO PARA ESCRIBIR LA X EN EL GRUPO DOCUMENTACION CUANDO VALIDATION FAIL*/
+
+#VC_TMPAT29_GUONN_683_tab>span.k-link>span.ng-binding.cb-validation-fail,
+#VC_TMPAT29_GROIR_999_tab >span.k-link>span.ng-binding.cb-validation-fail,
+#VC_TMPAT29_OSMRE_198_tab >span.k-link>span.ng-binding.cb-validation-fail {
+    color: transparent;
+    font-size: 0px;
+}
+.labelMontoMaximo {
+    color: #7C7E7A;
+    font-size: 11px;
+}
+#GR_VDETALEBCO99_07_VAL div > div > .form-group > .control-label,
+#GR_VDETALEBCO99_06_VAL div > div > .form-group > .control-label,
+#GR_VDETALEBCO99_04_VAL div > div > .form-group > .control-label {
+    text-transform: uppercase;
+}
+
+/*
+button#VA_VPOPOVERPX7607_0000331 {
+	width:100px;
+	margin-top: 15px;
+}
+*/
+
+.oculto {
+    display: none;
+}
+#VA_VPOPOVERPX7606_TILO883 {
+    text-align: left;
+}
+
+/*
+#VA_VPOPOVERPX7607_0000760{
+	width: 80px;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+*/
+
+#QV_HISRL9006_26 .k-grid-header {
+    display: none;
+}
+.textoAlineadoDerecha {
+    text-align: right;
+}
+#GR_DTLLECTACN40_09_VAL {
+    margin-left: -15px;
+    margin-top: -32px;
+}
+
+/*
+#VC_TMPAT29_GOSBR_064_VAL {
+	height:230px;
+}
+*/
+
+.glyphicon-list-alt {
+    color: rgb(48, 113, 169);
+    font-size: 20px;
+}
+a.k-grid-update {
+    height: 20px;
+}
+.bg-sincolorborder {
+    border-color: none !important;
+}
+.bg-cabeceraCotizacion {
+    height: 140px !important;
+}
+.bg-cabeceraCotizacionLargo {
+    height: 120px !important;
+}
+.bg-cabeceraCotizacionMedio {
+    height: 100px !important;
+}
+.bg-cabeceraCotizacionLite {
+    height: 80px !important;
+}
+
+/*TARJETAS DE CREDITO*/
+
+div#GR_VOBLIGCION91_08_VAL {
+    padding-left: 20px;
+}
+
+/*colores y tamaños ícono en el lado derecho de un campo en una grilla*/
+
+.bg-icono-grilla {
+    background-color: transparent;
+    font-size: 12px;
+    text-align: left;
+    padding: 2px 0px 0px 4px;
+    width: 22px;
+    float: right !important;
+}
+
+/*boton de popup para mensajes genericos*/
+
+.bg-grpbtnMsgSingle {
+    padding: 36px 0 0 0px;
+    margin: 0 -140px 0 -10px;
+}
+
+/*conjunto de estilos para el link */
+
+#GR_VTARJETAFD57_07_VAL >div.row.cb-col-container>div.col-xs-4.col-sm-4.col-md-4.col-lg-4 {
+    padding-right: 0px;
+}
+div#GR_VTARJETAFD57_07_VAL>div.row.cb-col-container>div.col-xs-6.col-sm-6.col-md-6.col-lg-6 {
+    padding-left: 0px;
+    margin-left: -53px;
+}
+.bg-lbl-msgPlatsicosTC {
+    padding-top: 35.5px!important;
+}
+.bg-btn-lnkPlasticosTC {
+    font-size: 12px;
+}
+#GR_VOBLIACINC93_09_VAL div.col-xs-2.col-sm-2.col-md-2.col-lg-2 {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 50px;
+}
+#GR_VOBLIACINC93_09_VAL div.col-xs-3.col-sm-3.col-md-3.col-lg-3 {
+    margin-right: 94px;
+}
+.cb-buscar-empresa {
+    width: 50px;
+}
+div#VA_VDATOSALUD3214_LQEO565_DIV.form-group {
+    display: none;
+}
+div#VA_VPOPOVERPX7604_EXLE373 {
+    float: right;
+}
+
+/* ***** Tipos de mercado ***/
+
+.mercadoObjetivo {
+    background: transparent;
+    color: #000000;
+}
+.indefinidoRevisado {
+    background: transparent;
+    color: #000000;
+}
+.mercadoNoObjetivo {
+    background: transparent;
+    color: #000000;
+}
+.indefinidoNoRevisado {
+    background: transparent;
+    color: #FF0000;
+}
+.mercado {
+    background: transparent;
+    color: #FF0000;
+}
+
+/* **** */
+
+div#QV_RECAR4206_85 div.k-header.k-grid-toolbar.ng-scope {
+    display: none;
+}
+div#QV_RECAR4206_85 table thead.k-grid-header {
+    display: none;
+}
+div#QV_RECAR4206_85 table tbody tr td:nth-child(3) {
+    display: none;
+}
+div#QV_RECAR4206_85 table tbody tr td:nth-child(4) {
+    display: none;
+}
+div#QV_RECAR4206_85 table tbody tr td {
+    padding: 0 0 0 0;
+    border-bottom-color: rgb(44, 44, 44);
+    color: #A6A8A4;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+div#QV_RECAR4206_85 table tbody tr td:nth-child(1) {
+    width: 175px;
+    float: left;
+    word-spacing: inherit;
+    text-transform: uppercase;
+}
+div#QV_RECAR4206_85 table tbody tr td:nth-child(2) {
+    float: right;
+}
+div#QV_RECAR4206_85 table tbody tr {
+    background-color: rgb(44, 44, 44);
+}
+
+/*
+#QV_COBLC9807_84 {
+  margin-top: -20px;
+}
+*/
+
+div#VA_VNOEALUCIO0505_OSOM299 {
+    display: none;
+}
+div#VA_VNOEALUCIO0505_OSOM299_DIV.form-group {
+    padding-top: 30px;
+    margin-left: 10px;
+}
+div#GR_VNOEALUCIO05_05_VAL>div>div>div:nth-child(1) {
+    width: 50px;
+    padding-left: 5px;
+}
+div#GR_VNOEALUCIO05_05_VAL>div>div>div:nth-child(2) {
+    width: 90px;
+}
+div#GR_VNOEALUCIO05_05_VAL>div>div>div:nth-child(3) {
+    width: 328px;
+    padding-left: 0px;
+    padding-right: 5px;
+}
+div#GR_VNOEALUCIO05_04_VAL {
+    margin-bottom: -30px;
+}
+div#VA_VNOEALUCIO0506_OMTI519_DIV {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+div#GR_VNOEALUCIO05_06_VAL>div>div>div {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*div#GR_VNOEALUCIO05_04_VAL>div>div>div:nth-child(1){
+	padding-left: 5px;
+}
+div#GR_VNOEALUCIO05_04_VAL>div>div>div:nth-child(3){
+	padding-right: 5px;
+}*/
+
+div#VA_VNOEALUCIO0505_OSOM299_DIV label {
+    color: rgb(51, 51, 51);
+}
+div#QV_ATOSP6329_01 thead {
+    display: none;
+}
+
+/*ESTILO PARA SIGNO DE ADVERTENCIA APC*/
+
+#VA_VTRAEXANEI4604_TOAS957 {
+    background-color: transparent;
+    border-color: transparent;
+    color: #FFF1BB;
+    font-size: 90px;
+    margin-top: -80px !important;
+    padding-left: 170px;
+}
+
+/* APC*/
+
+.bajar120PX {
+    padding-top: 120px;
+}
+.subir20PX {
+    margin-top: -20px;
+}
+.labelNotificacionIntento {
+    color: #AD153D;
+}
+.subir40PX {
+    margin-top: -40px;
+}
+.subir20PX {
+    margin-top: -20px;
+}
+.subir30PX {
+    margin-top: -30px;
+}
+#GR_VTRAEXANEI46_05_VAL label.control-label {
+    display: none;
+}
+#GR_VTRAEXANEI46_05_VAL .form-group {
+    min-height: 0;
+    margin-bottom: 0;
+}
+#GR_VTRAEXANEI46_04_VAL {
+    height: 70px;
+}
+.espacioAPC {
+    padding-left: 400px !important;
+}
+.espacioAPCActivas {
+    padding-left: 300px;
+    width: 355px;
+}
+.espacioAPCTodas {
+    padding-left: 300px;
+}
+
+/*div#QV_ATOSP6329_01 table tbody tr td:nth-child(2){
+	display:none;
+}*/
+
+
+/**FIN PRO*/
+
+#header_VC_TMPAT29_FGOZC_416 {
+    padding: 0 !important;
+}
+#header_VC_TMPAT29_FGOZC_416 .cb-breadcrumb-fixed-top {
+    /*left: 0;
+  top: 0;*/
+    border-radius: 0;
+    /*position: fixed;
+  z-index: 999;
+  width: 100%;*/
+    border-bottom-width: 0;
+    /*    
+  background: #4D93DE;
+  background: -moz-linear-gradient(left, #4d93de 0%, #357ecd 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#4D92DE), color-stop(100%,#357ECD));
+  background: -webkit-linear-gradient(left, #4D93DE 0%,#357ECD 100%);
+  background: -o-linear-gradient(left, #4d93de 0%,#357ecd 100%);
+  background: -ms-linear-gradient(left, #4d93de 0%,#357ecd 100%);
+  background: linear-gradient(to right, #4D93DE 0%,#357ECD 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d92de', endColorstr='#357ecd',GradientType=1 );
+    */
+}
+#header_VC_TMPAT29_FGOZC_416 .breadcrumb,
+#header_VC_TDOPE76_DOPRS_534 .breadcrumb,
+#header_VC_AOOLS03_RABOL_442 .breadcrumb {
+    background: transparent;
+    width: 756px;
+    position: relative;
+    margin: auto;
+}
+
+/*
+#QV_CRAOC6535_74 td > span {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      text-overflow: ellipsis;
+}
+*/
+
+.cb-form-list .form-horizontal > .row.cb-col-container > div[class*="col-"] > .form-group {
+    margin-top: -1px !important;
+}
+.cb-form-list .form-horizontal > .row.cb-col-container > div[class*="col-"]:first-child > .form-group {
+    margin-top: 0 !important;
+}
+.k-callout-n {
+    border-bottom-color: #333;
+}
+.form-control,
+.k-autocomplete.k-state-default,
+.k-picker-wrap.k-state-default,
+.k-numeric-wrap.k-state-default,
+.k-dropdown-wrap.k-state-default,
+.k-multiselect.k-header {
+    /* border-color: #b9bdc0; */
+}
+#loader_VC_TDOPE76_DOPRS_534+.cb-container-header+#validator,
+#loader_VC_AOOLS03_RABOL_442+.cb-container-header+#validator {
+    background: #FFF;
+}
+#loader_VC_TDOPE76_DOPRS_534+.cb-container-header+#validator>.cb-view-container:first-child,
+#loader_VC_AOOLS03_RABOL_442+.cb-container-header+#validator>.cb-view-container:first-child {
+    margin: 0;
+    width: 100% !important;
+}
+#VC_ONUAC54_GPNME_463 .form-vertical {
+    margin-bottom: 0;
+}
+#VC_ONUAC54_GPNME_463 .form-group {
+    min-height: 0;
+    margin-bottom: 0;
+}
+#VC_ONUAC54_GPNME_463 .bg-header {
+    padding: 29px 0;
+}
+[ng-show="vc.viewState.VA_CECROTICIO2202_0000093.visible"] .control-label {
+    display: none;
+}
+[ng-show="vc.viewState.VA_CECROTICIO2202_0000093.visible"] .form-group {
+    margin-top: 4px;
+    margin-left: 90px;
+}
+#VA_CECROTICIO2202_0000383 {
+    margin: 0;
+}
+#GR_VCOMISIOES38_06_VAL input.k-formatted-value.ng-pristine.ng-untouched.ng-valid.k-input,
+#GR_VCOMISIOES38_05_VAL input.k-formatted-value.ng-pristine.ng-untouched.ng-valid.k-input {
+    padding: 0px;
+    text-indent: .200em;
+}
+#VA_CAECESOLUD4404_0000864 {
+    width: auto;
+}
+#QV_CGAST2789_53 {
+    border: 1px solid #F0F0F0;
+    margin-top: 0;
+}
+#QV_CGAST2789_53 td {
+    background: #FCFCFC;
+    border-color: #F0F0F0;
+}
+#QV_CGAST2789_53 td:first-child {
+    font-weight: bold;
+    color: #A6A8A4;
+    font-size: 12px;
+}
+
+/*.k-tooltip-content .container-fluid,*/
+
+.tab-content .container-fluid {
+    padding: 0;
+}
+#VC_TMPAT29_GROIR_999_VAL {
+    margin: -10px;
+}
+#QV_ERSAR5992_07 {
+    font-size: 12px;
+}
+[ng-show="vc.viewState.VA_VCSAOACIES2506_IDOI401.visible"] {
+    padding-right: 1px;
+    width: 44px;
+}
+[ng-show="vc.viewState.VA_VCSAOACIES2506_ID2N485.visible"] {
+    width: 36px;
+}
+[ng-show="vc.viewState.VA_VCSAOACIES2506_ID3D732.visible"] {
+    width: 65px;
+}
+[ng-show="vc.viewState.VA_VCSAOACIES2506_ID4W941.visible"] {
+    width: 80px;
+}
+[ng-show="vc.viewState.VA_VCSAOACIES2506_ID2N485.visible"],
+[ng-show="vc.viewState.VA_VCSAOACIES2506_ID3D732.visible"],
+[ng-show="vc.viewState.VA_VCSAOACIES2506_ID4W941.visible"] {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+#QV_COIZI8153_32 > table > tbody > tr {
+    cursor: pointer;
+}
+#QV_CNSUC7108_20 > table > tbody > tr {
+    cursor: pointer;
+}
+#QV_COIRL3731_29 > table > tbody > tr {
+    cursor: pointer;
+}
+#QV_CNUEO0393_58 > table > tbody > tr {
+    cursor: pointer;
+}
+#VC_TMPAT29_PNBRE_971_tab {
+    cursor: pointer;
+}
+#VC_TMPAT29_PNBRE_971_tab {
+    overflow: hidden;
+}
+.k-grid td.k-detail-cell {
+    padding-top: 15px;
+}
+.k-detail-cell .cb-view-container-root,
+.k-detail-cell .cb-view-container-root .cb-view-container > .cb-view-container,
+.k-detail-cell .cb-view-container-root > .cb-view-container {
+    padding: 0 !important;
+}
+.k-detail-cell .form-vertical > .row.cb-col-container > [class*="col-"] > .form-group {
+    margin-bottom: 15px;
+}
+.cb-group > div > div > .form-horizontal,
+.cb-group > div > div > .form-vertical {
+    margin-bottom: 0;
+}
+[ng-show="vc.viewState.VA_CAECESOLUD4404_MXIO892.visible"] > .form-group {
+    margin: 0;
+}
+[ng-show="vc.viewState.VA_CAECESOLUD4404_PRMA179.visible"] > .form-group,
+[ng-show="vc.viewState.VA_CAECESOLUD4404_MXIO892.visible"] > .form-group {
+    position: absolute;
+}
+#VA_CAECESOLUD4404_MXIO892 {
+    position: absolute;
+    width: 164px;
+    margin-top: -68px;
+    margin-left: -12px;
+}
+
+/*HSA cambio para ubicar correctamente el link de opciones en la cotización*/
+
+#VA_CAECESOLUD4403_TOOE253 {
+    top: -25px;
+    left: -12px;
+    position: relative;
+}
+#VA_CAECESOLUD4404_UOAD728 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+[ng-show="vc.viewState.VA_ALABOAIENT4914_0000204.visible"] > .form-group {
+    display: none;
+}
+[ng-show="vc.viewState.VA_ALABOAIENT4914_ORAB191.visible"] > .form-group {
+    min-height: 0;
+    margin: 0;
+}
+.bg_PopUpLugardeTrabajo {
+    width: 230px!important;
+    text-align: justify!important;
+}
+.cb-container-header.affix {
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+}
+.cb-container-header.affix+#validator {
+    padding-top: 135px;
+}
+.cb-container-header.affix .cb-breadcrumb-fixed-top,
+.cb-container-header.affix #VA_CAECESOLUD4403_TOOE253,
+.cb-container-header.affix #VA_CAECESOLUD4404_MXIO892,
+.cb-container-header.affix #VA_CAECESOLUD4404_ESDO194_DIV,
+.cb-container-header.affix #VA_CAECESOLUD4404_UOAD728_DIV,
+.cb-container-header.affix #VA_CAECESOLUD4404_XPCS416_DIV,
+.cb-container-header.affix [ng-show="vc.viewState.VA_CAECESOLUD4403_TOOE253.visible"] {
+    display: none;
+}
+.cb-container-header.affix #GR_CAECESOLUD44_06_VAL {
+    margin: 0;
+    background: transparent;
+    position: static;
+    margin: 15px 0;
+}
+.cb-container-header.affix #VA_CAECESOLUD4406_TIPO171 {
+    margin: 0;
+    padding: 0;
+}
+.cb-container-header.affix #GR_CAECESOLUD44_07_VAL {
+    position: relative;
+}
+.cb-container-header.affix [ng-class="vc.viewState.GR_CAECESOLUD44_05.style"] {
+    position: absolute;
+    width: 100%;
+    top: 2px;
+}
+.cb-container-header.affix #VA_CAECESOLUD4406_TIPO171 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 36px;
+}
+.affix-detail-inline {
+    display: none;
+}
+.affix .affix-detail-inline {
+    display: inline;
+}
+label#VA_VOBLIGCION9107_0000752 {
+    font-size: small;
+    margin-top: 1px;
+    margin-left: -90px;
+}
+[ng-show="vc.viewState.VA_DTLLECTACN4008_MONT806.visible"] {
+    padding-right: 0;
+}
+.k-tooltip-closable .k-tooltip-content {
+    padding: 5px;
+}
+.k-tooltip .cb-view-container.container-fluid {
+    padding: 0;
+}
+#VA_VPOPOVERPX7604_TXLL084 {
+    margin-bottom: 10px;
+}
+#GR_VPOPOVERPX76_07_VAL {
+    margin-top: 10px;
+}
+#GR_VPOPOVERPX76_07_VAL .form-group {
+    margin: 0;
+    min-height: 0;
+}
+#GR_VPOPOVERPX76_07_VAL button {
+    padding-left: 0;
+    padding-right: 0;
+}
+#GR_VPOPOVERPX76_07_VAL .row [class*="col-"]:first-child {
+    padding-right: 5px;
+}
+#GR_VPOPOVERPX76_07_VAL .row [class*="col-"]:not(:first-child) {
+    padding-left: 5px;
+}
+.fieldsetPopOverDetalle,
+.fieldsetPopOver {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#VC_TMPAT29_ABECE_184_VAL {
+    position: relative;
+    z-index: 999;
+}
+#GR_VPOPOVERPX76_05_VAL .row [class*="col-"],
+#VA_VCSITUDCEN2104_NOMR924_DIV [class*="col-"] {
+    width: 100%;
+}
+#VA_VNOEALUCIO0505_MBEC017 {
+    width: 250px;
+    margin-left: 50px;
+}
+#VA_VNOEALUCIO0505_NMFA919 {
+    width: 100px;
+}
+#QV_COBLC9807_84 > .k-grid-toolbar {
+    display: none;
+}
+#QV_COBLC9807_84 .k-detail-cell {
+    padding: 0;
+}
+#VA_VCSITUDCEN2104_NOMR924 {
+    padding-top: 0;
+}
+#GR_VABEERLCDL00_04_VAL {
+    margin-top: 5px;
+}
+#GR_VABEERLCDL00_04_VAL .row > [class*="col-"]:not(:first-child) {
+    padding-left: 5px;
+}
+#GR_VABEERLCDL00_04_VAL .row > [class*="col-"]:not(:last-child) {
+    padding-right: 5px;
+}
+#GR_VABEERLCDL00_04_VAL .form-control {
+    min-height: 0;
+}
+#GR_VABEERLCDL00_04_VAL a {
+    padding: 0;
+}
+#GR_VPOPOVERPX76_04_VAL .form-group,
+#GR_VABEERLCDL00_04_VAL .form-group,
+#GR_VPOPOVERPX76_12_VAL .form-group,
+#GR_VPOPOVERPX76_13_VAL .form-group {
+    margin-bottom: 0;
+    min-height: 0;
+}
+#GR_VPOPOVERPX76_04_VAL label,
+#GR_VPOPOVERPX76_04_VAL .form-control-static,
+#GR_VPOPOVERPX76_12_VAL label,
+#GR_VPOPOVERPX76_12_VAL .form-control-static,
+#GR_VPOPOVERPX76_13_VAL label,
+#GR_VPOPOVERPX76_13_VAL .form-control-static {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*opciones para popver de capacidad*/
+
+#GR_VPOPOVERPX76_13_VAL .form-group {
+    height: 5px;
+}
+#GR_VPOPOVERPX76_13_VAL>div>div>div label {
+    margin-bottom: 0px;
+    float: left;
+}
+#VA_VPOPOVERPX7613_XLBL856 {
+    text-align: right;
+}
+#GR_VPOPOVERPX76_13_VAL>div>div>div>div:first-child,
+#GR_VPOPOVERPX76_13_VAL>div:nth-child(3),
+#GR_VPOPOVERPX76_13_VAL>div>div>:nth-child(5) {
+    margin-top: 12px !important;
+}
+#VA_VPOPOVERPX7613_URY1454,
+#VA_VPOPOVERPX7613_XLBL856,
+#VA_VPOPOVERPX7613_CRY2601,
+#VA_VPOPOVERPX7613_OENA509,
+#VA_VPOPOVERPX7613_CUCY244,
+#VA_VPOPOVERPX7613_TJE3754 {
+    background-color: #2C2C2C;
+    border: 0px !important;
+    color: white;
+    margin-top: -6px;
+}
+
+/*fin popover capacidad*/
+
+#VA_VABEERLCDL0004_LARI339_DIV {
+    padding: 0;
+}
+#VA_VDTALECTCI5513_APRA224_DIV_tt_active [ng-class="vc.viewState.GR_VPOPOVERPX76_06.style"] {
+    margin: 0 !important;
+}
+#VA_VDTALECTCI5513_APRA224_DIV_tt_active #GR_VPOPOVERPX76_04_VAL .form-group .col-sm-8 {
+    width: 100%;
+    float: none;
+}
+#VA_VPOPOVERPX7606_TILO883_DIV {
+    margin: 0;
+}
+#VA_VDTALECTCI5513_APRA224_DIV_tt_active #VA_VPOPOVERPX7606_TILO883_DIV > label {
+    float: none;
+    padding: 0;
+    font-size: 14px;
+    display: inline;
+}
+[ng-show="vc.viewState.VA_VTRAEXANEI4604_0000580.visible"] .form-group {
+    margin-left: 0;
+}
+#QV_CXEPI2846_27 >.k-grid-toolbar>.k-grid-add:after {
+    content: "A\0000F1adir una excepci\0000F3n";
+}
+
+/*Pestaña de comunicaciones**/
+
+#VC_TMPAT29_INOMB_425_tab {
+    display: none;
+}
+.alineaTextExcepciones {
+    left: 15px !important;
+    width: 100% !important;
+    margin-top: -5px !important;
+}
+.subirBotonTasa {
+    margin-top: -10px;
+}
+.rowLaborales {
+    background-color: #EFEFEF !important;
+    color: #d1021b;
+}
+
+/* Boton imprimir memo de la modal Enviar a Evaluar de la Cotizacion*/
+
+#VA_VNVIOAEVLU6605_0000590:after {
+    content: ' Imprimir memo';
+    margin-left: 3px;
+    font-weight: 100;
+}
+div#VA_VNVIOAEVLU6604_DRAO063_DIV div span {
+    padding-bottom: 50px;
+}
+div#VA_VNVIOAEVLU6604_CDAD633_DIV div span {
+    padding-bottom: 50px;
+}
+#GR_VPOPOVERPX76_10_VAL {
+    margin-top: -30px;
+}
+#GR_VPOPOVERPX76_10_VAL label {
+    display: none;
+}
+#GR_VPOPOVERPX76_10_VAL .form-group {
+    margin-bottom: 0px !important;
+}
+#VA_VPOPOVERPX7610_URY1767_DIV {
+    margin-left: 15px;
+    margin-right: 10px;
+}
+#VA_VPOPOVERPX7610_ONTA854_DIV {
+    margin-left: -45px;
+}
+.botonPorcentaje {
+    margin-left: 20px;
+    margin-top: -15px;
+}
+div#GR_VBOTONESSB09_06_VAL label {
+    display: none;
+}
+div#QV_ERSAR5992_07 thead {
+    display: none;
+}
+.colorGris {
+    color: #BBBABA;
+}
+.textoLabelPopUp {
+    width: 160px;
+    font-size: 12px !important;
+    padding-top: 15px !important;
+}
+.aumentarAncho {
+    width: 150%;
+}
+
+/*#VA_VPOPOVERPX7607_0000331{
+  display: none;
+}*/
+
+.tituloUsuario {
+    margin-left: -91px;
+}
+.botonUsuario {
+    display: none;
+}
+
+/*#VA_VPOPOVERPX7606_TILO883{
+  margin-left: -91px;
+}*/
+
+#VA_VDTALECTCI5513_CACD189_DIV>div,
+#VA_VDTALECTCI5513_UDIN519_DIV>div,
+#VA_VDTALECTCI5511_AUAL783_DIV>div,
+#VA_VDTALECTCI5511_LIDD826_DIV>div {
+    padding-top: 6px;
+}
+#VA_VDTALECTCI5513_CACD189,
+#VA_VDTALECTCI5513_UDIN519,
+#VA_VDTALECTCI5511_AUAL783,
+#VA_VDTALECTCI5511_LIDD826 {
+    display: inline;
+    padding-right: 0px;
+    background: none;
+    box-shadow: none;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+/*SUBRAYA DE LOS PORCENTAJES DE VIABILIDAD*/
+
+#VA_VDTALECTCI5513_CACD189,
+#VA_VDTALECTCI5513_UDIN519 {
+    text-decoration: underline;
+}
+.texto-rojo-1 {
+    color: #C82356 !important;
+}
+.texto-rojo-2 {
+    color: #F0597B !important;
+}
+#GR_VCOMISIOES38_09_VAL>div>div.cb-col-container {
+    margin: 0px;
+}
+#GR_VCOMISIOES38_09_VAL>div>div>div[class^="col-xs-4"] {
+    padding-left: 0px;
+}
+
+/**Estilos para los mensajes de timeout*/
+
+#GR_BUQUELIENE03_12_msg,
+#GR_VCSAOACIES25_07_msg,
+#GR_VUEVOTRABJ85_09_msg,
+#GR_BUQUELIENE03_10_msg {
+    background-color: #FFFFFF !important;
+    border-color: #B6C0D0 !important;
+    font-weight: bold !important;
+}
+#GR_BUQUELIENE03_12_msg>span.glyphicon-exclamation-sign:before,
+#GR_VCSAOACIES25_07_msg>span.glyphicon-exclamation-sign:before,
+#GR_VUEVOTRABJ85_09_msg>span.glyphicon-exclamation-sign:before,
+#GR_BUQUELIENE03_10_msg>span.glyphicon-exclamation-sign:before {
+    content: initial !important;
+}
+
+/**Fin estilos para los mensajes de timeout*/
+
+#QV_COIZI8153_32>table>tbody>tr>td:first-child>span,
+#QV_COIZI8153_32>table>tbody>tr>td:last-child>span {
+    font-weight: bold;
+}
+#VA_VDATOSALUD3214_CROR110_DIV>label {
+    display: none;
+}
+#VA_VPOPOVERPX7610_ONTA854_DIV .input-group-addon.ng-binding {
+    /* width: 5px; */
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.margin-left-60PX {
+    margin-left: -60px;
+}
+
+/*Modal de Cliente que solicita un prestamo "NUEVA COTIZACION"*/
+
+#VA_BUQUELIENE0308_GENE171 {
+    background-color: #eef5fe !important;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+    text-decoration: none;
+    margin-bottom: 49px;
+}
+.alinear-derecha {
+    float: right;
+}
+#QV_CXEPI2846_27 td.k-hierarchy-cell {
+    display: none;
+}
+#VA_VDTLLEXCPN7632_CODG541_DIV label.control-label.ng-binding {
+    font-size: 14px;
+}
+div#QV_CXEPI2846_27 {
+    margin-bottom: 20px;
+    margin-top: -30px;
+}
+div#QV_CNSUC7108_20 div.k-header.k-grid-toolbar.ng-scope {
+    display: none;
+}
+div#QV_CNSUC7108_20 div.k-pager-wrap.k-grid-pager.k-widget {
+    margin-top: 25px;
+}
+#VA_BUQUELIENE0308_GENE171_DIV label {
+    display: none;
+}
+#VA_BUQUELIENE0308_GENE171 {
+    margin-top: 15px;
+}
+#GR_VXCECIONES87_04 legend {
+    font-size: 14px;
+}
+#QV_COBLC9807_84 a {
+    float: initial !important;
+    margin-left: 5px !important;
+}
+#QV_COBLC9807_84 span.glyphicon.glyphicon-comment {
+    color: #BBBABA;
+}
+.k-window-titlebar.k-header {
+    background-color: white !important;
+    font-weight: 300;
+}
+.k-header > span.k-window-title {
+    font-weight: bold;
+    border-bottom: 1px solid #1b2b36 !important;
+    margin-left: 20px;
+    margin-right: 30px;
+    padding-bottom: 10px;
+}
+.k-content > div.cb-form-controlbar.btn-toolbar {
+    background-color: white;
+}
+.k-window > div.cb-has-controlbar.k-window-content.k-content {
+    background-color: transparent;
+}
+.k-tabstrip > .k-tabstrip-items {
+    display: table;
+    width: 100%;
+}
+.k-tabstrip > .k-tabstrip-items .k-item {
+    display: table-cell;
+}
+.k-tabstrip > .k-tabstrip-items .k-item > .k-link {
+    padding: .5em .92em;
+}
+
+/*Ajustar segunda columna grid direcciones, direcciones laborales*/
+
+#QV_CIESS6555_52 table tbody tr td:nth-child(2) > span,
+#QV_CDCNL6000_28 table tbody tr td:nth-child(2) > span {
+    display: inline-block;
+    width: 360px;
+    overflow-wrap: break-word;
+}
+.addPaddingTop15 {
+    padding-top: 15px !important;
+}
+.addWidth200 {
+    width: 200px;
+}
+.withOutMarginBottom {
+    margin-bottom: 0px !important;
+}
+
+/*centrado de asignar a para sucursal y extension*/
+
+.centerAssignTo {
+    width: 270px;
+    text-align: center;
+}
+#VA_VDTOPERSON2415_CLAC981_DIV label.control-label.ng-binding {
+    margin-bottom: 6px;
+}
+/*
+#VA_BUQUELIENE0307_0000314_DIV label.control-label.ng-binding,
+#VA_BUQUELIENE0307_0000106_DIV label.control-label.ng-binding,
+#VA_BUQUELIENE0307_0000664_DIV label.control-label.ng-binding {
+    margin-bottom: 0px;
+}
+*/
+.moverDiasActualizacion {
+    margin-top: 10px;
+    margin-left: -180px;
+}
+.moverActivasTodas {
+    margin-top: -20px;
+}
+.subir4px {
+    margin-top: -4px;
+}
+
+/*Estilos ajustados para las pantallas generadas desde el editor 6*/
+
+.cb-spacer .cb-control {
+    min-height: 34px;
+    display: block;
+}
+.cb-col-container .form-vertical .row .form-group {
+    margin-bottom: 30px;
+}
+.breadcrumb li {
+    color: #B7D3F1 !important;
+}
+ol.breadcrumb {
+    width: 756px !important;
+    margin: 0px auto !important;
+    position: relative !important;
+    border-bottom: 0px !important;
+    font-size: 14px;
+}
+#GR_CECROTICIO22_02 .form-group>.control-label,
+#GR_CAECESOLUD44_04 [class*="col-"]:first-child .form-group .control-label,
+#GR_CAECESOLUD44_05 [class*="col-"]:last-child .form-group .control-label,
+#GR_CAECESOLUD44_05 [class*="col-xs-1"] .form-group .control-label,
+#GR_VTRAEXANEI46_04_VAL [ng-show="vc.viewState.VA_VTRAEXANEI4604_CVAS200.visible"] .form-group > label,
+#GR_VTRAEXANEI46_04_VAL [ng-show="vc.viewState.VA_VTRAEXANEI4604_TOAS957.visible"] .form-group > label,
+#GR_VTRAEXANEI46_04_VAL [ng-show="vc.viewState.VA_VTRAEXANEI4604_0000580.visible"] .form-group > label,
+#GR_VTRAEXANEI46_03_VAL [ng-show="vc.viewState.VA_VOBLIGCION9106_0000307.visible"] .form-group > label,
+#GR_VTRAEXANEI46_03_VAL [ng-show="vc.viewState.VA_VOBLIGCION9106_0000135.visible"] .form-group > label,
+#GR_VOBLIGCION91_07_VAL [ng-show="vc.viewState.VA_VOBLIGCION9107_0000752.visible"] .form-group > label,
+#GR_VDATOSALUD32_14_VAL [ng-show="vc.viewState.VA_VDATOSALUD3214_0000596.visible"] .form-group > label,
+
+/*form salud*/
+
+#GR_VDATOSALUD32_14_VAL [ng-show="vc.viewState.VA_VDATOSALUD3214_MDES181.visible"] .form-group > label,
+
+/*SALUD /RECARGO A COBRAR*/
+
+
+/*ICONO ADICIONAL EN PERSONALES*/
+
+#GR_VDTOPERSON24_24_VAL [ng-show="vc.viewState.VA_VDTOPERSON2424_0000387.visible"] .form-group > label,
+#GR_VCSAOACIES25_05 [ng-show="vc.viewState.VA_VDATOSALUD3214_0000596.visible"] .form-group > label,
+#GR_VTRAEXANEI46_03_VAL .row > [ng-show="vc.viewState.VA_DTLLECTACN4011_0000267.visible"] .cb-spacer {
+    display: none;
+}
+#bc_VC_TMPAT29_FGOZC_416 {
+    padding-top: 0px;
+}
+#bc_VC_TMPAT29_FGOZC_416 {
+    padding-bottom: 0px !important;
+}
+div#VC_TMPAT29_GPNNE_840_VAL {
+    width: 756px;
+    padding-top: 10px;
+}
+#GR_VCSITUDCEN21_03_VAL [ng-show="vc.viewState.VA_VCSITUDCEN2103_CIZC069.visible"] .form-group > label {
+    display: block;
+}
+fieldset legend .cb-title {
+    font-size: 22px !important;
+    font-weight: normal !important;
+    text-transform: none;
+    padding: 0 !important;
+}
+fieldset legend .group-title {
+    font-weight: normal !important;
+    color: black;
+}
+.form-horizontal > .row > [class*="col-"] > .form-group .control-label,
+.form-horizontal > .row > [class*="col-"] > .form-group .control-label {
+    overflow: visible !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+    margin-bottom: 0;
+}
+#GR_VTRAEXANEI46_04_VAL [ng-show="vc.viewState.VA_VTRAEXANEI4604_CVAS200.visible"] .form-group .cb-control > label {
+    white-space: nowrap;
+}
+#GR_VTRAEXANEI46_04_VAL [ng-show="vc.viewState.VA_VTRAEXANEI4604_0000580.visible"] .form-group .col-sm-8 {
+    width: 100%;
+    padding-left: 0px;
+    margin-top: -13px;
+}
+#GR_VDATOSALUD32_14_VAL [ng-show="vc.viewState.VA_VDATOSALUD3214_0000596.visible"] .form-group > label {
+    white-space: nowrap;
+}
+
+/* CAMBIOS PRO*/
+
+#VC_TMPAT29_GOSBR_064_VAL {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* FIN CAMBIOS PRO*/
+
+
+/*menu datos personales*/
+
+#VC_TMPAT29_UONBR_569_tab,
+#VC_TMPAT29_GNNME_535_tab,
+#VC_TMPAT29_RPOBE_070_tab,
+#VC_TMPAT29_UOOBE_446_tab {
+    border-radius: 0;
+    border: 1spx solid #e8e9eb !important;
+    border-bottom: none !important;
+    background-color: #F7F7F8;
+    border-color: #A5B3C2;
+}
+
+/*botones */
+
+#CEQV_201_QV_CRAOC6535_74_702,
+#CEQV_201_QV_CDCNL6000_28_359,
+#CEQV_201_QV_EFREN8178_73_344,
+#CEQV_201_QV_CRAOC6535_81_822 {
+    background-color: #eef5fe;
+    border: 0;
+    color: #337ab7;
+}
+#VA_DTLLECTACN4006_RGRA136 {
+    color: black
+}
+.c_grid_base_sc > .k-grid-toolbar {
+    background: none !important;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+/*borde de la pagina */
+
+#VC_TMPAT29_RUPIN_875_VAL {
+    margin-bottom: 52px;
+}
+.cb-view-container > legend,
+.cb-group > legend {
+    border: 0;
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 42px;
+}
+
+/*MARGEN DE LA PANTALLA DE DOCUMENTACIÓN */
+
+#VC_TMPAT29_RUPIN_875_tab-3 {
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: -10;
+}
+
+/*grilla de la pantalla principal de BG*/
+
+#VC_ONUAC54_FCOOA_565 {
+    margin-left: 0px;
+}
+#GR_ALABOAIENT49_10 {
+    margin-bottom: -28px;
+}
+#GR_VXCECIONES87_04_VAL {
+    margin-top: -2px;
+}
+
+/*ESPACIOS ENTRE SECCIONES COTIZACION PRODUCTO Y FERIA */
+
+#VA_DTLLECTACN4006_ERIA028_DIV,
+#VA_DTLLECTACN4006_PPTO121_DIV {
+    margin-bottom: 30px;
+}
+
+/*NEGRITA DEL TOTAL RECARGOS "SALUD"*/
+
+#VA_VDATOSALUD3214_0000821 {
+    font-weight: bold;
+    margin-top: -10px;
+    margin-left: -20px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/*TITULO DE LA PANTALLA EXCEPCIONES*/
+
+#GR_VXCECIONES87_03_VAL>fieldset:first-child>legend>span[class="cb-title ng-binding"] {
+    font-size: 14px !important;
+    color: black;
+}
+
+/*TITULO DE LA BANDEJA DE COTIZACION*/
+
+#GR_VCSAOACIES25_07_VAL>fieldset:first-child>legend>span[class="cb-title ng-binding"] {
+    font-size: 14px !important;
+    color: black;
+}
+
+/*TITULOS DE SALUD "Otras circunstancias relacionadas a la salud"*/
+
+fieldset#GR_VDATOSALUD32_10>legend>span[class="cb-title ng-binding"] {
+    font-size: 22px !important;
+    color: #A6A8A4;
+}
+
+/*TITULOS DE SALUD "Otras Actividades de Riesgo"*/
+
+fieldset#GR_VDATOSALUD32_11>legend>span[class="cb-title ng-binding"] {
+    font-size: 22px !important;
+    color: #A6A8A4;
+}
+#GR_VPOPOVERPX76_03 {
+    padding: -50px;
+}
+#VA_VPOPOVERPX7604_URY1024,
+#VA_VPOPOVERPX7604_CRY2428,
+#VA_VPOPOVERPX7604_CUCY087,
+#VA_VPOPOVERPX7607_0000331 {
+    margin-top: -8px;
+}
+#VA_VDATOSALUD3218_MNAJ709 {
+    background-color: inherit;
+    border-style: none;
+    box-shadow: none;
+    border: none;
+    padding: inherit;
+}
+#GR_VDTOPERSON24_43,
+#VC_AOOLS03_RABOL_442 {
+    margin: 0 auto 0 auto;
+    padding: 0;
+    /*width: 756px !important;*/
+}

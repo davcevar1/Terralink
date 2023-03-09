@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Body>
+      <OSIOFAC.SEARCHRESULTSResponse xmlns="OSIWebServices">
+         <Searchresultsrs>
+            <RequestId>22</RequestId>
+            <StatusCode>0000</StatusCode>
+            <StatusDesc>Search results returned successfully.</StatusDesc>
+            <NbrMatches>4</NbrMatches>
+            <Results>
+               <Results_Type.ResultsItem>
+                  <RecNum>SDN0000006365</RecNum>
+                  <Score>100</Score>
+                  <MatchDetails>
+					SDN Number: 6365
+					Initial Load Date: 12/11/2009
+					BIN LADIN, Usama bin Muhammad bin Awad
+					aka BIN LADIN, Usama
+					aka BIN LADEN, Usama
+					aka BIN LADEN, Osama
+					aka BIN LADIN, Osama
+					aka BIN LADIN, Osama bin Muhammad bin Awad
+
+					Type: individual
+					Program: SDGT] [SDT
+
+					Remarks: DOB 30 Jul 1957; alt. DOB 1958; POB Jeddah, Saudi Arabia; alt. POB Yemen.
+				   </MatchDetails>
+               </Results_Type.ResultsItem>
+               <Results_Type.ResultsItem>
+                  <RecNum>SDN0000011378</RecNum>
+                  <Score>99</Score>
+                  <MatchDetails>
+					SDN Number: 11378
+					Initial Load Date: 12/11/2007
+					BIN LADEN, Sa'ad
+					aka BIN LADEN, Sad
+					aka ABUD, Sa'ad Muhammad Awad
+					aka AWAD, Muhammad
+					aka ADBUD, Muhammad 'Awad
+					aka BAABOOD, Sa'ad Muhammad
+					aka ABBUD, Bin Muhammad Awad
+					a.k.a. AL-KAHTANE, Abdul Rahman. (Added)
+
+					Type: individual
+					Program: SDGT
+					Remarks: DOB 1982; POB Saudi Arabia; nationality Saudi Arabia; Passport 520951 (Sudan); alt. Passport 530951
+					(Sudan); a.k.a. 'AL-KAHTANE, Abdul Rahman'.
+				   </MatchDetails>
+               </Results_Type.ResultsItem>
+               <Results_Type.ResultsItem>
+                  <RecNum>SDN0000021286</RecNum>
+                  <Score>98</Score>
+                  <MatchDetails>
+					SDN Number: 21286
+					Initial Load Date: 01/05/2017
+					BIN LADEN, Hamza
+
+					Type: individual
+					Program: SDGT
+					Remarks: DOB 01 Jan 1989 to 31 Dec 1989; POB Jeddah, Saudi Arabia; citizen Saudi Arabia; Gender
+					Male.
+				   </MatchDetails>
+               </Results_Type.ResultsItem>
+               <Results_Type.ResultsItem>
+                  <RecNum>SDN0000006366</RecNum>
+                  <Score>91</Score>
+                  <MatchDetails>
+					SDN Number: 6366
+					Initial Load Date: 12/11/2009
+					AL QA'IDA
+					aka ISLAMIC ARMY
+					aka ISLAMIC SALVATION FOUNDATION
+					aka THE GROUP FOR THE PRESERVATION OF THE HOLY SITES
+					aka THE ISLAMIC ARMY FOR THE LIBERATION OF THE HOLY PLACES
+					aka THE WORLD ISLAMIC FRONT FOR JIHAD AGAINST JEWS AND CRUSADERS
+					aka AL QAEDA
+					aka THE BASE
+					aka USAMA BIN LADEN NETWORK
+					aka USAMA BIN LADEN ORGANIZATION
+					aka AL QAIDA
+					aka INTERNATIONAL FRONT FOR FIGHTING JEWS AND CRUSADES
+					aka ISLAMIC ARMY FOR THE LIBERATION OF HOLY SITES
+					aka AL-JIHAD
+					aka EGYPTIAN AL-JIHAD
+					aka EGYPTIAN ISLAMIC JIHAD
+					aka NEW JIHAD
+					aka THE JIHAD GROUP
+
+					Program: FTO] [SDGT] [SDT
+				   </MatchDetails>
+               </Results_Type.ResultsItem>
+            </Results>
+         </Searchresultsrs>
+      </OSIOFAC.SEARCHRESULTSResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

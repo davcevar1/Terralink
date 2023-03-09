@@ -1,0 +1,70 @@
+{
+  "LienJudgmentReportResponseEx": {
+    "response": {
+      "Header": {
+        "TransactionId": "158897243R107710",
+        "Status": "0"
+      },
+      "LienJudgments": {
+        "LienJudgment": {
+          "Debtors": {
+            "Debtor": {
+              "Addresses": {
+                "Address": {
+                  "StreetName": "CORDSTON",
+                  "City": "KAFKA BEACH",
+                  "County": "OAKLAND",
+                  "State": "MI",
+                  "StreetNumber": "4714",
+                  "Zip5": "18283",
+                  "Zip4": "1514",
+                  "StreetSuffix": "AVE"
+                }
+              },
+              "ParsedParties": {
+                "Party": {
+                  "SSN": "77326xxxx",
+                  "Name": {
+                    "Last": "CRIMALI",
+                    "First": "MICHAEL",
+                    "Prefix": "MR",
+                    "Middle": "K"
+                  },
+                  "UniqueId": "999900078443",
+                  "PersonFilterId": "2513982709"
+                }
+              },
+              "OriginName": "MICHAEL K CRIMALI"
+            }
+          },
+          "OriginFilingDate": {
+            "Day": "9",
+            "Month": "12",
+            "Year": "2008"
+          },
+          "Filings": {
+            "Filing": {
+              "OriginFilingDate": {
+                "Day": "9",
+                "Month": "12",
+                "Year": "2008"
+              },
+              "Book": "40499",
+              "Type": "STATE TAX LIEN",
+              "Page": "874",
+              "AgencyState": "MI",
+              "Number": "BK40499PG874",
+              "AgencyCounty": "OAKLAND",
+              "Agency": "OAKLAND COUNTY REGISTER OF DEEDS"
+            }
+          },
+          "Amount": "1261",
+          "FilingJurisdiction": "MI",
+          "MultipleDefendant": "false",
+          "FilingJurisdictionName": "MICHIGAN",
+          "TMSId": "HGBK40499PG8721261MIOAKC1"
+        }
+      }
+    }
+  }
+}

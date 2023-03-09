@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LienJudgmentReportResponseEx>
+	<response>
+		<Header>
+			<TransactionId>158897243R107710</TransactionId>
+			<Status>0</Status>
+		</Header>
+		<LienJudgments>
+			<LienJudgment>
+				<Debtors>
+					<Debtor>
+						<Addresses>
+							<Address>
+								<StreetName>CORDSTON</StreetName>
+								<City>KAFKA BEACH</City>
+								<County>OAKLAND</County>
+								<State>MI</State>
+								<StreetNumber>4714</StreetNumber>
+								<Zip5>18283</Zip5>
+								<Zip4>1514</Zip4>
+								<StreetSuffix>AVE</StreetSuffix>
+							</Address>
+						</Addresses>
+						<ParsedParties>
+							<Party>
+								<SSN>77326xxxx</SSN>
+								<Name>
+									<Last>CRIMALI</Last>
+									<First>MICHAEL</First>
+									<Prefix>MR</Prefix>
+									<Middle>K</Middle>
+								</Name>
+								<UniqueId>999900078443</UniqueId>
+								<PersonFilterId>2513982709</PersonFilterId>
+							</Party>
+						</ParsedParties>
+						<OriginName>MICHAEL K CRIMALI</OriginName>
+					</Debtor>
+				</Debtors>
+				<OriginFilingDate>
+					<Day>9</Day>
+					<Month>12</Month>
+					<Year>2008</Year>
+				</OriginFilingDate>
+				<Filings>
+					<Filing>
+						<OriginFilingDate>
+							<Day>9</Day>
+							<Month>12</Month>
+							<Year>2008</Year>
+						</OriginFilingDate>
+						<Book>40499</Book>
+						<Type>STATE TAX LIEN</Type>
+						<Page>874</Page>
+						<AgencyState>MI</AgencyState>
+						<Number>BK40499PG874</Number>
+						<AgencyCounty>OAKLAND</AgencyCounty>
+						<Agency>OAKLAND COUNTY REGISTER OF DEEDS</Agency>
+					</Filing>
+				</Filings>
+				<Amount>1261</Amount>
+				<FilingJurisdiction>MI</FilingJurisdiction>
+				<MultipleDefendant>false</MultipleDefendant>
+				<FilingJurisdictionName>MICHIGAN</FilingJurisdictionName>
+				<TMSId>HGBK40499PG8721261MIOAKC1</TMSId>
+			</LienJudgment>
+		</LienJudgments>
+	</response>
+</LienJudgmentReportResponseEx>

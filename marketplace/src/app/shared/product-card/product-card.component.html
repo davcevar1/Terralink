@@ -1,0 +1,6 @@
+<a [routerLink]="['/product', product.id]" class="card-body p-2 text-center">
+  <div class="image mt-3 ml-3 mr-3" [ngStyle]="{'background-image':'url('+product.image+')'}"></div>
+  <h5 class="card-title m-0">{{ product.name }}</h5>
+  <div class="card-text text-muted" style="text-decoration: line-through;" *ngIf="product.listPrice!=product.price" [ngClass]="{'text-muted text-line-through small': product.offer}">{{ product.listPrice | currency }} USD</div>
+  <div class="card-text text-success">{{ product.price | currency }} USD</div>
+</a>

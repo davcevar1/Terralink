@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Terrabank</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    <link rel="stylesheet" href="loan-request-terra.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var toggleVisible = function(e, value, selector) {
+            $(selector).prop('disabled', e.target.value != value);
+        };
+    </script>
+</head>
+
+<body class="wf-shell" ng-controller="controller">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" style="padding-top:0;">
+            <div id="main-content">
+                <form id="step2" class="wf-fixed-bottom">
+                    <p><img src="images/logo_terrabank.png" class="img-responsive" style="max-height: 35px;" /></p>
+                    <div>
+                        <ul class="wf-steps-2" style="margin-top:0;">
+                            <li ng-repeat="step in steps" ng-class="{active:lastStep>=($index+1), current:currentStep==($index+1)}">
+								<a ng-if="lastStep>$index" ng-href="{{ step.url }}"><span class="{{ step.icon }}"></span> <span class="hidden-xs">{{ step.label }}</span></a>
+                                <div ng-if="lastStep<=$index"><span class="{{ step.icon }}"></span> <span class="hidden-xs">{{ step.label }}</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p style="font-weight:bold; font-size:12px; color:#990000; text-align:right;">* Indicates required field</p>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Business Name</div>
+                                    <div class="wf-control">
+                                        <input type="text" name="business-name" class="form-control" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="control-label">Doing Business As (DBA), if applicable</div>
+                                    <div class="wf-control">
+                                        <input type="text" name="dba" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Phone Number</div>
+                                    <div class="wf-control">
+                                        <input type="text" name="phone" class="form-control" kendo-masked-text-box k-mask="'(999) 999-9999'" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="height:70px;">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Website, if applicable</div>
+                                    <div class="wf-control">
+                                        <input type="text" name="website" class="form-control url" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Purpose of the loan</div>
+                                    <div class="wf-control">
+                                        <select class="form-control" name="purpose-loan" id="purposeLoan" onchange="toggleVisible(event, 6, '#other-purpose')" required>
+                                            <option class=""></option>
+                                            <option class="" value="1">Working Capital</option>
+                                            <option class="" value="2">Inventory</option>
+                                            <option class="" value="3">Equipment Purchase</option>
+                                            <option class="" value="4">Payroll</option>
+                                            <option class="" value="5">Expansion</option>
+                                            <option class="" value="6">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <fieldset id="other-purpose" disabled>
+                                    <div class="form-group wf-required">
+                                        <div class="control-label">If other, please provide details</div>
+                                        <div class="wf-control">
+                                            <input type="text" name="purpose-loan-details" class="form-control" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Company Structure</div>
+                                    <div class="wf-control">
+                                        <select class="form-control" name="company-structure" id="companyStructure" onchange="toggleVisible(event, 'XX', '#other-company')" required>
+                                            <option class=""></option>
+                                            <option class="" value="SL">Sole Proprietor</option>
+                                            <option class="" value="P">Partnership</option>
+                                            <option class="" value="C">Corporation</option>
+                                            <option class="" value="LLC">Limited Liability Company</option>
+                                            <option class="" value="LLP">Limited Liability Partnership</option>
+                                            <option class="" value="SC">S Corporation</option>
+                                            <option class="" value="XX">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <fieldset id="other-company" disabled>
+                                    <div class="form-group wf-required">
+                                        <div class="control-label">If other, please provide details</div>
+                                        <div class="wf-control">
+                                            <input type="text" name="company-structure-details" class="form-control" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wf-toolbar wf-toolbar-bottom wf-center">
+                        <div class="wf-actions wf-flex wf-gutters wf-center wf-grow">
+                            <a href="loan-request-step1.html" class="btn btn-default wf-grow-sm-down"><span class="fa fa-angle-left"></span> Back</a>
+                            <button type="button" class="btn btn-default">Save for later</button>
+                            <button type="submit" class="btn btn-primary wf-grow-sm-down">Next <span class="fa fa-angle-right"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<script>
+        var librariesUrl = 'libraries/';
+    </script>
+    <script src="libraries/require.config.js"></script>
+    <script data-main="loan-request" src="libraries//require/require.js"></script>
+</body>
+
+</html>

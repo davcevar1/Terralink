@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>My Account</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        function toggleChangePassword(e) {
+            if (e.currentTarget.checked) {
+                $('#password-change').removeClass('hidden');
+            }else{
+                $('#password-change').addClass('hidden');
+            }
+        };
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" ng-view>
+            <div class="container" style="max-width:400px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <p><a href="#">
+                            <img src="images/a4.jpg" class="img-circle" />
+                        </a></p>
+                        <p class="text-muted small">Click the image to change it</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="control-label">Name</div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="First name" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Last name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">Email</div>
+                            <div>
+                                <input type="email" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">Language</div>
+                            <div>
+                                <select class="form-control">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="password-change" class="hidden">
+                            <hr />
+                            <div class="form-group">
+                                <div class="control-label">Current Password</div>
+                                <div>
+                                    <input type="password" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-label">New Password</div>
+                                <div>
+                                    <input type="password" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-label">Confirm new Password</div>
+                                <div>
+                                    <input type="password" class="form-control" />
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" onclick="toggleChangePassword(event)" /> Change password
+                                </label>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer wf-actions">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+             </div>
+        </div>
+		<div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">My Account</div>
+			<div class="small text-muted">Customized for</div>
+            <div><img src="images/acme-logo.png" style="max-height:50px; margin-right:15px;" /></div>
+        </div>
+	</div>
+</body>
+
+</html>

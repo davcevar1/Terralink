@@ -1,0 +1,17 @@
+<layout-base>
+  <div class="text-center" style="padding: 100px; padding-bottom: 200px;">
+    <div *ngIf="type!='credit'">
+      <icon name="check-circle" class="text-success" collection="factoricons-slim" style="font-size: 100px;"></icon>
+      <div class="label text-success" i18n>Su solicitud ha sido recibida exitosamente</div>
+    </div>
+    <div *ngIf="type=='credit'">
+      <svg class="progress-circle" viewBox="0 0 100 100" [ngClass]="{'success':success}">
+        <circle cx="50" cy="50" r="46" class="value" />
+        <circle cx="50" cy="50" r="46" class="border" />
+        <path class="check" d="M 30.387746,49.311213 45.996518,64.291499 73.017177,35.27084" />
+      </svg>
+      <div class="label" [ngClass]="{'text-success':success}">{{ label }}</div>
+      <div *ngIf="success" class="text-muted" style="max-width: 700px; margin: auto;" i18n>Un agente se contactará con usted para completar el proceso de su financiamiento, luego de la aprobación definitiva se continuará la gestión de su orden para su entrega</div>
+    </div>
+  </div>
+</layout-base>

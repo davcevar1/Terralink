@@ -1,0 +1,162 @@
+{
+  "BankruptcyReport2ResponseEx": {
+    "response": {
+      "Header": {
+        "TransactionId": "158932193R106488",
+        "Status": "0"
+      },
+      "BankruptcyReportRecords": {
+        "BankruptcyReportRecord": {
+          "CaseNumber": "xxx0342",
+          "CourtCode": "AK003",
+          "CourtName": "ALASKA - JUNEAU",
+          "CourtLocation": "JUNEAU",
+          "CaseType": "U",
+          "FilingJurisdiction": "AK",
+          "JudgeIdentification": "DM",
+          "AssetsForUnsecured": "N",
+          "FilerType": "INDIVIDUAL",
+          "OriginalChapter": "7",
+          "TrusteeId": "35",
+          "FilingDate": {
+            "Year": "2012",
+            "Month": "08",
+            "Day": "26"
+          },
+          "OriginalFilingDate": {
+            "Year": "2012",
+            "Month": "08",
+            "Day": "26"
+          },
+          "Meeting": {
+            "Time": "1145",
+            "Address": "ROOM 415 U S DC JUNEAU",
+            "Date": {
+              "Year": "2012",
+              "Month": "08",
+              "Day": "26"
+            }
+          },
+          "StatusHistory": {
+            "Status": {
+              "Type": "Dismissed",
+              "Date": {
+                "Year": "2014",
+                "Month": "09",
+                "Day": "30"
+              }
+            }
+          },
+          "Trustees": {
+            "Trustee": {
+              "AppendedSSN": "77302xxxx",
+              "SSN": "77302xxxx",
+              "Phones": {
+                "Phone": { "Phone10": "9075551235" }
+              },
+              "UniqueId": "999915523688",
+              "Names": {
+                "Name": {
+                  "Last": "TEMURALI",
+                  "First": "LARRY",
+                  "Middle": "D",
+                  "OriginalName": "LARRY D TEMURALI"
+                }
+              },
+              "Addresses": {
+                "Address": {
+                  "StreetNumber": "400",
+                  "StreetName": "ROZUR",
+                  "StreetSuffix": "ST",
+                  "UnitDesignation": "STE",
+                  "UnitNumber": "210",
+                  "City": "WOLFHILL",
+                  "State": "AK",
+                  "Zip5": "13271",
+                  "Zip4": "2342",
+                  "OrigStreetAddress1": "400 ROZUR ST"
+                }
+              }
+            }
+          },
+          "Attorneys": {
+            "Attorney": {
+              "BusinessId": "999918489835",
+              "AppendedSSN": "77304xxxx",
+              "SSN": "77304xxxx",
+              "Phones": {
+                "Phone": {
+                  "Phone10": "7607345238",
+                  "TimeZone": "PDT"
+                }
+              },
+              "UniqueId": "999914159666",
+              "Addresses": {
+                "Address": {
+                  "City": "LONDINGTON",
+                  "State": "AK",
+                  "Zip5": "84677",
+                  "Zip4": "4088"
+                }
+              },
+              "Names": {
+                "Name": {
+                  "CompanyName": "IVANAIMS  AND ASSOCIATES",
+                  "Last": "PAULOVA",
+                  "First": "MARVIN",
+                  "Middle": "H",
+                  "Suffix": "JR"
+                }
+              }
+            }
+          },
+          "Debtors": {
+            "Debtor": {
+              "BusinessId": "0",
+              "AppendedSSN": "77324xxxx",
+              "SSN": "77324xxxx",
+              "DefendantType": "I",
+              "DefendantId": "55912",
+              "RecordId": "33512484",
+              "OriginalCounty": "ANCHORAGE",
+              "CaseId": "42714",
+              "UniqueId": "999913497366",
+              "Addresses": {
+                "Address": {
+                  "StreetNumber": "3701",
+                  "StreetName": "JOHANSON",
+                  "StreetSuffix": "ST",
+                  "UnitDesignation": "APT",
+                  "UnitNumber": "10C",
+                  "City": "WOLFHILL",
+                  "State": "AK",
+                  "Zip5": "10813",
+                  "Zip4": "5819",
+                  "OrigStreetAddress1": "3701 JOHANSON"
+                }
+              },
+              "Names": {
+                "Name": {
+                  "Last": "KIRKARZI",
+                  "First": "HOWARD",
+                  "Middle": "A",
+                  "Type": "P"
+                }
+              }
+            }
+          },
+          "Comments": {
+            "Comment": {
+              "Description": "SINGLE DEBTOR",
+              "FilingDate": {
+                "Year": "2012",
+                "Month": "08",
+                "Day": "26"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

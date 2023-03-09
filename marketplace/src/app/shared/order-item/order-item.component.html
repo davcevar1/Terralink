@@ -1,0 +1,52 @@
+<div class="d-flex" *ngIf="!editing;else quantityEditor">
+  <a *ngIf="navigable" [routerLink]="['/product', item.product_id]" class="image mr-2" [ngStyle]="{'background-image': 'url('+item.image+')'}"></a>
+  <div *ngIf="!navigable" class="image mr-2" [ngStyle]="{'background-image': 'url('+item.image+')'}"></div>
+  <div class="flex-grow-1">
+    <a *ngIf="navigable" [routerLink]="['/product', item.product_id]">
+      <h5 class="m-0">{{ item.name }}</h5>
+      <div class="text-nowrap">
+        {{ item.quantity * item.price | currency }} USD
+      </div>
+      <div class="small text-muted">{{ item.quantity }} x {{ item.price | currency }} USD</div>
+    </a>
+    <div *ngIf="!navigable">
+      <h5 class="m-0">{{ item.name }}</h5>
+      <div class="text-nowrap">
+        {{ item.quantity * item.price | currency }} USD
+      </div>
+      <div class="small text-muted">{{ item.quantity }} x {{ item.price | currency }} USD</div>
+    </div>
+  </div>
+  <div class="actions" *ngIf="editable">
+    <button class="btn btn-primary btn-sm mr-1" (click)="edit(item, $event)" i18n>Editar</button>
+    <button class="btn btn-outline-danger btn-sm" (click)="remove(item, $event)" i18n>Eliminar</button>
+  </div>
+</div>
+
+<ng-template #quantityEditor>
+  <div class="d-flex">
+    <div class="image mr-2" [ngStyle]="{'background-image': 'url('+item.image+')'}"></div>
+    <div class="flex-grow-1">
+      <h5 class="m-0">{{ item.name }}</h5>
+      <div class="form-group d-flex mt-2">
+        <div class="input-group input-group-sm mr-2" style="width:100px;">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" (click)="minusQuantity($event)">
+              <icon name="minus"></icon>
+            </button>
+          </div>
+          <input type="text" class="form-control text-center" placeholder="Cantidad" [(ngModel)]="quantity" i18n/>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="plusQuantity($event)">
+              <icon name="plus"></icon>
+            </button>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm mr-1" (click)="put(item, $event)" i18n>Aceptar</button>
+          <button class="btn btn-outline-primary btn-sm" (click)="cancel($event)" i18n>Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

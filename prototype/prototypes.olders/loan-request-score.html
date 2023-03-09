@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Loan documents</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('.wf-score-input').on('change', function(e) {
+                var $input = $(e.currentTarget);
+                if ($input.val()<640) {
+                    $($input.data('target')).attr('class', 'wf-score wf-score-bad').text('BAD');
+                }else if($input.val()>=640 && $input.val()<680) {
+                    $($input.data('target')).attr('class', 'wf-score wf-score-fair').text('FAIR');
+                }else if($input.val()>=680 && $input.val()<720) {
+                    $($input.data('target')).attr('class', 'wf-score wf-score-good').text('GOOD');
+                }else if($input.val()>=720 && $input.val()<850) {
+                    $($input.data('target')).attr('class', 'wf-score wf-score-best').text('BEST');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div class="container" style="max-width:500px;">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding:30px;">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Experian</div>
+                                    <div class="wf-control">
+                                        <input type="number" class="form-control text-right wf-score-input" data-target="#experian" />
+                                    </div>
+                                </div>
+                                <div id="experian" class="wf-score"></div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Equifax</div>
+                                    <div class="wf-control">
+                                        <input type="number" class="form-control text-right wf-score-input" data-target="#equifax" />
+                                    </div>
+                                </div>
+                                <div id="equifax" class="wf-score"></div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">TransUnion</div>
+                                    <div class="wf-control">
+                                        <input type="number" class="form-control text-right wf-score-input" data-target="#transunion" />
+                                    </div>
+                                </div>
+                                <div id="transunion" class="wf-score"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer wf-actions">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Loan request</div>
+        </div>
+    </div>
+</body>
+
+</html>

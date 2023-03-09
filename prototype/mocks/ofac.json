@@ -1,0 +1,38 @@
+{
+  "SOAP-ENV:Envelope": {
+    "SOAP-ENV:Body": {
+      "OSIOFAC.SEARCHRESULTSResponse": {
+        "Searchresultsrs": {
+          "RequestId": "22",
+          "StatusCode": "0000",
+          "StatusDesc": "Search results returned successfully.",
+          "NbrMatches": "4",
+          "Results": {
+            "Results_Type.ResultsItem": [
+              {
+                "RecNum": "SDN0000006365",
+                "Score": "100",
+                "MatchDetails": "SDN Number: 6365\nInitial Load Date: 12/11/2009\nBIN LADIN, Usama bin Muhammad bin Awad\naka BIN LADIN, Usama\naka BIN LADEN, Usama\naka BIN LADEN, Osama\naka BIN LADIN, Osama\naka BIN LADIN, Osama bin Muhammad bin Awad\n\nType: individual\nProgram: SDGT] [SDT\n\nRemarks: DOB 30 Jul 1957; alt. DOB 1958; POB Jeddah, Saudi Arabia; alt. POB Yemen.\n"
+              },
+              {
+                "RecNum": "SDN0000011378",
+                "Score": "99",
+                "MatchDetails": "SDN Number: 11378\nInitial Load Date: 12/11/2007\nBIN LADEN, Sa'ad\naka BIN LADEN, Sad\naka ABUD, Sa'ad Muhammad Awad\naka AWAD, Muhammad\naka ADBUD, Muhammad 'Awad\naka BAABOOD, Sa'ad Muhammad\naka ABBUD, Bin Muhammad Awad\na.k.a. AL-KAHTANE, Abdul Rahman. (Added)\n\nType: individual\nProgram: SDGT\nRemarks: DOB 1982; POB Saudi Arabia; nationality Saudi Arabia; Passport 520951 (Sudan); alt. Passport 530951\n(Sudan); a.k.a. 'AL-KAHTANE, Abdul Rahman'.\n"
+              },
+              {
+                "RecNum": "SDN0000021286",
+                "Score": "98",
+                "MatchDetails": "SDN Number: 21286\nInitial Load Date: 01/05/2017\nBIN LADEN, Hamza\n\nType: individual\nProgram: SDGT\nRemarks: DOB 01 Jan 1989 to 31 Dec 1989; POB Jeddah, Saudi Arabia; citizen Saudi Arabia; Gender\nMale.\n"
+              },
+              {
+                "RecNum": "SDN0000006366",
+                "Score": "91",
+                "MatchDetails": "SDN Number: 6366\nInitial Load Date: 12/11/2009\nAL QA'IDA\naka ISLAMIC ARMY\naka ISLAMIC SALVATION FOUNDATION\naka THE GROUP FOR THE PRESERVATION OF THE HOLY SITES\naka THE ISLAMIC ARMY FOR THE LIBERATION OF THE HOLY PLACES\naka THE WORLD ISLAMIC FRONT FOR JIHAD AGAINST JEWS AND CRUSADERS\naka AL QAEDA\naka THE BASE\naka USAMA BIN LADEN NETWORK\naka USAMA BIN LADEN ORGANIZATION\naka AL QAIDA\naka INTERNATIONAL FRONT FOR FIGHTING JEWS AND CRUSADES\naka ISLAMIC ARMY FOR THE LIBERATION OF HOLY SITES\naka AL-JIHAD\naka EGYPTIAN AL-JIHAD\naka EGYPTIAN ISLAMIC JIHAD\naka NEW JIHAD\naka THE JIHAD GROUP\n\nProgram: FTO] [SDGT] [SDT\n"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+[
+	{
+		"AIN": "ALOAN.1.08.003688",
+        "CIN": "45687978",
+        "TIN": "12-4562121",
+        "SSN": "78-546555",
+		"BusinessName": "Tower Inc.",
+		"StartDate": "12-12-2016"
+	},
+	{
+		"AIN": "ALOAN.1.08.004568",
+        "CIN": "45632185",
+        "TIN": "12-4562121",
+        "SSN": "78-546555",
+		"BusinessName": "Tower Inc.",
+		"StartDate": "12-07-2016"
+	}
+]

@@ -1,0 +1,14 @@
+/* Importación de Estilos font-awesome */
+@import url('../../libraries/font-awesome/css/font-awesome.min.css');
+
+/* Importación de Estilos bootstrap */
+@import url('../../libraries/bootstrap/dist/css/bootstrap.min.css');
+
+/* Importación de Estilos kendo-common-bootstrap */
+@import url('../../libraries/kendo-2015.1.429/styles/kendo.common-bootstrap.min.css');
+
+/* Importación de Estilos kendo-bootstrap */
+@import url('../../libraries/kendo-2015.1.429/styles/kendo.bootstrap.min.css');
+
+/* Importación de Estilos Base */
+@import url('terrabank/base.css');

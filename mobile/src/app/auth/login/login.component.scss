@@ -1,0 +1,29 @@
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../theme/variables";
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  width: 100%;
+  background: $primary;
+  padding: 40px;
+  text-align: center;
+  img {
+    height: 85px;
+  }
+}
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+form {
+  width: 280px;
+  margin: auto;
+}

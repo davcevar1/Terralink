@@ -1,0 +1,80 @@
+<div class="sticky-top d-flex align-items-center px-3" style="height:60px; background-color:#FFF; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);">
+  <a routerLink="/admin/orders" class="btn btn-light p-2 mr-2" data-toggle="dropdown"><icon name="angle-left" collection="factoricons-regular" style="font-size:24px;"></icon></a>
+  <div class="flex-grow-1" style="font-size:22px; color: #5a6779;">Orden #{{ order?.number }}</div>
+  <div ngbDropdown placement="bottom-right" *ngIf="(auth.configuration$ | async )?.role?.id=='ROLE_PYME'">
+    <button class="btn btn-light p-2 dropdown-button" ngbDropdownToggle><icon name="ellipsis-vertical" collection="factoricons-regular" style="font-size:24px;"></icon></button>
+    <div ngbDropdownMenu>
+      <button type="button" class="dropdown-item" (click)="setStatus('delivered', false)" i18n>Marcar como entregado</button>
+      <button type="button" class="dropdown-item" i18n>Editar</button>
+      <button type="button" class="dropdown-item" (click)="setStatus('rejected')" i18n>Anular</button>
+    </div>
+  </div>
+</div>
+<div class="container pt-3">
+  <div *ngIf="order?.status=='delivered' && (auth.configuration$ | async )?.role?.id=='ROLE_PYME'" class="alert alert-info text-center p-3" i18n>
+    Esperando confirmación del negocio ...
+  </div>
+  <div *ngIf="order?.status=='delivered' && (auth.configuration$ | async )?.role?.id=='ROLE_STORE'" class="alert alert-info p-3">
+    <div class="d-flex">
+      <div class="mr-2"><img src="assets/profile1.jpg" class="rounded" style="width:75px;" /></div>
+      <div>
+        <p i18n>Carlos Romero de John Deere ha indicado que ha entregado este pedido.</p>
+        <p i18n>Al aceptar confirmas que se cobre con tu línea de crédito en Mainstreet Bank.</p>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <button class="btn btn-danger btn-block" (click)="setStatus('rejected')" i18n>Rechazar</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary btn-block" (click)="openPin(confirmModal)" i18n>Aceptar</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="order?.status=='approved' && (auth.configuration$ | async )?.role?.id=='ROLE_PYME'" class="alert alert-success d-flex align-items-center p-3">
+    <div class="mr-2"><icon name="check-circle" collection="factoricons-slim" style="font-size: 48px;"></icon></div>
+    <div i18n>Pedido entregado</div>
+  </div>
+  <div *ngIf="order?.status=='approved' && (auth.configuration$ | async )?.role?.id=='ROLE_STORE'" class="alert alert-success d-flex p-3">
+    <div class="mr-2"><icon name="check-circle" collection="factoricons-slim" style="font-size: 48px;"></icon></div>
+    <div>
+      <p i18n>Transacción ejecutada exitosamente.</p>
+      <p i18n>Monto disponible actual en su línea de crédito: $50,000 USD.</p>
+    </div>
+  </div>
+  <div *ngIf="order?.status=='rejected' && (auth.configuration$ | async )?.role?.id=='ROLE_STORE'" class="alert alert-danger d-flex p-2 align-items-center">
+    <div class="mr-2"><icon name="minus-circle" collection="factoricons-slim" style="font-size: 48px;"></icon></div>
+    <div i18n>Transacción rechazada.</div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div><strong i18n>Cliente:</strong> {{ order?.name }}</div>
+      <div><strong i18n>Fecha:</strong> {{ order?.date }}</div>
+      <div><strong i18n>Estado:</strong> {{ order?.status }}</div>
+    </div>
+    <div class="list-group list-group-flush">
+      <app-order-item [item]="item" [editable]="false" [navigable]="false" class="list-group-item" *ngFor="let item of orderItems"></app-order-item>
+    </div>
+    <div class="card-footer text-right">
+      <div><strong><span i18n>Subtotal:</span></strong> {{ subtotal | currency }} USD</div>
+      <div><strong><span i18n>Impuestos:</span></strong> {{ taxes | currency }} USD</div>
+      <strong><span i18n>Total:</span> {{ total | currency }} USD</strong>
+    </div>
+  </div>
+</div>
+
+<ng-template #confirmModal let-c="close" let-d="dismiss">
+  <form class="modal-body" [formGroup]="confirmForm" (ngSubmit)="confirmTransaction()">
+    <div *ngIf="!sendEmailSuccess">
+      <div class="form-group text-center">
+        <label i18n>PIN de confirmación</label>
+        <div>
+          <input type="password" class="form-control form-control-lg m-auto" size="4" maxlength="4" style="letter-spacing: 20px; text-align: center; width: 160px;" />
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c('authorized')" i18n>Autorizar</button>
+  </div>
+</ng-template>

@@ -1,0 +1,42 @@
+.overlay() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s;
+    z-index: 1030;
+}
+.wf-status {
+    font-size: 11px;
+    &&-red {
+        color: @status-red-color;
+    }
+    &&-orange {
+        color: @status-orange-color;
+    }
+    &&-green {
+        color: @status-green-color;
+    }
+}
+.wf-text-capitalize {
+    text-transform: capitalize;
+}
+.wf-text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.wf-clickable {
+    &,
+    .dropzone.dz-clickable &,
+    .dropzone.dz-clickable & * {
+        cursor: pointer;
+    }
+}
+.wf-gap-bottom {
+    margin-bottom: @content-margin;
+}

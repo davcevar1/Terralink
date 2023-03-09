@@ -1,0 +1,542 @@
+{
+  "sellers": [
+    {
+      "name": "Jorge Martinez",
+      "amount": 123456,
+      "count": 15
+    },
+    {
+      "name": "Marco Hidalgo",
+      "amount": 89345,
+      "count": 6
+    },
+    {
+      "name": "Sebastian Bustamante",
+      "amount": 45678,
+      "count": 6
+    },
+    {
+      "name": "José Andrade",
+      "amount": 41000,
+      "count": 5
+    },
+    {
+      "name": "Viviana Cordero",
+      "amount": 23456,
+      "count": 2
+    }
+  ],
+  "terms": [
+    {
+      "id": 1,
+      "name": "Maquinaria Agricultura",
+      "slug": "maquinaria-agricola"
+    },
+    {
+      "id": 2,
+      "name": "Maquinaria Industrial",
+      "slug": "maquinaria-industrial"
+    },
+    {
+      "id": 3,
+      "name": "Material de oficina",
+      "slug": "material-oficina"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "John Deere",
+      "image": "assets/brands/john-deere.svg"
+    },
+    {
+      "id": 2,
+      "name": "Viking",
+      "image": "assets/brands/viking.png"
+    },
+    {
+      "id": 3,
+      "name": "Tapsa",
+      "image": "assets/brands/tapsa.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Stihl",
+      "image": "assets/brands/stihl.svg"
+    },
+    {
+      "id": 5,
+      "name": "Petzl",
+      "image": "assets/brands/petzl.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Caterpillar",
+      "image": "assets/brands/cat.svg"
+    },
+    {
+      "id": 7,
+      "name": "New Holland",
+      "image": "assets/brands/new-holland.svg"
+    },
+    {
+      "id": 8,
+      "name": "Husqvarna",
+      "image": "assets/brands/husqvarna.svg"
+    }
+  ],
+  "banners": [
+    {
+      "title": "Usados a la venta",
+      "url": "#",
+      "image": "assets/featured/2.jpg"
+    },
+    {
+      "title": "Stihl",
+      "url": "#",
+      "image": "assets/featured/3.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "5075E",
+      "listPrice": 31850,
+      "price": 29000,
+      "image": "assets/catalog/5075E.png"
+    },
+    {
+      "id": 2,
+      "name": "5090M",
+      "listPrice": 39000,
+      "price": 35000,
+      "image": "assets/catalog/5090M.png"
+    },
+    {
+      "id": 3,
+      "name": "5100R",
+      "listPrice": 45500,
+      "price": 40000,
+      "image": "assets/catalog/5100R.png"
+    },
+    {
+      "id": 4,
+      "name": "5090GF",
+      "listPrice": 34700,
+      "price": 30000,
+      "image": "assets/catalog/5090GF.png"
+    },
+    {
+      "id": 5,
+      "name": "MSA 120 C-BQ, sin batería y cargador",
+      "listPrice": 229,
+      "price": 229,
+      "image": "assets/catalog/MSA120.jpg"
+    },
+    {
+      "id": 6,
+      "name": "RMA 443 C - Cortacesped de batería silencioso con monomanillar",
+      "listPrice": 549,
+      "price": 549,
+      "image": "assets/catalog/RMA443C.jpg"
+    },
+    {
+      "id": 7,
+      "name": "FSE 31 - Cortabordes eléctrico muy ligero",
+      "listPrice": 59,
+      "price": 59,
+      "image": "assets/catalog/FSE31.jpg"
+    },
+    {
+      "id": 8,
+      "name": "GB 370 S - Potente biotrituradora de gasolina (Para astillar)",
+      "listPrice": 1195,
+      "price": 1195,
+      "image": "assets/catalog/GB370S.jpg"
+    },
+    {
+      "id": 9,
+      "name": "LE 240 - Silencioso y ligero escarificador eléctrico",
+      "listPrice": 199,
+      "price": 199,
+      "image": "assets/catalog/LE240.jpg"
+    },
+    {
+      "id": 10,
+      "name": "C0.5 Tier 4 Diesel Engines - Highly Regulated",
+      "listPrice": 6000,
+      "price": 6000,
+      "image": "assets/catalog/CO5.jpeg"
+    },
+    {
+      "id": 11,
+      "name": "C1.1 Tier 4 Diesel Engines - Highly Regulated",
+      "listPrice": 6500,
+      "price": 6500,
+      "image": "assets/catalog/C11.jpeg"
+    },
+    {
+      "id": 12,
+      "name": "AP355F",
+      "listPrice": 64500,
+      "price": 64500,
+      "image": "assets/catalog/AP355F.jpeg"
+    }
+  ],
+  "cart-items": [
+    {
+      "name": "Fortuner",
+      "listPrice": 55990,
+      "price": 55990,
+      "image": "https://firebasestorage.googleapis.com/v0/b/mainstreet-demo.appspot.com/o/images%2Ffortuner.jpeg?alt=media&token=d1fb39ea-0ea9-4cb3-a3a7-39034245d2c5",
+      "quantity": 1,
+      "product_id": "5EOCip2965e6N5ZaQ0ni",
+      "order_number": "001-1533308869095",
+      "description": "Para quienes se conforman solo con lo mejor\n\nEl All New Fortuner presenta un estilo completamente renovado, pero con la misma esencia de un Todo Terreno de verdad. Conserva en su ADN las bondades de un 4x4 real con Chasis Reforzado; único en su clase.",
+      "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "number": "001-1533308869095",
+      "customer_id": 1,
+      "name": "Juan Carlos Altamirano",
+      "total": 129715,
+      "status": "delivered",
+      "date": "26-07-2018",
+      "id": 1
+    },
+    {
+      "number": "001-1533308907421",
+      "customer_id": 1,
+      "name": "Juan Carlos Altamirano",
+      "total": 131887,
+      "status": "approved",
+      "date": "26-07-2018",
+      "id": 2
+    },
+    {
+      "number": "001-1533828563138",
+      "customer_id": 1,
+      "name": "Juan Carlos Altamirano",
+      "total": 317,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 3
+    },
+    {
+      "number": "001-1534433175667",
+      "customer_id": 2,
+      "name": "undefined undefined",
+      "total": 19500,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 4
+    },
+    {
+      "number": "001-1534436371927",
+      "customer_id": 2,
+      "name": "undefined undefined",
+      "total": 0,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 5
+    },
+    {
+      "number": "001-1534520936597",
+      "customer_id": 1,
+      "name": "Juan Carlos Altamirano",
+      "total": 30000,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 6
+    },
+    {
+      "number": "001-1535037509672",
+      "customer_id": 4,
+      "name": "gkjh gkjh",
+      "total": 69990,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 7
+    },
+    {
+      "number": "001-1535461559533",
+      "customer_id": 6,
+      "name": "asdf asdf",
+      "total": 240000,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 8
+    },
+    {
+      "number": "001-1535463435382",
+      "customer_id": 6,
+      "name": "asdf asdf",
+      "total": 0,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 9
+    },
+    {
+      "number": "001-1535662333825",
+      "customer_id": 6,
+      "name": "asdf asdf",
+      "total": 33990,
+      "status": "created",
+      "date": "26-07-2018",
+      "id": 10
+    },
+    {
+      "code": "ORD1535665956071",
+      "customer_id": 6,
+      "name": "asdf asdf",
+      "totalValue": 55990,
+      "status": "Enviada",
+      "date": "2018-08-30T21:52:36.071Z",
+      "id": 11
+    }
+  ],
+  "order-items": [
+    {
+      "name": "FSE 31 - Cortabordes eléctrico muy ligero",
+      "listPrice": 59,
+      "price": 59,
+      "image": "assets/catalog/FSE31.jpg",
+      "quantity": 2,
+      "product_id": 7,
+      "order_number": "001-1533308869095",
+      "id": 1
+    },
+    {
+      "name": "AP355F",
+      "listPrice": 64500,
+      "price": 64500,
+      "image": "assets/catalog/AP355F.jpeg",
+      "quantity": 2,
+      "product_id": 12,
+      "order_number": "001-1533308869095",
+      "id": 2
+    },
+    {
+      "name": "LE 240 - Silencioso y ligero escarificador eléctrico",
+      "listPrice": 199,
+      "price": 199,
+      "image": "assets/catalog/LE240.jpg",
+      "quantity": 3,
+      "product_id": 9,
+      "order_number": "001-1533308869095",
+      "id": 3
+    },
+    {
+      "name": "AP355F",
+      "listPrice": 64500,
+      "price": 64500,
+      "image": "assets/catalog/AP355F.jpeg",
+      "quantity": 2,
+      "product_id": 12,
+      "order_number": "001-1533308907421",
+      "id": 4
+    },
+    {
+      "name": "LE 240 - Silencioso y ligero escarificador eléctrico",
+      "listPrice": 199,
+      "price": 199,
+      "image": "assets/catalog/LE240.jpg",
+      "quantity": 3,
+      "product_id": 9,
+      "order_number": "001-1533308907421",
+      "id": 5
+    },
+    {
+      "name": "MSA 120 C-BQ, sin batería y cargador",
+      "listPrice": 229,
+      "price": 229,
+      "image": "assets/catalog/MSA120.jpg",
+      "quantity": "10",
+      "product_id": 5,
+      "order_number": "001-1533308907421",
+      "id": 6
+    },
+    {
+      "name": "FSE 31 - Cortabordes eléctrico muy ligero",
+      "listPrice": 59,
+      "price": 59,
+      "image": "assets/catalog/FSE31.jpg",
+      "quantity": 2,
+      "product_id": 7,
+      "order_number": "001-1533828563138",
+      "id": 7
+    },
+    {
+      "name": "LE 240 - Silencioso y ligero escarificador eléctrico",
+      "listPrice": 199,
+      "price": 199,
+      "image": "assets/catalog/LE240.jpg",
+      "quantity": 1,
+      "product_id": 9,
+      "order_number": "001-1533828563138",
+      "id": 8
+    },
+    {
+      "name": "C1.1 Tier 4 Diesel Engines - Highly Regulated",
+      "listPrice": 6500,
+      "price": 6500,
+      "image": "assets/catalog/C11.jpeg",
+      "quantity": 3,
+      "product_id": 11,
+      "order_number": "001-1534433175667",
+      "id": 9
+    },
+    {
+      "name": "5090GF",
+      "listPrice": 34700,
+      "price": 30000,
+      "image": "assets/catalog/5090GF.png",
+      "quantity": 1,
+      "product_id": 4,
+      "order_number": "001-1534520936597",
+      "id": 10
+    },
+    {
+      "name": "5075E",
+      "listPrice": 69990,
+      "price": 69990,
+      "image": "https://firebasestorage.googleapis.com/v0/b/mainstreet-demo.appspot.com/o/products%2F5075E.png?alt=media&token=f6537d2b-6ee5-42a9-a009-74b8d6fa816b",
+      "quantity": 1,
+      "product_id": "OYR6yYMZGRtWo9dHmYVz",
+      "order_number": "001-1535037509672",
+      "description": "To meet variegated requirements of agriculture farms, we are successfully betrothed in offering exceptional quality Tractors 5075E MFWD (75HP). This tractor is manufactured by vendor’s adroit professionals by utilizing premium quality components and the pioneering techniques",
+      "id": 11
+    },
+    {
+      "name": "5090GV",
+      "listPrice": 120000,
+      "price": 120000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/mainstreet-demo.appspot.com/o/products%2F5090GV.png?alt=media&token=452cf125-978c-4656-886e-3688651ad067",
+      "quantity": 2,
+      "product_id": "LGGMwF1vv84EbA2KZr0c",
+      "order_number": "001-1535461559533",
+      "features": [
+        "Capacidad de combustible: 73 l",
+        "Potencia nominal (97/68EC): 54 kW (73 CV)",
+        "Distancia entre ejes: 2148 mm"
+      ],
+      "description": "La serie 5090GV es una de las gamas de tractores especiales más completas del mercado. Así que le resultará sencillo encontrar el tractor más adecuado para sus necesidades.",
+      "id": 12
+    },
+    {
+      "name": "Prius 4G",
+      "listPrice": 33990,
+      "price": 33990,
+      "image": "https://firebasestorage.googleapis.com/v0/b/mainstreet-demo.appspot.com/o/images%2Fprius%204g.png?alt=media&token=70f8e514-9333-49c8-b432-dbe799c90724",
+      "quantity": 1,
+      "product_id": "IZz2f8dz8YjyqechcMpG",
+      "order_number": "001-1535662333825",
+      "description": "El Toyota Prius hoy marca un nuevo paso adelante en cuanto a diseño inteligente y tecnología:.\nel nuevo Prius, más ágil, más eficiente y más silencioso que nunca, sigue redefiniendo el excepcional híbrido Toyota.",
+      "id": 13
+    },
+    {
+      "name": "Fortuner",
+      "listPrice": 55990,
+      "price": 55990,
+      "image": "https://firebasestorage.googleapis.com/v0/b/mainstreet-demo.appspot.com/o/images%2Ffortuner.jpeg?alt=media&token=d1fb39ea-0ea9-4cb3-a3a7-39034245d2c5",
+      "quantity": 1,
+      "product_id": "5EOCip2965e6N5ZaQ0ni",
+      "description": "Para quienes se conforman solo con lo mejor\n\nEl All New Fortuner presenta un estilo completamente renovado, pero con la misma esencia de un Todo Terreno de verdad. Conserva en su ADN las bondades de un 4x4 real con Chasis Reforzado; único en su clase.",
+      "id": 14
+    }
+  ],
+  "users": [
+    {
+      "id": 2,
+      "username": "pyme",
+      "email": "juanca.altamirano@gmail.com",
+      "enabled": true,
+      "home_path": "orders",
+      "channel": "admin",
+      "image": "http://i.dailymail.co.uk/i/pix/2017/04/20/13/3F6B966D00000578-4428630-image-m-80_1492690622006.jpg",
+      "menus": [],
+      "role": {
+        "id": "ROLE_PYME",
+        "name": "Pyme"
+      }
+    },
+    {
+      "id": 1,
+      "username": "store",
+      "email": "jose.martinez@gmail.com",
+      "firstName": "Juan Carlos",
+      "lastName": "Altamirano",
+      "enabled": true,
+      "home_path": "orders",
+      "channel": "admin",
+      "image": "http://i.dailymail.co.uk/i/pix/2017/04/20/13/3F6B966D00000578-4428630-image-m-80_1492690622006.jpg",
+      "menus": [],
+      "role": {
+        "id": "ROLE_STORE",
+        "name": "Tienda"
+      }
+    },
+    {
+      "firstName": "Juan Carlos",
+      "lastName": "Altamirano",
+      "username": "juanca202",
+      "password": "lhjkh",
+      "confirmPassword": "lkjh",
+      "role": {
+        "id": "ROLE_STORE",
+        "name": "Tienda"
+      },
+      "id": 3
+    },
+    {
+      "firstName": "gkjh",
+      "lastName": "gkjh",
+      "username": "kjhg",
+      "password": "khjg",
+      "confirmPassword": "kjhg",
+      "role": {
+        "id": "ROLE_STORE",
+        "name": "Tienda"
+      },
+      "id": 4
+    },
+    {
+      "firstName": "fff",
+      "lastName": "ff",
+      "username": "adsf",
+      "password": "asdf",
+      "confirmPassword": "asdf",
+      "role": {
+        "id": "ROLE_STORE",
+        "name": "Tienda"
+      },
+      "id": 5
+    },
+    {
+      "firstName": "asdf",
+      "lastName": "asdf",
+      "username": "asdf",
+      "password": "asdf",
+      "confirmPassword": "asdf",
+      "role": {
+        "id": "ROLE_STORE",
+        "name": "Tienda"
+      },
+      "id": 6
+    }
+  ],
+  "_oauth": {
+    "success": true,
+    "response": {
+      "authorization": {
+        "access_token": "d8dd27e4-cae7-4c8f-b2ba-c9adf0fa7611",
+        "token_type": "bearer",
+        "refresh_token": "27f00200-b662-45b0-8a2b-b169cb19059e",
+        "expires_in": 7199,
+        "scope": "read write trust"
+      }
+    }
+  }
+}

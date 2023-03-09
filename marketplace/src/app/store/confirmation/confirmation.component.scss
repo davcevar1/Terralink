@@ -1,0 +1,51 @@
+.progress-circle {
+  width: 100px;
+  height: 100px;
+}
+.progress-circle circle,
+.progress-circle .check {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke .5s linear, fill .5s linear;
+}
+.progress-circle circle.value {
+  fill: #FFF;
+  stroke: #4A90E2;
+  stroke-dasharray: 10;
+  animation: circle-progress 4s linear infinite;
+  transform-origin: center;
+}
+.progress-circle .check {
+  stroke: #FFF;
+  stroke-dasharray: 62;
+  stroke-dashoffset: 62;
+  transition: stroke-dashoffset .2s ease-in-out .4s;
+}
+
+.progress-circle.success circle.value {
+  stroke: transparent;
+  animation-duration: .1s;
+  fill: #8bc34a;
+}
+.progress-circle.success circle.border {
+  stroke: #8BC34A;
+}
+.progress-circle.success .check {
+  stroke-dashoffset: 0;
+}
+.label {
+  margin-top: 10px;
+  transition: color .2s;
+  color: #6c757d;
+  font-size: 1.5rem;
+}
+@keyframes circle-progress {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

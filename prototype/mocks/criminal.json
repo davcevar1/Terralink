@@ -1,0 +1,114 @@
+{
+  "CrimSearchResponseEx": {
+    "response": {
+      "Header": {
+        "Status": "0",
+        "TransactionId": "158870463R9360"
+      },
+      "RecordCount": "3",
+      "Records": {
+        "Record": [
+          {
+            "AlsoFound": "0",
+            "DataSource": "CRIMINAL COURT",
+            "OffenderId": "093PA-06-12646MO",
+            "Name": {
+              "First": "HOWARD",
+              "Middle": "A",
+              "Last": "KIRKARZI"
+            },
+            "Address": {
+              "State": "AK",
+              "Zip5": "00000"
+            },
+            "SSN": "77324xxxx",
+            "DOB": {
+              "Year": "1969",
+              "Month": "12",
+              "Day": "23"
+            },
+            "StateOfOrigin": "ALASKA",
+            "UniqueId": "999913497366",
+            "CaseNumber": "3PA-280188-12646MO",
+            "CaseFilingDate": {
+              "Year": "2006",
+              "Month": "03",
+              "Day": "21"
+            },
+            "DateLastSeen": {
+              "Year": "2009",
+              "Month": "05",
+              "Day": "11"
+            }
+          },
+          {
+            "AlsoFound": "0",
+            "DataSource": "CRIMINAL COURT",
+            "OffenderId": "093PA-04-07576MO",
+            "Name": {
+              "First": "HOWARD",
+              "Middle": "A",
+              "Last": "KIRKARZI"
+            },
+            "Address": {
+              "State": "AK",
+              "Zip5": "00000"
+            },
+            "SSN": "77324xxxx",
+            "DOB": {
+              "Year": "1969",
+              "Month": "12",
+              "Day": "23"
+            },
+            "StateOfOrigin": "ALASKA",
+            "UniqueId": "999913497366",
+            "CaseNumber": "3PA-308963-07576MO",
+            "CaseFilingDate": {
+              "Year": "2004",
+              "Month": "05",
+              "Day": "22"
+            },
+            "DateLastSeen": {
+              "Year": "2009",
+              "Month": "05",
+              "Day": "11"
+            }
+          },
+          {
+            "AlsoFound": "0",
+            "DataSource": "CRIMINAL COURT",
+            "OffenderId": "093AN-03-02631MO",
+            "Name": {
+              "First": "HOWARD",
+              "Middle": "A",
+              "Last": "KIRKARZI"
+            },
+            "Address": {
+              "State": "AK",
+              "Zip5": "00000"
+            },
+            "SSN": "77324xxxx",
+            "DOB": {
+              "Year": "1969",
+              "Month": "12",
+              "Day": "23"
+            },
+            "StateOfOrigin": "ALASKA",
+            "UniqueId": "999913497366",
+            "CaseNumber": "3AN-225329-02631MO",
+            "CaseFilingDate": {
+              "Year": "2003",
+              "Month": "01",
+              "Day": "23"
+            },
+            "DateLastSeen": {
+              "Year": "2009",
+              "Month": "05",
+              "Day": "11"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

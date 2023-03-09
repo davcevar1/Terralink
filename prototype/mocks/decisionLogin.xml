@@ -1,0 +1,515 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <GetReportDetailFromRequestCode8Response xmlns="https://integration.decisionlogic.com">
+         <GetReportDetailFromRequestCode8Result>
+            <RequestCode>HKJAZB</RequestCode>
+            <CustomerIdentifier>cobis</CustomerIdentifier>
+            <EmailAddress>Tony.Brown@cobiscorp.com</EmailAddress>
+            <InstitutionName>Citibank</InstitutionName>
+            <AccountName>CHECKING</AccountName>
+            <RoutingNumberEntered>0</RoutingNumberEntered>
+            <RoutingNumberReturned/>
+            <AccountType>DDA</AccountType>
+            <AccountNumberEntered>411482961</AccountNumberEntered>
+            <AccountNumberFound>2961</AccountNumberFound>
+            <AccountNumberConfidence>3</AccountNumberConfidence>
+            <NameEntered>Tony Brown</NameEntered>
+            <NameFound>TONY</NameFound>
+            <NameConfidence>0</NameConfidence>
+            <AmountInput>0</AmountInput>
+            <AvailableBalance>480.94</AvailableBalance>
+            <AverageBalance>632.65160493827159</AverageBalance>
+            <AverageBalanceRecent>794.68125</AverageBalanceRecent>
+            <IsLoginValid>true</IsLoginValid>
+            <IsVerified>true</IsVerified>
+            <AsOfDate>2019-06-13T15:55:26.763</AsOfDate>
+            <ActivityStartDate>2019-03-19T00:00:00</ActivityStartDate>
+            <ActivityEndDate>2019-06-07T00:00:00</ActivityEndDate>
+            <TotalCredits>4109.0300000000007</TotalCredits>
+            <TotalDebits>-3842.4600000000009</TotalDebits>
+            <CurrentBalance>480.94</CurrentBalance>
+            <IsActivityAvailable>true</IsActivityAvailable>
+            <TransactionAnalysisSummaries>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Payroll</TypeName>
+                  <TypeCode>py</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>1</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Other Income</TypeName>
+                  <TypeCode>oi</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>2</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Loan Debit</TypeName>
+                  <TypeCode>ld</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>3</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Loan Credit</TypeName>
+                  <TypeCode>lc</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>4</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Overdraft</TypeName>
+                  <TypeCode>ov</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>5</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>ACH Debit</TypeName>
+                  <TypeCode>ad</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>6</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>ACH Credit</TypeName>
+                  <TypeCode>ac</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>7</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Deposit</TypeName>
+                  <TypeCode>dp</TypeCode>
+                  <TotalCount>9</TotalCount>
+                  <TotalAmount>4109.0300000000007</TotalAmount>
+                  <RecentCount>4</RecentCount>
+                  <RecentAmount>2409.01</RecentAmount>
+                  <DisplayOrder>8</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Reversal</TypeName>
+                  <TypeCode>rv</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>9</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Military Payroll</TypeName>
+                  <TypeCode>mi</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>11</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Overdraft Protection</TypeName>
+                  <TypeCode>op</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>13</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Online Gambling</TypeName>
+                  <TypeCode>og</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>16</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Court Ordered Debit</TypeName>
+                  <TypeCode>cd</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>17</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Credit Card Payments</TypeName>
+                  <TypeCode>cc</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>18</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Loan Debit - Mortgage</TypeName>
+                  <TypeCode>lm</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>19</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Loan Debit - Automobile</TypeName>
+                  <TypeCode>la</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>20</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Loan Debit - Student</TypeName>
+                  <TypeCode>ls</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>23</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Loan Debit - Business</TypeName>
+                  <TypeCode>bd</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>24</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Collection Payments</TypeName>
+                  <TypeCode>ca</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>25</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Wire Transfer Credit</TypeName>
+                  <TypeCode>wc</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>26</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>ATM Withdrawal</TypeName>
+                  <TypeCode>aw</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>27</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>ATM Deposit</TypeName>
+                  <TypeCode>at</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>28</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Loan Credit - Business</TypeName>
+                  <TypeCode>bc</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>29</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Wire Transfer Debit</TypeName>
+                  <TypeCode>wd</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>30</DisplayOrder>
+               </TransactionAnalysisSummary5>
+               <TransactionAnalysisSummary5>
+                  <TypeName>Self Employment Income</TypeName>
+                  <TypeCode>se</TypeCode>
+                  <TotalCount>0</TotalCount>
+                  <TotalAmount>0</TotalAmount>
+                  <RecentCount>0</RecentCount>
+                  <RecentAmount>0</RecentAmount>
+                  <DisplayOrder>31</DisplayOrder>
+               </TransactionAnalysisSummary5>
+            </TransactionAnalysisSummaries>
+            <TransactionSummaries>
+               <TransactionSummary5>
+                  <TransactionDate>2019-06-07T00:00:00</TransactionDate>
+                  <Amount>-100</Amount>
+                  <RunningBalance>480.94</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190606 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-06-03T00:00:00</TransactionDate>
+                  <Amount>-300</Amount>
+                  <RunningBalance>580.94</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190531 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-31T00:00:00</TransactionDate>
+                  <Amount>0.01</Amount>
+                  <RunningBalance>880.94</RunningBalance>
+                  <Description>INTEREST PAYMENT</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Earned Income</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-30T00:00:00</TransactionDate>
+                  <Amount>-58</Amount>
+                  <RunningBalance>880.93000000000006</RunningBalance>
+                  <Description>ANNUAL FEE</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Fees &amp; Charges</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-24T00:00:00</TransactionDate>
+                  <Amount>-700</Amount>
+                  <RunningBalance>938.93000000000006</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190523 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-24T00:00:00</TransactionDate>
+                  <Amount>1300</Amount>
+                  <RunningBalance>1638.93</RunningBalance>
+                  <Description>SCHWAB BROKERAGE MONEYLINK 190524 ** TONY BROWN</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Services</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-23T00:00:00</TransactionDate>
+                  <Amount>-362.26</Amount>
+                  <RunningBalance>338.93000000000006</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190522 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-21T00:00:00</TransactionDate>
+                  <Amount>-1000</Amount>
+                  <RunningBalance>701.19</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190520 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-20T00:00:00</TransactionDate>
+                  <Amount>700</Amount>
+                  <RunningBalance>1701.19</RunningBalance>
+                  <Description>TRANSFER FROM BROWN TONY ON 05/18 REF # PP068QY7DM</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Miscellaneous Income</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-20T00:00:00</TransactionDate>
+                  <Amount>409</Amount>
+                  <RunningBalance>1001.19</RunningBalance>
+                  <Description>SCHWAB BROKERAGE MONEYLINK 190520 **373805 TONY BROWN</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Services</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-05-16T00:00:00</TransactionDate>
+                  <Amount>-57.34</Amount>
+                  <RunningBalance>592.19</RunningBalance>
+                  <Description>BILL PAY CITI CARDS ON-LINE xxxxxxxxxxx12303 ON 05-16</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Transfers &amp; Adjustments</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-04-24T00:00:00</TransactionDate>
+                  <Amount>-20.17</Amount>
+                  <RunningBalance>649.53000000000009</RunningBalance>
+                  <Description>BILL PAY CITI CARDS ON-LINE xxxxxxxxxxx12303 ON 04-24</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Transfers &amp; Adjustments</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-04-23T00:00:00</TransactionDate>
+                  <Amount>-362.26</Amount>
+                  <RunningBalance>669.7</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190422 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-04-16T00:00:00</TransactionDate>
+                  <Amount>700</Amount>
+                  <RunningBalance>1031.96</RunningBalance>
+                  <Description>TRANSFER FROM BROWN TONY ON 04/16 REF # PP0648DWRB</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Miscellaneous Income</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-04-05T00:00:00</TransactionDate>
+                  <Amount>-300</Amount>
+                  <RunningBalance>331.96000000000004</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190404 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-04-05T00:00:00</TransactionDate>
+                  <Amount>300</Amount>
+                  <RunningBalance>631.96</RunningBalance>
+                  <Description>TRANSFER FROM BROWN TONY ON 04/05 REF # PP062RHCCH</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Miscellaneous Income</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-03-29T00:00:00</TransactionDate>
+                  <Amount>0.02</Amount>
+                  <RunningBalance>331.96000000000004</RunningBalance>
+                  <Description>INTEREST PAYMENT</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Earned Income</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-03-27T00:00:00</TransactionDate>
+                  <Amount>-200</Amount>
+                  <RunningBalance>331.94000000000005</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190326 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-03-25T00:00:00</TransactionDate>
+                  <Amount>-362.26</Amount>
+                  <RunningBalance>531.94</RunningBalance>
+                  <Description>FIRSTMARK PAYMENTS 190322 **819924 BROWN, TONY</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Uncategorized</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-03-25T00:00:00</TransactionDate>
+                  <Amount>300</Amount>
+                  <RunningBalance>894.2</RunningBalance>
+                  <Description>TRANSFER FROM BROWN TONY ON 03/24 REF # PP05YWR9R2</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Miscellaneous Income</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-03-20T00:00:00</TransactionDate>
+                  <Amount>-20.17</Amount>
+                  <RunningBalance>594.2</RunningBalance>
+                  <Description>BILL PAY CITI CARDS ON-LINE xxxxxxxxxxx12303 ON 03-20</Description>
+                  <TypeCodes/>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Transfers &amp; Adjustments</Category>
+               </TransactionSummary5>
+               <TransactionSummary5>
+                  <TransactionDate>2019-03-19T00:00:00</TransactionDate>
+                  <Amount>400</Amount>
+                  <RunningBalance>614.37</RunningBalance>
+                  <Description>TRANSFER FROM BROWN TONY ON 03/19 REF # PP05Y88WLS</Description>
+                  <TypeCodes>dp</TypeCodes>
+                  <IsRefresh>false</IsRefresh>
+                  <Status>posted</Status>
+                  <Category>Miscellaneous Income</Category>
+               </TransactionSummary5>
+            </TransactionSummaries>
+            <ProcessedStatus>1</ProcessedStatus>
+            <IsStarted>true</IsStarted>
+            <IsCompleted>true</IsCompleted>
+            <Notes><![CDATA[<ul style="margin-top: 3px; margin-bottom: 0px;"><li><strong>Account holder name</strong> : neither first or last name were found</li><li><strong>Transactions</strong> : 90-days of transactions returned</li></ul>]]></Notes>
+            <Status>100</Status>
+            <StatusText>Successful</StatusText>
+            <StatusCodeColor>#228822</StatusCodeColor>
+            <LastRefreshErrorMessage/>
+            <IsError>false</IsError>
+            <ErrorMessage/>
+            <IsACHSupported>false</IsACHSupported>
+            <AccountExpenses>
+               <AccountExpense5>
+                  <Category>Fees &amp; Charges</Category>
+                  <Amount>58</Amount>
+                  <Percent>1.5094496754683198</Percent>
+               </AccountExpense5>
+               <AccountExpense5>
+                  <Category>Transfers &amp; Adjustments</Category>
+                  <Amount>97.68</Amount>
+                  <Percent>2.5421214534438876</Percent>
+               </AccountExpense5>
+               <AccountExpense5>
+                  <Category>Uncategorized</Category>
+                  <Amount>3686.78</Amount>
+                  <Percent>95.948428871087785</Percent>
+               </AccountExpense5>
+            </AccountExpenses>
+            <ChartsId>30571115</ChartsId>
+            <AdditionalAPI/>
+            <IsRequestRefreshable>false</IsRequestRefreshable>
+         </GetReportDetailFromRequestCode8Result>
+      </GetReportDetailFromRequestCode8Response>
+   </soap:Body>
+</soap:Envelope>

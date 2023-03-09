@@ -1,0 +1,5 @@
+theme/node_modules
+theme/build
+.idea
+mobile/node_modules
+mobile/dist

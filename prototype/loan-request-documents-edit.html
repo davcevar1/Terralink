@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Terrabank</title>
+ 
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="libraries/misc/dropzone.css" />
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    <style>
+        .dropzone {
+            min-height: inherit;
+        }
+        .dropzone .dz-message {
+            display: none;
+        }
+        .dropzone.dz-drag-hover {
+            border-color: #23527c;
+            z-index: 2;
+        }
+        .dropzone.dz-started .wf-note {
+            display: none;
+        }
+		.dropzone.list-group-item:hover .dz-remove {
+			color:#FFF;
+		}
+        body {
+            background-color: #f8f8f8;
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        .btn.btn-link {
+            color: #990000;
+        }
+
+        .btn.btn-default {
+            border-color: #990000;
+            color: #990000;
+        }
+
+        .btn.btn-primary,
+        .btn.btn-primary:hover {
+            background-color: #990000;
+            border-color: #990000;
+            color: #FFF;
+        }
+
+        .btn.btn-primary:hover {
+            border-color: #4e0000;
+        }
+
+        .form-control:focus {
+            border-color: #848484;
+            box-shadow: 0 0 0;
+        }
+
+        #navigation > .wf-content .wf-inbox,
+        #navigation > .wf-content .wf-navigation-wrapper {
+            background-color: #565656;
+        }
+
+        #navigation > .wf-content .list-group > .list-group-heading {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus,
+        .dropdown-menu > li > a:active,
+        .list-group .list-group-item:hover,
+        .list-group .list-group-item:focus,
+        .list-group .list-group-item.active,
+        #navigation > .wf-content > .list-group a:hover,
+        #navigation > .wf-content .btn-link:hover {
+            background-color: #990000;
+            color: #FFF;
+        }
+
+        #navigation > .wf-content .list-group > .wf-logo {
+            background-color: #990000;
+        }
+
+        .wf-title,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #990000;
+        }
+
+        .wf-steps-2 li.active,
+        .wf-steps-2 li.active::before {
+            background: #900;
+            border-color: #CCC;
+            color: #FFF;
+        }
+
+        .wf-steps-2 li:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .wf-steps-2 li:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .form-control[disabled],
+        fieldset[disabled] .form-control {
+            background: #f5f5f5;
+            border-color: #CCC;
+        }
+
+        fieldset[disabled] .control-label {
+            color: #CCC;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="libraries/misc/dropzone.js"></script>
+    <script>
+        $(function(){
+            Dropzone.autoDiscover = false;
+            $(".dropzone").dropzone({
+                url: "/file/post",
+                uploadMultiple: true,
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                acceptedFiles: 'application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+				init: function() {
+					this.on("error", function(file){
+						if (!file.accepted) {
+							this.removeFile(file);
+							alert('Selected file has not a valid format.');
+						}
+					});
+					var mockFile = { name: "document.pdf", size: 12345, type: 'application/pdf' };
+					this.addFile.call(this, mockFile);
+				}
+			});
+			$(document).on('click', '.dz-file-preview', function(e) {
+				$('#viewer').modal();
+			})
+        });
+        function clickParent(elm) {
+            debugger;
+        }
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" style="padding-top:0;">
+            <div id="main-content">
+                <form class="wf-fixed-bottom">
+                    <p><img src="images/logo_terrabank.png" class="img-responsive" style="max-height: 35px;" /></p>
+
+					<div class="alert alert-danger">
+						<div class="wf-flex wf-gutters wf-middle">
+							<div class="fa fa-exclamation-circle hidden-xs" style="font-size:28px;"></div>
+							<div class="wf-grow" style="font-size:14px;">
+								The following files have been rejected for not meeting the necessary requirements, please delete them and load new ones considering the reason of rejection of the current ones.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="list-group">
+							<div class="list-group-item dropzone dz-clickable">
+								<div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+									<div>
+										<span class="fa fa-file-text-o fa-2x"></span>
+									</div>
+									<div class="wf-grow">
+										<div class="wf-label">Two Years of Business Tax Returns</div>
+										<div class="text-danger"><strong>Rejection reason:</strong> This file was not updated, please upload a most recent document.</div>
+									</div>
+									<div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+								</div>
+							<div class="dz-default dz-message"><span>Drop files here to upload</span></div></div>
+							<div class="list-group-item dropzone dz-clickable">
+								<div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+									<div>
+										<span class="fa fa-file-text-o fa-2x"></span>
+									</div>
+									<div class="wf-grow">
+										<div class="wf-label">Three Months of Business Bank Statements</div>
+										<div class="text-danger"><strong>Rejection reason:</strong> This file was not updated, please upload a most recent document.</div>
+									</div>
+									<div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+								</div>
+							<div class="dz-default dz-message"><span>Drop files here to upload</span></div></div>
+						</div>
+						<div class="panel-footer wf-actions">
+							<a href="loan-request-step7.html" class="btn btn-primary">Upload documents now</a>
+						</div>
+					</div>
+
+				<p>Should you have any questions about your loan inquiry, please contact us at 1-800-448-4898.</p>
+				<p>Thank you for choosing <a href="https://www.terrabank.com/" style="font-weight:bold;">Terrabank, N.A.</a> for your financial needs.</p>
+
+				<p class="small text-muted">Notice: The Federal Equal Credit Opportunity Act prohibits creditors from discriminating against credit applicants on the basis of race, color, religion, national origin, sex, marital
+status, age (provided the applicant has the capacity to enter into a binding contract); because all or part of the applicant's income derives from any public assistance program; or
+because the applicant has in good faith exercised any right under the Consumer Credit Protection Act. The Federal agency that administers compliance with this law concerning this
+creditor is: Office of the Comptroller of the Currency, Customer Assistance Group, 1301 McKinney Avenue, Suite 3450, Houston, TX 77010.</p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<div id="viewer" class="modal fade">
+        <div class="modal-dialog" style="width:90%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Document.pdf</h4>
+                </div>
+                <div class="modal-body" style="padding:0;">
+                    <iframe src="libraries/pdfjs/web/viewer.html?file=../../../data/example.pdf" style="width:100%; height:450px; border:0;"></iframe>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

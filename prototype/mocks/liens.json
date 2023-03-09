@@ -1,0 +1,329 @@
+{
+  "LienJudgmentSearchResponseEx": {
+    "response": {
+      "Header": {
+        "TransactionId": "158871803R8124",
+        "Status": "0"
+      },
+      "RecordCount": "4",
+      "Records": {
+        "Record": [
+          {
+            "Debtors": {
+              "Debtor": {
+                "Addresses": {
+                  "Address": {
+                    "StreetName": "CORDSTON",
+                    "City": "KAFKA BEACH",
+                    "County": "OAKLAND",
+                    "State": "MI",
+                    "StreetNumber": "4714",
+                    "Zip5": "18283",
+                    "Zip4": "1514",
+                    "StreetSuffix": "AVE"
+                  }
+                },
+                "ParsedParties": {
+                  "Party": {
+                    "SSN": "77326xxxx",
+                    "Name": {
+                      "Last": "CRIMALI",
+                      "First": "MICHAEL",
+                      "Prefix": "MR",
+                      "Middle": "K"
+                    },
+                    "UniqueId": "999900078443",
+                    "PersonFilterId": "2513982709"
+                  }
+                },
+                "OriginName": "MICHAEL K CRIMALI"
+              }
+            },
+            "OriginFilingDate": {
+              "Day": "9",
+              "Month": "12",
+              "Year": "2008"
+            },
+            "Filings": {
+              "Filing": {
+                "OriginFilingDate": {
+                  "Day": "9",
+                  "Month": "12",
+                  "Year": "2008"
+                },
+                "Book": "40499",
+                "Type": "STATE TAX LIEN",
+                "Page": "874",
+                "AgencyState": "MI",
+                "Number": "BK40499PG874",
+                "AgencyCounty": "OAKLAND",
+                "Agency": "OAKLAND COUNTY REGISTER OF DEEDS"
+              }
+            },
+            "Amount": "1261",
+            "FilingJurisdiction": "MI",
+            "MatchedParty": {
+              "PartyType": "D",
+              "ParsedParty": {
+                "Last": "CRIMALI",
+                "First": "MICHAEL",
+                "Prefix": "MR",
+                "Middle": "K"
+              },
+              "Address": {
+                "StreetName": "CORDSTON",
+                "City": "KAFKA BEACH",
+                "State": "MI",
+                "StreetNumber": "4714",
+                "Zip5": "18283",
+                "Zip4": "1514",
+                "StreetSuffix": "AVE"
+              }
+            },
+            "ExternalKey": "HGBK40499PG8721261MIOAKC1",
+            "MultipleDefendant": "false",
+            "FilingJurisdictionName": "MICHIGAN",
+            "TMSId": "HGBK40499PG8721261MIOAKC1"
+          },
+          {
+            "IRSSerialNumber": "443449708",
+            "OriginFilingDate": {
+              "Day": "12",
+              "Month": "2",
+              "Year": "2008"
+            },
+            "Debtors": {
+              "Debtor": {
+                "Addresses": {
+                  "Address": {
+                    "StreetName": "CORDSTON",
+                    "City": "KAFKA BEACH",
+                    "County": "OAKLAND",
+                    "State": "MI",
+                    "StreetNumber": "4714",
+                    "Zip5": "18283",
+                    "Zip4": "1514",
+                    "StreetSuffix": "AVE"
+                  }
+                },
+                "ParsedParties": {
+                  "Party": {
+                    "SSN": "77326xxxx",
+                    "Name": {
+                      "Last": "CRIMALI",
+                      "First": "MICHAEL",
+                      "Prefix": "MR",
+                      "Middle": "K"
+                    },
+                    "UniqueId": "999900078443",
+                    "PersonFilterId": "2513982709"
+                  }
+                },
+                "OriginName": "MICHAEL K CRIMALI"
+              }
+            },
+            "Filings": {
+              "Filing": {
+                "OriginFilingDate": {
+                  "Day": "12",
+                  "Month": "2",
+                  "Year": "2008"
+                },
+                "Book": "40335",
+                "Type": "FEDERAL TAX LIEN",
+                "Page": "494",
+                "AgencyState": "MI",
+                "AgencyCounty": "OAKLAND",
+                "Agency": "OAKLAND COUNTY REGISTER OF DEEDS"
+              }
+            },
+            "Amount": "19249",
+            "FilingJurisdiction": "MI",
+            "MatchedParty": {
+              "PartyType": "D",
+              "ParsedParty": {
+                "Last": "CRIMALI",
+                "First": "MICHAEL",
+                "Prefix": "MR",
+                "Middle": "K"
+              },
+              "Address": {
+                "StreetName": "CORDSTON",
+                "City": "KAFKA BEACH",
+                "State": "MI",
+                "StreetNumber": "4714",
+                "Zip5": "18283",
+                "Zip4": "1514",
+                "StreetSuffix": "AVE"
+              }
+            },
+            "ExternalKey": "HG769268285",
+            "MultipleDefendant": "false",
+            "FilingJurisdictionName": "MICHIGAN",
+            "TMSId": "HG769268285"
+          },
+          {
+            "OriginFilingDate": {
+              "Day": "5",
+              "Month": "7",
+              "Year": "2006"
+            },
+            "ExternalKey": "HGBK37773PG4536190MIOAKC1",
+            "MultipleDefendant": "false",
+            "ReleaseDate": {
+              "Day": "7",
+              "Month": "8",
+              "Year": "2008"
+            },
+            "FilingJurisdictionName": "MICHIGAN",
+            "IRSSerialNumber": "498070606",
+            "Debtors": {
+              "Debtor": {
+                "Addresses": {
+                  "Address": {
+                    "StreetName": "CORDSTON",
+                    "City": "KAFKA BEACH",
+                    "County": "OAKLAND",
+                    "State": "MI",
+                    "StreetNumber": "4714",
+                    "Zip5": "18283",
+                    "Zip4": "1514",
+                    "StreetSuffix": "AVE"
+                  }
+                },
+                "ParsedParties": {
+                  "Party": {
+                    "SSN": "77326xxxx",
+                    "Name": {
+                      "Last": "CRIMALI",
+                      "First": "MICHAEL",
+                      "Prefix": "MR",
+                      "Middle": "K"
+                    },
+                    "UniqueId": "999900078443",
+                    "PersonFilterId": "2513982709"
+                  }
+                },
+                "OriginName": "MICHAEL K CRIMALI"
+              }
+            },
+            "OriginFilingNumber": "BK37773PG453",
+            "CertificateNumber": "298070606",
+            "Amount": "6190",
+            "FilingJurisdiction": "MI",
+            "MatchedParty": {
+              "PartyType": "D",
+              "ParsedParty": {
+                "Last": "CRIMALI",
+                "First": "MICHAEL",
+                "Prefix": "MR",
+                "Middle": "K"
+              },
+              "Address": {
+                "StreetName": "CORDSTON",
+                "City": "KAFKA BEACH",
+                "State": "MI",
+                "StreetNumber": "4714",
+                "Zip5": "18283",
+                "Zip4": "1514",
+                "StreetSuffix": "AVE"
+              }
+            },
+            "Filings": {
+              "Filing": {
+                "Type": "FEDERAL TAX LIEN RELEASE",
+                "OriginFilingDate": {
+                  "Day": "5",
+                  "Month": "7",
+                  "Year": "2006"
+                },
+                "Page": "534",
+                "Number": "BK40695PG534",
+                "AgencyState": "MI",
+                "Book": "40695"
+              }
+            },
+            "TMSId": "HGBK37773PG4536190MIOAKC1"
+          },
+          {
+            "IRSSerialNumber": "498070606",
+            "OriginFilingDate": {
+              "Day": "5",
+              "Month": "7",
+              "Year": "2006"
+            },
+            "Debtors": {
+              "Debtor": {
+                "Addresses": {
+                  "Address": {
+                    "StreetName": "CORDSTON",
+                    "City": "KAFKA BEACH",
+                    "County": "OAKLAND",
+                    "State": "MI",
+                    "StreetNumber": "4714",
+                    "Zip5": "18283",
+                    "Zip4": "1514",
+                    "StreetSuffix": "AVE"
+                  }
+                },
+                "ParsedParties": {
+                  "Party": {
+                    "SSN": "77326xxxx",
+                    "Name": {
+                      "Last": "CRIMALI",
+                      "First": "MICHAEL",
+                      "Prefix": "MR",
+                      "Middle": "K"
+                    },
+                    "UniqueId": "999900078443",
+                    "PersonFilterId": "2513982709"
+                  }
+                },
+                "OriginName": "MICHAEL K CRIMALI"
+              }
+            },
+            "Filings": {
+              "Filing": {
+                "OriginFilingDate": {
+                  "Day": "5",
+                  "Month": "7",
+                  "Year": "2006"
+                },
+                "Book": "37773",
+                "Type": "FEDERAL TAX LIEN",
+                "Page": "453",
+                "AgencyState": "MI",
+                "AgencyCounty": "OAKLAND",
+                "Agency": "OAKLAND COUNTY REGISTER OF DEEDS"
+              }
+            },
+            "Amount": "6190",
+            "FilingJurisdiction": "MI",
+            "MatchedParty": {
+              "PartyType": "D",
+              "ParsedParty": {
+                "Last": "CRIMALI",
+                "First": "MICHAEL",
+                "Prefix": "MR",
+                "Middle": "K"
+              },
+              "Address": {
+                "StreetName": "CORDSTON",
+                "City": "KAFKA BEACH",
+                "State": "MI",
+                "StreetNumber": "4714",
+                "Zip5": "18283",
+                "Zip4": "1514",
+                "StreetSuffix": "AVE"
+              }
+            },
+            "ExternalKey": "HG452022529",
+            "MultipleDefendant": "false",
+            "FilingJurisdictionName": "MICHIGAN",
+            "TMSId": "HG452022529"
+          }
+        ]
+      }
+    }
+  }
+}

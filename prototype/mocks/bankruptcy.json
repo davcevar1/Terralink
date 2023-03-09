@@ -1,0 +1,191 @@
+{
+  "BankruptcySearch2ResponseEx": {
+    "response": {
+      "Header": {
+        "TransactionId": "158870443R9288",
+        "Status": "0"
+      },
+      "Records": { 
+        "Record": [
+          {
+            "Bankruptcy": {
+              "TMSId": "BKAK0040900401",
+              "FilingDate": {
+                "Day": "26",
+                "Month": "08",
+                "Year": "2012"
+              },
+              "OriginalFilingDate": {
+                "Day": "26",
+                "Month": "08",
+                "Year": "2012"
+              },
+              "Debtors": {
+                "Debtor": {
+                  "SSN": "77324xxxx",
+                  "AppendedSSN": "77324xxxx",
+                  "Names": {
+                    "Name": {
+                      "Last": "KIRKARZI",
+                      "Type": "P",
+                      "First": "HOWARD",
+                      "Middle": "A"
+                    }
+                  },
+                  "Addresses": {
+                    "Address": {
+                      "OrigStreetAddress1": "3701 JOHANSON",
+                      "StreetName": "JOHANSON",
+                      "City": "WOLFHILL",
+                      "State": "AK",
+                      "UnitNumber": "10C",
+                      "StreetNumber": "3701",
+                      "Zip5": "10813",
+                      "Zip4": "5819",
+                      "StreetSuffix": "ST",
+                      "UnitDesignation": "APT"
+                    }
+                  },
+                  "BusinessId": "0",
+                  "UniqueId": "999913497366"
+                }
+              },
+              "MatchedParty": {
+                "Address": {
+                  "OrigStreetAddress1": "3701 JOHANSON",
+                  "StreetName": "JOHANSON",
+                  "City": "WOLFHILL",
+                  "State": "AK",
+                  "UnitNumber": "10C",
+                  "StreetNumber": "3701",
+                  "Zip5": "10813",
+                  "Zip4": "5819",
+                  "StreetSuffix": "ST",
+                  "UnitDesignation": "APT"
+                },
+                "ParsedParty": {
+                  "Last": "KIRKARZI",
+                  "First": "HOWARD",
+                  "Middle": "A"
+                }
+              },
+              "CourtName": "ALASKA - JUNEAU",
+              "OriginalChapter": "7",
+              "ExternalKey": "BKAK0040900401",
+              "FilerType": "INDIVIDUAL",
+              "CourtLocation": "JUNEAU",
+              "CourtCode": "AK003",
+              "CaseNumber": "xxx0342"
+            }
+          },
+          {
+            "Bankruptcy": {
+              "CorpFlag": "N",
+              "ExternalKey": "BKAK0010100435",
+              "FilerType": "JOINT",
+              "Disposition": "Discharged",
+              "CaseNumber": "xxx0435",
+              "FilingDate": {
+                "Day": "07",
+                "Month": "09",
+                "Year": "2001"
+              },
+              "Debtors": {
+                "Debtor": [
+                  {
+                    "SSN": "77324xxxx",
+                    "AppendedSSN": "77324xxxx",
+                    "Names": {
+                      "Name": {
+                        "Last": "KIRKARZI",
+                        "Type": "P",
+                        "First": "HOWARD",
+                        "Middle": "A"
+                      }
+                    },
+                    "Addresses": {
+                      "Address": {
+                        "OrigStreetAddress1": "3701 JOHANSON",
+                        "StreetName": "JOHANSON",
+                        "City": "WOLFHILL",
+                        "State": "AK",
+                        "UnitNumber": "10C",
+                        "StreetNumber": "3701",
+                        "Zip5": "10813",
+                        "Zip4": "5819",
+                        "StreetSuffix": "ST",
+                        "UnitDesignation": "APT"
+                      }
+                    },
+                    "BusinessId": "0",
+                    "UniqueId": "999913497366"
+                  },
+                  {
+                    "SSN": "77323xxxx",
+                    "AppendedSSN": "77323xxxx",
+                    "Names": {
+                      "Name": {
+                        "Last": "KIRKARZI",
+                        "Type": "S",
+                        "First": "ROWENA",
+                        "Middle": "B"
+                      }
+                    },
+                    "Addresses": {
+                      "Address": {
+                        "OrigStreetAddress1": "3701 JOHANSON",
+                        "StreetName": "JOHANSON",
+                        "City": "WOLFHILL",
+                        "State": "AK",
+                        "UnitNumber": "10C",
+                        "StreetNumber": "3701",
+                        "Zip5": "10813",
+                        "Zip4": "5819",
+                        "StreetSuffix": "ST",
+                        "UnitDesignation": "APT"
+                      }
+                    },
+                    "BusinessId": "0",
+                    "UniqueId": "999968317252"
+                  }
+                ]
+              },
+              "OriginalFilingDate": {
+                "Day": "07",
+                "Month": "09",
+                "Year": "2001"
+              },
+              "FilingType": "INDIVIDUAL",
+              "MatchedParty": {
+                "Address": {
+                  "OrigStreetAddress1": "3701 JOHANSON",
+                  "StreetName": "JOHANSON",
+                  "City": "WOLFHILL",
+                  "State": "AK",
+                  "UnitNumber": "10C",
+                  "StreetNumber": "3701",
+                  "Zip5": "10813",
+                  "Zip4": "5819",
+                  "StreetSuffix": "ST",
+                  "UnitDesignation": "APT"
+                },
+                "ParsedParty": {
+                  "Last": "KIRKARZI",
+                  "First": "HOWARD",
+                  "Middle": "A"
+                }
+              },
+              "Chapter": "7",
+              "CourtName": "ALASKA - ANCHORAGE",
+              "OriginalChapter": "7",
+              "CourtLocation": "ANCHORAGE",
+              "CourtCode": "AK001",
+              "TMSId": "BKAK0010100435"
+            }
+          }
+        ]
+      },
+      "RecordCount": "2"
+    }
+  }
+}

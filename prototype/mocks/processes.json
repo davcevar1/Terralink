@@ -1,0 +1,204 @@
+[{
+  "name": "Fast Loan Request",
+  "statuses": [{
+    "name": "Pending",
+    "nameClass": "text-muted",
+    "amount": "$125K",
+    "requestCount": 12
+  }, {
+    "name": "Approved",
+    "nameClass": "text-success",
+    "amount": "$1.2M",
+    "requestCount": 54
+  }, {
+    "name": "Rejected",
+    "nameClass": "text-danger",
+    "amount": "$23K",
+    "requestCount": 3
+  }],
+  "steps": [{
+      "id": 1,
+      "name": "Ingreso",
+      "statuses": [{
+        "name": "Pending",
+        "nameClass": "text-muted",
+        "amount": "$40K",
+        "requestCount": 4,
+        "requestData": [
+          {"alternateCode": "ALOAN.1.17.010846", "businessName": "Ambacar, Great Wall Ecuador ", "taxId":"145643245", "startAt": "2018-03-28", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010848", "businessName": "Autoasia", "taxId":"17654876", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010849", "businessName": "Metrocar", "taxId":"124356529", "startAt": "2018-04-01", "status": "Pending"}
+        ]
+      }, {
+        "name": "Rejected",
+        "nameClass": "text-danger",
+        "amount": "---",
+        "requestCount": 0
+      }]
+    },
+    {
+      "id": 2,
+      "name": "Gestión documental",
+      "statuses": [{
+        "name": "Pending",
+        "nameClass": "text-muted",
+        "amount": "$42K",
+        "requestCount": 4,
+        "requestData": [
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010848", "businessName": "Autoasia", "taxId":"17654876", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010846", "businessName": "Ambacar, Great Wall Ecuador ", "taxId":"145643245", "startAt": "2018-03-28", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010849", "businessName": "Metrocar", "taxId":"124356529", "startAt": "2018-04-01", "status": "Pending"}
+        ]
+      }, {
+        "name": "Rejected",
+        "nameClass": "text-danger",
+        "amount": "$4.5K",
+        "requestCount": 1,
+        "requestData": [
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Rejected"}
+        ]
+      }]
+    },
+    {
+      "id": 3,
+      "name": "Aprobación / Aceptación",
+      "statuses": [{
+        "name": "Pending",
+        "nameClass": "text-muted",
+        "amount": "$30K",
+        "requestCount": 3,
+        "requestData": [
+          {"alternateCode": "ALOAN.1.17.010849", "businessName": "Metrocar", "taxId":"124356529", "startAt": "2018-04-01", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010846", "businessName": "Ambacar, Great Wall Ecuador ", "taxId":"145643245", "startAt": "2018-03-28", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010848", "businessName": "Autoasia", "taxId":"17654876", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Pending"}
+        ]
+      }, {
+        "name": "Rejected",
+        "nameClass": "text-danger",
+        "amount": "$18.5K",
+        "requestCount": 2,
+        "requestData": [
+          {"alternateCode": "ALOAN.1.17.010848", "businessName": "Autoasia", "taxId":"17654876", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Pending"}
+        ]
+      }]
+    },
+    {
+      "id": 4,
+      "name": "Instrumentación",
+      "statuses": [{
+        "name": "Pending",
+        "nameClass": "text-muted",
+        "amount": "11K",
+        "requestCount": 4,
+        "requestData": [
+          {"alternateCode": "ALOAN.1.17.010846", "businessName": "Frank's Auto Repair", "taxId":"182336455", "startAt": "2018-03-28", "status": "Pending"}
+        ]
+      }, {
+        "name": "Rejected",
+        "nameClass": "text-danger",
+        "amount": "---",
+        "requestCount": 0
+      }]
+    },
+    {
+      "id": 5,
+      "name": "Finalizado",
+      "statuses": [{
+        "name": "Approved",
+        "nameClass": "text-success",
+        "amount": "$1.2M",
+        "requestCount": 54,
+        "requestData": [
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010848", "businessName": "Autoasia", "taxId":"17654876", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010846", "businessName": "Ambacar, Great Wall Ecuador ", "taxId":"145643245", "startAt": "2018-03-28", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010849", "businessName": "Metrocar", "taxId":"124356529", "startAt": "2018-04-01", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010848", "businessName": "Autoasia", "taxId":"17654876", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010846", "businessName": "Ambacar, Great Wall Ecuador ", "taxId":"145643245", "startAt": "2018-03-28", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010849", "businessName": "Metrocar", "taxId":"124356529", "startAt": "2018-04-01", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010847", "businessName": "Concesionaria Qauto", "taxId":"182336455", "startAt": "2018-03-29", "status": "Pending"},
+          {"alternateCode": "ALOAN.1.17.010848", "businessName": "Autoasia", "taxId":"17654876", "startAt": "2018-03-29", "status": "Pending"}
+        ]
+      }]
+    }
+  ]
+}, {
+  "name": "Account Request",
+  "statuses": [{
+    "name": "Pending",
+    "nameClass": "text-muted",
+    "amount": "---",
+    "requestCount": 2
+  }, {
+    "name": "Approved",
+    "nameClass": "text-success",
+    "amount": "$4.34M",
+    "requestCount": 23
+  }, {
+    "name": "Rejected",
+    "nameClass": "text-danger",
+    "amount": "---",
+    "requestCount": 1
+  }],
+  "steps": [{
+      "id": 1,
+      "name": "Ingreso",
+      "statuses": [{
+        "name": "Pending",
+        "nameClass": "text-muted",
+        "amount": "---",
+        "requestCount": 12
+      }, {
+        "name": "Rejected",
+        "nameClass": "text-danger",
+        "amount": "---",
+        "requestCount": 0
+      }]
+    },
+    {
+      "id": 2,
+      "name": "Gestión documental",
+      "statuses": [{
+        "name": "Pending",
+        "nameClass": "text-muted",
+        "amount": "---",
+        "requestCount": 1
+      }, {
+        "name": "Rejected",
+        "nameClass": "text-danger",
+        "amount": "---",
+        "requestCount": 0
+      }]
+    },
+    {
+      "id": 3,
+      "name": "Aprobación / Aceptación",
+      "statuses": [{
+        "name": "Pending",
+        "nameClass": "text-muted",
+        "amount": "$125K",
+        "requestCount": 1
+      }, {
+        "name": "Rejected",
+        "nameClass": "text-danger",
+        "amount": "$23K",
+        "requestCount": 1
+      }]
+    },
+    {
+      "id": 5,
+      "name": "Finalizado",
+      "statuses": [{
+        "name": "Approved",
+        "nameClass": "text-success",
+        "amount": "$4.34M",
+        "requestCount": 23
+      }]
+    }
+  ]
+}]

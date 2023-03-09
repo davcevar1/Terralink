@@ -1,0 +1,31 @@
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+
+.featured {
+  background-color: #4d4d4d;
+  .carousel-item {
+    a {
+      height: 400px;
+      @include media-breakpoint-down(sm) {
+        height: 160px;
+      }
+      background-size: cover;
+      background-position: center;
+      display: block;
+    }
+  }
+}
+.categories {
+  margin-top: -20px;
+  margin-bottom: 2rem;
+  padding: 0.2rem;
+}
+.brands {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  grid-gap: 15px;
+}

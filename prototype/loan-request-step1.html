@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Terrabank</title>
+
+  <!-- To disable compatibility mode in Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Mobile tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="themes/mainstreet.css" />
+  <link rel="stylesheet" href="loan-request-terra.css" />
+  <style>
+    .wf-validation-message {
+      position: -webkit-sticky;
+      position: sticky;
+      display: block;
+      top: -5px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 99999;
+      transition: max-height .3s, padding .3s;
+      max-height: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+    }
+    .has-error .wf-validation-message {
+      max-height: 100px;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body class="wf-shell" ng-controller="controller">
+  <div id="shell" class="wf-view" ng-cloak>
+    <div class="wf-content wf-fixed-top" style="padding-top:0;">
+      <div id="main-content">
+        <form id="step1" class="wf-fixed-bottom">
+          <div class="wf-flex wf-gutters wf-middle" style="margin-bottom:20px;">
+            <div class="wf-grow">
+              <div style="max-width: 300px;"><img src="images/logo_terrabank.png" class="img-responsive" /></div>
+            </div>
+            <!-- Seccion: unicamente visible si el usuario no esta autenticado -->
+            <div><a href="/web/lead-help"><span class="glyphicon glyphicon-question-sign"></span> <span class="hidden-xs">Help</span></a></div>
+            <!-- /Seccion -->
+          </div>
+          <div class="wf-validation-message alert alert-danger">There are some validation errors, verify that all the fields that are marked with red</div>
+          <div>
+            <ul class="wf-steps-2" style="margin-top:0;">
+              <li ng-repeat="step in steps" ng-class="{active:lastStep>=($index+1), current:currentStep==($index+1)}">
+                <a ng-if="lastStep>$index" ng-href="{{ step.url }}"><span class="{{ step.icon }}"></span> <span class="hidden-xs">{{ step.label }}</span></a>
+                <div ng-if="lastStep<=$index"><span class="{{ step.icon }}"></span> <span class="hidden-xs">{{ step.label }}</span></div>
+              </li>
+            </ul>
+          </div>
+          <p class="lead" style="margin:0;">Terrabank is committed to helping our Small Business community grow.</p>
+          <p class="lead">Apply today and get instantly pre-approved.</p>
+          <div>
+            <p style="font-weight:bold; font-size:12px; color:#990000; text-align:right;">* Indicates required field</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Are you a Terrabank customer?</div>
+                  <div class="wf-control wf-flex wf-middle">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customer-yes" name="customer" class="custom-control-input">
+                      <label class="custom-control-label" for="customer-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customer-no" name="customer" class="custom-control-input">
+                      <label class="custom-control-label" for="customer-no">No</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Loan Type</div>
+                  <div class="wf-control wf-flex wf-middle">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="loantype-loan" name="loantype" class="custom-control-input">
+                      <label class="custom-control-label" for="loantype-loan">Loan</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="loantype-credit-line" name="loantype" class="custom-control-input">
+                      <label class="custom-control-label" for="loantype-credit-line">Credit line</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12"><hr style="border-color: #CCC; margin-bottom:40px;" /></div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Loan Amount Requested</div>
+                  <div class="wf-control">
+                    <input type="range" min="25000" max="150000" step="25000" ng-model="loanAmountRequestedValue" />
+                    <div class="wf-flex wf-middle" style="min-height: 20px;">
+                      <div class="wf-grow text-muted small">$25,000</div>
+                      <div style="position: absolute; right: 15px; top: 1px;">{{ formatValue(loanAmountRequestedValue) }}</div>
+                      <div class="wf-grow text-muted text-right small">$150,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Years in Business</div>
+                  <div class="wf-control">
+                    <input type="range" min="0" max="5" step="1" ng-model="yearsInBusinessIndex" />
+                    <div class="wf-flex wf-middle" style="min-height: 20px;">
+                      <div class="wf-grow text-muted small">Less than 2 Years</div>
+                      <div style="position: absolute; right: 15px; top: 1px;">{{ getValue(yearsInBusinessIndex, 'yearsInBusiness') }}</div>
+                      <div class="wf-grow text-muted text-right small">21 or More</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Business Annual Revenue <button type="button" id="revenue-tooltip" class="btn btn-link" style="padding:0;" tabindex="-1"><span class="glyphicon glyphicon-question-sign"></span></button></div>
+                  <div class="wf-control">
+                    <input type="range" min="100000" max="1000000" step="25000" ng-model="businessAnnualRevenueValue" />
+                    <div class="wf-flex">
+                      <div class="wf-grow text-muted small">$100,000</div>
+                      <div style="position: absolute; right: 15px; top: 1px;">{{ formatValue(businessAnnualRevenueValue) }}</div>
+                      <div class="wf-grow text-muted text-right small">$1,000,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Business Annual Expenses <button type="button" id="expenses-tooltip" class="btn btn-link" style="padding:0;" tabindex="-1"><span class="glyphicon glyphicon-question-sign"></span></button></div>
+                  <div class="wf-control">
+                    <input type="range" min="100000" max="2000000" step="25000" ng-model="businessAnnualExpensesValue" />
+                    <div class="wf-flex">
+                      <div class="wf-grow text-muted small">$100,000</div>
+                      <div style="position: absolute; right: 15px; top: 1px;">{{ formatValue(businessAnnualExpensesValue) }}</div>
+                      <div class="wf-grow text-muted text-right small">$2,000,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12"><hr style="border-color: #CCC;" /></div>
+              <div class="col-sm-12">
+                <div class="form-group" style="font-size: 16px; margin-top: 20px;">Enter your email and password to register. Should you need more time to complete your loan request, come back anytime and complete your application.</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Email Address</div>
+                  <div class="wf-control">
+                    <div class="cb-error-note">Email address already exists</div>
+                    <input name="email" type="email" class="form-control" required />
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Confirm Email Address</div>
+                  <div class="wf-control">
+                    <input name="confirm-email" type="email" class="form-control" required />
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Password <button type="button" id="password-tooltip" class="btn btn-link" style="padding:0;" tabindex="-1"><span class="glyphicon glyphicon-question-sign"></span></button></div>
+                  <div class="wf-control">
+                    <div>
+                      <input name="password" type="password" class="form-control upper lower numbers symbols no-spaces" minlength="10" required />
+                      <span class="input-group-addon hidden"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group wf-required">
+                  <div class="control-label">Confirm Password</div>
+                  <div class="wf-control">
+                    <input name="confirm-password" type="password" class="form-control" required />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wf-flex" style="border-top: 1px solid #DDD; padding-top: 15px; margin-top: 30px;">
+            <div class="wf-grow">
+              <a href="https://www.fdic.gov/" target="_blank" title="Federal Deposit Insurance Corporation"><img src="images/logo-fdic.svg" style="height:25px;" /></a>
+            </div>
+            <div>
+              <a href="https://www.fdic.gov/regulations/laws/rules/2000-6000.html" target="_blank" title="Equal Housing Lender"><img src="images/logo-ehl.svg" style="height:25px;width:118px;" /></a>
+            </div>
+          </div>
+
+          <div class="wf-toolbar wf-toolbar-bottom wf-center">
+            <div class="wf-actions wf-flex wf-gutters wf-center wf-grow">
+              <button type="button" class="btn btn-default wf-grow-sm-down">Save for later</button>
+              <button type="submit" class="btn btn-primary wf-grow-sm-down">Next <span class="fa fa-angle-right"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="password-requirement" class="hidden">
+    <strong>Password requirements:</strong>
+    <ul style="white-space:nowrap;">
+      <li>Minimum 10 characters</li>
+      <li>At least one lower case letter [a-z]</li>
+      <li>At least one upper case letter [A-Z]</li>
+      <li>At least one numeral [0-9]</li>
+      <li>At least one symbol [!@#^&*()+_.{}?-]</li>
+      <li>No spaces</li>
+    </ul>
+  </div>
+  <div id="expenses-tooltip-content" class="hidden">
+    An <strong>expense</strong> incurred in carrying out an organization's day-to-day activities, but not directly associated with production. <strong>Expenses</strong> include such things as payroll, sales commissions, employee benefits and pension contributions,
+    transportation and travel, amortization and depreciation, rent, repairs, and taxes.
+  </div>
+  <div id="revenue-tooltip-content" class="hidden">
+    <strong>Revenue</strong> is the amount of money that a company actually receives during a specific period, including discounts and deductions for returned merchandise. It is the "top line" or "gross income" figure from which costs are subtracted to
+    determine net income.
+  </div>
+
+  <script>
+    var librariesUrl = 'libraries/';
+  </script>
+  <script src="libraries/require.config.js"></script>
+  <script data-main="loan-request" src="libraries/require/require.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="e7846807619d6cb78f32803ea3b4b5da8c25e9a2" datatype="html">
+        <source>Ayuda</source>
+        <target>Help</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="650fc7ff88b6444033bd121da1743aa6b44713ee" datatype="html">
+        <source>Carrito</source><target>Cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e657507a4e9ff27ce501080e9e0b93cf6811a185" datatype="html">
+        <source>Total:</source><target>Total:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">213</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0d076c9ebac085c1b1efe9cd659a9709ccde7020" datatype="html">
+        <source>Ver Carrito</source><target>View cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4289895072698c5c584d5236312b425e2162732f" datatype="html">
+        <source>Pagar</source><target>Confirm purchase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="204a37d3714060dbf9e821dfc8911bfb8f9f5abe" datatype="html">
+        <source>
+        Carrito vacio
+      </source><target>Empty cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="66e9daee15cbf831a40b0f4c5df884ec139f710f" datatype="html">
+        <source>Ingresar</source><target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e369e13629132e32dcd958b82261059243f21d58" datatype="html">
+        <source>Contraseña</source><target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f700ebd76566a570f489129481d888abfb83d010" datatype="html">
+        <source>Olvidé mi contraseña</source><target>I forgot my password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="55d5c14ef0234d92869512c415172b9c275ee222" datatype="html">
+        <source>Crear cuenta</source><target>Create account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7f8d5b2abf723954b4468331d05c06cb635ea0ba" datatype="html">
+        <source>Usuario:</source><target>User:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0aab85cf1c300fa7b2f127dcfb0149ef111b662c" datatype="html">
+        <source>Rol:</source><target>Rol:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="201ed23a802cc88da5bfc7d737ccf560c9c80b96" datatype="html">
+        <source>Ver mis ordenes</source><target>View my orders</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1ec80d1cecc8c466276dce7fc8caa95a6818ffe" datatype="html">
+        <source>Cerrar sesión</source><target>Logout</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5d6e2342e48d75e405f0fc141ab3e4a93c872dbb" datatype="html">
+        <source>Editar</source><target>Edit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/order-item/order-item.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c0cfd3e88d5d6af1d5f23914fb74cb353a83811" datatype="html">
+        <source>Eliminar</source><target>Delete</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/order-item/order-item.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="35ad82bbaa7e8b24c1bdf03f3260422c5910a1fb" datatype="html">
+        <source>Aceptar</source><target>Confirm</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/order-item/order-item.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e8d22cdef9f5780e31395340125d873f9df518c3" datatype="html">
+        <source>Cancelar</source><target>Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/order-item/order-item.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">200</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">196</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="835c421495300b9a42dec5a2f962798503ab1db5" datatype="html">
+        <source>
+  Ordenes de compra
+</source><target>Previous purchases</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/orders/orders.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56871fd28e36c1bdd17b657d9c8dbd12773ed332" datatype="html">
+        <source>Vendedores</source><target>Merchants</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/orders/orders.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="708ca83a681f5021838b992b751b4fb1b43544cd" datatype="html">
+        <source>Estados</source><target>Status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/orders/orders.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5dd2493fc6d99342efbac667513b6c872df10945" datatype="html">
+        <source>Marcar como entregado</source><target>Mark as delivered</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="69959d23447d7ad496806a8533a03f351e22a3ca" datatype="html">
+        <source>Anular</source><target>Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b5bc69dca89c3487cf00299b2e5b42fb2589149a" datatype="html">
+        <source>
+    Esperando confirmación del negocio ...
+  </source><target>Waiting for confirmation from the business...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a8d1cd185fe97f48dd420e1bdb91637ca503e839" datatype="html">
+        <source>Carlos Romero de John Deere ha indicado que ha entregado este pedido.</source>
+        <target>Carlos Romero from John Deere has indicated the order was received.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="67da1043d5a8a2f968bbab91010542940d41718b" datatype="html">
+        <source>Al aceptar confirmas que se cobre con tu línea de crédito en Mainstreet Bank.</source>
+        <target>By accepting, you are confirming your line of credit with MainStreet Bank.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a8387c8ad811ecb5ad300b409d66dc14fda7a3fd" datatype="html">
+        <source>Rechazar</source><target>Reject</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a6e7931cea232233ec2489b02573c6afa69e80c3" datatype="html">
+        <source>Pedido entregado</source><target>Order received</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="823f07eca905b881d44a44e2f4392dfafb1f2114" datatype="html">
+        <source>Transacción ejecutada exitosamente.</source><target>Transaction executed successfully.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aaa41ec702802de98e1cfb0f6c47f2da2abb5f0b" datatype="html">
+        <source>Monto disponible actual en su línea de crédito: $50,000 USD.</source>
+        <target>Amount available in you line of credit: $50,000 USD.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="87b2c5ebeafd8656eacd225efebd6108e71efb02" datatype="html">
+        <source>Transacción rechazada.</source><target>Transaction declined.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2dcfed58ce6e68074cd6b1f33624800f6e20cb0a" datatype="html">
+        <source>Cliente:</source><target>Client:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8d68cf2cfbebb8a6981fed8e272ab86aab9e305e" datatype="html">
+        <source>Fecha:</source><target>Date:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6af459f444da8b576f25fc9727b913ed7e6aea51" datatype="html">
+        <source>Estado:</source><target>Status:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b82dcdc3b188d150f4596b5112f416f5dcbe0fb9" datatype="html">
+        <source>Subtotal:</source><target>Subtotal:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2498f9782cfe035866d1f2bab606338f5e73a704" datatype="html">
+        <source>Impuestos:</source><target>Taxes:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d70e87ce1ed108f3fbee40454aa5561c03a293e4" datatype="html">
+        <source>PIN de confirmación</source><target>Confirmation PIN</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d55edb8252568297e60143f0cd552aefc9ba430d" datatype="html">
+        <source>Autorizar</source><target>Authorize</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/order/order.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/order/order.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0ac5848d3ee8b22b4f286fbd661a0649e42fe5ca" datatype="html">
+        <source>Siguiente</source><target>Next</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/catalog/catalog.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b7783b824c69f5a208b048b18c767b85b401d3a4" datatype="html">
+        <source>Precio:</source><target>Price:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f37b5b542e293d96a54fbd94e0c7edb934f4edd" datatype="html">
+        <source>Seleccione un color</source><target>Select color</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c938dc19531dba7517d8eaeaa5fd3c39077fa7bd" datatype="html">
+        <source>Green</source><target>Green</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e83428a8f0aea8e131aa94179980c36fd7caeaad" datatype="html">
+        <source>Seleccione una tipo</source><target>Select type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="077e90416bdae39a40441d0b94c5a9e8fcad4514" datatype="html">
+        <source>Normal</source><target>Normal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dbef27250a0ebcd59b1dc99e6bb07ef122e00998" datatype="html">
+        <source>Potencia 106 hp / 79 kW</source><target>Horse Power 106 / 79 KW</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b0e611b2bfac70d1af43295307e558cbf9f48e57" datatype="html">
+        <source>Descripción</source><target>Description:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="37d767142140ff45ef3e54d8fc90df69359ee330" datatype="html">
+        <source>También te puede interesar</source><target>You may also be interested in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/product/product.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="579e185ee0ae6dbcd15f7dfbfab8c152fe7ef676" datatype="html">
+        <source>Carrito de compras</source><target>Shopping cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="633361218d8c27a9654b563d398b4c146dfadcb6" datatype="html">
+        <source>Continuar comprando</source><target>Continue shopping</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e0a1be9d1f247c2c0f27b4a9f05e14e79268281f" datatype="html">
+        <source>No tienes productos en tu carrito todavía</source>
+        <target>You don't have products in your cart yet</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/cart/cart.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="85215be3f9c38b03a89f078073d7d06f9cd3c88b" datatype="html">
+        <source>Identificación</source><target>Identification:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ce481c62df3e14538e1d2cd8f14f8bb211c60ba3" datatype="html">
+        <source>Cédula</source><target>ID</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source><target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="415cca8b6932b706442d0681714ad680ed11b4b6" datatype="html">
+        <source>Teléfono</source><target>Phone number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="98a81718fc4f26455d4a8564c240c691b34714e2" datatype="html">
+        <source>Para este método de pago es requerido que enlace su cuenta de banco.</source>
+        <target>For this payment method, it is required to link your bank account.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0090bd2e2e07693be3c9eca71e37e9c53fe40eb2" datatype="html">
+        <source>Enlazar cuenta</source>
+        <target>Link account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="42a6cab40201d776649afd604ca6337f0c224898" datatype="html">
+        <source>XXXX-XXXX-XXXX-3456 - Compras maquinaria</source>
+        <target>XXXX-XXXX-XXXX-3456 - Machinery Purchases</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e97bf5110a7c93e22179d7fa045ece3caaac434f" datatype="html">
+        <source>XXXX-XXXX-XXXX-8765 - Gastos corrientes</source>
+        <target>XXXX-XXXX-XXXX-8765 - Monthly expenses</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="be01604d9b2a57d02dc0ab6358717ad9a3266ee9" datatype="html">
+        <source>El débito de su cuenta se realizará cuando la orden de compra sea procesada (24h a 48h hábiles), en caso de no tener fondos la cuenta, la orden se anulará.</source>
+        <target>The debit from your account will be executed when the purchase is processed (1-2 business days). If funds are not available, the order will be cancelled. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4bb78fb6221df423a51b0b8bfa589af7d7f1a7df" datatype="html">
+        <source>Número de tarjeta</source>
+        <target>Card number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="13f8562f3a6d796a8627d36fae0dc877588e99d6" datatype="html">
+        <source>Fecha expiración</source><target>Expiration date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ea220c784d843863cd87f91f4b918541a58689b4" datatype="html">
+        <source>Mes</source>
+        <target>Month</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3857dedb6213c0659619bcf38252d39a73d5f342" datatype="html">
+        <source>01 - Enero</source>
+        <target>01 - January</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e970ebf77633e7b2d97c48f7b40037a98d2a4560" datatype="html">
+        <source>02 - Febrero</source>
+        <target>02 - February</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5aaf2dee85b9fa9b29c5f0c172c4da66fa7b9d3b" datatype="html">
+        <source>03 - Marzo</source>
+        <target>03 - March</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="15ca06dccc7ddb33961d510dcefbb55242efe296" datatype="html">
+        <source>04 - Abril</source>
+        <target>04 - April</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="876cf8112271a5020b00a6cf916a79eeccef4608" datatype="html">
+        <source>05 - Mayo</source>
+        <target>05 - May</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="188e9cb37d2471e7949711eb14137ccd433a70de" datatype="html">
+        <source>06 - Junio</source>
+        <target>06 - June</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12c88761118b9ce04c8d9afb49c4a9e8c99bba0d" datatype="html">
+        <source>07 - Julio</source>
+        <target>07 - July</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a4169cdd933375446eac116c7580e14c6b71dad1" datatype="html">
+        <source>08 - Agosto</source>
+        <target>08 - August</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e3a32dcdbf7ca657f7ba4599d547fb5799076953" datatype="html">
+        <source>09 - Septiembre</source>
+        <target>09 - September</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d04032a28fea8bb071c8d97d3df83fde47174c91" datatype="html">
+        <source>10 - Octubre</source>
+        <target>10 - October</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a20e05ecf381d27a2ecc484b14d476cb4a300b87" datatype="html">
+        <source>11 - Noviembre</source>
+        <target>11 - November</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7eecc3bcd5a1037068c03f03628a9a9252456f7" datatype="html">
+        <source>12 - Diciembre</source>
+        <target>12 - December</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2303658939715dcb612e76ae754407a28e4e8770" datatype="html">
+        <source>Datos financieros</source>
+        <target>Financial data</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c39840bb38a1b52c0978eb1e7469f08772972e44" datatype="html">
+        <source>Financiamiento</source>
+        <target>Financing</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">158</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c665976813acae9edccabb2109dd9e9ebeeabb6a" datatype="html">
+        <source>Ingrese el plazo del crédito que requiere solicitar</source>
+        <target>Enter the credit term length desired</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="94b0a425074dfadee9d7efd529934c99f5ec1e97" datatype="html">
+        <source>Plazo</source>
+        <target>Term</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">165</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c898bc58a9797ef30e7dc3afba7279ba30dba499" datatype="html">
+        <source>3 mes</source><target> 3 months</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76d4e328349f00aa867c9f15402a01921afceefb" datatype="html">
+        <source>36 meses</source>
+        <target>36 months</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">172</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff0caf949b7957cdc750c65f847779ef9254909d" datatype="html">
+        <source>Cuota mensual</source>
+        <target>Monthly payment</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5622b58360f8789203486c0d9f225b28abd47cb9" datatype="html">
+        <source>Interés</source>
+        <target>Interest</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d699222252eaf6801078f185fd2233f653a52ab0" datatype="html">
+        <source>Continuar</source><target>Continue</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">199</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">195</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="94efa71a224b2b3f987d35313a28b89384d71b81" datatype="html">
+        <source>Productos</source><target>Products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+          <context context-type="linenumber">206</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="258408aff7b875959cd9f867903f23bd14070396" datatype="html">
+        <source>Seleccione su banco, he ingrese el nombre de usuario de su banco.</source>
+        <target>Select your bank and enter the username of your bank.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7a84d85ebcf8f84c6072492ed6ca195d52727bb" datatype="html">
+        <source>Seleccionar</source>
+        <target>Select</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a65cf369d0e79c093967a76ef7fc8400872682bd" datatype="html">
+        <source>Nombre de usuario:</source><target>Username:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f19a0aea49ab57d3e9b14f7367775be052247615" datatype="html">
+        <source>Ingrese el PIN enviado por su banco para autorizar la conexión a su banco.</source>
+        <target>Enter the PIN send by your bank for authorization </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="578b967dbd365c5c1197e7e9fc987a7fecfed7f1" datatype="html">
+        <source>El PIN enviado tiene una duración de 2 minutos.</source>
+        <target>PIN sent has a duration of two minutes.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="65d9fa8deadf8e16ae1e470839763b94d24f18de" datatype="html">
+        <source>Reenviar PIN</source>
+        <target>Resend PIN</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/connect/connect.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="32701648e4e14b81e261a0e43a488a839692fb90" datatype="html">
+        <source>Su solicitud ha sido recibida exitosamente</source>
+        <target>Your application has been received</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/confirmation/confirmation.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0ee556b49c27c4115d463d050e9907396b09ff90" datatype="html">
+        <source>Un agente se contactará con usted para completar el proceso de su financiamiento, luego de la aprobación definitiva se continuará la gestión de su orden para su entrega</source>
+        <target>An agent contact you to complete the financing process. After final approval, we will continue your order</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/confirmation/confirmation.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cae67fc1ebe4a62cf5b13cbdae76d40f7a86bfa6" datatype="html">
+        <source>Mis órdenes</source><target>My orders</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/orders/orders.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c43d6486f73abb14889535b2f64106771b4c532f" datatype="html">
+        <source>Información Personal</source><target>Personal Information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="562f05cd83338cb402eb266d61ffbb15c0128d8c" datatype="html">
+        <source>Fecha de nacimiento</source><target>Birthday date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="78b578a5a62fc6385085a8cc9fb4b809b2e95f67" datatype="html">
+        <source>Nacionalidad</source><target>Nationality</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8e1692e4ec3846a7dd42682012a84398255cee13" datatype="html">
+        <source>Género</source><target>Genre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3a0c4927e2deed4d0691a9a03f8fd80179d1709" datatype="html">
+        <source>Estado civil</source><target>Marital status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e14f04cded78339c3375ca12d3ebc08508cd3954" datatype="html">
+        <source>Ciudad</source><target>City</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="31c513e331358cc6fdd536c130f66310a767984f" datatype="html">
+        <source>Cargas familiares</source><target>Dependents</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f01b195d65c8e557b4cc0f436a96f8602923461a" datatype="html">
+        <source>Nivel académico</source><target>Education level</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8adae6ba0de1639d03664f77c4f1ae9ebfc4377e" datatype="html">
+        <source>Información Laboral</source><target>Employment information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fa0b938e5edc1d39ae622365b6c80e7c64d36539" datatype="html">
+        <source>Actividad actual</source><target>Current role</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">157</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b3c1812d0fd6ee542d18b8e90f14778abfc4063" datatype="html">
+        <source>Empresa</source><target>Company</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f63f0b5b1b04666ca8b2bdfb897cc218219df722" datatype="html">
+        <source>Años de trabajo</source><target>Years of experience</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd493eefd6311ff917e060589912aec7212a42fe" datatype="html">
+        <source>Actividad anterior</source><target>Previous employment</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">175</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7702428381a43c86e4cf6a39b0235370720809bc" datatype="html">
+        <source>Información Conyuge</source><target>Spouse information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b2a864288f0300db077401dde2356c5f2c8f868a" datatype="html">
+        <source>Nombres</source><target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="35e02266689e07252b3aa04f63c60cf5ec7de490" datatype="html">
+        <source>Cédula o RUC</source><target>ID</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2d54fe202eb3709dd2af33e04dbaa2890a082833" datatype="html">
+        <source>Ecuatoriana</source><target>Ecuadorian</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9fb10621eea7ab54ee39d39938e3de71f8f75009" datatype="html">
+        <source>Información Laboral Cónyuge</source><target>Spouse's employment information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="66260d2d9e78068a08a1dfd90983e699c3110ff8" datatype="html">
+        <source>Para continuar con tu compra es necesario que ingreses con tu cuenta o te registres para obtener una.</source>
+        <target>To continue with your purchase, you need to login to your account or sign up for one.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="52f86d8536691039aa0530c8d8c7b3c60867215b" datatype="html">
+        <source>¿Ya eres usuario?</source>
+        <target>Are you already registered?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ad81870ca9e0e8c21d709ac5b7f5de8d0e03dc38" datatype="html">
+        <source>Ingresa tus datos para que accedas a tu cuenta.</source>
+        <target>Enter your information to access your account.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f2fa13d37e4d24b6f994a7dbde4a19a9b09c8f7" datatype="html">
+        <source>Usuario</source><target>User</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1d8f83dd6d9749fb3ae1bf4bfad609f2753a041c" datatype="html">
+        <source>¿Olvidaste tu contraseña?</source>
+        <target>Did you forget your password?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9ff0c0a1aef834e79bf132e820081e3a414b97a2" datatype="html">
+        <source>Si olvidaste tu contraseña, ingresa tu correo electrónico, y te enviaremos un email con un &quot;Código de activación&quot; para acceder a tu cuenta.</source>
+        <target>If you forgot your password enter your email address and will be send you activation code for access your account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e9e588741024086a4b24d5db5da4f5c540a07f30" datatype="html">
+        <source>Correo electrónico</source><target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="431d0527be090ee2e8c7277c66d4b9424125ad85" datatype="html">
+        <source>Solicitar código</source><target>Request code</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3ac2f175258dd7756c48dc7e92d67522a9e86f36" datatype="html">
+        <source>Ya tengo código</source><target> I have a code</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5ff40ba7c5226ad784e6601f2e63bb8fe4e42944" datatype="html">
+        <source>¿Aún no te has registrado?</source><target>You not registered yet?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2adc900971d91e6eba76befbf9ff91cf84ae6490" datatype="html">
+        <source>Regístrate para que puedas hacer compras online, revisar tu historial de compras y más.</source>
+        <target>Sign up so you can shop online, check your shopping history and more</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd2a11ebc737589080ed400dacc33a8c8c84728b" datatype="html">
+        <source>Nombre</source><target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e5ce6971c7cec0275fb6d0f7aee70ba8472dd05d" datatype="html">
+        <source>Confirmar contraseña</source><target>Confirm password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28c0f4e51cd46c99c0eb24ace953b810f9392691" datatype="html">
+        <source>Registrarse</source><target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/login/login.component.ts</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="41ada76252535a632219b680c25cebe9ccb3e16b" datatype="html">
+              <source>Anterior</source>
+              <target>Previous</target>
+              <context-group purpose="location">
+                <context context-type="sourcefile">app/store/catalog/catalog.component.ts</context>
+                <context context-type="linenumber">13</context>
+              </context-group>
+            </trans-unit>
+        <trans-unit id="290280edb8d384845acd6a0cd7848f9a6a803f54" datatype="html">
+             <source>Productos en oferta</source>
+             <target>Sales products</target>
+             <context-group purpose="location">
+             <context context-type="sourcefile">app/store/catalog/catalog.component.ts</context>
+             <context context-type="linenumber">28</context>
+             </context-group>
+       </trans-unit>
+  <trans-unit id="e07bad21e7f4a82b7f1eac653af38812e56e3511" datatype="html">
+       <source>Productos nuevos</source>
+           <target>New products</target>
+          <context-group purpose="location">
+          <context context-type="sourcefile">app/store/catalog/catalog.component.ts</context>
+     <context context-type="linenumber">32</context>
+         </context-group>
+        </trans-unit>
+         <trans-unit id="b9507f042a2d399b1a3aaee3546f8a4e59910c73" datatype="html">
+        <source>Las mejores marcas</source>
+       <target>Top trademark</target>
+       <context-group purpose="location">
+      <context context-type="sourcefile">app/store/catalog/catalog.component.ts</context>
+     <context context-type="linenumber">36</context>
+    </context-group>
+   </trans-unit>
+          <trans-unit id="7cc7d4e5b5cae80ca5d7c2d9227dc7fad54ce195" datatype="html">
+        <source>Apellidos</source>
+        <target>Last name</target>
+       <context-group purpose="location">
+       <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+        <context context-type="linenumber">13</context>
+       </context-group>
+        <context-group purpose="location">
+        <context context-type="sourcefile">app/store/credit-request/credit-request.component.ts</context>
+        <context context-type="linenumber">126</context>
+      </context-group>
+      <context-group purpose="location">
+      <context context-type="sourcefile">app/core/login/login.component.ts</context>
+     <context context-type="linenumber">58</context>
+     </context-group>
+    <note priority="1" from="description">Apellidos</note>
+    </trans-unit>
+  <trans-unit id="4f34fb1e4f061176565989e7f2340f906b9d5a3e" datatype="html">
+      <source>Número</source>
+    <target>Number</target>
+      <context-group purpose="location">
+       <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+        <context context-type="linenumber">27</context>
+      </context-group>
+         <context-group purpose="location">
+        <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+         <context context-type="linenumber">84</context>
+         </context-group>
+       <note priority="1" from="description">Número</note>
+       </trans-unit>
+   <trans-unit id="191a8f08c98d7a58c57c8c891373b60f0e03e5c2" datatype="html">
+        <source>Año</source>
+       <target>Year</target>
+      <context-group purpose="location">
+      <context context-type="sourcefile">app/store/checkout/checkout.component.ts</context>
+     <context context-type="linenumber">114</context>
+       </context-group>
+      <note priority="1" from="description">Año</note>
+     </trans-unit>
+  <trans-unit id="520999ddd15a6181faa7aab6013bcaad41e73cb4" datatype="html">
+      <source>Copyright © 2018 Mainstreet, Todos los Derechos Reservados.</source>
+     <target>Copyright © 2018 Mainstreet,  All rights reserved.</target>
+      <context-group purpose="location">
+      <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+       <context context-type="linenumber">96</context>
+       </context-group>
+        <context-group purpose="location">
+      <context context-type="sourcefile">app/shared/layouts/checkout/checkout.component.ts</context>
+       <context context-type="linenumber">4</context>
+       </context-group>
+    </trans-unit>
+  <trans-unit id="7214618db911944ce2f3bfd2a3b71b4cc48c4f1e" datatype="html">
+       <source>Buscar un producto</source>
+      <target>Search a product</target>
+   <context-group purpose="location">
+     <context context-type="sourcefile">app/shared/layouts/base/base.component.ts</context>
+     <context context-type="linenumber">5</context>
+     </context-group>
+      <note priority="1" from="description">Buscar un producto</note>
+      </trans-unit>
+      <trans-unit id="33521910f8e3898f9b758680766a4020f1ea2237" datatype="html">
+       <source>Orden</source>
+      <target>Order</target>
+      <context-group purpose="location">
+      <context context-type="sourcefile">app/store/order/order.component.ts</context>
+      <context context-type="linenumber">3</context>
+       </context-group>
+    </trans-unit>
+   <trans-unit id="341db80c9a3fbedab317cc29970dfd7de93e085b" datatype="html">
+           <source>Agregar al carrito</source>
+           <target>Add to cart</target>
+          <context-group purpose="location">
+         <context context-type="sourcefile">app/store/product/product.component.ts</context>
+        <context context-type="linenumber">39</context>
+      </context-group>
+    </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Fast Loan</title>
+
+  <!-- To disable compatibility mode in Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Mobile tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="themes/mainstreet.css" />
+  <style>
+    body {
+      background-color: #f8f8f8;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    .btn.btn-link {
+      color: #990000;
+    }
+
+    .btn.btn-default,
+    .btn.btn-default:hover,
+    .btn.btn-default:focus,
+    .btn.btn-default:active {
+      border-color: #990000;
+      color: #990000;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-primary:hover,
+    .btn.btn-primary:focus,
+    .btn.btn-primary:active {
+      background-color: #990000;
+      border-color: #990000;
+      color: #FFF;
+    }
+
+    #navigation>.wf-content .wf-inbox,
+    #navigation>.wf-content .wf-navigation-wrapper {
+      background-color: #565656;
+    }
+
+    #navigation>.wf-content .list-group>.list-group-heading {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus,
+    .dropdown-menu>li>a:active,
+    .list-group a.list-group-item:hover,
+    .list-group a.list-group-item:focus,
+    .list-group a.list-group-item.active,
+    #navigation>.wf-content>.list-group a:hover,
+    #navigation>.wf-content .btn-link:hover {
+      background-color: #990000;
+      color: #FFF;
+    }
+
+    .wf-page-header,
+    #navigation>.wf-content .list-group>.wf-logo {
+      background-color: #990000;
+    }
+
+    .wf-title,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #990000;
+    }
+
+    .wf-page-header>.wf-logo {
+      background-image: url(/image/layout_set_logo?img_id=228611&amp;t=1498671767449);
+    }
+
+    .wf-steps-2>li {
+      background: #f5f5f5;
+      border: 1px solid #CCC;
+      color: #CCC;
+    }
+
+    .wf-steps-2>li::before {
+      background: #f5f5f5;
+    }
+
+    .wf-steps-2>li.active {
+      background: #FFF;
+      border-color: #990000;
+      color: #990000;
+    }
+
+    .wf-steps-2>li.active::before {
+      background: #FFF;
+      border-color: #990000;
+    }
+  </style>
+  <style>
+    .btn {
+      border-width: 2px;
+      border-radius: 100px;
+    }
+
+    .wf-viewport {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      position: fixed;
+      overflow: auto;
+    }
+
+    #diagram {
+      transition: transform .8s;
+      transform: translateX(-100%);
+      background: #FFF;
+      border-right: 1px solid #CCC;
+    }
+
+    .wf-btn-diagram,
+    .wf-diagram-message {
+      transition: transform .6s;
+    }
+
+    .wf-diagram-opened #diagram {
+      transform: translateX(0);
+    }
+
+    .wf-diagram-opened .wf-btn-diagram,
+    .wf-diagram-opened .wf-diagram-message {
+      transform: translateX(-150%);
+    }
+
+    .wf-started .wf-diagram-message {
+      display: none;
+    }
+
+    #diagram:not(.wf-maximize)>div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #diagram:not(.wf-maximize) svg {
+      flex: 1;
+    }
+
+    #diagram:not(.wf-maximize) #minimize {
+      display: none;
+    }
+
+    #diagram.wf-maximize svg {
+      width: 4208px;
+    }
+
+    #diagram.wf-maximize #maximize {
+      display: none;
+    }
+
+    #diagram #close {
+      position: fixed;
+      right: 30px;
+      top: 15px;
+      padding: 11px 14px;
+    }
+
+    #diagram #maximize,
+    #diagram #minimize {
+      position: fixed;
+      right: 84px;
+      top: 15px;
+      padding: 11px 14px;
+    }
+
+    #4931471e-cd05-46da-9052-eceaaa42e94a {
+      cursor: pointer;
+    }
+  </style>
+
+  <script src="libraries/jquery/dist/jquery.min.js"></script>
+  <script src="libraries/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      var load = function(url) {
+        $('body').removeClass('wf-diagram-opened').addClass('wf-started');
+        setTimeout(function() {
+          $('#viewer')[0].src = url;
+        }, 400);
+      };
+      $('#open').on('click', function(e) {
+        $('body').addClass('wf-diagram-opened');
+      });
+      $('#close').on('click', function(e) {
+        $('body').removeClass('wf-diagram-opened');
+      });
+      $('#maximize').on('click', function(e) {
+        $('#diagram').addClass('wf-maximize');
+      });
+      $('#minimize').on('click', function(e) {
+        $('#diagram').removeClass('wf-maximize');
+      });
+
+      //Loan Request
+      $('#4931471e-cd05-46da-9052-eceaaa42e94a').on('click', function(e) {
+        load('loan-request-step1.html');
+      });
+      $('#39f5378b-7c39-47da-abee-de862e135ed9, #9a3bac83-05f7-48f9-b99b-a403bd844b9b, #47450ee2-2d23-453e-bb12-987dd4f78fc4, #47450ee2-2d23-453e-bb12-987dd4f78fc4').on('click', function(e) {
+        load('loan-request-step5.html');
+      });
+      $('#376f09e4-5426-4ac3-a73f-85834ea4414b').on('click', function(e) {
+        load('loan-request-approved.html');
+      });
+
+      //Verificacion
+      $('#687837ae-e59f-4c28-aa61-fa13bbd8d13b').on('click', function(e) {
+        load('loan-request-check.html?step=1');
+      });
+      $('#c8724ee2-dcf5-41a8-a770-1fd19876e436').on('click', function(e) {
+        load('loan-request-check.html?step=2');
+      });
+      $('#da632cf4-1c0f-4b9e-855c-aa11d5d57bf1').on('click', function(e) {
+        load('loan-request-check.html?step=3');
+      });
+      $('#14df411b-8a6a-4089-b61e-0ef4b32bfacf').on('click', function(e) {
+        load('loan-request-check.html?step=4');
+      });
+      $('#c774cc12-fce8-43a1-a0c3-9ddca419889d').on('click', function(e) {
+        load('loan-request-check.html?step=5');
+      });
+      $('#8a849731-e040-42d4-bade-3cd0b6cfbb98').on('click', function(e) {
+        load('loan-request-check.html?step=6');
+      });
+      $('#b34c4139-1362-4728-8f30-af00fe3d4f7b').on('click', function(e) {
+        load('loan-request-check.html?step=7');
+      });
+      $('#4cbd9d03-5cbf-4f3d-b1d9-eaba32319ed7').on('click', function(e) {
+        load('loan-request-check.html?step=8');
+      });
+      $('#4423dc5a-0629-42e7-87ea-b6a93e249ec4').on('click', function(e) {
+        load('loan-request-check.html?step=9');
+      });
+      $('#68d0a045-b838-4a3d-befc-036993db84b4').on('click', function(e) {
+        load('loan-request-check.html?step=9.5');
+      });
+      $('#a6e9deb7-af25-4d5d-81cb-f88cf81194e5').on('click', function(e) {
+        load('loan-request-check.html?step=10');
+      });
+      $('#ada454a2-0dbd-4b96-acd3-bb5e721546f6').on('click', function(e) {
+        load('loan-request-check.html?step=11');
+      });
+      $('#a868ee92-4ad0-434c-b800-2982b90830f9, #66259262-212e-4012-b225-5a64a95a1e30').on('click', function(e) {
+        load('loan-request-check.html?step=12');
+      });
+      $('#66259262-212e-4012-b225-5a64a95a1e30').on('click', function(e) {
+        load('loan-request-check.html?step=13');
+      });
+
+      //Schedule
+      $('#f8aaff57-ff3b-4ed9-bc4c-2671ce52117b').on('click', function(e) {
+        load('loan-request-check.html?step=14');
+      });
+
+      //User Accept
+      $('#ae777994-42e7-4494-b850-561dbfab2b28').on('click', function(e) {
+        load('loan-request-accept.html');
+      });
+
+      $('#9b7df1ca-5d19-4b95-9553-b79b0023b358').on('click', function(e) {
+        load('loan-request-check.html?step=15');
+      });
+
+      $('#4a227dcc-90f2-447f-afc0-4b49d0b9645c').on('click', function(e) {
+        load('loan-request-check.html?step=16');
+      });
+
+      //Emails
+      $('#e1a74cb9-0070-4382-b7e5-8006efb2f828').on('click', function(e) {
+        load('loan-request-email-pre-approved.html');
+      });
+      $('#5eb0173e-4149-4101-85e6-2b7defedebfb').on('click', function(e) {
+        load('loan-request-email-approved.html');
+      });
+      $(
+        '#d72057e8-e670-41ed-ab78-6f0f98e443b6, #fd8ec051-8822-4c32-9819-0de8fd8d4ad4, #2daf596b-68d5-428c-b390-a50bd87c1fd7, #8838a349-5cc4-4c86-9356-c710eb4055af, #efd89f6e-332b-49cc-943a-cb943c87637a, #59ad7717-d7ee-4d44-8eb1-81f31017d0f9, #d6edd13e-5531-44a7-9d29-f09eef7db01c'
+      ).on('click', function(e) {
+        load('loan-request-email-declined.html');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wf-viewport">
+    <iframe id="viewer" style="width:100%; height: 100%; border: 0; display: block;"></iframe>
+  </div>
+  <div id="diagram" class="wf-viewport">
+    <div class="wf-viewport">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4208 1420">
+  <style type="text/css"><![CDATA[
+	.style1{fill:#E6FF97;stroke:#62A716;stroke-width:2;}
+	.style2{fill:#ECEFFF;stroke:#03689A;stroke-width:2;}
+	.style3{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def16);}
+	.style4{fill:#FFFFCC;stroke:#A6A61D;stroke-width:2;}
+	.style5{fill:#CCC1D9;stroke:#7C7189;stroke-width:2;}
+	.style6{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def21);}
+	.style7{fill:#EEAAAA;stroke:#990000;stroke-width:3;}
+	.style8{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def23);}
+	.style9{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def25);}
+	.style10{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def27);}
+	.style11{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def29);}
+	.style12{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def30);}
+	.style13{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def31);}
+	.style14{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def33);}
+	.style15{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def35);}
+	.style16{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def36);}
+	.style17{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def38);}
+	.style18{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def41);}
+	.style19{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def43);}
+	.style20{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def45);}
+	.style21{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def46);}
+	.style22{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def47);}
+	.style23{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def48);}
+	.style24{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def50);}
+	.style25{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def51);}
+	.style26{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def53);}
+	.style27{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def56);}
+	.style28{fill:#D99694;stroke:#894644;stroke-width:2;}
+	.style29{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def58);}
+	.style30{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def59);}
+	.style31{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def61);}
+	.style32{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def63);}
+	.style33{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def64);}
+	.style34{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def65);}
+	.style35{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def66);}
+	.style36{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def67);}
+	.style37{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def68);}
+	.style38{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def70);}
+	.style39{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def87);}
+	.style40{fill:#FFFFFF;}
+	.style41{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def92);}
+	.style42{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def94);}
+	.style43{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def96);}
+	.style44{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def97);}
+	.style45{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def98);}
+	.style46{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def99);}
+	.style47{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def100);}
+	.style48{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def101);}
+	.style49{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def102);}
+	.style50{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def103);}
+	.style51{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def104);}
+	.style52{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def106);}
+	.style53{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def107);}
+	.style54{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def108);}
+	.style55{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def109);}
+	.style56{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def111);}
+	.style57{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def113);}
+	.style58{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def115);}
+	.style59{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def117);}
+	.style60{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def119);}
+	.style61{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def121);}
+	.style62{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def123);}
+	.style63{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def125);}
+	.style64{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def127);}
+	.style65{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def129);}
+	.style66{text-rendering:auto;font-family:'Segoe UI';font-size:8pt;fill:#000000;clip-path:url(#def130);}]]></style>
+  <defs>
+    <path id="d1cc3d34-50a8-48d5-ad27-6a487a804b87HeaderPath" fill-rule="evenodd" d="M 36,1307.5 L 1324.5,1307.5 L 1324.5,1357.5 L 36,1357.5 Z " />
+    <clipPath id="703fd0b2-51fb-4a1e-a424-a3c87c0ee02aHeaderClipPath">
+      <use xlink:href="#d1cc3d34-50a8-48d5-ad27-6a487a804b87HeaderPath" />
+    </clipPath>
+    <path id="e7a6f7f8-63a1-4284-bc31-e0ee845f6615HeaderPath" fill-rule="evenodd" d="M 86,281 L 348,281 L 348,311 L 86,311 Z " />
+    <clipPath id="f6e7f0eb-9c87-46c3-9be6-956508401ae5HeaderClipPath">
+      <use xlink:href="#e7a6f7f8-63a1-4284-bc31-e0ee845f6615HeaderPath" />
+    </clipPath>
+    <path id="6ff6f839-f6e6-46b5-b694-d8b11bfd59f8HeaderPath" fill-rule="evenodd" d="M 86,707.3 L 512.3,707.3 L 512.3,737.3 L 86,737.3 Z " />
+    <clipPath id="c1883a00-a608-4859-86fa-f7675cdcbfa9HeaderClipPath">
+      <use xlink:href="#6ff6f839-f6e6-46b5-b694-d8b11bfd59f8HeaderPath" />
+    </clipPath>
+    <path id="f4945cd0-60b4-4d0a-b62e-229a71aee2f4HeaderPath" fill-rule="evenodd" d="M 86,907.3 L 286,907.3 L 286,937.3 L 86,937.3 Z " />
+    <clipPath id="f52609bd-24a9-4d44-a1c1-e6d68f80e378HeaderClipPath">
+      <use xlink:href="#f4945cd0-60b4-4d0a-b62e-229a71aee2f4HeaderPath" />
+    </clipPath>
+    <path id="67c11ef9-41cb-484f-a5d8-2e813a5d67c0HeaderPath" fill-rule="evenodd" d="M 86,1107.3 L 286,1107.3 L 286,1137.3 L 86,1137.3 Z " />
+    <clipPath id="0693e1a4-989b-4720-9b18-b2e57e6ba198HeaderClipPath">
+      <use xlink:href="#67c11ef9-41cb-484f-a5d8-2e813a5d67c0HeaderPath" />
+    </clipPath>
+    <path id="e9cf12cd-b9f0-4206-8f9d-8288936ff034HeaderPath" fill-rule="evenodd" d="M 86,1307.5 L 286.2,1307.5 L 286.2,1337.5 L 86,1337.5 Z " />
+    <clipPath id="ec8954c2-b1ab-4cc3-a672-46354dc1a9a1HeaderClipPath">
+      <use xlink:href="#e9cf12cd-b9f0-4206-8f9d-8288936ff034HeaderPath" />
+    </clipPath>
+    <ellipse id="def13" cx="15" cy="15" rx="15" ry="15" />
+    <clipPath id="def14">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <path id="def15" fill-rule="evenodd" d="M 7,0 L 83,0 L 83,0 C 86.87,-0 90,3.13 90,7 C 90,7 90,7 90,7 L 90,7 L 90,53 L 90,53 C 90,56.87 86.87,60 83,60 L 83,60 L 7,60 L 7,60 C 3.13,60 0,56.87 0,53 L 0,53 L 0,7 L 0,7 C -0,3.13 3.13,0 7,0 Z " />
+    <clipPath id="def16">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <polygon id="def17" points="-0,20 20,-0 40,20 20,40 -0,20 " />
+    <clipPath id="def18">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def19">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def20">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def21">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def22">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def23">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def24">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def25">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def26">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def27">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def28">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def29">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def30">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def31">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def32">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def33">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def34">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def35">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def36">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def37">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def38">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def39">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <path id="def40" fill-rule="evenodd" d="M 7,0 L 199,0 L 199,0 C 202.87,-0 206,3.13 206,7 C 206,7 206,7 206,7 L 206,7 L 206,62 L 206,62 C 206,65.87 202.87,69 199,69 L 199,69 L 7,69 L 7,69 C 3.13,69 0,65.87 0,62 L 0,62 L 0,7 L 0,7 C -0,3.13 3.13,0 7,0 Z " />
+    <clipPath id="def41">
+      <use xlink:href="#def40" transform="translate(0,0)" />
+    </clipPath>
+    <path id="def42" fill-rule="evenodd" d="M 7,0 L 83,0 L 83,0 C 86.87,-0 90,3.13 90,7 C 90,7 90,7 90,7 L 90,7 L 90,89 L 90,89 C 90,92.87 86.87,96 83,96 L 83,96 L 7,96 L 7,96 C 3.13,96 0,92.87 0,89 L 0,7 L 0,7 C -0,3.13 3.13,0 7,0 Z " />
+    <clipPath id="def43">
+      <use xlink:href="#def42" transform="translate(0,0)" />
+    </clipPath>
+    <path id="def44" fill-rule="evenodd" d="M 7,0 L 150,0 L 150,0 C 153.87,-0 157,3.13 157,7 C 157,7 157,7 157,7 L 157,7 L 157,53 L 157,53 C 157,56.87 153.87,60 150,60 L 150,60 L 7,60 L 7,60 C 3.13,60 0,56.87 0,53 L 0,53 L 0,7 L 0,7 C -0,3.13 3.13,0 7,0 Z " />
+    <clipPath id="def45">
+      <use xlink:href="#def44" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def46">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def47">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def48">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def49">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def50">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def51">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def52">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def53">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def54">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <path id="def55" fill-rule="evenodd" d="M 7,0 L 109,0 L 109,0 C 112.87,-0 116,3.13 116,7 C 116,7 116,7 116,7 L 116,7 L 116,53 L 116,53 C 116,56.87 112.87,60 109,60 L 109,60 L 7,60 L 7,60 C 3.13,60 0,56.87 0,53 L 0,53 L 0,7 L 0,7 C -0,3.13 3.13,0 7,0 Z " />
+    <clipPath id="def56">
+      <use xlink:href="#def55" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def57">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def58">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def59">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def60">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def61">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <path id="def62" fill-rule="evenodd" d="M 7,0 L 131,0 L 131,0 C 134.87,-0 138,3.13 138,7 C 138,7 138,7 138,7 L 138,7 L 138,53 L 138,53 C 138,56.87 134.87,60 131,60 L 131,60 L 7,60 L 7,60 C 3.13,60 0,56.87 0,53 L 0,53 L 0,7 L 0,7 C -0,3.13 3.13,0 7,0 Z " />
+    <clipPath id="def63">
+      <use xlink:href="#def62" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def64">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def65">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def66">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def67">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def68">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def69">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def70">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def71">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def72">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def73">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def74">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def75">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def76">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def77">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def78">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def79">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def80">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def81">
+      <use xlink:href="#def13" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def82">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def83">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def84">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def85">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def86">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def87">
+      <use xlink:href="#def15" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def88">
+      <use xlink:href="#def17" transform="translate(0,0)" />
+    </clipPath>
+    <marker id="defMarkerShadow" viewbox="0 0 10 8" refX="10" refY="4" markerUnits="strokeWidth" markerWidth="10" markerHeight="8" orient="auto" fill="#000000" fill-opacity="0.1">
+      <path fill-rule="evenodd" d="M 9,4 L 1,9 L 3,4 L 1,-1 Z " />
+    </marker>
+    <marker id="defMarker" viewbox="0 0 10 8" refX="10" refY="4" markerUnits="strokeWidth" markerWidth="10" markerHeight="8" orient="auto" fill="#000000" fill-opacity="1">
+      <path fill-rule="evenodd" d="M 9,4 L 1,9 L 3,4 L 1,-1 Z " />
+    </marker>
+    <rect id="def91" width="51" height="30" />
+    <clipPath id="def92">
+      <use xlink:href="#def91" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def93" width="50" height="30" />
+    <clipPath id="def94">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def95" width="71" height="44" />
+    <clipPath id="def96">
+      <use xlink:href="#def95" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def97">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def98">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def99">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def100">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def101">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def102">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def103">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def104">
+      <use xlink:href="#def93" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def105" width="57" height="30" />
+    <clipPath id="def106">
+      <use xlink:href="#def105" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def107">
+      <use xlink:href="#def105" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def108">
+      <use xlink:href="#def105" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def109">
+      <use xlink:href="#def105" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def110" width="52" height="30" />
+    <clipPath id="def111">
+      <use xlink:href="#def110" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def112" width="62" height="44" />
+    <clipPath id="def113">
+      <use xlink:href="#def112" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def114" width="80" height="59" />
+    <clipPath id="def115">
+      <use xlink:href="#def114" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def116" width="80" height="44" />
+    <clipPath id="def117">
+      <use xlink:href="#def116" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def118" width="71" height="58" />
+    <clipPath id="def119">
+      <use xlink:href="#def118" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def120" width="79" height="44" />
+    <clipPath id="def121">
+      <use xlink:href="#def120" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def122" width="81" height="44" />
+    <clipPath id="def123">
+      <use xlink:href="#def122" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def124" width="84" height="44" />
+    <clipPath id="def125">
+      <use xlink:href="#def124" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def126" width="104" height="72" />
+    <clipPath id="def127">
+      <use xlink:href="#def126" transform="translate(0,0)" />
+    </clipPath>
+    <rect id="def128" width="68" height="44" />
+    <clipPath id="def129">
+      <use xlink:href="#def128" transform="translate(0,0)" />
+    </clipPath>
+    <clipPath id="def130">
+      <use xlink:href="#def124" transform="translate(0,0)" />
+    </clipPath>
+  </defs>
+  <g>
+    <rect x="36" y="19" width="4152" height="1288.5" rx="0" ry="0" style="fill:#FFFFFF;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <line x1="86" y1="19" x2="86" y2="1307.5" style="stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text style="font-family:'Segoe UI';font-size:8pt;font-weight:bold;fill:#000000;clip-path:url(#703fd0b2-51fb-4a1e-a424-a3c87c0ee02aHeaderClipPath);" transform="rotate(-90 36 1307.5)">
+      <tspan x="632.6988" y="1326.542">Agile Loan Process</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="86" y="19" width="4102" height="262" rx="0" ry="0" style="fill:none;stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <line x1="116" y1="19" x2="116" y2="281" style="stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text style="font-family:'Segoe UI';font-size:8pt;font-weight:bold;fill:#000000;clip-path:url(#f6e7f0eb-9c87-46c3-9be6-956508401ae5HeaderClipPath);" transform="rotate(-90 86 281)">
+      <tspan x="192.5556" y="300.0417">Customer</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="86" y="281" width="4102" height="426.3" rx="0" ry="0" style="fill:none;stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <line x1="116" y1="281" x2="116" y2="707.3" style="stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text style="font-family:'Segoe UI';font-size:8pt;font-weight:bold;fill:#000000;clip-path:url(#c1883a00-a608-4859-86fa-f7675cdcbfa9HeaderClipPath);" transform="rotate(-90 86 707.3)">
+      <tspan x="270.9321" y="726.3417">MainStreet</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="86" y="707.3" width="4102" height="200" rx="0" ry="0" style="fill:none;stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <line x1="116" y1="707.3" x2="116" y2="907.3" style="stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text style="font-family:'Segoe UI';font-size:8pt;font-weight:bold;fill:#000000;clip-path:url(#f52609bd-24a9-4d44-a1c1-e6d68f80e378HeaderClipPath);" transform="rotate(-90 86 907.3)">
+      <tspan x="137.0139" y="926.3417">Bank - Underwriter</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="86" y="907.3" width="4102" height="200" rx="0" ry="0" style="fill:none;stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <line x1="116" y1="907.3" x2="116" y2="1107.3" style="stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text style="font-family:'Segoe UI';font-size:8pt;font-weight:bold;fill:#000000;clip-path:url(#0693e1a4-989b-4720-9b18-b2e57e6ba198HeaderClipPath);" transform="rotate(-90 86 1107.3)">
+      <tspan x="140.0347" y="1126.342">Bank - Operations</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="86" y="1107.3" width="4102" height="200.2" rx="0" ry="0" style="fill:none;stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <line x1="116" y1="1107.3" x2="116" y2="1307.5" style="stroke:#505050;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text style="font-family:'Segoe UI';font-size:8pt;font-weight:bold;fill:#000000;clip-path:url(#ec8954c2-b1ab-4cc3-a672-46354dc1a9a1HeaderClipPath);" transform="rotate(-90 86 1307.5)">
+      <tspan x="144.6478" y="1326.542">Bank - FrontLine</tspan>
+    </text>
+  </g>
+  <use id="cce4c447-ce5c-43f9-9350-ca450d34dce8" xlink:href="#def13" class="style1" x="174" y="64" />
+  <g id="cce4c447-ce5c-43f9-9350-ca450d34dce8Container" transform="translate(174,64)" />
+  <use id="4931471e-cd05-46da-9052-eceaaa42e94a" xlink:href="#def15" class="style2" x="144" y="134" />
+  <g id="4931471e-cd05-46da-9052-eceaaa42e94aContainer" transform="translate(144,134)">
+    <text id="4931471e-cd05-46da-9052-eceaaa42e94aText" class="style3">
+	<tspan x="22" y="25">Financial </tspan><tspan x="12" y="39">Inquiry Form</tspan></text>
+  </g>
+  <use id="8f424da0-963b-4ff3-af5f-7bb11d381515" xlink:href="#def17" class="style4" x="367" y="328" />
+  <g id="8f424da0-963b-4ff3-af5f-7bb11d381515Container" transform="translate(367,328)" />
+  <use id="7867b1c4-84be-4fb1-b7ea-130c6891b8b4" xlink:href="#def17" class="style4" x="325" y="144" />
+  <g id="7867b1c4-84be-4fb1-b7ea-130c6891b8b4Container" transform="translate(325,144)" />
+  <use id="a2584813-f34a-4216-a896-e3d676b8c895" xlink:href="#def17" class="style4" x="717" y="328" />
+  <g id="a2584813-f34a-4216-a896-e3d676b8c895Container" transform="translate(717,328)" />
+  <use id="687837ae-e59f-4c28-aa61-fa13bbd8d13b" xlink:href="#def15" class="style5" x="657" y="782.5" />
+  <g id="687837ae-e59f-4c28-aa61-fa13bbd8d13bContainer" transform="translate(657,782.5)">
+    <text id="687837ae-e59f-4c28-aa61-fa13bbd8d13bText" class="style6">
+	<tspan x="25" y="25">Validate </tspan><tspan x="21" y="39">Manually</tspan></text>
+  </g>
+  <use id="4231a053-2a8d-4b0b-bd25-4145b125dc4a" xlink:href="#def13" class="style7" x="656" y="609" />
+  <g id="4231a053-2a8d-4b0b-bd25-4145b125dc4aContainer" transform="translate(656,609)" />
+  <use id="39f5378b-7c39-47da-abee-de862e135ed9" xlink:href="#def15" class="style2" x="822" y="318" />
+  <g id="39f5378b-7c39-47da-abee-de862e135ed9Container" transform="translate(822,318)">
+    <text id="39f5378b-7c39-47da-abee-de862e135ed9Text" class="style8">
+	<tspan x="14" y="18">Check OFAC </tspan><tspan x="6" y="32">List (Business + </tspan><tspan x="23" y="46">Owners)</tspan></text>
+  </g>
+  <use id="d6bcea3d-fdec-4000-8f5d-186728b2083d" xlink:href="#def17" class="style4" x="1190" y="327" />
+  <g id="d6bcea3d-fdec-4000-8f5d-186728b2083dContainer" transform="translate(1190,327)" />
+  <use id="da632cf4-1c0f-4b9e-855c-aa11d5d57bf1" xlink:href="#def15" class="style5" x="1165" y="774.5" />
+  <g id="da632cf4-1c0f-4b9e-855c-aa11d5d57bf1Container" transform="translate(1165,774.5)">
+    <text id="da632cf4-1c0f-4b9e-855c-aa11d5d57bf1Text" class="style9">
+	<tspan x="25" y="25">Validate </tspan><tspan x="21" y="39">Manually</tspan></text>
+  </g>
+  <use id="d9535107-5655-4d8c-804d-b7c81632b1b3" xlink:href="#def13" class="style7" x="1130" y="496" />
+  <g id="d9535107-5655-4d8c-804d-b7c81632b1b3Container" transform="translate(1130,496)" />
+  <use id="9a3bac83-05f7-48f9-b99b-a403bd844b9b" xlink:href="#def15" class="style2" x="1301" y="317" />
+  <g id="9a3bac83-05f7-48f9-b99b-a403bd844b9bContainer" transform="translate(1301,317)">
+    <text id="9a3bac83-05f7-48f9-b99b-a403bd844b9bText" class="style10">
+	<tspan x="8" y="18">Check Owners </tspan><tspan x="21" y="32">Tri-Merge </tspan><tspan x="14" y="46">Credit Score</tspan></text>
+  </g>
+  <use id="ae3e69de-8456-4f93-8c42-698b20452a91" xlink:href="#def17" class="style4" x="1630" y="329" />
+  <g id="ae3e69de-8456-4f93-8c42-698b20452a91Container" transform="translate(1630,329)" />
+  <use id="c8724ee2-dcf5-41a8-a770-1fd19876e436" xlink:href="#def15" class="style2" x="961" y="774.5" />
+  <g id="c8724ee2-dcf5-41a8-a770-1fd19876e436Container" transform="translate(961,774.5)">
+    <text id="c8724ee2-dcf5-41a8-a770-1fd19876e436Text" class="style11">
+	<tspan x="16" y="25">Retry OFAC </tspan><tspan x="21" y="39">Manually</tspan></text>
+  </g>
+  <use id="14df411b-8a6a-4089-b61e-0ef4b32bfacf" xlink:href="#def15" class="style2" x="1422" y="767.5" />
+  <g id="14df411b-8a6a-4089-b61e-0ef4b32bfacfContainer" transform="translate(1422,767.5)">
+    <text id="14df411b-8a6a-4089-b61e-0ef4b32bfacfText" class="style12">
+	<tspan x="15" y="25">Retry Credit </tspan><tspan x="6" y="39">Score Manually</tspan></text>
+  </g>
+  <use id="c774cc12-fce8-43a1-a0c3-9ddca419889d" xlink:href="#def15" class="style5" x="1645" y="758.5" />
+  <g id="c774cc12-fce8-43a1-a0c3-9ddca419889dContainer" transform="translate(1645,758.5)">
+    <text id="c774cc12-fce8-43a1-a0c3-9ddca419889dText" class="style13">
+	<tspan x="28" y="25">Validar </tspan><tspan x="21" y="39">Manually</tspan></text>
+  </g>
+  <use id="d5e72029-95ee-4a82-a730-99a4a8fe1bdf" xlink:href="#def13" class="style7" x="1599" y="456" />
+  <g id="d5e72029-95ee-4a82-a730-99a4a8fe1bdfContainer" transform="translate(1599,456)" />
+  <use id="47450ee2-2d23-453e-bb12-987dd4f78fc4" xlink:href="#def15" class="style2" x="1792" y="319" />
+  <g id="47450ee2-2d23-453e-bb12-987dd4f78fc4Container" transform="translate(1792,319)">
+    <text id="47450ee2-2d23-453e-bb12-987dd4f78fc4Text" class="style14">
+	<tspan x="10" y="25">Check Paydex </tspan><tspan x="31" y="39">Score</tspan></text>
+  </g>
+  <use id="b394e5ba-64c7-4c43-9a27-c12b4e0b44cd" xlink:href="#def17" class="style4" x="2160" y="322" />
+  <g id="b394e5ba-64c7-4c43-9a27-c12b4e0b44cdContainer" transform="translate(2160,322)" />
+  <use id="8a849731-e040-42d4-bade-3cd0b6cfbb98" xlink:href="#def15" class="style2" x="1905" y="750.5" />
+  <g id="8a849731-e040-42d4-bade-3cd0b6cfbb98Container" transform="translate(1905,750.5)">
+    <text id="8a849731-e040-42d4-bade-3cd0b6cfbb98Text" class="style15">
+	<tspan x="13" y="25">Retry Paydex </tspan><tspan x="6" y="39">Score Manually</tspan></text>
+  </g>
+  <use id="b34c4139-1362-4728-8f30-af00fe3d4f7b" xlink:href="#def15" class="style5" x="2167" y="746.5" />
+  <g id="b34c4139-1362-4728-8f30-af00fe3d4f7bContainer" transform="translate(2167,746.5)">
+    <text id="b34c4139-1362-4728-8f30-af00fe3d4f7bText" class="style16">
+	<tspan x="25" y="25">Validate </tspan><tspan x="21" y="39">Manually</tspan></text>
+  </g>
+  <use id="b602acd1-8c78-46a9-bbd8-b70c843fce29" xlink:href="#def13" class="style7" x="2132" y="462" />
+  <g id="b602acd1-8c78-46a9-bbd8-b70c843fce29Container" transform="translate(2132,462)" />
+  <use id="e1a74cb9-0070-4382-b7e5-8006efb2f828" xlink:href="#def15" class="style2" x="2880" y="319" />
+  <g id="e1a74cb9-0070-4382-b7e5-8006efb2f828Container" transform="translate(2880,319)">
+    <text id="e1a74cb9-0070-4382-b7e5-8006efb2f828Text" class="style17">
+	<tspan x="20" y="18">Send Pre-</tspan><tspan x="22" y="32">Approval </tspan><tspan x="22" y="46">Message</tspan></text>
+  </g>
+  <use id="a5bdc6b6-26c3-428d-a0e6-a60628d4135f" xlink:href="#def17" class="style4" x="3040" y="336" />
+  <g id="a5bdc6b6-26c3-428d-a0e6-a60628d4135fContainer" transform="translate(3040,336)" />
+  <use id="376f09e4-5426-4ac3-a73f-85834ea4414b" xlink:href="#def40" class="style2" x="3094" y="109" />
+  <g id="376f09e4-5426-4ac3-a73f-85834ea4414bContainer" transform="translate(3094,109)">
+    <text id="376f09e4-5426-4ac3-a73f-85834ea4414bText" class="style18">
+	<tspan x="57" y="22">Upload Documents
+</tspan><tspan x="10" y="36">()
+Business Bank Statements + Business </tspan><tspan x="71" y="50">Tax Rerturns)</tspan></text>
+  </g>
+  <use id="a6e9deb7-af25-4d5d-81cb-f88cf81194e5" xlink:href="#def42" class="style2" x="3269" y="743.5" />
+  <g id="a6e9deb7-af25-4d5d-81cb-f88cf81194e5Container" transform="translate(3269,743.5)">
+    <text id="a6e9deb7-af25-4d5d-81cb-f88cf81194e5Text" class="style19">
+	<tspan x="29" y="43">Check </tspan><tspan x="14" y="57">Information</tspan></text>
+  </g>
+  <use id="66259262-212e-4012-b225-5a64a95a1e30" xlink:href="#def44" class="style5" x="3582.5" y="1018" />
+  <g id="66259262-212e-4012-b225-5a64a95a1e30Container" transform="translate(3582.5,1018)">
+    <text id="66259262-212e-4012-b225-5a64a95a1e30Text" class="style20">
+	<tspan x="15" y="32">Generate Loan Documents</tspan></text>
+  </g>
+  <use id="f8aaff57-ff3b-4ed9-bc4c-2671ce52117b" xlink:href="#def15" class="style5" x="3616" y="1210.5" />
+  <g id="f8aaff57-ff3b-4ed9-bc4c-2671ce52117bContainer" transform="translate(3616,1210.5)">
+    <text id="f8aaff57-ff3b-4ed9-bc4c-2671ce52117bText" class="style21">
+	<tspan x="21" y="25">Schedule </tspan><tspan x="25" y="39">Closing</tspan></text>
+  </g>
+  <use id="9b7df1ca-5d19-4b95-9553-b79b0023b358" xlink:href="#def15" class="style5" x="3827" y="1210.5" />
+  <g id="9b7df1ca-5d19-4b95-9553-b79b0023b358Container" transform="translate(3827,1210.5)">
+    <text id="9b7df1ca-5d19-4b95-9553-b79b0023b358Text" class="style22">
+	<tspan x="17" y="32">Close Loan</tspan></text>
+  </g>
+  <use id="4a227dcc-90f2-447f-afc0-4b49d0b9645c" xlink:href="#def15" class="style5" x="3827" y="1006.5" />
+  <g id="4a227dcc-90f2-447f-afc0-4b49d0b9645cContainer" transform="translate(3827,1006.5)">
+    <text id="4a227dcc-90f2-447f-afc0-4b49d0b9645cText" class="style23">
+	<tspan x="13" y="32">Loan Booking</tspan></text>
+  </g>
+  <use id="48ef9898-cc26-4082-8cc5-683bbed20de1" xlink:href="#def13" class="style7" x="3969" y="1021.5" />
+  <g id="48ef9898-cc26-4082-8cc5-683bbed20de1Container" transform="translate(3969,1021.5)" />
+  <use id="5c33825f-aa58-41f7-bdb7-995a1e831d1e" xlink:href="#def15" class="style2" x="2299" y="312" />
+  <g id="5c33825f-aa58-41f7-bdb7-995a1e831d1eContainer" transform="translate(2299,312)">
+    <text id="5c33825f-aa58-41f7-bdb7-995a1e831d1eText" class="style24">
+	<tspan x="7" y="32">Call Lexis Nexis</tspan></text>
+  </g>
+  <use id="4cbd9d03-5cbf-4f3d-b1d9-eaba32319ed7" xlink:href="#def15" class="style2" x="2407" y="748.5" />
+  <g id="4cbd9d03-5cbf-4f3d-b1d9-eaba32319ed7Container" transform="translate(2407,748.5)">
+    <text id="4cbd9d03-5cbf-4f3d-b1d9-eaba32319ed7Text" class="style25">
+	<tspan x="18" y="25">Retry Lexis </tspan><tspan x="6" y="39">Nexis Manually</tspan></text>
+  </g>
+  <use id="49457ae9-25ff-4180-8651-c441730ef901" xlink:href="#def17" class="style4" x="2580" y="329" />
+  <g id="49457ae9-25ff-4180-8651-c441730ef901Container" transform="translate(2580,329)" />
+  <use id="4423dc5a-0629-42e7-87ea-b6a93e249ec4" xlink:href="#def15" class="style5" x="2664" y="746" />
+  <g id="4423dc5a-0629-42e7-87ea-b6a93e249ec4Container" transform="translate(2664,746)">
+    <text id="4423dc5a-0629-42e7-87ea-b6a93e249ec4Text" class="style26">
+	<tspan x="25" y="25">Validate </tspan><tspan x="21" y="39">Manually</tspan></text>
+  </g>
+  <use id="4c494ac9-359b-4d65-b149-5d366a099723" xlink:href="#def13" class="style7" x="2652" y="481" />
+  <g id="4c494ac9-359b-4d65-b149-5d366a099723Container" transform="translate(2652,481)" />
+  <use id="ada454a2-0dbd-4b96-acd3-bb5e721546f6" xlink:href="#def55" class="style2" x="3430" y="761.5" />
+  <g id="ada454a2-0dbd-4b96-acd3-bb5e721546f6Container" transform="translate(3430,761.5)">
+    <text id="ada454a2-0dbd-4b96-acd3-bb5e721546f6Text" class="style27">
+	<tspan x="11" y="25">Review &amp; Approve </tspan><tspan x="45" y="39">Loan</tspan></text>
+  </g>
+  <use id="c23209dd-ba3c-4607-be21-f939712b802c" xlink:href="#def13" class="style7" x="3535" y="443" />
+  <g id="c23209dd-ba3c-4607-be21-f939712b802cContainer" transform="translate(3535,443)" />
+  <use id="59ad7717-d7ee-4d44-8eb1-81f31017d0f9" xlink:href="#def15" class="style28" x="3401" y="494" />
+  <g id="59ad7717-d7ee-4d44-8eb1-81f31017d0f9Container" transform="translate(3401,494)">
+    <text id="59ad7717-d7ee-4d44-8eb1-81f31017d0f9Text" class="style29">
+	<tspan x="11" y="25">Send Decline </tspan><tspan x="30" y="39">Letter</tspan></text>
+  </g>
+  <use id="5eb0173e-4149-4101-85e6-2b7defedebfb" xlink:href="#def15" class="style28" x="3651" y="543" />
+  <g id="5eb0173e-4149-4101-85e6-2b7defedebfbContainer" transform="translate(3651,543)">
+    <text id="5eb0173e-4149-4101-85e6-2b7defedebfbText" class="style30">
+	<tspan x="7" y="25">Send Approval </tspan><tspan x="30" y="39">Letter</tspan></text>
+  </g>
+  <use id="3e046a4b-43e6-4242-b3e3-6e7eb094fc97" xlink:href="#def13" class="style7" x="3824" y="510" />
+  <g id="3e046a4b-43e6-4242-b3e3-6e7eb094fc97Container" transform="translate(3824,510)" />
+  <use id="d6edd13e-5531-44a7-9d29-f09eef7db01c" xlink:href="#def15" class="style28" x="3794" y="343" />
+  <g id="d6edd13e-5531-44a7-9d29-f09eef7db01cContainer" transform="translate(3794,343)">
+    <text id="d6edd13e-5531-44a7-9d29-f09eef7db01cText" class="style31">
+	<tspan x="11" y="25">Send Decline </tspan><tspan x="30" y="39">Letter</tspan></text>
+  </g>
+  <use id="ae777994-42e7-4494-b850-561dbfab2b28" xlink:href="#def62" class="style28" x="3592" y="158" />
+  <g id="ae777994-42e7-4494-b850-561dbfab2b28Container" transform="translate(3592,158)">
+    <text id="ae777994-42e7-4494-b850-561dbfab2b28Text" class="style32">
+	<tspan x="17" y="32">Accept Loan Approval</tspan></text>
+  </g>
+  <use id="efd89f6e-332b-49cc-943a-cb943c87637a" xlink:href="#def15" class="style28" x="2542" y="553" />
+  <g id="efd89f6e-332b-49cc-943a-cb943c87637aContainer" transform="translate(2542,553)">
+    <text id="efd89f6e-332b-49cc-943a-cb943c87637aText" class="style33">
+	<tspan x="11" y="25">Send Decline </tspan><tspan x="30" y="39">Letter</tspan></text>
+  </g>
+  <use id="8838a349-5cc4-4c86-9356-c710eb4055af" xlink:href="#def15" class="style28" x="2013" y="550" />
+  <g id="8838a349-5cc4-4c86-9356-c710eb4055afContainer" transform="translate(2013,550)">
+    <text id="8838a349-5cc4-4c86-9356-c710eb4055afText" class="style34">
+	<tspan x="11" y="25">Send Decline </tspan><tspan x="30" y="39">Letter</tspan></text>
+  </g>
+  <use id="2daf596b-68d5-428c-b390-a50bd87c1fd7" xlink:href="#def15" class="style28" x="1493" y="567" />
+  <g id="2daf596b-68d5-428c-b390-a50bd87c1fd7Container" transform="translate(1493,567)">
+    <text id="2daf596b-68d5-428c-b390-a50bd87c1fd7Text" class="style35">
+	<tspan x="11" y="25">Send Decline </tspan><tspan x="30" y="39">Letter</tspan></text>
+  </g>
+  <use id="fd8ec051-8822-4c32-9819-0de8fd8d4ad4" xlink:href="#def15" class="style28" x="1029" y="562" />
+  <g id="fd8ec051-8822-4c32-9819-0de8fd8d4ad4Container" transform="translate(1029,562)">
+    <text id="fd8ec051-8822-4c32-9819-0de8fd8d4ad4Text" class="style36">
+	<tspan x="11" y="25">Send Decline </tspan><tspan x="30" y="39">Letter</tspan></text>
+  </g>
+  <use id="d72057e8-e670-41ed-ab78-6f0f98e443b6" xlink:href="#def15" class="style28" x="534" y="518" />
+  <g id="d72057e8-e670-41ed-ab78-6f0f98e443b6Container" transform="translate(534,518)">
+    <text id="d72057e8-e670-41ed-ab78-6f0f98e443b6Text" class="style37">
+	<tspan x="11" y="25">Send Decline </tspan><tspan x="30" y="39">Letrer</tspan></text>
+  </g>
+  <use id="ce38d174-70ec-4531-b3fd-9cbd041b67ec" xlink:href="#def17" class="style4" x="3832" y="795.5" />
+  <g id="ce38d174-70ec-4531-b3fd-9cbd041b67ecContainer" transform="translate(3832,795.5)" />
+  <use id="a868ee92-4ad0-434c-b800-2982b90830f9" xlink:href="#def15" class="style5" x="3947" y="785.5" />
+  <g id="a868ee92-4ad0-434c-b800-2982b90830f9Container" transform="translate(3947,785.5)">
+    <text id="a868ee92-4ad0-434c-b800-2982b90830f9Text" class="style38">
+	<tspan x="33" y="25">User </tspan><tspan x="16" y="39">Acceptance</tspan></text>
+  </g>
+  <use id="5cf238a5-ef5a-4bac-b2cd-12df94645042" xlink:href="#def17" class="style4" x="494" y="604" />
+  <g id="5cf238a5-ef5a-4bac-b2cd-12df94645042Container" transform="translate(494,604)" />
+  <use id="16ea5eff-66ae-43fa-b92d-557e51d4dd38" xlink:href="#def17" class="style4" x="1105" y="648" />
+  <g id="16ea5eff-66ae-43fa-b92d-557e51d4dd38Container" transform="translate(1105,648)" />
+  <use id="9ce644df-dcc5-4c30-9313-b44cefbb9ab0" xlink:href="#def17" class="style4" x="1559" y="649" />
+  <g id="9ce644df-dcc5-4c30-9313-b44cefbb9ab0Container" transform="translate(1559,649)" />
+  <use id="d4e2872c-5b1c-417f-a0d6-a8c21bdbea3c" xlink:href="#def17" class="style4" x="2071" y="651" />
+  <g id="d4e2872c-5b1c-417f-a0d6-a8c21bdbea3cContainer" transform="translate(2071,651)" />
+  <use id="fb1f3b13-c0de-46ad-8a07-65f7253fecff" xlink:href="#def17" class="style4" x="3530" y="644" />
+  <g id="fb1f3b13-c0de-46ad-8a07-65f7253fecffContainer" transform="translate(3530,644)" />
+  <use id="7cbc6abe-1eae-4081-8174-e0d40a7cc2d9" xlink:href="#def17" class="style4" x="2607" y="645" />
+  <g id="7cbc6abe-1eae-4081-8174-e0d40a7cc2d9Container" transform="translate(2607,645)" />
+  <use id="b0573d90-301d-4039-8f40-76c083e5ffe6" xlink:href="#def17" class="style4" x="3964" y="420" />
+  <g id="b0573d90-301d-4039-8f40-76c083e5ffe6Container" transform="translate(3964,420)" />
+  <use id="019dcfe9-7c91-4235-b985-570c08fbafb5" xlink:href="#def17" class="style4" x="4112" y="335" />
+  <g id="019dcfe9-7c91-4235-b985-570c08fbafb5Container" transform="translate(4112,335)" />
+  <use id="11518e8b-2ac3-4967-9ed9-35f920aa3334" xlink:href="#def17" class="style4" x="3770" y="652" />
+  <g id="11518e8b-2ac3-4967-9ed9-35f920aa3334Container" transform="translate(3770,652)" />
+  <use id="cd8998e5-d623-48d0-af9c-5b18496825ef" xlink:href="#def17" class="style4" x="3306" y="587" />
+  <g id="cd8998e5-d623-48d0-af9c-5b18496825efContainer" transform="translate(3306,587)" />
+  <use id="0459e906-1811-4f26-aca9-4de7ce08b0c3" xlink:href="#def13" class="style7" x="3311" y="470" />
+  <g id="0459e906-1811-4f26-aca9-4de7ce08b0c3Container" transform="translate(3311,470)" />
+  <use id="20fc9634-f08d-4905-8ce4-dcda4baa7189" xlink:href="#def17" class="style4" x="498" y="328" />
+  <g id="20fc9634-f08d-4905-8ce4-dcda4baa7189Container" transform="translate(498,328)" />
+  <use id="fdc08fa3-ce70-45b4-95bb-5e0a63a1e0f7" xlink:href="#def17" class="style4" x="1043" y="328" />
+  <g id="fdc08fa3-ce70-45b4-95bb-5e0a63a1e0f7Container" transform="translate(1043,328)" />
+  <use id="b43ce91f-c2b9-47a4-8a2a-184d34f61027" xlink:href="#def17" class="style4" x="1510" y="327" />
+  <g id="b43ce91f-c2b9-47a4-8a2a-184d34f61027Container" transform="translate(1510,327)" />
+  <use id="300cd933-cbaa-458f-9954-45de95608290" xlink:href="#def17" class="style4" x="2022" y="329" />
+  <g id="300cd933-cbaa-458f-9954-45de95608290Container" transform="translate(2022,329)" />
+  <use id="8369390c-9b61-4a50-b269-ed33cdf4c34d" xlink:href="#def17" class="style4" x="2474" y="322" />
+  <g id="8369390c-9b61-4a50-b269-ed33cdf4c34dContainer" transform="translate(2474,322)" />
+  <use id="68d0a045-b838-4a3d-befc-036993db84b4" xlink:href="#def15" class="style2" x="2791" y="484" />
+  <g id="68d0a045-b838-4a3d-befc-036993db84b4Container" transform="translate(2791,484)">
+    <text id="68d0a045-b838-4a3d-befc-036993db84b4Text" class="style39">
+	<tspan x="28" y="25">Global </tspan><tspan x="19" y="39">Validation</tspan></text>
+  </g>
+  <use id="dee91655-b35a-4b30-bb76-9b0720bf73c8" xlink:href="#def17" class="style4" x="367" y="471" />
+  <g id="dee91655-b35a-4b30-bb76-9b0720bf73c8Container" transform="translate(367,471)" />
+  <polyline id="5e0413f3-71d6-4aa7-a8df-f7abdbc56b57" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,40 " marker-end="url(#defMarker)" transform="translate(189,94)" />
+  <text x="189" y="112" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="18489a88-8f2d-4c93-8493-b509c505bb06" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 91,0 " marker-end="url(#defMarker)" transform="translate(234,164)" />
+  <text x="279.5" y="162" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="1e64a07e-e2ee-40cb-94c1-a13ecc872c91" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="156,0 156,53 156,58.99998 156,62.31371 153.3137,64.99998 150,64.99998 12,65 6,64.99998 2.686295,65 0,62.31371 0,59 0,10 " marker-end="url(#defMarker)" transform="translate(189,184)" />
+  <text x="267" y="247" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="d762e1c8-1d96-473d-9c17-5df6c2a1681f" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,1.525879E-05 10,1.525879E-05 15.99997,1.525879E-05 19.31369,0 21.99997,2.686295 21.99997,6 21.99997,6 21.99997,6.000015 21.99997,6.000015 22,164 " marker-end="url(#defMarker)" transform="translate(365,164)" />
+  <text x="387" y="162" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="39809b36-56d0-4946-a6f7-038470e1442b" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="35.00006,0 35.00006,196 35,201.9999 35,205.3137 32.31372,207.9999 29.00006,207.9999 12.00006,208 6,207.9999 2.68634,208 0,210.6863 0,214 6.103516E-05,414 " marker-end="url(#defMarker)" transform="translate(702,368)" />
+  <text x="719.4999" y="574" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="bd5a8f32-e7e9-45c9-ac63-76b35b4a17a1" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="349.8334,321 12.00003,321 6.000031,321 2.68631,321 3.051758E-05,318.3137 3.051758E-05,315 3.051758E-05,12.00003 0,6.000031 0,2.68631 2.68631,3.051758E-05 6,0 59.83337,3.051758E-05 " marker-end="url(#defMarker)" transform="translate(307.1667,491)" />
+  <text x="307.1667" y="649.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="cb2899ff-035d-4c84-b435-f7e38ea0805d" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 65,0 " marker-end="url(#defMarker)" transform="translate(757,348)" />
+  <text x="789.5" y="346" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="024cc698-7bde-4801-ba06-8ccddc31b23e" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,407 " marker-end="url(#defMarker)" transform="translate(1210,367)" />
+  <text x="1210" y="568.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="7a6e7ae8-4998-4089-a8eb-44c2798b2d80" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,434 108,434 114,433.9999 117.3137,433.9999 119.9999,431.3137 119.9999,427.9999 120,0 " marker-end="url(#defMarker)" transform="translate(747,378)" />
+  <text x="867" y="810" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="06e2e129-839e-469c-b65e-b1eff2208b43" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="49,46 12,46 6,45.99994 2.686279,46 0,43.31366 0,40 0,0 " marker-end="url(#defMarker)" transform="translate(1056,622)" />
+  <text x="1056" y="666" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="179d0bbd-10dd-48b1-81d1-71255e26f0be" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 71,0 " marker-end="url(#defMarker)" transform="translate(1230,347)" />
+  <text x="1265.5" y="345" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="9424c56a-2038-4650-84fc-f797e2dbe0bf" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,427 79,427 85,426.9999 88.3136,426.9999 90.99988,424.3137 90.99988,420.9999 91,0 " marker-end="url(#defMarker)" transform="translate(1255,377)" />
+  <text x="1346" y="802" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="620f6026-6fa5-44c8-bbea-7dd6efd83105" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,3.051758E-05 82,3.051758E-05 87.99994,3.051758E-05 91.31366,0 93.99994,2.68631 93.99994,6 93.99994,6 93.99994,6.000031 93.99994,6.000031 94,415 " marker-end="url(#defMarker)" transform="translate(912,359)" />
+  <text x="1006" y="357" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="04681e73-6d15-4a50-94f2-8067ab241752" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="60,426 12,426 6,425.9999 2.686279,426 0,423.3137 0,420 0,0 " marker-end="url(#defMarker)" transform="translate(901,378)" />
+  <text x="901" y="802" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="4f89a9c8-ba01-4c74-a574-579135080463" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,3.051758E-05 81,3.051758E-05 86.99988,3.051758E-05 90.3136,0 92.99988,2.68631 92.99988,6 92.99988,6 92.99988,6.000031 92.99988,6.000031 93,409 " marker-end="url(#defMarker)" transform="translate(1391,358)" />
+  <text x="1484" y="356" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="29fd8258-23b1-4db7-8091-6aba15f0ce01" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="59,420 12,420 6,419.9999 2.686279,420 0,417.3137 0,414 0,0 " marker-end="url(#defMarker)" transform="translate(1363,377)" />
+  <text x="1363" y="795" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="25fa8157-90c8-43a8-b239-6c607cd89822" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,189 0,195 0,198.3137 2.686279,201 6,200.9999 28,201 33.99988,201 37.3136,200.9999 39.99988,203.6863 39.99988,206.9999 39.99988,206.9999 39.99988,207 39.99988,207 40,389 " marker-end="url(#defMarker)" transform="translate(1650,369)" />
+  <text x="1670" y="568" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="743ecf2d-fd05-4092-9f9b-c8924dafe3db" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="39,42 12,42 6,41.99994 2.686279,42 0,39.31366 0,36 0,0 " marker-end="url(#defMarker)" transform="translate(1520,627)" />
+  <text x="1520" y="667" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="ffc9396e-ff4b-4fb1-b3df-8b51a364dc29" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 122,0 " marker-end="url(#defMarker)" transform="translate(1670,349)" />
+  <text x="1731" y="347" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="9856edd1-487d-4390-b141-57edcc6c6fe7" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,3.051758E-05 38,3.051758E-05 43.99988,3.051758E-05 47.3136,0 49.99988,2.68631 49.99988,6 49.99988,6 49.99988,6.000031 49.99988,6.000031 50,378 " marker-end="url(#defMarker)" transform="translate(1882,372)" />
+  <text x="1932" y="370" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="e73eb2a3-d252-4be2-8f75-ee68864cfca3" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="68,389 12,389 6,388.9999 2.686279,389 0,386.3137 0,383 0,0 " marker-end="url(#defMarker)" transform="translate(1837,379)" />
+  <text x="1837" y="766" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="a79c1080-9ed8-4bed-b17b-de1817f8cabc" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,181 0,187 0,190.3137 2.686279,193 6,192.9999 20,193 25.99976,193 29.31348,192.9999 31.99976,195.6863 31.99976,198.9999 31.99976,198.9999 31.99976,199 31.99976,199 32,384 " marker-end="url(#defMarker)" transform="translate(2180,362)" />
+  <text x="2196" y="553" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="f669965e-2fc3-462b-bbd8-97b1bef101d1" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="31,61 12,61 6,60.99994 2.686279,61 0,58.31366 0,55 0,0 " marker-end="url(#defMarker)" transform="translate(2040,610)" />
+  <text x="2040" y="669" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="014833b1-d825-40f6-8b4c-ebb2a564112c" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0002441406,179 0.0002441406,12.00002 0,6.000015 0,2.68631 2.686523,1.525879E-05 6,0 34.00024,1.525879E-05 " marker-end="url(#defMarker)" transform="translate(3060,157)" />
+  <text x="3060" y="155" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="47d26d29-0339-460f-8a54-69c2d64509d1" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,563 0,569 0,572.3137 2.686279,575 6,574.9999 72,575 " marker-end="url(#defMarker)" transform="translate(3197,178)" />
+  <text x="3197" y="751" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="2024311a-5675-4af0-8554-25de9282bf7c" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="112,613 12,613 6,612.9999 2.686279,613 0,610.3137 0,607 0,0 " marker-end="url(#defMarker)" transform="translate(3157,178)" />
+  <text x="3157" y="789" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="9abfa0eb-c0b5-4db3-b7cc-8283fc27c00a" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="84,110 12,110 6,109.9999 2.686279,110 0,107.3137 0,104 0,0 " marker-end="url(#defMarker)" transform="translate(3446,554)" />
+  <text x="3446" y="662" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="4fe26595-4b86-455d-8fe0-f816cdef8c1c" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,66 1,66 1,132 " marker-end="url(#defMarker)" transform="translate(3660,1078)" />
+  <text x="3660.5" y="1142" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="f9dcf12d-7382-46a1-9ad7-b9617e1de7b4" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 121,0 " marker-end="url(#defMarker)" transform="translate(3706,1240)" />
+  <text x="3766.5" y="1238" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="a31d136a-6127-429c-a058-88de67da603e" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,144 0,0 " marker-end="url(#defMarker)" transform="translate(3872,1066)" />
+  <text x="3872" y="1136" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="b54d2512-74c3-49a3-84e4-a86e166a3b92" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 52,0 " marker-end="url(#defMarker)" transform="translate(3917,1036)" />
+  <text x="3943" y="1034" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="0bd0bb53-2a1a-454d-8c71-bf6a326314ad" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,409 72,409 78,408.9999 81.3136,408.9999 83.99988,406.3137 83.99988,402.9999 84,0 " marker-end="url(#defMarker)" transform="translate(1735,379)" />
+  <text x="1819" y="786" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="4851ae1a-fc27-4316-a6a3-419372528758" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,441 0,447 0,450.3137 2.686279,453 6,452.9999 209,453 " marker-end="url(#defMarker)" transform="translate(3060,376)" />
+  <text x="3060" y="827" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="0396a5e9-3538-470b-a7e1-0247c726177a" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 99,0 " marker-end="url(#defMarker)" transform="translate(2200,342)" />
+  <text x="2249.5" y="340" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="026d9a2f-65b1-425c-9473-8b72a2b99631" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,3.051758E-05 51,3.051758E-05 56.99976,3.051758E-05 60.31348,0 62.99976,2.68631 62.99976,6 62.99976,6 62.99976,6.000031 62.99976,6.000031 63,395 " marker-end="url(#defMarker)" transform="translate(2389,353)" />
+  <text x="2452" y="351" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="03954213-bf1c-4d4b-baa9-ed60c9158a8e" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="63,406 12,406 6,405.9999 2.686279,406 0,403.3137 0,400 0,0 " marker-end="url(#defMarker)" transform="translate(2344,372)" />
+  <text x="2344" y="776" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="774deff9-be87-4255-9a03-b1acde409c79" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,404 57,404 63,403.9999 66.31348,403.9999 68.99976,401.3137 68.99976,397.9999 69,0 " marker-end="url(#defMarker)" transform="translate(2257,372)" />
+  <text x="2326" y="774" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="d6ba2893-1389-4cb5-aab1-5299ba43fdc7" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="20,52 12,52 6,51.99994 2.686279,52 0,49.31366 0,46 0,0 " marker-end="url(#defMarker)" transform="translate(2587,613)" />
+  <text x="2587" y="663" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="3788c499-67e6-4c0c-91c2-bba1302898fe" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,158 0,164 0,167.3137 2.686279,170 6,169.9999 97,170 102.9998,170 106.3135,169.9999 108.9998,172.6863 108.9998,175.9999 108.9998,175.9999 108.9998,176 108.9998,176 109,377 " marker-end="url(#defMarker)" transform="translate(2600,369)" />
+  <text x="2654.5" y="537" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="01a5334d-9551-41c9-8913-d451671209dc" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,397 159,397 165,396.9999 168.3135,396.9999 170.9998,394.3137 170.9998,390.9999 171,0 " marker-end="url(#defMarker)" transform="translate(2754,379)" />
+  <text x="2925" y="774" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="2d0d3915-67ec-49c8-8b8a-03393badc441" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,101 0,107 0,110.3137 2.686279,113 6,112.9999 107,113 " marker-end="url(#defMarker)" transform="translate(387,511)" />
+  <text x="387" y="622" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="3e3970d2-f4be-4188-898a-36374b2ac493" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 35,0 35,7 70,7 " marker-end="url(#defMarker)" transform="translate(2970,349)" />
+  <text x="3005" y="350.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="136e3e52-a481-4cef-baae-39f710714157" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="74,69 12,69 6,68.99994 2.686279,69 0,66.31366 0,63 0,0 " marker-end="url(#defMarker)" transform="translate(3696,603)" />
+  <text x="3696" y="670" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="2124541b-76c0-4f6e-8236-7986875d3bd1" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,389 0,395 0,398.3137 2.686279,401 6,400.9999 41,401 46.99976,401 50.31348,400.9999 52.99976,403.6863 52.99976,406.9999 52.99976,406.9999 52.99976,407 52.99976,407 53,800 " marker-end="url(#defMarker)" transform="translate(3607,218)" />
+  <text x="3633.5" y="617" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="21dbebef-406b-4928-85a4-c2a8244c203d" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,325 0,0 " marker-end="url(#defMarker)" transform="translate(3661,218)" />
+  <text x="3661" y="378.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="c58d6698-5f8d-4a43-b99c-ef8fcd1302c0" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0002441406,36.00003 0.0002441406,12.00003 0,6.000031 0,2.68631 2.686523,3.051758E-05 6,0 107.0002,3.051758E-05 " marker-end="url(#defMarker)" transform="translate(3428,458)" />
+  <text x="3428" y="456" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="6dc6ada2-7384-4b5a-b4f3-51efbf2eb307" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,107 " marker-end="url(#defMarker)" transform="translate(3839,403)" />
+  <text x="3839" y="454.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="0d7bdf6c-b186-4ff5-92d9-cb47190a6875" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="80,67.00003 52,67.00003 46,67 42.68628,67.00003 40,64.31372 40,61.00003 40,12.00003 39.99976,6 39.99976,2.68631 37.31348,0 33.99976,0 33.99976,0 33.99976,3.051758E-05 33.99976,3.051758E-05 0,3.051758E-05 " marker-end="url(#defMarker)" transform="translate(3884,373)" />
+  <text x="3924" y="404.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="ebcf963c-540a-4b8e-9cd1-1a3142886206" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0002441406,62.00003 0.0002441406,17.00003 0,11.00003 0,7.68631 2.686523,5.000031 6,5 26.00024,5.000031 26,5.000031 26,2.238586 28.23877,3.051758E-05 31,3.051758E-05 33.76147,0 36,2.238586 36,5 36,5 36,5.000031 36,5.000031 36.00024,5.000031 83.00024,5.000031 " marker-end="url(#defMarker)" transform="translate(2569,496)" />
+  <text x="2569" y="494" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="19128db3-4898-4bf5-85ca-db2c317fa2d5" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0001220703,73.00003 0.0001220703,12.00003 0,6.000031 0,2.68631 2.686401,3.051758E-05 6,0 92.00012,3.051758E-05 " marker-end="url(#defMarker)" transform="translate(2040,477)" />
+  <text x="2040" y="475" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="1e329318-5613-4a8a-a54f-59ca2c5d61db" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0001220703,96.00003 0.0001220703,12.00003 0,6.000031 0,2.68631 2.686401,3.051758E-05 6,0 79.00012,3.051758E-05 " marker-end="url(#defMarker)" transform="translate(1520,471)" />
+  <text x="1520" y="469" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="1abaed53-b6dd-4241-80f6-bcf09921d776" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0001220703,51.00003 0.0001220703,12.00003 0,6.000031 0,2.68631 2.686401,3.051758E-05 6,0 74.00012,3.051758E-05 " marker-end="url(#defMarker)" transform="translate(1056,511)" />
+  <text x="1056" y="509" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="74c98154-a3fa-4e65-a2ea-d7eb3acfef6f" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 122,0 " marker-end="url(#defMarker)" transform="translate(534,624)" />
+  <text x="595" y="622" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="a00e6679-1cd3-496a-80c5-86a461f525de" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="117,134 117,79 116.9998,72.99994 116.9998,69.68628 114.3135,66.99994 110.9998,66.99994 110.9998,66.99994 110.9998,67 110.9998,67 12,67 6,66.99994 2.686279,67 0,64.31366 0,61 0,0 " marker-end="url(#defMarker)" transform="translate(3326,627)" />
+  <text x="3384.5" y="692" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="5f22bd26-6f50-4aff-9fa1-61335d11255f" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 75,0 " marker-end="url(#defMarker)" transform="translate(3872,815)" />
+  <text x="3909.5" y="813" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="65a9160d-a9b4-4a8a-8a0f-4613f3c7d303" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,440 83,440 89,439.9999 92.31348,439.9999 94.99951,437.3137 94.99951,433.9999 95,0 " marker-end="url(#defMarker)" transform="translate(4037,375)" />
+  <text x="4132" y="813" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="7cb69dfb-75fb-4053-8b7f-b5fcdb7f81ed" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="301.0002,0 301.0002,83.70514 301,89.70508 301,93.0188 298.3137,95.70508 295.0002,95.70508 12.00024,95.70514 6,95.70508 2.686523,95.70514 0,98.39142 0,101.7051 0.0002441406,173 " marker-end="url(#defMarker)" transform="translate(3691,845)" />
+  <text x="3841.5" y="938.7051" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="5346ab91-629e-460c-8f51-45320b8cbb99" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="6.103516E-05,56.00006 6.103516E-05,12.00006 0,6.000061 0,2.68634 2.68634,6.103516E-05 6,0 20.00006,6.103516E-05 " marker-end="url(#defMarker)" transform="translate(514,548)" />
+  <text x="514" y="546" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="2f03992e-bcb9-4819-ba52-88646595cad3" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,6.103516E-05 35,6.103516E-05 40.99994,6.103516E-05 44.31366,0 46.99994,2.68634 46.99994,6 46.99994,6 46.99994,6.000061 46.99994,6.000061 47,61.00006 " marker-end="url(#defMarker)" transform="translate(624,548)" />
+  <text x="671" y="546" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="5fceb6a0-c7fe-43ae-b1d3-d528a9bd79b4" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="40,116 12,116 6,115.9999 2.686279,116 0,113.3137 0,110 0,0 " marker-end="url(#defMarker)" transform="translate(1125,688)" />
+  <text x="1125" y="802" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="3516d974-c65a-45fb-8075-6303618d4edf" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,142 2,142 8,141.9999 11.3136,141.9999 13.99988,139.3137 13.99988,135.9999 14,120 13.99988,113.9999 13.99988,110.6863 11.3136,107.9999 7.999878,107.9999 7.999878,107.9999 7.999878,108 7.999878,108 8,108 0,108 0,0 " marker-end="url(#defMarker)" transform="translate(1145,526)" />
+  <text x="1159" y="632" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="986a01da-bcd2-4a34-8a71-59ba3f5e7336" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="66,99 12,99 6,98.99994 2.686279,99 0,96.31366 0,93 0,0 " marker-end="url(#defMarker)" transform="translate(1579,689)" />
+  <text x="1579" y="786" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="2e708439-dc0f-4030-a762-7999126b5544" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,183 3,183 9,182.9999 12.3136,182.9999 14.99988,180.3137 14.99988,176.9999 15,0 " marker-end="url(#defMarker)" transform="translate(1599,486)" />
+  <text x="1614" y="667" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="33f5b645-85d9-4d28-9ee7-bc65e17e4561" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="76,85 12,85 6,84.99994 2.686279,85 0,82.31366 0,79 0,0 " marker-end="url(#defMarker)" transform="translate(2091,691)" />
+  <text x="2091" y="774" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="4414b76d-04f4-41b8-b457-2e281442d7c6" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,179 24,179 30,178.9999 33.31348,178.9999 35.99976,176.3137 35.99976,172.9999 36,0 " marker-end="url(#defMarker)" transform="translate(2111,492)" />
+  <text x="2147" y="669" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="89f8e4df-c671-4333-a2de-821c3066444a" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0002441406,77 0.0002441406,44.5 0,38.5 0,35.18628 2.686523,32.5 6,32.49994 50.00024,32.5 56.00024,32.49994 59.31372,32.49994 62,29.81366 62,26.49994 62.00024,0 " marker-end="url(#defMarker)" transform="translate(3488,684)" />
+  <text x="3519" y="714.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="b03b591d-0409-498a-8ce5-c0b827334104" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,171 0,0 " marker-end="url(#defMarker)" transform="translate(3550,473)" />
+  <text x="3550" y="556.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="d94c1587-497e-4e45-b4d2-15a42bf6989b" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="37,91 12,91 6,90.99994 2.686279,91 0,88.31366 0,85 0,0 " marker-end="url(#defMarker)" transform="translate(2627,685)" />
+  <text x="2627" y="774" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="58031d31-0a00-441a-9281-384e37b8e8e3" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,154 8,154 14,153.9999 17.31348,153.9999 19.99976,151.3137 19.99976,147.9999 20,33 20,32.99994 17.23853,33 15,30.76141 14.99976,28 14.99976,25.23853 17.23853,23 19.99976,22.99994 20,23 20,0 " marker-end="url(#defMarker)" transform="translate(2647,511)" />
+  <text x="2667" y="663" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="feef98b6-da9b-4ab7-b6c0-a15fad4dfa3d" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,1.525879E-05 390,1.525879E-05 395.9995,1.525879E-05 399.3135,0 401.9995,2.686295 401.9995,6 401.9995,6 401.9995,6.000015 401.9995,6.000015 402,147 " marker-end="url(#defMarker)" transform="translate(3730,188)" />
+  <text x="4132" y="186" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="af01f35a-fcb9-4bc2-b49f-b2ccc672f075" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="130,0 130,53 129.9998,58.99994 129.9998,62.31366 127.3135,64.99994 124,64.99994 0,65 " marker-end="url(#defMarker)" transform="translate(3854,460)" />
+  <text x="3984" y="523" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="f32b3970-a64c-43ee-86bf-280c986a3cf7" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="128.0002,3.051758E-05 12.00024,3.051758E-05 6,0 2.686523,3.051758E-05 0,2.68631 0,6.000031 0.0002441406,65.00003 " marker-end="url(#defMarker)" transform="translate(3984,355)" />
+  <text x="3984" y="353" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="53a1ef46-0520-4c4d-a971-20620a96dca5" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="62,103 62,43 61.99976,36.99994 61.99976,33.68628 59.31348,30.99994 55.99976,30.99994 55.99976,30.99994 55.99976,31 55.99976,31 12,31 6,30.99994 2.686279,31 0,28.31366 0,25 0,0 " marker-end="url(#defMarker)" transform="translate(3790,692)" />
+  <text x="3821" y="721" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="2fd5872e-487d-478b-ba24-0fa8559abf14" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="103,434 103,223 102.9998,217 102.9998,213.6863 100.3135,211 96.99976,211 96.99976,211 96.99976,211 96.99976,211 12,211 6,211 2.686279,211 0,208.3137 0,205 0,0 " marker-end="url(#defMarker)" transform="translate(3687,218)" />
+  <text x="3738.5" y="427" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="e94b5861-fdb6-4298-835c-25542ab573f8" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 260,0 " marker-end="url(#defMarker)" transform="translate(2620,349)" />
+  <text x="2750" y="347" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="f510140f-5b5a-4fa0-98f6-9f47d05acc12" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,87 0,0 " marker-end="url(#defMarker)" transform="translate(3326,500)" />
+  <text x="3326" y="541.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="a62e8a99-77c5-49e7-8bec-57161e2ee6fe" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="6.103516E-05,38.69235 6.103516E-05,12.00003 0,6.000031 0,2.68631 2.68634,3.051758E-05 6,0 337.0001,3.051758E-05 343,3.051758E-05 346.3137,0 349,2.68631 349,6 349,6 349,6.000031 349,6.000031 349.0001,28.69235 " marker-end="url(#defMarker)" transform="translate(518,289.3077)" />
+  <text x="692.5001" y="287.3077" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="0845d73d-746c-4697-9e80-7248ef8fac13" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 179,0 " marker-end="url(#defMarker)" transform="translate(538,348)" />
+  <text x="627.5" y="346" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="ae68abd4-104c-4254-8dd0-f517b1cfba1f" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 131,0 " marker-end="url(#defMarker)" transform="translate(912,348)" />
+  <text x="977.5" y="346" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="7516f4cf-5846-45f2-8d8e-d01471fe69c4" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0001220703,25.00003 0.0001220703,12.00003 0,6.000031 0,2.68631 2.686401,3.051758E-05 6,0 271.0001,3.051758E-05 277,3.051758E-05 280.3137,0 283,2.68631 283,6 283,6 283,6.000031 283,6.000031 283.0001,14.00003 " marker-end="url(#defMarker)" transform="translate(1063,303)" />
+  <text x="1204.5" y="301" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="94596b36-86e4-4ccf-86fb-2b814d4f3dc8" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,1 53.5,1 53.5,0 107,0 " marker-end="url(#defMarker)" transform="translate(1083,347)" />
+  <text x="1136.5" y="345.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="2d0308dc-6057-480d-81fc-4441076759bb" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 119,0 " marker-end="url(#defMarker)" transform="translate(1391,347)" />
+  <text x="1450.5" y="345" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="89a22cf0-94b3-4c99-a0ae-e02e7e49a4f6" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0001220703,38.66669 0.0001220703,12.00003 0,6.000031 0,2.68631 2.686401,3.051758E-05 6,0 295.0001,3.051758E-05 301,3.051758E-05 304.3137,0 307,2.68631 307,6 307,6 307,6.000031 307,6.000031 307.0001,30.66669 " marker-end="url(#defMarker)" transform="translate(1530,288.3333)" />
+  <text x="1683.5" y="286.3333" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="d55fbd4d-dd9f-4c1b-8297-2e309a40eade" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 40,0 40,2 80,2 " marker-end="url(#defMarker)" transform="translate(1550,347)" />
+  <text x="1590" y="346" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="08ed6224-c01b-40b3-944b-46a7ada8604b" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 140,0 " marker-end="url(#defMarker)" transform="translate(1882,349)" />
+  <text x="1952" y="347" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="13ea7ffd-68b8-4d52-92af-91b304048d3c" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0001220703,31.00003 0.0001220703,12.00003 0,6.000031 0,2.68631 2.686401,3.051758E-05 6,0 290.0001,3.051758E-05 295.9999,3.051758E-05 299.3136,0 301.9999,2.68631 301.9999,6 301.9999,6 301.9999,6.000031 301.9999,6.000031 302.0001,14.00003 " marker-end="url(#defMarker)" transform="translate(2042,298)" />
+  <text x="2193" y="296" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="4f017d51-dba7-4c54-99f9-3d1005d3ea08" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,7 49,7 49,0 98,0 " marker-end="url(#defMarker)" transform="translate(2062,342)" />
+  <text x="2111" y="343.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="faad59b6-39df-483f-b3f9-ff5eadb069ef" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 85,0 " marker-end="url(#defMarker)" transform="translate(2389,342)" />
+  <text x="2431.5" y="340" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="28aae01c-3e3e-4635-b1cb-8c65018d3dda" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0002441406,14.00003 0.0002441406,12.00003 0,6.000031 0,2.68631 2.686523,3.051758E-05 6,0 312.0002,3.051758E-05 318,3.051758E-05 321.3137,0 324,2.68631 324,6 324,6 324,6.000031 324,6.000031 324.0002,36.00003 324,36.00003 326.7615,36 329,38.23859 329,41 329.0002,43.76144 326.7615,46 324.0002,46 324.0002,46 324.0002,46 324.0002,46 324.0002,46.00003 324.0002,176 " marker-end="url(#defMarker)" transform="translate(2494,308)" />
+  <text x="2656" y="306" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="73586279-7a40-497b-8ad7-0c1a2e270d6f" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 52,0 52,7 66,7 " marker-end="url(#defMarker)" transform="translate(2514,342)" />
+  <text x="2566" y="343.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="72f618fa-8627-4675-92e7-260b4f2bd835" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="65.00024,6.103516E-05 12.00024,6.103516E-05 6,0 2.686523,6.103516E-05 0,2.68634 0,6.000061 0.0002441406,232.0001 " marker-end="url(#defMarker)" transform="translate(2726,514)" />
+  <text x="2726" y="512" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="97b590fa-1ac4-467a-b53c-273f08b12f5f" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0.0002441406,105 0.0002441406,64.5 0,58.5 0,55.18628 2.686523,52.5 6,52.49997 42.00024,52.5 48.00024,52.49997 51.31372,52.49997 54,49.81369 54,46.49997 54.00024,0 " marker-end="url(#defMarker)" transform="translate(2836,379)" />
+  <text x="2863" y="429.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="8d432f8f-3cd4-4c9a-a89a-2a8f69a18305" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 91,0 " marker-end="url(#defMarker)" transform="translate(407,348)" />
+  <text x="452.5" y="346" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="a5f5392d-a3a1-4f6f-b0bd-f79921b79e75" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 0,103 " marker-end="url(#defMarker)" transform="translate(387,368)" />
+  <text x="387" y="417.5" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="27222559-4b6a-40d8-9be1-62cff3108fcf" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,0 71,0 " marker-end="url(#defMarker)" transform="translate(3359,791)" />
+  <text x="3394.5" y="789" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <polyline id="8d2f9b32-e18f-4ce4-b5a5-e47924eb31de" style="stroke:#000000;fill:none;stroke-opacity:1;stroke-width:1;" points="0,5.000061 95,5.000061 94.99976,5.000061 94.99976,2.238586 97.23853,6.103516E-05 99.99976,6.103516E-05 102.7612,0 104.9998,2.238586 104.9998,5 104.9998,5 104.9998,5.000061 104.9998,5.000061 105,5.000061 199,5.000061 198.9998,5.000061 198.9998,2.238586 201.2385,6.103516E-05 203.9998,6.103516E-05 206.7612,0 208.9998,2.238586 208.9998,5 208.9998,5 208.9998,5.000061 208.9998,5.000061 209,5.000061 231,5.000061 236.9998,5.000061 240.3135,5 242.9998,7.68634 242.9998,11 242.9998,11 242.9998,11.00006 242.9998,11.00006 243,201.0001 243,207.0001 243,210.3137 245.6863,213.0001 249,213 309,213.0001 308.9998,213.0001 308.9998,210.2386 311.2385,208.0001 313.9998,208.0001 316.7612,208 318.9998,210.2386 318.9998,213 318.9998,213 318.9998,213.0001 318.9998,213.0001 319,213.0001 486,213.0001 " marker-end="url(#defMarker)" transform="translate(3346,607)" />
+  <text x="3589" y="714.0001" style="font-family:'Segoe UI';font-size:8pt;fill:#000000;">
+  </text>
+  <g id="Text_32813721-6608-418c-8115-cf03f3c550ffContainer" transform="translate(3909,271)">
+    <text id="Text_32813721-6608-418c-8115-cf03f3c550ffText" class="style41">
+	<tspan x="7" y="14">Decline</tspan></text>
+  </g>
+  <g id="Text_c264f38e-2c7d-4f73-a384-f7363d40365bContainer" transform="translate(2398,360)">
+    <text id="Text_c264f38e-2c7d-4f73-a384-f7363d40365bText" class="style42">
+	<tspan x="7" y="14">ERROR</tspan></text>
+  </g>
+  <g id="Text_c2c3e8bc-5bc8-4ff5-91ba-4e766c7fb82cContainer" transform="translate(3212,792)">
+    <text id="Text_c2c3e8bc-5bc8-4ff5-91ba-4e766c7fb82cText" class="style43">
+	<tspan x="7" y="14">Invalid </tspan><tspan x="7" y="29">Documents</tspan></text>
+  </g>
+  <g id="Text_a0c7e3fb-34e1-49f6-b3ab-31f460545728Container" transform="translate(1945,388)">
+    <text id="Text_a0c7e3fb-34e1-49f6-b3ab-31f460545728Text" class="style44">
+	<tspan x="7" y="14">ERROR</tspan></text>
+  </g>
+  <g id="Text_1ec5979c-554f-45e3-a882-00799e9b91a5Container" transform="translate(1671,559)">
+    <text id="Text_1ec5979c-554f-45e3-a882-00799e9b91a5Text" class="style45">
+	<tspan x="7" y="14">NO</tspan></text>
+  </g>
+  <g id="Text_3441b3dd-a90e-4868-bb91-0951e5eeca10Container" transform="translate(1465,369)">
+    <text id="Text_3441b3dd-a90e-4868-bb91-0951e5eeca10Text" class="style46">
+	<tspan x="7" y="14">ERROR</tspan></text>
+  </g>
+  <g id="Text_bbb4aa05-9251-428d-b0c0-84a956c30242Container" transform="translate(985,399)">
+    <text id="Text_bbb4aa05-9251-428d-b0c0-84a956c30242Text" class="style47">
+	<tspan x="7" y="14">ERROR</tspan></text>
+  </g>
+  <g id="Text_75edbc58-2be5-4f72-9f30-e4646d51c692Container" transform="translate(1222,592)">
+    <text id="Text_75edbc58-2be5-4f72-9f30-e4646d51c692Text" class="style48">
+	<tspan x="7" y="14">NO</tspan></text>
+  </g>
+  <g id="Text_9c3f4863-cd0e-43c4-bc2c-865b23b05096Container" transform="translate(794,605)">
+    <text id="Text_9c3f4863-cd0e-43c4-bc2c-865b23b05096Text" class="style49">
+	<tspan x="7" y="14">SI</tspan></text>
+  </g>
+  <g id="Text_6e59a7f4-be8e-4d42-baa1-9a6aea87050eContainer" transform="translate(376,165)">
+    <text id="Text_6e59a7f4-be8e-4d42-baa1-9a6aea87050eText" class="style50">
+	<tspan x="7" y="14">YES</tspan></text>
+  </g>
+  <g id="Text_b738699d-b76c-4da1-933f-f71dbb77fb89Container" transform="translate(266,239)">
+    <text id="Text_b738699d-b76c-4da1-933f-f71dbb77fb89Text" class="style51">
+	<tspan x="7" y="14">No</tspan></text>
+  </g>
+  <g id="Text_8369390c-9b61-4a50-b269-ed33cdf4c34dContainer" transform="translate(2466,368)">
+    <text id="Text_8369390c-9b61-4a50-b269-ed33cdf4c34dText" class="style52">
+	<tspan x="6" y="14">Global??</tspan></text>
+  </g>
+  <g id="Text_300cd933-cbaa-458f-9954-45de95608290Container" transform="translate(2080,368)">
+    <text id="Text_300cd933-cbaa-458f-9954-45de95608290Text" class="style53">
+	<tspan x="6" y="14">Global??</tspan></text>
+  </g>
+  <g id="Text_b43ce91f-c2b9-47a4-8a2a-184d34f61027Container" transform="translate(1502,373)">
+    <text id="Text_b43ce91f-c2b9-47a4-8a2a-184d34f61027Text" class="style54">
+	<tspan x="6" y="14">Global??</tspan></text>
+  </g>
+  <g id="Text_fdc08fa3-ce70-45b4-95bb-5e0a63a1e0f7Container" transform="translate(1034,374)">
+    <text id="Text_fdc08fa3-ce70-45b4-95bb-5e0a63a1e0f7Text" class="style55">
+	<tspan x="6" y="14">Global??</tspan></text>
+  </g>
+  <g id="Text_20fc9634-f08d-4905-8ce4-dcda4baa7189Container" transform="translate(492,374)">
+    <text id="Text_20fc9634-f08d-4905-8ce4-dcda4baa7189Text" class="style56">
+	<tspan x="6" y="14">Global?</tspan></text>
+  </g>
+  <g id="Text_cd8998e5-d623-48d0-af9c-5b18496825efContainer" transform="translate(3295,633)">
+    <text id="Text_cd8998e5-d623-48d0-af9c-5b18496825efText" class="style57">
+	<tspan x="7" y="14">Continue </tspan><tspan x="7" y="29">Process??</tspan></text>
+  </g>
+  <g id="Text_ce38d174-70ec-4531-b3fd-9cbd041b67ecContainer" transform="translate(3812,842)">
+    <text id="Text_ce38d174-70ec-4531-b3fd-9cbd041b67ecText" class="style58">
+	<tspan x="11" y="14">Interactive/
+
+</tspan><tspan x="22" y="29">Remote </tspan><tspan x="11" y="43">Acceptance</tspan></text>
+  </g>
+  <g id="Text_49457ae9-25ff-4180-8651-c441730ef901Container" transform="translate(2560,375)">
+    <text id="Text_49457ae9-25ff-4180-8651-c441730ef901Text" class="style59">
+	<tspan x="6" y="14">Validate Lexis </tspan><tspan x="26" y="29">Nexis</tspan></text>
+  </g>
+  <g id="Text_a5bdc6b6-26c3-428d-a0e6-a60628d4135fContainer" transform="translate(3024,382)">
+    <text id="Text_a5bdc6b6-26c3-428d-a0e6-a60628d4135fText" class="style60">
+	<tspan x="22" y="14">Need </tspan><tspan x="6" y="29">Documents </tspan><tspan x="14" y="43">Upload?</tspan></text>
+  </g>
+  <g id="Text_b394e5ba-64c7-4c43-9a27-c12b4e0b44cdContainer" transform="translate(2140,368)">
+    <text id="Text_b394e5ba-64c7-4c43-9a27-c12b4e0b44cdText" class="style61">
+	<tspan x="19" y="14">Validate </tspan><tspan x="6" y="29">Paydex Score</tspan></text>
+  </g>
+  <g id="Text_ae3e69de-8456-4f93-8c42-698b20452a91Container" transform="translate(1610,375)">
+    <text id="Text_ae3e69de-8456-4f93-8c42-698b20452a91Text" class="style62">
+	<tspan x="6" y="14">Validar Credit </tspan><tspan x="26" y="29">Score</tspan></text>
+  </g>
+  <g id="Text_d6bcea3d-fdec-4000-8f5d-186728b2083dContainer" transform="translate(1168,373)">
+    <text id="Text_d6bcea3d-fdec-4000-8f5d-186728b2083dText" class="style63">
+	<tspan x="6" y="14">Validate OFAC </tspan><tspan x="33" y="29">List </tspan></text>
+  </g>
+  <g id="Text_a2584813-f34a-4216-a896-e3d676b8c895Container" transform="translate(685,374)">
+    <text id="Text_a2584813-f34a-4216-a896-e3d676b8c895Text" class="style64">
+	<tspan x="11" y="14">Evaluate Business </tspan><tspan x="6" y="29">Information (Years </tspan><tspan x="7" y="43">in Business,
+ DSCR,  </tspan><tspan x="14" y="57">Anual Revenues)</tspan></text>
+  </g>
+  <g id="Text_7867b1c4-84be-4fb1-b7ea-130c6891b8b4Container" transform="translate(311,190)">
+    <text id="Text_7867b1c4-84be-4fb1-b7ea-130c6891b8b4Text" class="style65">
+	<tspan x="21" y="14">Form </tspan><tspan x="7" y="29">Complete?</tspan></text>
+  </g>
+  <g id="Text_8f424da0-963b-4ff3-af5f-7bb11d381515Container" transform="translate(345,374)">
+    <text id="Text_8f424da0-963b-4ff3-af5f-7bb11d381515Text" class="style66">
+	<tspan x="6" y="14">Evaluate Agile </tspan><tspan x="17" y="29">Loan Type</tspan></text>
+  </g>
+  <image x="4098" y="1367" width="90" height="43" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAArCAYAAAD41p9mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYsSURBVGhD7Vuxbhw3EFWZUqWtO0eqAheB4dJNoCtVuol9TiMXxllIpdJdrot1MpBPTB0kluA/yLzH4d6QHO7u7enOlrUPGOxyOBySb4ZcnkwfjBgx4mvhdL44O339/i3l1cULVe8c0t8MfWqRkPJS5ESL3xdI8JvFy9Pf3j3nRH/9/ZFW7RTS1wMkGpM+Pz+ME1WdvC8+MAAIxKuLeWMTgjJrAjRfXIhcUoe2KGvQtA7lt9L+Bz5RpzodBkF90zefGMuS7WS1oY2a3j+YiWHyZzqhy2ZyIPvN4il1sQ4Eox30qEcQgi4QJGX6hj4QigAstRx865bFQShog8DZoMM+BlOeanr/gMmKzLQIckqiQyaGLIyTljLtQyBA8kkgfu3PEB3qQO7a9xy2sIuQ8pJ2WAl4xzP0J6sljENNfdysJh9uryZLPP/7ONnbB6cPMFmRNdGBVM1ymZxmUcxGvmsW8x1EoBxICpkeiQ5bB7YUBAkEHzakhQCURGsQ5XlGHccj9uKbRm0AyY2sniTOR9TBwIRV0u8jPRI9DCQaK6Tv3jwSvSeMRO8JI9F7QhvR/6yOH93+eXxC+ev4UNWtaOxFVEUkvtqkZz8AbG1bVQ/CEF+2Deanah850Wj876fHT+OxL62fXN5eT2Z//3FcPTOmbabNsYe+kzpHxAZHzNvV0fNaH9BjDByL4+Pz9XTel6jo6/PV0cUQXxyHsW8l2xpGotFBrXMIg1AZQGJrVkgX0egPJN98fPwjy6spz6oWmIibAK6sg+yBK6wSrFKmL73A50S3BjgxFDLgEJNM9DWRzFM3DdL6NdHMDluXCfoUEp/ZAGtTAqvM2vcR+PII2ixgQTxfWxHNSEuDXJSIYnD5cknqDdFcpo5fCHwwwNkq0qbcC/O+UWZCRD8SdH/VpJm9jS8ki7ohtiJa1S48MvI2bXU1uBlm2uaT5hiEMK1OQJKMLcUQAOJt3Va+dkU04GWEzWqr7+VPBudlWPSJ/mwdpUJMRLn1hazmqkr0HR8wQU6mzeqdEg3kE7F/jLL6Ln9uxsgHKglcYdP+kQPy4CBw0Jf7fLcvLzhatXuii8lLh1rV218xSJE+H5y+f2HMVwl0RZ9m3G2ofjtyf72JFlF1K7YlOt8nIViSOcnAUKLRt21H3UCic1+R0M2Izs+SHfsfMHTr4DLMB02pL+EhWwfgET1k6wDuhugiu9o7B1lDPoZoV5xYRLoy1Ntv+ySDR3TuizLA1yCiQVJiDJEs0uoELlmGTKBWVwyK9X4/OfKJent5Do9oIE8szqeD7DshGiiPQyJwjmUrjSGwyTMZkh+PknpLtBks/KAdtxL1n4slErZ53yhz3E5bJk+NaCF1W1/Q09emRAPesu4UJyPT+pJoTup6+jMn1vK3BthpU6Lcq33hT31sERWigd4/5+HD8bUV0UC5X/vCjKg4TWwTogNRN1dPfuFE88E7ok0boM88G62wTibPldJCNOCtEivRF2zvnGgAxswK6yAKMlAnouYFksEbogG0/fLp6CcEtG2SUbRZApKICTqrYROigW19FatsE6It0DAKMkDVreBS62hjbdpEzavg/lmxb6vzkI/JJlOeFKombD+2zYgNgeOnJTlfpSPuAMjSYotzDgC9cIorUefnyTlS7yz02m/a7jX0vvPwDaHZQpyDAU5marY59IpT4kCvT7kfkBy4RKKvBdrqvgW4vx8qwsyWIGjTzaFE8+4Zy7hPFu6kNSTJO66oIvObzb7RmSDldvJOH/SpdU0Zq0YFuq+B4thWkT6/RDshk8eV1RcQlnExUC8EsoyLfSjzKusi3N7EpcJw43KGoNAONtFOyU98QB8uI+JKbLjyGgLaa4vaBbqI5o+4oXtyDpkoLlPzJiXLICNcTW1IwhPQAJAkVSVkUiHAOwMidbSXdlqFOpIrz+JfufcN/nDCOdoKzsbYo7fZJjzIpLkXN6REwlFGAJRIQN5xaRtbgNUFosP1WPgIosESCdlr64KPXn8L/m4gEw5EY8sAIZppIIRPm71hu6hldKOLQB3tTUYD1D1YouNS148T3vkM+274vx66PSQ6yeREF8jVLG+CsP6/InGPfmhEjxhxj3Fw8D9gsagO0z4R1gAAAABJRU5ErkJggg==" />
+</svg>
+    </div>
+    <div class="alert alert-info" style="position: fixed; top:15px; left:15px;">
+      Click on blue boxes to see the screen
+    </div>
+    <button id="close" class="btn btn-primary" title="Close"><span class="glyphicon glyphicon-remove"></span></button>
+    <button id="maximize" class="btn btn-default" title="Maximize"><span class="glyphicon glyphicon-resize-full"></span></button>
+    <button id="minimize" class="btn btn-default" title="Minimize"><span class="glyphicon glyphicon-resize-small"></span></button>
+  </div>
+  <div class="wf-btn-diagram" style="position: fixed; left: 0; top: 50%; margin-top:-25px"><button id="open" style="width:50px; height:50px; position: relative; margin-left:-25px; text-align:right; padding-right: 7px; border-radius: 100px;" class="btn btn-default" title="Process diagram"><span class="glyphicon glyphicon-chevron-right"></span></button></div>
+  <div class="wf-diagram-message" style="position:fixed; left:50px; top:50%; margin-top: -16px; font-size: 22px;"><span class="glyphicon glyphicon-chevron-left"></span> Click to start</div>
+</body>
+
+</html>

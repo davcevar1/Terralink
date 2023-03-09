@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Loan request - Business information</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var setAgreeDisclaimer = function() {
+            $('[name="agree-disclaimer"]').prop('checked', true);
+        }
+        $(window).on('load resize scroll touchstart touchmove mousewheel', function() {
+            $(".dropdown-toggle").each(function() {
+                par = $(this).parents('.btn-group');
+                dropl = par.find('ul');
+                otop = $(this).offset().top + $(this).height() - $(window).scrollTop();
+                ulh = dropl.height();
+                obot = $(window).height() - $(this).height() - $(this).offset().top + $(window).scrollTop();
+                if ((obot < ulh) && (otop > ulh)) {
+                    par.addClass('dropup');
+                } else {
+                    par.removeClass('dropup');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div id="main-content">
+                <form class="wf-fixed-bottom">
+                    <ul class="wf-steps-2">
+                        <li class="active">Business <span class="hidden-xs">information</span></li>
+                        <li>Owners <span class="hidden-xs">information</span></li>
+                        <li>Legal <span class="hidden-xs">information</span></li>
+                    </ul>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row wf-column-rules-md-up">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-sm-7">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">Borrower (Legal Business Name)</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <div class="control-label">Tax ID</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="form-group">
+                                                <div class="control-label">Email Address</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <div class="control-label">Phone Number</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group wf-required">
+                                        <div class="control-label">Business Street Address</div>
+                                        <div class="wf-control">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">City</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">State</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="control-label">Zip Code</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="form-group wf-required">
+                                        <div class="control-label">Description of Business / Products or Services Offered</div>
+                                        <div class="wf-control">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">State of Organization</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="control-label">Date Business Established</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">Loan Amount Request</div>
+                                                <div class="wf-control">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-addon">USD</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">Purpose of the Loan</div>
+                                                <div class="wf-control">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">Total Amount of Business Debt</div>
+                                                <div class="wf-control">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-addon">USD</span>
+                                                    </div>
+                                                    <div class="text-muted small">Loans, Lines of Credit, Credit Cards</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group wf-required">
+                                                <div class="control-label">Total Monthly Obligations</div>
+                                                <div class="wf-control">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-addon">USD</span>
+                                                    </div>
+                                                    <div class="text-muted small">For All Business Debt Reported</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <fieldset>
+                                        <legend>Business Revenue</legend>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group wf-required">
+                                                    <div class="control-label">Annual Revenue</div>
+                                                    <div class="wf-control">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" />
+                                                            <span class="input-group-addon">USD</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group wf-required">
+                                                    <div class="control-label">Annual COGS</div>
+                                                    <div class="wf-control">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" />
+                                                            <span class="input-group-addon">USD</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group wf-required">
+                                                    <div class="control-label">Annual Expenses</div>
+                                                    <div class="wf-control">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" />
+                                                            <span class="input-group-addon">USD</span>
+                                                        </div>
+                                                        <div class="text-muted small">Excluding depreciation &amp; amortization</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group wf-required">
+                                        <label class="control-label">Type of business entity</label>
+                                        <div class="wf-control">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="typeEntity" value="no" required /> Sole Proprietorship
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="typeEntity" value="yes" /> Partnership
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="typeEntity" value="yes" /> Corporation
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="typeEntity" value="no" required /> S Corporation
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="typeEntity" value="yes" /> Limited Liability Partnership
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="typeEntity" value="yes" /> Limited Liability Company
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group wf-required">
+                                        <label class="control-label">Projected Sales growth over next 12 months</label>
+                                        <div class="wf-control">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="judgements" value="no" required /> Up to 10%
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="judgements" value="yes" /> 10 - 20%
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="judgements" value="yes" /> 20% or more
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Mark all that apply</label>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="yes" /> There is seasonality to business revenue
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="yes" /> Business is involved with internet gambling
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="yes" /> Business cashes or will cash checks for 3rd parties
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="yes" /> There are past due taxes for the business
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Monthly cash transactions anticipated with this loan account?</label>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label>Payments - "Cash in"</label>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> &lt; $10,000 USD
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> $10,001 USD - $50,000 USD
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> $50,001 USD - $100,000 USD
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> &gt; $100,000 USD
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label>Advances - "Cash out"</label>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> &lt; $10,000 USD
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> $10,001 USD - $50,000 USD
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> $50,001 USD - $100,000 USD
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="cashin" value="yes" /> &gt; $100,000 USD
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="form-group wf-required">
+                                        <fieldset style="margin-top:20px;">
+                                            <legend style="margin-bottom:5px;">Business Accounts</legend>
+                                            <div class="form-group">
+                                                <div class="btn-group dropdown">
+                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="fa fa-plus"></span> Add bank account</button>
+                                                    <ul class="dropdown-menu" style="padding:0; border-width:1px; width:220px;">
+                                                        <li class="form-group" style="padding-left:15px; padding-right:15px; padding-top:15px;">
+                                                            <input type="text" class="form-control" placeholder="Account #" />
+                                                        </li>
+                                                        <li class="form-group" style="padding-left:15px; padding-right:15px;">
+                                                            <input type="text" class="form-control" placeholder="Routing #" />
+                                                        </li>
+                                                        <li class="form-group" style="padding-left:15px; padding-right:15px;">
+                                                            <input type="text" class="form-control" placeholder="Bank Name" />
+                                                        </li>
+                                                        <li class="form-group" style="padding-left:15px; padding-right:15px;">
+                                                            <input type="number" class="form-control" placeholder="Current Account Balance" />
+                                                        </li>
+                                                        <li style="padding: 10px; border-top: 1px solid #e5e5e5; margin-top: 15px;">
+                                                            <button type="button" class="btn btn-primary btn-block">Add</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <ul class="list-group">
+                                                <div class="list-group-item" data-toggle="modal">
+                                                    <div class="wf-flex wf-gutters">
+                                                        <div class="wf-grow">
+                                                            <div title="Account #">#1234567890</div>
+                                                            <div class="small text-muted">Bank of America <span title="Routing #">123456789</span></div>
+                                                        </div>
+                                                        <div>$30,000.00</div>
+                                                        <div class="wf-menu">
+                                                            <button title="Delete" class="btn btn-default" style="margin-right: -5px; margin-top: -6px;"><span class="fa fa-times"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer wf-actions wf-flex wf-gutters wf-center" style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center; z-index: 2; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);">
+                            <button class="btn btn-default">Save</button>
+                            <a href="loan-request-owner-2.html" class="btn btn-primary">Next</a>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p>
+                                This is not an application for credit. However, by selecting agree, you are acknowledging the <a href="#disclaimer" style="font-weight:bold;" data-toggle="modal">Terms and Conditions</a> and authorizing us to perform a soft inquiry through the credit bureau.
+                            </p>
+                            <div class="checkbox" style="white-space:nowrap;">
+                                <label>
+                                    <input type="checkbox" name="agree-disclaimer" /> I Agree
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wf-toolbar wf-toolbar-bottom wf-center">
+                        <div class="wf-actions wf-flex wf-gutters wf-center wf-grow">
+                            <button class="btn btn-default wf-grow-sm-down">Save for later</button>
+                            <a href="loan-request-owner-2.html" class="btn btn-primary wf-grow-sm-down">Next <span class="fa fa-angle-right"></span></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Loan request - Business information</div>
+            <div class="wf-actions">
+                <div class="dropdown">
+                    <button class="btn btn-default" data-toggle="dropdown"><span class="fa fa-question-circle"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">Related Help Topics</li>
+                        <li><a href="#">Submit loan request</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="disclaimer" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Disclaimer</h4>
+                </div>
+                <div class="modal-body">
+                    <p>The above-signed certify that he/she has full authority to act on behalf of the business (the "Applicant") identified on this Business Loan Application (the "Application), and that all information contained herein is true and correct in all respects Terrabank, N.A. (the "Bank") is authorized to verify any information provided in connection with the Application .Bank may obtain credit reports for all owners' guarantors expected to be personally liable, including consumer credit reports in connection with the Application, and may also do so for renewals, extensions, collection activity or as otherwise permitted by law. Under the federal Fair Credit Reporting Act, Bank may get or share information regarding Applicant, guarantor(s) or Applicant's owner(s) with Bank affiliates unless the above-signed tells Bank not to share. The above-signed may prohibit Bank from sharing information provided or obtained by Bank from a third party, by mailing a written request to Terrabank, N.A., Business Banking, 3191 Coral Way, Coral Gables, FL 33145. The Application will be Bank's property whether or not credit is granted. Applicant agrees that Bank may rely on a facsimile and/or electronic transmission of the Application and any other signed documents received by Bank by facsimile and/or electronic transmission relating to the credit granted pursuant to the Application.</p>
+
+                    <p>Such facsimiles and/or electronic transmission or any copy of such facsimiles or electronic transmission shall be binding on Applicant and shall for all purposes be considered original documents. The above-signed understands that making false statements or material omissions intended to conceal pertinent facts may be a financial crime requiring referral to the appropriate law enforcement officials. The above-signed further agree to notify Bank immediately of any change in name, address, or any material change in (a) any information contained in the Application. (b) the financial condition of any of the above-signed, or (c) the ability of any of the above-signed to perform their obligations to the Bank.</p>
+
+                    <h4>CUSTOMER IDENTIFICATION PROGRAM</h4>
+
+                    <p>In accordance with Section 326 of the USA PATRIOT Act, Terrabank, N.A has developed a Customer Identification Program which is intended to facilitate the prevention, detection and prosecution of international money laundering and the financing of terrorism. Section 326 of the Act requires financial institutions to set forth minimum standards that relate to the identification and verification of any person who applies for an account Under this Act a person is defined as any individual, corporation, partnership, trust, estate, association, syndicate and unincorporated organization or group.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="setAgreeDisclaimer();">I Agree</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</body>
+
+</html>

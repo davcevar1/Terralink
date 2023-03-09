@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Roles</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" ng-view>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="panel panel-default">
+                            <ul class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <div class="wf-flex">
+                                        <div class="wf-icons">
+                                            <span class="fa fa-fw fa-plus"></span>
+                                        </div>
+                                        <div>Add role</div>
+                                    </div>
+                                </a>
+                                <li class="list-group-item active">
+                                    <div class="wf-flex wf-middle">
+                                        <div class="wf-grow">
+                                            <div>Role 1</div>
+                                            <div class="small text-muted">Description description role</div>
+                                        </div>
+                                        <div class="dropdown wf-menu">
+                                            <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="#">Edit</a></li>
+                                                <li><a href="#">Users</a></li>
+                                                <li><a href="#">Permissions</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="wf-flex wf-middle">
+                                        <div class="wf-grow">
+                                            <div>Role 2</div>
+                                            <div class="small text-muted">Description description role</div>
+                                        </div>    
+                                        <div class="dropdown wf-menu">
+                                            <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="#">Edit</a></li>
+                                                <li><a href="#">Users</a></li>
+                                                <li><a href="#">Permissions</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+                                </li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Users</div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Enter a username" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" title="Search"><span class="fa fa-fw fa-search"></span></button>
+                                        </span>
+                                    </div>    
+                                </li>
+                                <li class="list-group-item form-inline">
+                                    <span>
+                                        Find on:
+                                    </span>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="list" checked /> All
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="list" /> Only in this role
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="wf-flex">
+                                        <div class="wf-icons">
+                                            <span class="text-success fa fa-check" title="In this role"></span>
+                                        </div>
+                                        <div class="wf-grow">
+                                            <div>frank</div>
+                                            <div class="small text-muted">Frank, Johnson (frank@store1.com)</div>
+                                        </div>    
+                                        <div class="dropdown wf-menu">
+                                            <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="#">Remove</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="wf-flex">
+                                        <div class="wf-icons">
+                                            <span class="fa"></span>
+                                        </div>
+                                        <div class="wf-grow">
+                                            <div>joe</div>
+                                            <div class="small text-muted">Joe, Williams (joe@store2.com)</div>
+                                        </div>    
+                                        <div class="dropdown wf-menu">
+                                            <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="#">Add</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+                                </li>
+                                <li class="list-group-item">
+                                    <ul class="pager" style="margin:0;">
+                                        <li><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Role</div>
+                            <form class="panel-body">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Name</div>
+                                    <div>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Description</div>
+                                    <div>
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="panel-footer wf-actions">
+                                <button class="btn btn-link text-danger">Delete</button>
+                                <button class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Permissions</div>
+                            <div class="panel-body">
+                                <fieldset>
+                                    <legend>
+                                        Administration
+                                        <div class="wf-actions wf-actions-hover">
+                                            <button class="btn btn-default btn-sm"><span class="fa fa-fw fa-plus-circle"></span> Advanced</button>
+                                        </div>
+                                        <div class="small text-muted">Description description feature</div>
+                                    </legend>
+                                    <div class="wf-indent">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> View
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Manage
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        Configuration 
+                                        <div class="wf-actions wf-actions-hover">
+                                            <button class="btn btn-default btn-sm"><span class="fa fa-fw fa-minus-circle"></span> Basic</button>
+                                        </div>
+                                        <div class="small text-muted">Description description feature</div>
+                                    </legend>
+                                    <div class="wf-indent">
+                                        <h4>Portlet 1</h4>
+                                        <div class="wf-indent">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> View
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Manage
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <h4>Portlet 2</h4>
+                                        <div class="wf-indent">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> View
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Manage
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        Bank accounts
+                                        <div class="wf-actions wf-actions-hover">
+                                            <button class="btn btn-default btn-sm"><span class="fa fa-fw fa-plus-circle"></span> Advanced</button>
+                                        </div>
+                                        <div class="small text-muted">Description description feature</div>
+                                    </legend>
+                                    <div class="wf-indent">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> View
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Manage
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="panel-footer wf-actions">
+                                <button class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Roles</div>
+        </div>
+	</div>
+</body>
+
+</html>

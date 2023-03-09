@@ -1,0 +1,97 @@
+<div class="d-flex align-items-center p-2 p-md-3 bg-light border-bottom sticky-top">
+  <a routerLink="/" class="my-0 ml-2 ml-sm-0 mr-3"><img src="assets/logo-mainstreet-color.svg" style="height:30px;" /></a>
+  <div class="searchbox mr-3 w-100 d-none d-sm-block">
+    <icon name="search" collection="factoricons-regular"></icon>
+    <input type="search" class="form-control" placeholder="Buscar un producto" i18n-placeholder="Buscar un producto"/>
+  </div>
+  <div class="d-block d-sm-none w-100"></div>
+  <a class="p-2 text-dark btn btn-light" href="#">
+    <icon name="help" collection="factoricons-regular"></icon>
+    <span class="d-none d-md-inline" i18n>Ayuda</span>
+  </a>
+  <div ngbDropdown placement="bottom-right" class="cart-dropdown mr-sm-2">
+    <button class="p-2 text-dark btn btn-light" ngbDropdownToggle>
+      <icon name="shopping-cart" collection="factoricons-regular"></icon>
+      <span class="d-none d-md-inline" i18n>Carrito</span>
+      <span class="ml-sm-1 badge badge-primary" *ngIf="cartStateService.items.length>0">{{ cartStateService.items.length }}</span>
+    </button>
+    <div ngbDropdownMenu class="pb-0">
+      <div *ngIf="cartStateService.items.length>0" class="list-group list-group-flush">
+        <div style="overflow:auto; max-height: 400px;">
+          <app-order-item [item]="item" class="list-group-item" *ngFor="let item of cartStateService.items"></app-order-item>
+        </div>
+        <div class="list-group-item text-center p-3">
+          <strong><span i18n>Total:</span> {{ cartStateService.total | currency }} USD</strong>
+        </div>
+        <div class="list-group-item p-3">
+          <div class="form-row">
+            <div class="col">
+              <a routerLink="/cart" class="btn btn-outline-primary btn-block" i18n>Ver Carrito</a>
+            </div>
+            <div class="col">
+              <a routerLink="/checkout" class="btn btn-primary btn-block" i18n>Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="empty-cart d-flex align-items-center justify-content-center" *ngIf="cartStateService.items.length==0" i18n>
+        Carrito vacio
+      </div>
+    </div>
+  </div>
+  <div ngbDropdown autoClose="outside" placement="bottom-right" *ngIf="!(auth.loggedIn$ | async)">
+    <button class="btn btn-primary" ngbDropdownToggle>
+      <icon name="user" collection="factoricons-regular"></icon>
+      <span class="d-none d-md-inline" i18n>Ingresar</span>
+    </button>
+    <form ngbDropdownMenu [formGroup]="loginForm" (ngSubmit)="login()" class="p-4" style="min-width:380px;">
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" formControlName="username" autofocus />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" i18n>Contraseña</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" formControlName="password" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+          <button class="btn btn-primary" i18n>Ingresar</button>
+          <div class="pt-4">
+            <a href="#" i18n>Olvidé mi contraseña</a><br />
+            <a href="#" i18n>Crear cuenta</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div ngbDropdown placement="bottom-right" *ngIf="auth.loggedIn$ | async">
+    <button class="btn btn-light p-2" ngbDropdownToggle>
+      <icon name="user-profile" collection="factoricons-regular" style="font-size:24px;"></icon>
+      <span class="d-none d-md-inline">{{ (auth.configuration$ | async ).firstName }}</span>
+    </button>
+    <div ngbDropdownMenu>
+      <div class="dropdown-item">
+        <div><strong i18n>Usuario:</strong> {{ (auth.configuration$ | async ).username }}</div>
+        <div><strong i18n>Rol:</strong> {{ (auth.configuration$ | async ).role?.name }}</div>
+      </div>
+      <div class="dropdown-divider"></div>
+      <a routerLink="/orders" class="dropdown-item" i18n>Ver mis ordenes</a>
+      <div class="dropdown-divider"></div>
+      <button type="button" class="dropdown-item" (click)="auth.logout()" i18n>Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+<ng-content></ng-content>
+<footer class="bg-secondary text-white text-center p-4 mt-4">
+  <ul class="nav nav-pills d-flex justify-content-center">
+    <li class="nav-item" *ngFor="let menu of menus">
+      <a class="nav-link text-white" href="#">{{ menu.label }}</a>
+    </li>
+  </ul>
+  <div class="small" i18n>Copyright &copy; 2018 Mainstreet, Todos los Derechos Reservados.</div>
+</footer>

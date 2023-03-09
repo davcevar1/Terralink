@@ -1,0 +1,145 @@
+{
+  "ForeclosureSearchResponseEx": {
+    "response": {
+      "Header": {
+        "Status": "0",
+        "TransactionId": "158876073R4653"
+      },
+      "RecordCount": "4",
+      "Records": {
+        "Record": [
+          {
+            "AlsoFound": "0",
+            "ForeclosureId": "79008030905002LONDONLEONA",
+            "RecordingDate": {
+              "Year": "2004",
+              "Month": "09",
+              "Day": "16"
+            },
+            "SiteAddress": {
+              "StreetName": "PETERERO",
+              "City": "BLACKRIVER",
+              "State": "MI",
+              "Zip5": "13040",
+              "Zip4": "2308",
+              "County": "WAYNE"
+            },
+            "DeedType": "Foreclosure",
+            "DocumentType": "SHERIFF'S DEED",
+            "Plaintiffs": { "Plaintiff": "PLAINTIFF" },
+            "Defendants": {
+              "Defendant": {
+                "UniqueId": "999903003912",
+                "Name": {
+                  "First": "LEON",
+                  "Middle": "A",
+                  "Last": "GAGLEWALL",
+                  "Prefix": "MR"
+                },
+                "SSN": "77306xxxx"
+              }
+            }
+          },
+          {
+            "AlsoFound": "0",
+            "ForeclosureId": "0435304005LONDONLEONA",
+            "RecordingDate": {
+              "Year": "2004",
+              "Month": "09",
+              "Day": "06"
+            },
+            "SiteAddress": {
+              "StreetNumber": "11812",
+              "StreetName": "ULAKOVA",
+              "StreetSuffix": "LN",
+              "City": "KIRKHILL",
+              "State": "MI",
+              "Zip5": "92474",
+              "Zip4": "3125",
+              "County": "MACOMB"
+            },
+            "DeedType": "Foreclosure",
+            "DocumentType": "SHERIFF'S DEED",
+            "Plaintiffs": { "Plaintiff": "PLAINTIFF" },
+            "Defendants": {
+              "Defendant": {
+                "UniqueId": "999903003912",
+                "Name": {
+                  "First": "LEON",
+                  "Middle": "A",
+                  "Last": "GAGLEWALL",
+                  "Prefix": "MR"
+                },
+                "SSN": "77306xxxx"
+              }
+            }
+          },
+          {
+            "AlsoFound": "0",
+            "ForeclosureId": "79008030905002LONDONLEONA",
+            "RecordingDate": {
+              "Year": "2004",
+              "Month": "09",
+              "Day": "16"
+            },
+            "SiteAddress": {
+              "StreetName": "PETERERO",
+              "City": "BLACKRIVER",
+              "State": "MI",
+              "Zip5": "13040",
+              "Zip4": "2308",
+              "County": "WAYNE"
+            },
+            "DeedType": "Foreclosure",
+            "DocumentType": "SHERIFF'S DEED",
+            "Plaintiffs": { "Plaintiff": "PLAINTIFF" },
+            "Defendants": {
+              "Defendant": {
+                "UniqueId": "999903003912",
+                "Name": {
+                  "First": "LEON",
+                  "Middle": "A",
+                  "Last": "GAGLEWALL",
+                  "Prefix": "MR"
+                }
+              }
+            }
+          },
+          {
+            "AlsoFound": "0",
+            "ForeclosureId": "0435304005LONDONLEONA",
+            "RecordingDate": {
+              "Year": "2004",
+              "Month": "09",
+              "Day": "06"
+            },
+            "SiteAddress": {
+              "StreetNumber": "11812",
+              "StreetName": "ULAKOVA",
+              "StreetSuffix": "LN",
+              "City": "KIRKHILL",
+              "State": "MI",
+              "Zip5": "92474",
+              "Zip4": "3125",
+              "County": "MACOMB"
+            },
+            "DeedType": "Foreclosure",
+            "DocumentType": "SHERIFF'S DEED",
+            "Plaintiffs": { "Plaintiff": "PLAINTIFF" },
+            "Defendants": {
+              "Defendant": {
+                "UniqueId": "999903003912",
+                "Name": {
+                  "First": "LEON",
+                  "Middle": "A",
+                  "Last": "GAGLEWALL",
+                  "Prefix": "MR"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

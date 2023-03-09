@@ -1,0 +1,54 @@
+#home-banner {
+    margin: -15px;
+    margin-bottom: 30px;
+    @media (min-width: @screen-md) {
+        margin:-30px;
+        margin-bottom: 30px;
+    }
+    &-content {
+        height:350px; 
+        background: url(/documents/20160/58426/welcome-image.jpg);
+        background-size: cover;
+        background-position: center;
+        opacity: .4;
+        @media (max-width: (@screen-md - 1)) {
+            display: none;
+        }
+    }
+    &-overlay {
+        @media (min-width: @screen-md) {
+            position: absolute;
+            top: 0;
+            right: -30px;
+            width: 600px;
+        }
+        &-content {
+            background: #1c62b7;
+            color: #FFF;
+            font-size: 22px;
+            padding: 30px;
+            @media (max-width: (@screen-md - 1)) {
+                font-size: 18px;
+            }
+        }
+    }
+    &-actions {
+        margin:30px;
+        text-align: center;
+        @media (max-width: (@screen-sm - 1)) {
+            .btn {
+                display: block;
+                width: 100%;
+                &:not(:first-child) {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_aus1fmIXaiJy,
+#portlet_com_liferay_login_web_portlet_LoginPortlet {
+    max-width: 400px;
+    margin: auto;
+}

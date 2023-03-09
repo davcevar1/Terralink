@@ -1,0 +1,510 @@
+{
+  "soap:Envelope": {
+    "-xmlns:soap": "http://www.w3.org/2003/05/soap-envelope",
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+    "soap:Body": {
+      "GetReportDetailFromRequestCode8Response": {
+        "-xmlns": "https://integration.decisionlogic.com",
+        "GetReportDetailFromRequestCode8Result": {
+          "RequestCode": "HKJAZB",
+          "CustomerIdentifier": "cobis",
+          "EmailAddress": "Tony.Brown@cobiscorp.com",
+          "InstitutionName": "Citibank",
+          "AccountName": "CHECKING",
+          "RoutingNumberEntered": "0",
+          "AccountType": "DDA",
+          "AccountNumberEntered": "411482961",
+          "AccountNumberFound": "2961",
+          "AccountNumberConfidence": "3",
+          "NameEntered": "Tony Brown",
+          "NameFound": "TONY",
+          "NameConfidence": "0",
+          "AmountInput": "0",
+          "AvailableBalance": "480.94",
+          "AverageBalance": "632.65160493827159",
+          "AverageBalanceRecent": "794.68125",
+          "IsLoginValid": "true",
+          "IsVerified": "true",
+          "AsOfDate": "2019-06-13T15:55:26.763",
+          "ActivityStartDate": "2019-03-19T00:00:00",
+          "ActivityEndDate": "2019-06-07T00:00:00",
+          "TotalCredits": "4109.0300000000007",
+          "TotalDebits": "-3842.4600000000009",
+          "CurrentBalance": "480.94",
+          "IsActivityAvailable": "true",
+          "TransactionAnalysisSummaries": {
+            "TransactionAnalysisSummary5": [
+              {
+                "TypeName": "Payroll",
+                "TypeCode": "py",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "1"
+              },
+              {
+                "TypeName": "Other Income",
+                "TypeCode": "oi",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "2"
+              },
+              {
+                "TypeName": "Loan Debit",
+                "TypeCode": "ld",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "3"
+              },
+              {
+                "TypeName": "Loan Credit",
+                "TypeCode": "lc",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "4"
+              },
+              {
+                "TypeName": "Overdraft",
+                "TypeCode": "ov",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "5"
+              },
+              {
+                "TypeName": "ACH Debit",
+                "TypeCode": "ad",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "6"
+              },
+              {
+                "TypeName": "ACH Credit",
+                "TypeCode": "ac",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "7"
+              },
+              {
+                "TypeName": "Deposit",
+                "TypeCode": "dp",
+                "TotalCount": "9",
+                "TotalAmount": "4109.0300000000007",
+                "RecentCount": "4",
+                "RecentAmount": "2409.01",
+                "DisplayOrder": "8"
+              },
+              {
+                "TypeName": "Reversal",
+                "TypeCode": "rv",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "9"
+              },
+              {
+                "TypeName": "Military Payroll",
+                "TypeCode": "mi",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "11"
+              },
+              {
+                "TypeName": "Overdraft Protection",
+                "TypeCode": "op",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "13"
+              },
+              {
+                "TypeName": "Online Gambling",
+                "TypeCode": "og",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "16"
+              },
+              {
+                "TypeName": "Court Ordered Debit",
+                "TypeCode": "cd",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "17"
+              },
+              {
+                "TypeName": "Credit Card Payments",
+                "TypeCode": "cc",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "18"
+              },
+              {
+                "TypeName": "Loan Debit - Mortgage",
+                "TypeCode": "lm",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "19"
+              },
+              {
+                "TypeName": "Loan Debit - Automobile",
+                "TypeCode": "la",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "20"
+              },
+              {
+                "TypeName": "Loan Debit - Student",
+                "TypeCode": "ls",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "23"
+              },
+              {
+                "TypeName": "Loan Debit - Business",
+                "TypeCode": "bd",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "24"
+              },
+              {
+                "TypeName": "Collection Payments",
+                "TypeCode": "ca",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "25"
+              },
+              {
+                "TypeName": "Wire Transfer Credit",
+                "TypeCode": "wc",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "26"
+              },
+              {
+                "TypeName": "ATM Withdrawal",
+                "TypeCode": "aw",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "27"
+              },
+              {
+                "TypeName": "ATM Deposit",
+                "TypeCode": "at",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "28"
+              },
+              {
+                "TypeName": "Loan Credit - Business",
+                "TypeCode": "bc",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "29"
+              },
+              {
+                "TypeName": "Wire Transfer Debit",
+                "TypeCode": "wd",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "30"
+              },
+              {
+                "TypeName": "Self Employment Income",
+                "TypeCode": "se",
+                "TotalCount": "0",
+                "TotalAmount": "0",
+                "RecentCount": "0",
+                "RecentAmount": "0",
+                "DisplayOrder": "31"
+              }
+            ]
+          },
+          "TransactionSummaries": {
+            "TransactionSummary5": [
+              {
+                "TransactionDate": "2019-06-07T00:00:00",
+                "Amount": "-100",
+                "RunningBalance": "480.94",
+                "Description": "FIRSTMARK PAYMENTS 190606 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-06-03T00:00:00",
+                "Amount": "-300",
+                "RunningBalance": "580.94",
+                "Description": "FIRSTMARK PAYMENTS 190531 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-05-31T00:00:00",
+                "Amount": "0.01",
+                "RunningBalance": "880.94",
+                "Description": "INTEREST PAYMENT",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Earned Income"
+              },
+              {
+                "TransactionDate": "2019-05-30T00:00:00",
+                "Amount": "-58",
+                "RunningBalance": "880.93000000000006",
+                "Description": "ANNUAL FEE",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Fees & Charges"
+              },
+              {
+                "TransactionDate": "2019-05-24T00:00:00",
+                "Amount": "-700",
+                "RunningBalance": "938.93000000000006",
+                "Description": "FIRSTMARK PAYMENTS 190523 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-05-24T00:00:00",
+                "Amount": "1300",
+                "RunningBalance": "1638.93",
+                "Description": "SCHWAB BROKERAGE MONEYLINK 190524 ** TONY BROWN",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Services"
+              },
+              {
+                "TransactionDate": "2019-05-23T00:00:00",
+                "Amount": "-362.26",
+                "RunningBalance": "338.93000000000006",
+                "Description": "FIRSTMARK PAYMENTS 190522 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-05-21T00:00:00",
+                "Amount": "-1000",
+                "RunningBalance": "701.19",
+                "Description": "FIRSTMARK PAYMENTS 190520 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-05-20T00:00:00",
+                "Amount": "700",
+                "RunningBalance": "1701.19",
+                "Description": "TRANSFER FROM BROWN TONY ON 05/18 REF # PP068QY7DM",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Miscellaneous Income"
+              },
+              {
+                "TransactionDate": "2019-05-20T00:00:00",
+                "Amount": "409",
+                "RunningBalance": "1001.19",
+                "Description": "SCHWAB BROKERAGE MONEYLINK 190520 **373805 TONY BROWN",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Services"
+              },
+              {
+                "TransactionDate": "2019-05-16T00:00:00",
+                "Amount": "-57.34",
+                "RunningBalance": "592.19",
+                "Description": "BILL PAY CITI CARDS ON-LINE xxxxxxxxxxx12303 ON 05-16",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Transfers & Adjustments"
+              },
+              {
+                "TransactionDate": "2019-04-24T00:00:00",
+                "Amount": "-20.17",
+                "RunningBalance": "649.53000000000009",
+                "Description": "BILL PAY CITI CARDS ON-LINE xxxxxxxxxxx12303 ON 04-24",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Transfers & Adjustments"
+              },
+              {
+                "TransactionDate": "2019-04-23T00:00:00",
+                "Amount": "-362.26",
+                "RunningBalance": "669.7",
+                "Description": "FIRSTMARK PAYMENTS 190422 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-04-16T00:00:00",
+                "Amount": "700",
+                "RunningBalance": "1031.96",
+                "Description": "TRANSFER FROM BROWN TONY ON 04/16 REF # PP0648DWRB",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Miscellaneous Income"
+              },
+              {
+                "TransactionDate": "2019-04-05T00:00:00",
+                "Amount": "-300",
+                "RunningBalance": "331.96000000000004",
+                "Description": "FIRSTMARK PAYMENTS 190404 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-04-05T00:00:00",
+                "Amount": "300",
+                "RunningBalance": "631.96",
+                "Description": "TRANSFER FROM BROWN TONY ON 04/05 REF # PP062RHCCH",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Miscellaneous Income"
+              },
+              {
+                "TransactionDate": "2019-03-29T00:00:00",
+                "Amount": "0.02",
+                "RunningBalance": "331.96000000000004",
+                "Description": "INTEREST PAYMENT",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Earned Income"
+              },
+              {
+                "TransactionDate": "2019-03-27T00:00:00",
+                "Amount": "-200",
+                "RunningBalance": "331.94000000000005",
+                "Description": "FIRSTMARK PAYMENTS 190326 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-03-25T00:00:00",
+                "Amount": "-362.26",
+                "RunningBalance": "531.94",
+                "Description": "FIRSTMARK PAYMENTS 190322 **819924 BROWN, TONY",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Uncategorized"
+              },
+              {
+                "TransactionDate": "2019-03-25T00:00:00",
+                "Amount": "300",
+                "RunningBalance": "894.2",
+                "Description": "TRANSFER FROM BROWN TONY ON 03/24 REF # PP05YWR9R2",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Miscellaneous Income"
+              },
+              {
+                "TransactionDate": "2019-03-20T00:00:00",
+                "Amount": "-20.17",
+                "RunningBalance": "594.2",
+                "Description": "BILL PAY CITI CARDS ON-LINE xxxxxxxxxxx12303 ON 03-20",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Transfers & Adjustments"
+              },
+              {
+                "TransactionDate": "2019-03-19T00:00:00",
+                "Amount": "400",
+                "RunningBalance": "614.37",
+                "Description": "TRANSFER FROM BROWN TONY ON 03/19 REF # PP05Y88WLS",
+                "TypeCodes": "dp",
+                "IsRefresh": "false",
+                "Status": "posted",
+                "Category": "Miscellaneous Income"
+              }
+            ]
+          },
+          "ProcessedStatus": "1",
+          "IsStarted": "true",
+          "IsCompleted": "true",
+          "Notes": "<ul style=\"margin-top: 3px; margin-bottom: 0px;\"><li><strong>Account holder name</strong> : neither first or last name were found</li><li><strong>Transactions</strong> : 90-days of transactions returned</li></ul>",
+          "Status": "100",
+          "StatusText": "Successful",
+          "StatusCodeColor": "#228822",
+          "IsError": "false",
+          "IsACHSupported": "false",
+          "AccountExpenses": {
+            "AccountExpense5": [
+              {
+                "Category": "Fees & Charges",
+                "Amount": "58",
+                "Percent": "1.5094496754683198"
+              },
+              {
+                "Category": "Transfers & Adjustments",
+                "Amount": "97.68",
+                "Percent": "2.5421214534438876"
+              },
+              {
+                "Category": "Uncategorized",
+                "Amount": "3686.78",
+                "Percent": "95.948428871087785"
+              }
+            ]
+          },
+          "ChartsId": "30571115",
+          "IsRequestRefreshable": "false"
+        }
+      }
+    }
+  }
+}

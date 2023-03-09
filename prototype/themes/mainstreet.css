@@ -1,0 +1,19 @@
+/* Importación de Estilos font-awesome */
+@import url('../libraries/font-awesome/css/font-awesome.min.css');
+
+/* Importación de Estilos bootstrap */
+@import url('../libraries/bootstrap/dist/css/bootstrap.min.css');
+
+/* Importación de Estilos kendo-common-bootstrap */
+@import url('../libraries/kendo-2015.1.429/styles/kendo.common-bootstrap.min.css');
+
+/* Importación de Estilos kendo-bootstrap */
+@import url('../libraries/kendo-2015.1.429/styles/kendo.bootstrap.min.css');
+/*
+@import url('http://kendo.cdn.telerik.com/2017.1.118/styles/kendo.common-bootstrap.core.min.css');
+@import url('http://kendo.cdn.telerik.com/2017.1.118/styles/kendo.bootstrap.min.css');
+*/
+/* Importación de Estilos Notificaciones */
+/*@import url('../../../cobis-ui/styles/kiui/kiui.min.css');*/
+
+@import url("mainstreet/base.css");

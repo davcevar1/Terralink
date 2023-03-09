@@ -1,0 +1,81 @@
+{
+    "BankruptcySearch2ResponseEx": {
+        "response": {
+            "Records": {
+                "Record": [{
+                    "Bankruptcy": {
+                        "CourtLocation": "ANCHORAGE",
+                        "MatchedParty": {
+                            "Address": {
+                                "State": "AK",
+                                "Zip4": 6770,
+                                "Zip5": 84677,
+                                "City": "LONDINGTON"
+                            },
+                            "ParsedParty": {
+                                "CompanyName": "GOLDOST FLOORING"
+                            }
+                        },
+                        "FilingDate": {
+                            "Month": "03",
+                            "Day": "09",
+                            "Year": 2003
+                        },
+                        "FilingStatus": "Voluntary",
+                        "Chapter": 7,
+                        "FilerType": "INDIVIDUAL",
+                        "FilingType": "INDIVIDUAL",
+                        "ExternalKey": "BKAK0010301222",
+                        "TMSId": "BKAK0010301222",
+                        "CorpFlag": "N",
+                        "CourtName": "ALASKA - ANCHORAGE",
+                        "Disposition": "Discharged",
+                        "CourtCode": "AK001",
+                        "OriginalFilingDate": {
+                            "Month": "03",
+                            "Day": "09",
+                            "Year": 2003
+                        },
+                        "CaseNumber": "xxx1222",
+                        "OriginalChapter": 7,
+                        "Debtors": {
+                            "Debtor": {
+                                "Addresses": {
+                                    "Address": {
+                                        "State": "AK",
+                                        "Zip4": 6770,
+                                        "Zip5": 84677,
+                                        "City": "LONDINGTON"
+                                    }
+                                },
+                                "AppendedSSN": "77368xxxx",
+                                "Names": {
+                                    "Name": [{
+                                        "First": "PAMELA",
+                                        "Middle": "MAE",
+                                        "Last": "ZELLANA",
+                                        "Type": "P"
+                                    }, {
+                                        "CompanyName": "GOLDOST FLOORING",
+                                        "Type": "PA"
+                                    }, {
+                                        "CompanyName": "BORDETTA FLOOR",
+                                        "Type": "PA"
+                                    }]
+                                },
+                                "BusinessId": 0,
+                                "UniqueId": 999936039239,
+                                "SSN": "77368xxxx"
+                            }
+                        }
+                    }
+                }]
+            },
+            "Header": {
+                "Status": 0,
+                "TransactionId": "158876043R7561"
+            },
+            "RecordCount": 1
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<div class="sticky-top d-flex align-items-center px-3" style="height:60px; background-color:#FFF; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4); font-size:22px; color: #5a6779;" i18n>
+  Ordenes de compra
+</div>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-8">
+      <div class="list-group">
+        <a [routerLink]="['/admin/orders/'+order.number]" class="list-group-item d-flex" *ngFor="let order of orders">
+          <div class="w-100" *ngIf="(auth.configuration$ | async )?.role?.id=='ROLE_PYME'">
+            <div>{{ order.name }}</div>
+            <div class="text-muted small">#{{ order.number }}<br />{{ order.date }}</div>
+          </div>
+          <div class="w-100" *ngIf="(auth.configuration$ | async )?.role?.id=='ROLE_STORE'">
+            <div>#{{ order.number }}</div>
+            <div class="text-muted small">{{ order.date }}</div>
+          </div>
+          <div class="w-100 text-right">
+            <div>{{ order.total | currency }} USD</div>
+            <div class="badge" [ngClass]="{'badge-success':order.status=='approved', 'badge-info':order.status=='created', 'badge-danger':order.status=='rejected', 'badge-warning':order.status=='delivered'}">{{ order.status }}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card mb-3">
+        <div class="card-header" i18n>Vendedores</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let seller of sellers">{{ seller.name }}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header" i18n>Estados</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let status of statuses">{{ status.label }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../theme/variables";
+body {
+  background: #ecf2f6;
+}
+
+.icon {
+  fill: none;
+  color: #333;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  .btn-outline-primary & {
+    color: $primary;
+  }
+  .btn-outline-primary:hover &,
+  .navbar-dark & {
+    color: #FFF;
+  }
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.navbar {
+  .badge-success {
+    position: absolute;
+    top: 21px;
+    right: 43px;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}

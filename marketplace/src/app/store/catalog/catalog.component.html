@@ -1,0 +1,43 @@
+<layout-base>
+  <div id="featured" class="featured carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#featured" [title]="feature.title" [attr.data-slide-to]="i" [ngClass]="{active:i==0}" *ngFor="let feature of featured; let i = index"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item" [ngClass]="{active:i==0}" *ngFor="let feature of featured; let i = index">
+        <a [href]="feature.url" [title]="feature.title" [ngStyle]="{'background-image':'url('+feature.image+')'}"></a>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#featured" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only" i18n>Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#featured" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only" i18n>Siguiente</span>
+    </a>
+  </div>
+  <div class="container">
+    <div class="card categories" style="display: none">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item" *ngFor="let category of categories">
+          <a class="nav-link" [routerLink]="['/search', {cs:category.slug}]">{{ category.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <h5 i18n>Productos en oferta</h5>
+    <div class="py-3 grid">
+      <app-product-card *ngFor="let product of offers" [product]="product"></app-product-card>
+    </div>
+    <h5 i18n>Productos nuevos</h5>
+    <div class="py-3 grid">
+      <app-product-card *ngFor="let product of arrived" [product]="product"></app-product-card>
+    </div>
+    <h5 i18n>Las mejores marcas</h5>
+    <div class="brands py-3">
+      <div class="card p-3 d-flex align-items-center justify-content-center" *ngFor="let brand of brands">
+        <img [src]="brand.image" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</layout-base>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Customers</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="input-group">
+                                    <input type="search" class="form-control" placeholder="Enter a Tax ID or Name" />
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-default" title="Search"><span class="fa fa-search"></span></button>
+                                    </span>
+                                </div>    
+                            </li>
+                            <li class="list-group-item">
+								<div class="text-muted small text-right" style="margin-right: 27px;">Mainstreet enabled</div>
+                            </li>
+							<li class="list-group-item">
+                                <div class="wf-flex">
+                                    <div class="wf-grow">
+                                        <div>Business Name 1</div>
+                                        <div class="small text-muted"># 123-4563-9874</div>
+                                    </div>  
+									<div style="text-align: center; width: 100px; margin-right: 8px; margin-top: 4px;">
+										<span class="text-success fa fa-check" title="Active"></span>
+									</div>									
+									<div class="wf-menu">
+										<div class="dropdown">
+											<button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#">Edit</a></li>
+											</ul>
+										</div>
+									</div>	
+                                </div>    
+                            </li>
+                            <li class="list-group-item">
+                                <div class="wf-flex">
+                                    <div class="wf-grow">
+                                        <div>Business Name 2</div>
+                                        <div class="small text-muted"># 123-4563-9874</div>
+                                    </div>  
+									<div style="text-align: center; width: 100px; margin-right: 8px; margin-top: 4px;">
+										<span class="fa fa-check" style="opacity:.3;" title="Inactive"></span>
+									</div>		
+                                    <div class="wf-menu">
+										<div class="dropdown">
+											<button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#">Enable Mainstreet</a></li>
+											</ul>
+										</div>
+									</div>
+                                </div>    
+                            </li>
+                            <li class="list-group-item">
+                                <div class="wf-flex">
+                                    <div class="wf-grow">
+                                        <div>Business Name 3</div>
+                                        <div class="small text-muted"># 123-4563-9874</div>
+                                    </div>    
+                                    <div class="wf-menu">
+										<div class="dropdown">
+											<button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#">Enable Mainstreet</a></li>
+											</ul>
+										</div>
+									</div>
+                                </div>    
+                            </li>
+                            <li class="list-group-item">
+                                <ul class="pager" style="margin:0;">
+                                    <li><span>1</span></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                </ul>
+                            </li>
+                        </ul>    
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="portlet" style="margin-bottom:30px;">
+                            <div class="portlet-content">
+                                <div class="portlet-title-text">Customer settings</div>
+                                <div class="portlet-content-container">
+                                    <form class="portlet-body">
+                                        <fieldset>
+                                            <legend>Administrator User</legend>
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group wf-required">
+                                                            <div class="control-label">Username</div>
+                                                            <div>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group wf-required">
+                                                            <div class="control-label">Email</div>
+                                                            <div>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group wf-required">
+                                                            <div class="control-label">Fist name</div>
+                                                            <div>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group wf-required">
+                                                            <div class="control-label">Lastname</div>
+                                                            <div>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+										<!--
+                                        <fieldset>
+                                            <legend>Look and feel</legend>
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <div class="control-label">Logo</div>
+                                                            <div>
+                                                                <input type="file" />
+                                                                <div class="help-block">Please use a high-contrast image between logo and block background</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="wf-flex wf-middle wf-center" style="background: #1c62b7;
+    height: 60px;"><img src="images/layout_set_logo.png" /></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="control-label">Color theme</div>
+                                                    <div class="form-inline">
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="color-theme" checked style="vertical-align:middle;" /> <div style="width:36px;height:26px;background:url(images/theme-blue.png);display: inline-block;vertical-align: middle;"></div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="color-theme" style="vertical-align:middle;" /> <div style="width:36px;height:26px;background:url(images/theme-yellow.png);display: inline-block;vertical-align: middle;"></div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+										-->
+                                        <fieldset>
+                                            <legend>Products</legend>
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" /> All products
+                                                    </label>
+                                                </div>
+                                                <div style="background:#CCC; color:#999; line-height:150px; text-align:center;">Replace with products tree</div>
+                                            </div>
+                                        </fieldset>
+                                        <div class="wf-actions">
+                                            <div class="wf-flex">
+                                                <div class="wf-grow text-left">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" checked /> Active
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="wf-grow">
+                                                    <button class="btn btn-primary">Save</button>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+		<div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Customers</div>
+        </div>
+	</div>
+</body>
+
+</html>

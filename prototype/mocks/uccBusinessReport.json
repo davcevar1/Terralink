@@ -1,0 +1,83 @@
+{
+  "UCCReport2ResponseEx": {
+    "response": {
+      "Header": {
+        "TransactionId": "103543700R209491",
+        "Status": "0"
+      },
+      "UCCFilings": {
+        "UCCFiling": {
+          "OriginFilingDate": {
+            "Day": "21",
+            "Month": "11",
+            "Year": "1990"
+          },
+          "OriginFilingNumber": "B9044007",
+          "Filings": {
+            "Filing": {
+              "Type": "INITIAL FILING",
+              "VendorUpdateDate": { "Year": "1990" },
+              "Number": "B9044007",
+              "Date": {
+                "Day": "21",
+                "Month": "11",
+                "Year": "1990"
+              },
+              "Time": "0000",
+              "VendorEntryDate": {
+                "Day": "19",
+                "Month": "12",
+                "Year": "1990"
+              }
+            }
+          },
+          "FilingJurisdiction": "AL",
+          "Secureds": {
+            "Secured": {
+              "Addresses": {
+                "Address": {
+                  "StreetAddress2": "MOUS CABINS, AL 96884",
+                  "Zip5": "96884",
+                  "Zip4": "2007",
+                  "City": "MOUS CABINS",
+                  "State": "AL"
+                }
+              },
+              "ParsedParties": {
+                "Party": {
+                  "BusinessIds": {
+                    "UltID": "0",
+                    "POWID": "0",
+                    "OrgID": "0",
+                    "ProxID": "0",
+                    "EmpID": "0",
+                    "DotID": "0",
+                    "SeleID": "0"
+                  },
+                  "BusinessId": "999900074587"
+                }
+              },
+              "OriginName": "ROZWALL BANK"
+            }
+          },
+          "Collaterals": {
+            "Collateral": { "Description": "11/21/1990 B9044007 - FIXTURES SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;CONTRACT RIGHTS SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;EQUIPMENT SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;ACCOUNTS RECEIVABLE SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;INVENTORY SPECIFIED INCLUDING PROCEEDS AND PRODUCTS;ACCOUNT(S) SPECIFIED INCLUDING PROCEEDS AND PRODUCTS" }
+          },
+          "FilingJurisdictionName": "ALABAMA",
+          "FilingOffices": {
+            "Office": {
+              "Address": {
+                "Zip5": "36130",
+                "StreetAddress1": "STATE CAPITOL",
+                "City": "MONTGOMERY",
+                "State": "AL"
+              },
+              "FilingAgency": "SECRETARY OF STATE/UCC DIVISION"
+            }
+          },
+          "TMSId": "DNBB904200719901126"
+        }
+      }
+    }
+  }
+}

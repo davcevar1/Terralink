@@ -1,0 +1,5 @@
+<app-wizard-steps [data]="stepService.steps" [current]="stepService.currentStep$ | async" [allowed]="stepService.allowedStep$ | async"></app-wizard-steps>
+<ng-content></ng-content>
+<footer class="bg-secondary text-white text-center p-4 mt-4">
+  <div class="small" i18n>Copyright &copy; 2018 Mainstreet, Todos los Derechos Reservados.</div>
+</footer>

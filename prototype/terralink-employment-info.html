@@ -1,0 +1,102 @@
+<fieldset>
+  <legend>Employment information</legend>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group wf-required">
+        <label class="control-label">Type of Employment</label>
+        <div class="small text-muted">Check all that apply</div>
+        <div class="wf-control">
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="employment-type" value="employed" ng-check="request.employmentType" /> Employed
+              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="employment-type" value="self-employed" ng-check="request.employmentType" /> Self-employed
+              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="employment-type" value="retired" ng-check="request.employmentType" /> Retired
+              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="employment-type" value="student" ng-check="request.employmentType" /> Student
+              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="employment-type" value="home-maker" ng-check="request.employmentType" /> Home-maker
+              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="employment-type" value="unemployed-no-income" ng-check="request.employmentType" /> Unemployed - No income
+              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="employment-type" value="unemployed-with-income" ng-check="request.employmentType" /> Unemployed - With income
+              </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group wf-required">
+        <label class="control-label">Estimated Annual Income</label>
+        <div class="small text-muted">Select the option which describes your annual income</div>
+        <div class="wf-control">
+          <div class="radio">
+            <label>
+                <input type="radio" name="anual-income" value="self-employed" ng-model="request.income" /> USD$0-50,000
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="anual-income" value="retired" ng-model="request.income" /> USD$50,001-100,000
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="anual-income" value="student" ng-model="request.income" /> USD$100,001-150,000
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="anual-income" value="home-maker" ng-model="request.income" /> USD$150,001-200,000
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="anual-income" value="unemployed-no-income" ng-model="request.income" /> USD$200,001-250,000
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="anual-income" value="unemployed-with-income" ng-model="request.income" /> USD$250,001-300,000
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="anual-income" value="unemployed-with-income" ng-model="request.income" /> USD$300,001 or more
+              </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <div class="control-label">Name of Employer / Business</div>
+        <div class="small text-muted" style="margin-bottom:10px;">Provide the name of your current employer or source of income</div>
+        <div class="wf-control" style="margin-bottom:8px; position:relative;" ng-repeat="businessName in person.businessNames">
+          <input type="text" class="form-control" />
+          <button type="button" ng-show="person.businessNames.length>1" ng-click="removeItem(person.businessNames, businessName)" style="border:0; background:transparent; position: absolute; top: 0; right: 0; padding: 7px;"><span class="fa fa-times"></span></button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-default" ng-click="addBusinessName(person)"><span class="fa fa-plus"></span> Add additional</button>
+    </div>
+  </div>
+</fieldset>

@@ -1,0 +1,30 @@
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-crystal">
+    <defs>
+      <mask id="mask">
+        <path d="M50 13L75 30L75 70L50 87L25 70L25 30L50 13Z" fill="#fff" stroke="#000" ng-attr-stroke-width="{{config.width}}" stroke-width="2"></path>
+      </mask>
+    </defs>
+    <path d="M50 13L75 30L75 70L50 87L25 70L25 30L50 13Z" ng-attr-fill="{{config.fill1}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2"></path>
+    <path d="M 50 13 L 53.1667 30 L 53.1667 70 L 50 87 L 38.1667 70 L 38.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+      <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.2s" repeatCount="indefinite"></animate>
+      <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.2s" repeatCount="indefinite"></animate>
+    </path>
+    <path d="M 50 13 L 40.1667 30 L 40.1667 70 L 50 87 L 25.1667 70 L 25.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+      <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.4s" repeatCount="indefinite"></animate>
+      <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.4s" repeatCount="indefinite"></animate>
+    </path>
+    <path d="M 50 13 L 27.1667 30 L 27.1667 70 L 50 87 L 12.1667 70 L 12.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+      <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.6s" repeatCount="indefinite"></animate>
+      <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.6s" repeatCount="indefinite"></animate>
+    </path>
+    <path d="M 50 13 L 79.1667 30 L 79.1667 70 L 50 87 L 64.1667 70 L 64.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+      <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.8s" repeatCount="indefinite"></animate>
+      <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.8s" repeatCount="indefinite"></animate>
+    </path>
+    <path d="M 50 13 L 66.1667 30 L 66.1667 70 L 50 87 L 51.1667 70 L 51.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+      <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+      <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+    </path>
+    <path d="M25 30L75 30" ng-attr-fill="{{config.fill1}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2"></path>
+    <path d="M25 70L75 70" ng-attr-fill="{{config.fill1}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2"></path>
+  </svg>

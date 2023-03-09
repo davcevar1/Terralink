@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24.977768mm"
+   height="24.477818mm"
+   viewBox="0 0 88.503901 86.732424"
+   id="svg4337"
+   version="1.1"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="logo-mainstreet-iso.svg">
+  <defs
+     id="defs4339" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.1337883"
+     inkscape:cx="194.39758"
+     inkscape:cy="40.714283"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1440"
+     inkscape:window-height="800"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4342">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-168.03249,-94.710279)">
+    <path
+       style="fill:#ffffff;fill-opacity:1"
+       d="m 180.85671,94.710279 c -7.10493,0 -12.82422,5.719301 -12.82422,12.824221 v 61.08398 c 0,7.10492 5.71929,12.82422 12.82422,12.82422 h 62.85351 c 7.10493,0 12.82617,-5.7193 12.82617,-12.82422 V 107.5345 c 0,-7.10492 -5.72124,-12.824221 -12.82617,-12.824221 z m 25.72851,14.892581 h 3.76953 c 0.73091,0 1.32031,0.58939 1.32031,1.32031 v 62.53516 c 0,0.73091 -0.5894,1.32031 -1.32031,1.32031 h -3.76953 c -0.73091,0 -1.31836,-0.5894 -1.31836,-1.32031 v -28.61328 h -18.89257 l -10,-10.56641 10,-10.35742 h 18.89257 v -12.99805 c 0,-0.73092 0.58745,-1.32031 1.31836,-1.32031 z m 6.3125,6.88281 h 25.37695 l 10,10.2832 -10,10.64258 h -24.33984 z"
+       id="rect3394-1"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

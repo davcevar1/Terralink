@@ -1,0 +1,1750 @@
+{
+	"ArrayOfReportDetail4": {
+		"ReportDetail4": [
+			{
+				"AccountNumberEntered": "XX-XXXX647",
+				"InstitutionName": "Worldwide Savings Bank",
+				"IsCompleted": "false"
+			},
+			{
+				"RequestCode": "4Y9RMX",
+				"CustomerIdentifier": "Demo for Carlos",
+				"EmailAddress": "kday@decisionlogic.com",
+				"InstitutionName": "Worldwide Savings Bank",
+				"AccountName": "PREMIER PLATINUM CHECKING",
+				"RoutingNumberEntered": "",
+				"AccountType": "CHECKING",
+				"AccountNumberEntered": "0000",
+				"AccountNumberFound": "XX-XXXX647",
+				"AccountNumberConfidence": "2",
+				"NameEntered": "Michael Draper",
+				"NameFound": "MICHAEL DRAPER",
+				"NameConfidence": "5",
+				"AmountInput": "0",
+				"AvailableBalance": "84.78",
+				"AverageBalance": "1251.4595505617983",
+				"AverageBalanceRecent": "409.88533333333339",
+				"IsLoginValid": "true",
+				"IsVerified": "true",
+				"AsOfDate": "2016-10-26T19:02:09.977",
+				"ActivityStartDate": "2016-07-30T00:00:00",
+				"ActivityEndDate": "2016-10-26T00:00:00",
+				"TotalCredits": "5403.1799999999994",
+				"TotalDebits": "-8263.6800000000039",
+				"CurrentBalance": "74.78",
+				"IsActivityAvailable": "true",
+				"TransactionAnalysisSummaries": {
+					"TransactionAnalysisSummary4": [
+						{
+							"TypeName": "Payroll",
+							"TypeCode": "py",
+							"TotalCount": "5",
+							"TotalAmount": "4266.2699999999995",
+							"RecentCount": "1",
+							"RecentAmount": "1254.84"
+						},
+						{
+							"TypeName": "Loan Debit",
+							"TypeCode": "ld",
+							"TotalCount": "1",
+							"TotalAmount": "-40",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "Loan Credit",
+							"TypeCode": "lc",
+							"TotalCount": "1",
+							"TotalAmount": "300",
+							"RecentCount": "1",
+							"RecentAmount": "300"
+						},
+						{
+							"TypeName": "Overdraft",
+							"TypeCode": "ov",
+							"TotalCount": "2",
+							"TotalAmount": "-70",
+							"RecentCount": "2",
+							"RecentAmount": "-70"
+						},
+						{
+							"TypeName": "ACH Debit",
+							"TypeCode": "ad",
+							"TotalCount": "1",
+							"TotalAmount": "-190.61",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "ACH Credit",
+							"TypeCode": "ac",
+							"TotalCount": "1",
+							"TotalAmount": "240",
+							"RecentCount": "1",
+							"RecentAmount": "240"
+						},
+						{
+							"TypeName": "Deposit",
+							"TypeCode": "dp",
+							"TotalCount": "11",
+							"TotalAmount": "5403.1799999999994",
+							"RecentCount": "4",
+							"RecentAmount": "1854.84"
+						},
+						{
+							"TypeName": "Reversal",
+							"TypeCode": "rv",
+							"TotalCount": "1",
+							"TotalAmount": "6.91",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						}
+					]
+				},
+				"TransactionSummaries": {
+					"TransactionSummary4": [
+						{
+							"TransactionDate": "2016-10-26T00:00:00",
+							"Amount": "-99.5",
+							"RunningBalance": "74.78",
+							"Description": "EXXONMOBIL POS   10/26 #xxxxx7540 PURCHASE EXXONMOBIL POS SMITHFIE  RI 202",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-10-26T00:00:00",
+							"Amount": "-25",
+							"RunningBalance": "174.28",
+							"Description": "SHELL Service  10/26 #xxxxx6818 PURCHASE SHELL Service Sta  CRANSTON  RI 201",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-10-24T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "199.28",
+							"Description": "SAMS FOOD STOR   10/24 #xxxxx9649 PURCHASE SAMS FOOD STORE  CRANSTON  RI 203",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-10-22T00:00:00",
+							"Amount": "-20.7",
+							"RunningBalance": "207.53",
+							"Description": "CHECKCARD 1022 GENERATIONS PIZZA SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0512 205",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-10-22T00:00:00",
+							"Amount": "-23.23",
+							"RunningBalance": "228.23",
+							"Description": "WALGREEN COMPA   10/22 #xxxxx7035 PURCHASE WALGREEN COMPANY CRANSTON  RI 204",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Healthcare/Medical"
+						},
+						{
+							"TransactionDate": "2016-10-22T00:00:00",
+							"Amount": "300",
+							"RunningBalance": "251.45999999999998",
+							"Description": "PAYDAY LOAN ID: xxxxxxx4324  10/22 #76 CRANSTON RI 206",
+							"TypeCodes": "lc,dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Loans"
+						},
+						{
+							"TransactionDate": "2016-10-18T00:00:00",
+							"Amount": "-35",
+							"RunningBalance": "-48.54000000000002",
+							"Description": "INSUFFICIENT FUNDS FEE FOR CARD PURCHASE 208",
+							"TypeCodes": "ov",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Service Charges/Fees"
+						},
+						{
+							"TransactionDate": "2016-10-18T00:00:00",
+							"Amount": "-35",
+							"RunningBalance": "-13.54000000000002",
+							"Description": "INSUFFICIENT FUNDS FEE FOR CARD PURCHASE 207",
+							"TypeCodes": "ov",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Service Charges/Fees"
+						},
+						{
+							"TransactionDate": "2016-10-17T00:00:00",
+							"Amount": "-99.96",
+							"RunningBalance": "21.45999999999998",
+							"Description": "RI   10/17 #xxxxx9919 PURCHASE RI LINCOLN RI 210",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "General Merchandise"
+						},
+						{
+							"TransactionDate": "2016-10-17T00:00:00",
+							"Amount": "-28.25",
+							"RunningBalance": "121.41999999999997",
+							"Description": "SAMS FOOD STOR   10/17 #xxxxx0734 PURCHASE SAMS FOOD STORE  CRANSTON  RI 209",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-10-13T00:00:00",
+							"Amount": "-29.6",
+							"RunningBalance": "149.66999999999996",
+							"Description": "SHELL Service  10/13 #xxxxx8737 PURCHASE SHELL Service Sta  CRANSTON  RI 211",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-10-12T00:00:00",
+							"Amount": "-12.09",
+							"RunningBalance": "179.26999999999995",
+							"Description": "EXXONMOBIL POS   10/12 #xxxxx9934 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 212",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-10-11T00:00:00",
+							"Amount": "-645",
+							"RunningBalance": "191.35999999999996",
+							"Description": "SEACREST APARTMENT VILLAS 214",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Uncategorized"
+						},
+						{
+							"TransactionDate": "2016-10-11T00:00:00",
+							"Amount": "-20",
+							"RunningBalance": "836.3599999999999",
+							"Description": "Online scheduled transfer to Sav 1234 Confirmation 10/11 # xxxxxx6232 213",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-10-10T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "856.3599999999999",
+							"Description": "SAMS FOOD STOR   10/10 #xxxxx4731 PURCHASE SAMS FOOD STORE  CRANSTON  RI 216",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-10-10T00:00:00",
+							"Amount": "-23.75",
+							"RunningBalance": "864.6099999999999",
+							"Description": "SHEERGATE   10/10 #xxxxx1220 WITHDRWL SHEERGATE  LINCOLN RI 215",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "ATM/Cash Withdrawals"
+						},
+						{
+							"TransactionDate": "2016-10-09T00:00:00",
+							"Amount": "-5.95",
+							"RunningBalance": "888.3599999999999",
+							"Description": "KMART  10/09 #xxxxx6491 PURCHASE KMART 4  S ATTLEBORO MA 217",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "General Merchandise"
+						},
+						{
+							"TransactionDate": "2016-10-08T00:00:00",
+							"Amount": "-60",
+							"RunningBalance": "894.31",
+							"Description": "CHECKCARD 1008  NAIL ARTS   GREENVILLE RI xxxxxxxxxxxxxxxxxxx6457 220",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Personal Care"
+						},
+						{
+							"TransactionDate": "2016-10-08T00:00:00",
+							"Amount": "-235.41",
+							"RunningBalance": "954.31",
+							"Description": "CHECKCARD 1008  BELLISSIMO GRANDE STONINGTON CT xxxxxxxxxxxxxxxxxxx1045 219",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Uncategorized"
+						},
+						{
+							"TransactionDate": "2016-10-08T00:00:00",
+							"Amount": "-40",
+							"RunningBalance": "1189.72",
+							"Description": "BKOFAMERICA ATM  10/08 #xxxxx4790 WITHDRWL CRANSTON CRANSTON  RI 218",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "ATM/Cash Withdrawals"
+						},
+						{
+							"TransactionDate": "2016-10-05T00:00:00",
+							"Amount": "-12.87",
+							"RunningBalance": "1229.72",
+							"Description": "SHELL Service  10/05 #xxxxx5924 PURCHASE SHELL Service Sta  CRANSTON  RI 222",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-10-05T00:00:00",
+							"Amount": "-9.7",
+							"RunningBalance": "1242.59",
+							"Description": "CHECKCARD 1005 GENERATIONS PIZZA SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0227 221",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-10-04T00:00:00",
+							"Amount": "-28.8",
+							"RunningBalance": "1252.29",
+							"Description": "BESTWAY GAS &  10/04 #xxxxx0907 PURCHASE BESTWAY GAS & CON  CRANSTON  RI 225",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-10-04T00:00:00",
+							"Amount": "-30",
+							"RunningBalance": "1281.09",
+							"Description": "CHECKCARD 1004 PEDIATRIC OPHTHALMOLOGY PROVIDENCE RI xxxxxxxxxxxxxxxxxxx7765 223",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Healthcare/Medical"
+						},
+						{
+							"TransactionDate": "2016-10-04T00:00:00",
+							"Amount": "60",
+							"RunningBalance": "1311.09",
+							"Description": "Online Banking transfer from Savings xxxx5004 Confirmation 10/04 # xxxxxx9407 224",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-10-03T00:00:00",
+							"Amount": "-25",
+							"RunningBalance": "1251.09",
+							"Description": "SUNOCO xxx0946   10/03 #xxxxx4128 PURCHASE SUNOCO xxxxxx6900  WARWICK RI 226",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-10-02T00:00:00",
+							"Amount": "-21",
+							"RunningBalance": "1276.09",
+							"Description": "CHECKCARD 1002 GENERATIONS PIZZA SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0155 228",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-10-02T00:00:00",
+							"Amount": "-68.46",
+							"RunningBalance": "1297.09",
+							"Description": "CVS xxxxx 0021   10/02 #xxxxx1370 PURCHASE CVS xxxxx xxx12--  CRANSTON  RI 227",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Healthcare/Medical"
+						},
+						{
+							"TransactionDate": "2016-10-02T00:00:00",
+							"Amount": "1254.84",
+							"RunningBalance": "1365.55",
+							"Description": "BOB'S DISCOUNT F DES:PAYROLL  ID:xxxxxxxxxx1106X INDN:  CO ID:9006 229",
+							"TypeCodes": "py,dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Paychecks/Salary"
+						},
+						{
+							"TransactionDate": "2016-10-01T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "110.71000000000004",
+							"Description": "SAMS FOOD STOR   10/01 #xxxxx3796 PURCHASE SAMS FOOD STORE  CRANSTON  RI 233",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-10-01T00:00:00",
+							"Amount": "-7.74",
+							"RunningBalance": "118.96000000000004",
+							"Description": "CHECKCARD 1001  WENDYS  10/01 #9435 Q25  S.ATTLEBORO  MA xxxxxxxxxxxxxxxxxxx3910 232",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-10-01T00:00:00",
+							"Amount": "-49.8",
+							"RunningBalance": "126.70000000000003",
+							"Description": "CHECKCARD 1001  DOTS  10/01 #274   S ATTLEBORO  MA xxxxxxxxxxxxxxxxxxx3708 231",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Uncategorized"
+						},
+						{
+							"TransactionDate": "2016-10-01T00:00:00",
+							"Amount": "-8.75",
+							"RunningBalance": "176.50000000000003",
+							"Description": "SHELL Service  10/01 #xxxxx8459 PURCHASE SHELL Service Sta  CRANSTON  RI 230",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-30T00:00:00",
+							"Amount": "-27.68",
+							"RunningBalance": "185.25000000000003",
+							"Description": "CHECKCARD 0930  MCDONALD'S F1909  CRANSTON RI xxxxxxxxxxxxxxxxxxx4667 234",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-29T00:00:00",
+							"Amount": "-24.57",
+							"RunningBalance": "212.93000000000004",
+							"Description": "KMART  09/29 #xxxxx6473 PURCHASE KMART 4  S ATTLEBORO MA 235",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "General Merchandise"
+						},
+						{
+							"TransactionDate": "2016-09-29T00:00:00",
+							"Amount": "240",
+							"RunningBalance": "237.50000000000003",
+							"Description": "ACH  09/29 #xxxx-xxxx-1324 328",
+							"TypeCodes": "ac,dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-27T00:00:00",
+							"Amount": "-13.1",
+							"RunningBalance": "-2.4999999999999716",
+							"Description": "CHECKCARD 0927 FRIENDLY ICE CREAM  CRANSTON RI xxxxxxxxxxxxxxxxxxx5170 237",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-27T00:00:00",
+							"Amount": "-24.01",
+							"RunningBalance": "10.600000000000028",
+							"Description": "CHECKCARD 0927 EXXONMOBIL  xxxx1455  ATTLEBORO  MA xxxxxxxxxxxxxxxxxxx8368 236",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-26T00:00:00",
+							"Amount": "-1150.52",
+							"RunningBalance": "34.610000000000028",
+							"Description": "WARREN AUTO BODY SHOP SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0441 240",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Personal Care"
+						},
+						{
+							"TransactionDate": "2016-09-26T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "1185.13",
+							"Description": "SAMS FOOD STOR   09/26 #xxxxx5888 PURCHASE SAMS FOOD STORE  CRANSTON  RI 239",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-09-26T00:00:00",
+							"Amount": "-32.13",
+							"RunningBalance": "1193.38",
+							"Description": "SHELL Service  09/26 #xxxxx4796 PURCHASE SHELL Service Sta  CRANSTON  RI 238",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-25T00:00:00",
+							"Amount": "-20",
+							"RunningBalance": "1225.5100000000002",
+							"Description": "CHECKCARD 0925  EXXONMOBIL  xxxx7204  SMITHFIELD RI xxxxxxxxxxxxxxxxxxx9579 242",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-25T00:00:00",
+							"Amount": "-0.25",
+							"RunningBalance": "1245.5100000000002",
+							"Description": "CUMBERLAND FAR   09/25 #xxxxx8033 PURCHASE CUMBERLAND FARMS CRANSTON  RI 241",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-09-24T00:00:00",
+							"Amount": "6.91",
+							"RunningBalance": "1245.7600000000002",
+							"Description": "Reversal Return - xxxxxx2744 243",
+							"TypeCodes": "dp,rv",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Other Income"
+						},
+						{
+							"TransactionDate": "2016-09-23T00:00:00",
+							"Amount": "-300",
+							"RunningBalance": "1238.8500000000001",
+							"Description": "TRANSFER TO xx-xxx5004 329",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-23T00:00:00",
+							"Amount": "-37.17",
+							"RunningBalance": "1538.8500000000001",
+							"Description": "Check 0091 244",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Checks"
+						},
+						{
+							"TransactionDate": "2016-09-21T00:00:00",
+							"Amount": "-20",
+							"RunningBalance": "1576.0200000000002",
+							"Description": "SUNOCO xxx8247   09/21 #xxxxx6206 PURCHASE SUNOCO xxxxxx7400  FOSTER  RI 246",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-21T00:00:00",
+							"Amount": "-79.99",
+							"RunningBalance": "1596.0200000000002",
+							"Description": "CHECKCARD 0921  LEANSPA xxx xxx xxxx  xxx-xxx9990  CT xxxxxxxxxxxxxxxxxxx0074 245",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Personal Care"
+						},
+						{
+							"TransactionDate": "2016-09-21T00:00:00",
+							"Amount": "30",
+							"RunningBalance": "1676.0100000000002",
+							"Description": "Online Banking transfer from Savings xxxx5004 Confirmation 09/21 # xxxxxx2351 247",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-20T00:00:00",
+							"Amount": "-104",
+							"RunningBalance": "1646.0100000000002",
+							"Description": "AUTOZONE   09/20 #xxxxx4931 PURCHASE AUTOZONE,  UNCASVILLE  CT 248",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Automotive Expenses"
+						},
+						{
+							"TransactionDate": "2016-09-19T00:00:00",
+							"Amount": "-2",
+							"RunningBalance": "1750.0100000000002",
+							"Description": "AUTOZONE   09/19 #xxxxx4931 PURCHASE AUTOZONE,  UNCASVILLE  CT FE 250",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Automotive Expenses"
+						},
+						{
+							"TransactionDate": "2016-09-19T00:00:00",
+							"Amount": "-3.38",
+							"RunningBalance": "1752.0100000000002",
+							"Description": "CHECKCARD 0919  MCDONALD'S Fx2199 SOUTH ATTLEB MA xxxxxxxxxxxxxxxxxxx4096 249",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-18T00:00:00",
+							"Amount": "-300",
+							"RunningBalance": "1755.3900000000003",
+							"Description": "AUTOMATIC TRANSFER TO xx-xxx5004 330",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-18T00:00:00",
+							"Amount": "-19.32",
+							"RunningBalance": "2055.3900000000003",
+							"Description": "CHECKCARD 0918  D'ANGELO SANDWICH SHOP  SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0130 251",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-17T00:00:00",
+							"Amount": "-25.01",
+							"RunningBalance": "2074.7100000000005",
+							"Description": "CHECKCARD 0917 EXXONMOBIL  xxxx1455  ATTLEBORO  MA xxxxxxxxxxxxxxxxxxx6311 253",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-17T00:00:00",
+							"Amount": "-10",
+							"RunningBalance": "2099.7200000000007",
+							"Description": "EXXONMOBIL POS   09/17 #xxxxx9653 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 252",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-17T00:00:00",
+							"Amount": "1257.08",
+							"RunningBalance": "2109.7200000000007",
+							"Description": "BOB'S DISCOUNT F DES:PAYROLL  ID:xxxxxxxxxx1604X INDN:  CO ID:9006 254",
+							"TypeCodes": "py,dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Paychecks/Salary"
+						},
+						{
+							"TransactionDate": "2016-09-16T00:00:00",
+							"Amount": "-40",
+							"RunningBalance": "852.64000000000078",
+							"Description": "CHECKCARD 0916  NAIL ARTS   GREENVILLE RI xxxxxxxxxxxxxxxxxxx6450 257",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Personal Care"
+						},
+						{
+							"TransactionDate": "2016-09-16T00:00:00",
+							"Amount": "-2",
+							"RunningBalance": "892.64000000000078",
+							"Description": "964 CRANSTON S   09/16 #xxxxx6657 WITHDRWL 964 CRANSTON ST. CRANSTON  RI FE 256",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "ATM/Cash Withdrawals"
+						},
+						{
+							"TransactionDate": "2016-09-16T00:00:00",
+							"Amount": "-20",
+							"RunningBalance": "894.64000000000078",
+							"Description": "CHECKCARD 0916  AMERICAN PRFRMNCE PETRO CRANSTON RI xxxxxxxxxxxxxxxxxxx0606 255",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-14T00:00:00",
+							"Amount": "-2",
+							"RunningBalance": "914.64000000000078",
+							"Description": "AUTOZONE   09/14 #xxxxx4699 PURCHASE AUTOZONE  LINCOLN RI FE 259",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Automotive Expenses"
+						},
+						{
+							"TransactionDate": "2016-09-14T00:00:00",
+							"Amount": "-89.59",
+							"RunningBalance": "916.64000000000078",
+							"Description": "CHECKCARD 0914  TWIRL HAIR STUDIO INC SMITHFIELD RI xxxxxxxxxxxxxxxxxxx9874 258",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Personal Care"
+						},
+						{
+							"TransactionDate": "2016-09-13T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "1006.2300000000008",
+							"Description": "SAMS FOOD STOR   09/13 #xxxxx7395 PURCHASE SAMS FOOD STORE  CRANSTON  RI 260",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-09-12T00:00:00",
+							"Amount": "-3.38",
+							"RunningBalance": "1014.4800000000008",
+							"Description": "CHECKCARD 0912  MCDONALD'S Fx2199 SOUTH ATTLEB MA xxxxxxxxxxxxxxxxxxx1221 261",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-11T00:00:00",
+							"Amount": "-9.16",
+							"RunningBalance": "1017.8600000000008",
+							"Description": "CHECKCARD 0911  CRANSTON TACO BELL Q63  CRANSTON RI xxxxxxxxxxxxxxxxxxx6971 264",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-11T00:00:00",
+							"Amount": "-645",
+							"RunningBalance": "1027.0200000000009",
+							"Description": "SEACREST APARTMENT VILLAS 263",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Uncategorized"
+						},
+						{
+							"TransactionDate": "2016-09-11T00:00:00",
+							"Amount": "-60",
+							"RunningBalance": "1672.0200000000009",
+							"Description": "BKOFAMERICA ATM  09/11 #xxxxx2416 WITHDRWL GREENVILLE GREENVILLE  RI 262",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "ATM/Cash Withdrawals"
+						},
+						{
+							"TransactionDate": "2016-09-09T00:00:00",
+							"Amount": "-5.92",
+							"RunningBalance": "1732.0200000000009",
+							"Description": "CHECKCARD 0909  MCDONALD'S Fx2199 SOUTH ATTLEB MA xxxxxxxxxxxxxxxxxxx1649 266",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-09T00:00:00",
+							"Amount": "-5",
+							"RunningBalance": "1737.940000000001",
+							"Description": "CHECKCARD 0909  FACEBOOK.COM*YCSP222UQ  www.fb.me/cc CA xxxxxxxxxxxxxxxxxxx8993 265",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Entertainment"
+						},
+						{
+							"TransactionDate": "2016-09-09T00:00:00",
+							"Amount": "500",
+							"RunningBalance": "1742.940000000001",
+							"Description": "ONE-TIME TRANSFER FROM xx-xxx5004 331",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-07T00:00:00",
+							"Amount": "-6.67",
+							"RunningBalance": "1242.940000000001",
+							"Description": "CHECKCARD 0907  MCDONALD'S Fx2199 SOUTH ATTLEB MA xxxxxxxxxxxxxxxxxxx8453 268",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-07T00:00:00",
+							"Amount": "-9.01",
+							"RunningBalance": "1249.610000000001",
+							"Description": "EXXONMOBIL POS   09/07 #xxxxx7467 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 267",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-06T00:00:00",
+							"Amount": "-20.12",
+							"RunningBalance": "1258.620000000001",
+							"Description": "EXXONMOBIL POS   09/06 #xxxxx7961 PURCHASE EXXONMOBIL POS SMITHFIE  RI 270",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-06T00:00:00",
+							"Amount": "-31.15",
+							"RunningBalance": "1278.7400000000009",
+							"Description": "SHELL Service   09/06 #xxxxx1298 PURCHASE SHELL Service Sta  PAWTUCKET RI 269",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-06T00:00:00",
+							"Amount": "1051.61",
+							"RunningBalance": "1309.890000000001",
+							"Description": "BOB'S DISCOUNT F DES:PAYROLL  ID:xxxxxxxxxx7085X INDN:  CO ID:9006 271",
+							"TypeCodes": "py,dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Paychecks/Salary"
+						},
+						{
+							"TransactionDate": "2016-09-05T00:00:00",
+							"Amount": "-25",
+							"RunningBalance": "258.28000000000111",
+							"Description": "AUTOMATIC TRANSFER TO xxxx5004 273",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-05T00:00:00",
+							"Amount": "-38.58",
+							"RunningBalance": "283.28000000000111",
+							"Description": "CVS xxxxx 0204   09/05 #xxxxx5031 PURCHASE CVS xxxxx xxx48--  CHEPACHET RI 272",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Healthcare/Medical"
+						},
+						{
+							"TransactionDate": "2016-09-04T00:00:00",
+							"Amount": "-9.5",
+							"RunningBalance": "321.86000000000109",
+							"Description": "EXXONMOBIL POS   09/04 #xxxxx8724 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 274",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-09-03T00:00:00",
+							"Amount": "-19.14",
+							"RunningBalance": "331.36000000000109",
+							"Description": "CVS xxxxx 0204   09/03 #xxxxx0432 PURCHASE CVS xxxxx xxx48--  CHEPACHET RI 275",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Healthcare/Medical"
+						},
+						{
+							"TransactionDate": "2016-09-02T00:00:00",
+							"Amount": "-8.35",
+							"RunningBalance": "350.50000000000108",
+							"Description": "CHECKCARD 0902  GENERATIONS PIZZA SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0043 278",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-02T00:00:00",
+							"Amount": "-25.64",
+							"RunningBalance": "358.8500000000011",
+							"Description": "CHECKCARD 0902  MCDONALD'S F1909  CRANSTON RI xxxxxxxxxxxxxxxxxxx1039 277",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-09-02T00:00:00",
+							"Amount": "-30.36",
+							"RunningBalance": "384.49000000000109",
+							"Description": "SUNOCO xxx0946   09/02 #xxxxx6701 PURCHASE SUNOCO xxxxxx6900  WARWICK RI 276",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-31T00:00:00",
+							"Amount": "-30.41",
+							"RunningBalance": "414.8500000000011",
+							"Description": "SHELL Service   08/31 #xxxxx6945 PURCHASE SHELL Service Sta  CRANSTON  RI 280",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-31T00:00:00",
+							"Amount": "-2",
+							"RunningBalance": "445.26000000000113",
+							"Description": "AUTOZONE   08/31 #xxxxx5699 PURCHASE AUTOZONE,  UNCASVILLE  CT FE 279",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Automotive Expenses"
+						},
+						{
+							"TransactionDate": "2016-08-30T00:00:00",
+							"Amount": "-8.75",
+							"RunningBalance": "447.26000000000113",
+							"Description": "SHELL Service   08/30 #xxxxx7922 PURCHASE SHELL Service Sta  CRANSTON  RI 283",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-30T00:00:00",
+							"Amount": "-6.9",
+							"RunningBalance": "456.01000000000113",
+							"Description": "CHECKCARD 0830  GENERATIONS PIZZA SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0147 282",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-08-30T00:00:00",
+							"Amount": "-25.02",
+							"RunningBalance": "462.91000000000111",
+							"Description": "SHELL Service  08/30 #xxxxx9649 PURCHASE SHELL Service Sta  CRANSTON  RI 281",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-29T00:00:00",
+							"Amount": "-800",
+							"RunningBalance": "487.93000000000109",
+							"Description": "TRANSFER TO xx-xxx5004 332",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-29T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "1287.9300000000012",
+							"Description": "SAMS FOOD STOR   08/29 #xxxxx8371 PURCHASE SAMS FOOD STORE  CRANSTON  RI 286",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-08-29T00:00:00",
+							"Amount": "-20.02",
+							"RunningBalance": "1296.1800000000012",
+							"Description": "EXXONMOBIL POS   08/29 #xxxxx2245 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 285",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-29T00:00:00",
+							"Amount": "-20.01",
+							"RunningBalance": "1316.2000000000012",
+							"Description": "SHELL Service  08/29 #xxxxx0857 PURCHASE SHELL Service Sta  CRANSTON  RI 284",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-28T00:00:00",
+							"Amount": "-23.4",
+							"RunningBalance": "1336.2100000000012",
+							"Description": "SHELL Service  08/28 #xxxxx4218 PURCHASE SHELL Service Sta  CRANSTON  RI 288",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-28T00:00:00",
+							"Amount": "-18.38",
+							"RunningBalance": "1359.6100000000013",
+							"Description": "KMART  08/28 #xxxxx9644 PURCHASE KMART 4  S ATTLEBORO MA 287",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "General Merchandise"
+						},
+						{
+							"TransactionDate": "2016-08-27T00:00:00",
+							"Amount": "-190.61",
+							"RunningBalance": "1377.9900000000014",
+							"Description": "ACH xxxxxxxxxxxxxxxxxxx7652 294",
+							"TypeCodes": "ad",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-27T00:00:00",
+							"Amount": "-33.97",
+							"RunningBalance": "1568.6000000000013",
+							"Description": "CHECKCARD 0827  SALLY BEAUTY  08/27 #1011  JOHNSTON RI xxxxxxxxxxxxxxxxxxx1718 293",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Personal Care"
+						},
+						{
+							"TransactionDate": "2016-08-27T00:00:00",
+							"Amount": "-20.02",
+							"RunningBalance": "1602.5700000000013",
+							"Description": "SHELL Service   08/27 #xxxxx4387 PURCHASE SHELL Service Sta  CRANSTON  RI 292",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-27T00:00:00",
+							"Amount": "-15.72",
+							"RunningBalance": "1622.5900000000013",
+							"Description": "CHECKCARD 0827 D'ANGELO SANDWICH SHOP  SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0301 291",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-08-27T00:00:00",
+							"Amount": "-20",
+							"RunningBalance": "1638.3100000000013",
+							"Description": "SUNOCO xxx1804   08/27 #xxxxx8230 PURCHASE SUNOCO xxxxxx4600  SCITUATE  RI 290",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-27T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "1658.3100000000013",
+							"Description": "SAMS FOOD STOR   08/27 #xxxxx6735 PURCHASE SAMS FOOD STORE  CRANSTON  RI 289",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-08-25T00:00:00",
+							"Amount": "-5.35",
+							"RunningBalance": "1666.5600000000013",
+							"Description": "CHECKCARD 0825  REDBOX *DVD RENTAL  xxx-xxx-2693 IL xxxxxxxxxxxxxxxxxxx9698 296",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Entertainment"
+						},
+						{
+							"TransactionDate": "2016-08-25T00:00:00",
+							"Amount": "-32.98",
+							"RunningBalance": "1671.9100000000012",
+							"Description": "FASHIONBUG 08/25 #044   08/25 #xxxxx8424 PURCHASE FASHIONBUG 08/25 #xx44 1  JOHNSTON  RI 295",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "General Merchandise"
+						},
+						{
+							"TransactionDate": "2016-08-24T00:00:00",
+							"Amount": "-8.07",
+							"RunningBalance": "1704.8900000000012",
+							"Description": "RITE AID CORP.   08/24 #xxxxx8598 PURCHASE RITE AID CORP. COVENTRY  RI 297",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Healthcare/Medical"
+						},
+						{
+							"TransactionDate": "2016-08-23T00:00:00",
+							"Amount": "-300",
+							"RunningBalance": "1712.9600000000012",
+							"Description": "AUTOMATIC TRANSFER TO xx-xxx5004 333",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-22T00:00:00",
+							"Amount": "-23.18",
+							"RunningBalance": "2012.9600000000012",
+							"Description": "EXXONMOBIL POS   08/22 #xxxxx0284 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 298",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-21T00:00:00",
+							"Amount": "-20.01",
+							"RunningBalance": "2036.1400000000012",
+							"Description": "SUNOCO xxx0946   08/21 #xxxxx6308 PURCHASE SUNOCO xxxxxx6900  WARWICK RI 299",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-18T00:00:00",
+							"Amount": "-73.7",
+							"RunningBalance": "2056.1500000000015",
+							"Description": "FASHIONBUG 08/18 #249   08/18 #xxxxx1664 PURCHASE FASHIONBUG 08/18 #xx97 1  SOUTHATTLEBOR MA 301",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "General Merchandise"
+						},
+						{
+							"TransactionDate": "2016-08-18T00:00:00",
+							"Amount": "-19.45",
+							"RunningBalance": "2129.8500000000013",
+							"Description": "CHECKCARD 0818 GENERATIONS PIZZA SOUTH ATTLEBOMA xxxxxxxxxxxxxxxxxxx0295 300",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-08-17T00:00:00",
+							"Amount": "-40",
+							"RunningBalance": "2149.3000000000011",
+							"Description": "BKOFAMERICA ATM  08/17 #xxxxx4365 WITHDRWL GARDEN CITY  CRANSTON  RI 302",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "ATM/Cash Withdrawals"
+						},
+						{
+							"TransactionDate": "2016-08-15T00:00:00",
+							"Amount": "-8.25",
+							"RunningBalance": "2189.3000000000011",
+							"Description": "SAMS FOOD STOR   08/15 #xxxxx1067 PURCHASE SAMS FOOD STORE  CRANSTON  RI 304",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-08-15T00:00:00",
+							"Amount": "-8.02",
+							"RunningBalance": "2197.5500000000011",
+							"Description": "EXXONMOBIL POS   08/15 #xxxxx3457 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 303",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-14T00:00:00",
+							"Amount": "-1.07",
+							"RunningBalance": "2205.5700000000011",
+							"Description": "CHECKCARD 0814  REDBOX *DVD RENTAL  OAKBRKTERRACEIL xxxxxxxxxxxxxxxxxxx2245 305",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Entertainment"
+						},
+						{
+							"TransactionDate": "2016-08-12T00:00:00",
+							"Amount": "-645",
+							"RunningBalance": "2206.6400000000012",
+							"Description": "SEACREST APARTMENT VILLAS 306",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Uncategorized"
+						},
+						{
+							"TransactionDate": "2016-08-11T00:00:00",
+							"Amount": "-63.75",
+							"RunningBalance": "2851.6400000000012",
+							"Description": "AUTOZONE   08/11 #xxxxx5439 PURCHASE AUTOZONE  LINCOLN RI 307",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Automotive Expenses"
+						},
+						{
+							"TransactionDate": "2016-08-10T00:00:00",
+							"Amount": "-130",
+							"RunningBalance": "2915.3900000000012",
+							"Description": "CHECKCARD 0810  SPRINT *WIRELESS  xxx-xxx-6111 VA xxxxxxxxxxxxxxxxxxx3364 308",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Telephone Services"
+						},
+						{
+							"TransactionDate": "2016-08-09T00:00:00",
+							"Amount": "-21.77",
+							"RunningBalance": "3045.3900000000012",
+							"Description": "SHELL Service   08/09 #xxxxx9521 PURCHASE SHELL Service Sta  CRANSTON  RI 309",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-09T00:00:00",
+							"Amount": "359.94",
+							"RunningBalance": "3067.1600000000012",
+							"Description": "BOB'S DISCOUNT F DES:PAYROLL  ID:xxxxxxxxxx6227X INDN:  CO ID:9006 310",
+							"TypeCodes": "py,dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Paychecks/Salary"
+						},
+						{
+							"TransactionDate": "2016-08-08T00:00:00",
+							"Amount": "-2",
+							"RunningBalance": "2707.2200000000012",
+							"Description": "AUTOZONE   08/08 #xxxxx5439 PURCHASE AUTOZONE  LINCOLN RI FE 311",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Automotive Expenses"
+						},
+						{
+							"TransactionDate": "2016-08-07T00:00:00",
+							"Amount": "-300",
+							"RunningBalance": "2709.2200000000012",
+							"Description": "TRANSFER TO xx-xxx5004 334",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-07T00:00:00",
+							"Amount": "-8.8",
+							"RunningBalance": "3009.2200000000012",
+							"Description": "BESTWAY FOOD S   08/07 #xxxxx3949 PURCHASE BESTWAY FOOD STOR  CRANSTON  RI 314",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-08-07T00:00:00",
+							"Amount": "-3.43",
+							"RunningBalance": "3018.0200000000013",
+							"Description": "CHECKCARD 0807  WENDY'S  08/07 #3 Q25  WARWICK  RI xxxxxxxxxxxxxxxxxxx7792 313",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-08-07T00:00:00",
+							"Amount": "342.8",
+							"RunningBalance": "3021.4500000000012",
+							"Description": "BOB'S DISCOUNT F DES:PAYROLL  ID:xxxxxxxxxx5359X INDN:  CO ID:9006 312",
+							"TypeCodes": "py,dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Paychecks/Salary"
+						},
+						{
+							"TransactionDate": "2016-08-05T00:00:00",
+							"Amount": "-8.75",
+							"RunningBalance": "2678.650000000001",
+							"Description": "SHELL Service  08/05 #xxxxx4632 PURCHASE SHELL Service Sta  CRANSTON  RI 315",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-04T00:00:00",
+							"Amount": "-20.91",
+							"RunningBalance": "2687.400000000001",
+							"Description": "Wal-Mart Store   08/04 #xxxxx0985 PURCHASE Wal-Mart Store WARWICK (W) RI 318",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "General Merchandise"
+						},
+						{
+							"TransactionDate": "2016-08-04T00:00:00",
+							"Amount": "-25",
+							"RunningBalance": "2708.3100000000009",
+							"Description": "AUTOMATIC TRANSFER TO xxxx5004 317",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-04T00:00:00",
+							"Amount": "-9.01",
+							"RunningBalance": "2733.3100000000009",
+							"Description": "EXXONMOBIL POS   08/04 #xxxxx9014 PURCHASE EXXONMOBIL POS ATTLEBOR  MA 316",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-08-03T00:00:00",
+							"Amount": "-12.24",
+							"RunningBalance": "2742.3200000000011",
+							"Description": "SAMS FOOD STOR   08/03 #xxxxx9253 PURCHASE SAMS FOOD STORE  CRANSTON  RI 319",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-08-02T00:00:00",
+							"Amount": "-9.84",
+							"RunningBalance": "2754.5600000000009",
+							"Description": "SAMS FOOD STOR   08/02 #xxxxx9427 PURCHASE SAMS FOOD STORE  CRANSTON  RI 321",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						},
+						{
+							"TransactionDate": "2016-08-02T00:00:00",
+							"Amount": "-6.89",
+							"RunningBalance": "2764.400000000001",
+							"Description": "CHECKCARD 0802 DUNKIN  08/02 #xx1402 Q35  CRANSTON RI xxxxxxxxxxxxxxxxxxx9867 320",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-08-01T00:00:00",
+							"Amount": "-38.76",
+							"RunningBalance": "2771.2900000000009",
+							"Description": "SHELL Service  08/01 #xxxxx1872 PURCHASE SHELL Service Sta  CRANSTON  RI 322",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Gasoline/Fuel"
+						},
+						{
+							"TransactionDate": "2016-07-31T00:00:00",
+							"Amount": "-13.23",
+							"RunningBalance": "2810.0500000000011",
+							"Description": "CHECKCARD 0731  KING`S OAK PIZZA  SEEKONK  MA xxxxxxxxxxxxxxxxxxx7310 323",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Restaurants/Dining"
+						},
+						{
+							"TransactionDate": "2016-07-30T00:00:00",
+							"Amount": "-60.99",
+							"RunningBalance": "2823.2800000000011",
+							"Description": "CHECKCARD 0730 TWIRL HAIR STUDIO INC SMITHFIELD RI xxxxxxxxxxxxxxxxxxx2882 326",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Personal Care"
+						},
+						{
+							"TransactionDate": "2016-07-30T00:00:00",
+							"Amount": "-40",
+							"RunningBalance": "2884.2700000000009",
+							"Description": "PAYDAY LOAN  07/30 #xxxxx4246 325",
+							"TypeCodes": "ld",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Loans"
+						},
+						{
+							"TransactionDate": "2016-07-30T00:00:00",
+							"Amount": "-11.01",
+							"RunningBalance": "2924.2700000000009",
+							"Description": "SAMS FOOD STOR   07/30 #xxxxx5586 PURCHASE SAMS FOOD STORE  CRANSTON  RI 324",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Groceries"
+						}
+					]
+				},
+				"ProcessedStatus": "1",
+				"IsStarted": "true",
+				"IsCompleted": "true",
+				"Notes": "<ul style=\"margin-top: 3px; margin-bottom: 0px;\"><li><strong>Transactions</strong> : 90-days of transactions returned</li></ul>",
+				"Status": "3",
+				"StatusText": "Login, Verified",
+				"StatusCodeColor": "#228822",
+				"LastRefreshErrorMessage": "",
+				"IsError": "false",
+				"ErrorMessage": "",
+				"IsACHSupported": "false",
+				"AccountExpenses": {
+					"AccountExpense4": [
+						{
+							"Category": "ATM/Cash Withdrawals",
+							"Amount": "165.75",
+							"Percent": "2.0057649860594795"
+						},
+						{
+							"Category": "Automotive Expenses",
+							"Amount": "175.75",
+							"Percent": "2.1267764482651796"
+						},
+						{
+							"Category": "Checks",
+							"Amount": "37.17",
+							"Percent": "0.44979960501858735"
+						},
+						{
+							"Category": "Entertainment",
+							"Amount": "11.42",
+							"Percent": "0.13819508983890955"
+						},
+						{
+							"Category": "Gasoline/Fuel",
+							"Amount": "790.03",
+							"Percent": "9.5602685486369268"
+						},
+						{
+							"Category": "General Merchandise",
+							"Amount": "276.45",
+							"Percent": "3.34536187267658"
+						},
+						{
+							"Category": "Groceries",
+							"Amount": "136.39",
+							"Percent": "1.6504753330235438"
+						},
+						{
+							"Category": "Healthcare/Medical",
+							"Amount": "187.48",
+							"Percent": "2.2687228934324657"
+						},
+						{
+							"Category": "Loans",
+							"Amount": "40",
+							"Percent": "0.4840458488228005"
+						},
+						{
+							"Category": "Personal Care",
+							"Amount": "1515.06",
+							"Percent": "18.333962592936803"
+						},
+						{
+							"Category": "Restaurants/Dining",
+							"Amount": "247.36",
+							"Percent": "2.9933395291201981"
+						},
+						{
+							"Category": "Service Charges/Fees",
+							"Amount": "70",
+							"Percent": "0.84708023543990085"
+						},
+						{
+							"Category": "Telephone Services",
+							"Amount": "130",
+							"Percent": "1.5731490086741016"
+						},
+						{
+							"Category": "Transfers",
+							"Amount": "2260.61",
+							"Percent": "27.355972157682775"
+						},
+						{
+							"Category": "Uncategorized",
+							"Amount": "2220.21",
+							"Percent": "26.867085850371748"
+						}
+					]
+				},
+				"ChartsId": "13128939"
+			},
+			{
+				"RequestCode": "4Y9RMX",
+				"CustomerIdentifier": "Demo for Carlos",
+				"EmailAddress": "kday@decisionlogic.com",
+				"InstitutionName": "Worldwide Savings Bank",
+				"AccountName": "PLATINUM SAVINGS",
+				"RoutingNumberEntered": "",
+				"AccountType": "SAVINGS",
+				"AccountNumberEntered": "0000",
+				"AccountNumberFound": "XX-XXXX004",
+				"AccountNumberConfidence": "2",
+				"NameEntered": "Michael Draper",
+				"NameFound": "MICHAEL DRAPER",
+				"NameConfidence": "5",
+				"AmountInput": "0",
+				"AvailableBalance": "245.1",
+				"AverageBalance": "-898.4135135135142",
+				"AverageBalanceRecent": "-256.32857142857148",
+				"IsLoginValid": "true",
+				"IsVerified": "true",
+				"AsOfDate": "2016-10-26T19:02:09.977",
+				"ActivityStartDate": "2016-07-29T00:00:00",
+				"ActivityEndDate": "2016-10-10T00:00:00",
+				"TotalCredits": "2940",
+				"TotalDebits": "-545",
+				"CurrentBalance": "245.1",
+				"IsActivityAvailable": "true",
+				"TransactionAnalysisSummaries": {
+					"TransactionAnalysisSummary4": [
+						{
+							"TypeName": "Payroll",
+							"TypeCode": "py",
+							"TotalCount": "0",
+							"TotalAmount": "0",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "Loan Debit",
+							"TypeCode": "ld",
+							"TotalCount": "0",
+							"TotalAmount": "0",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "Loan Credit",
+							"TypeCode": "lc",
+							"TotalCount": "0",
+							"TotalAmount": "0",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "Overdraft",
+							"TypeCode": "ov",
+							"TotalCount": "0",
+							"TotalAmount": "0",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "ACH Debit",
+							"TypeCode": "ad",
+							"TotalCount": "0",
+							"TotalAmount": "0",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "ACH Credit",
+							"TypeCode": "ac",
+							"TotalCount": "0",
+							"TotalAmount": "0",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						},
+						{
+							"TypeName": "Deposit",
+							"TypeCode": "dp",
+							"TotalCount": "7",
+							"TotalAmount": "2940",
+							"RecentCount": "1",
+							"RecentAmount": "540"
+						},
+						{
+							"TypeName": "Reversal",
+							"TypeCode": "rv",
+							"TotalCount": "0",
+							"TotalAmount": "0",
+							"RecentCount": "0",
+							"RecentAmount": "0"
+						}
+					]
+				},
+				"TransactionSummaries": {
+					"TransactionSummary4": [
+						{
+							"TransactionDate": "2016-10-10T00:00:00",
+							"Amount": "540",
+							"RunningBalance": "245.1",
+							"Description": "Counter Deposit 3001",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Deposits"
+						},
+						{
+							"TransactionDate": "2016-09-23T00:00:00",
+							"Amount": "300",
+							"RunningBalance": "-294.9",
+							"Description": "TRANSFER FROM xx-xxx5647 3002",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-18T00:00:00",
+							"Amount": "300",
+							"RunningBalance": "-594.9",
+							"Description": "AUTOMATIC TRANSFER FROM xx-xxx5647 3003",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-09-09T00:00:00",
+							"Amount": "-500",
+							"RunningBalance": "-894.9",
+							"Description": "ONE-TIME TRANSFER TO xx-xxx5647 3004",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-29T00:00:00",
+							"Amount": "800",
+							"RunningBalance": "-394.9",
+							"Description": "TRANSFER FROM xx-xxx5647 3005",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-23T00:00:00",
+							"Amount": "300",
+							"RunningBalance": "-1194.9",
+							"Description": "AUTOMATIC TRANSFER FROM xx-xxx5647 3006",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-08-18T00:00:00",
+							"Amount": "-45",
+							"RunningBalance": "-1494.9",
+							"Description": "Check 310 3007",
+							"TypeCodes": "",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Checks"
+						},
+						{
+							"TransactionDate": "2016-08-07T00:00:00",
+							"Amount": "300",
+							"RunningBalance": "-1449.9",
+							"Description": "TRANSFER FROM xx-xxx5647 3008",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Transfers"
+						},
+						{
+							"TransactionDate": "2016-07-29T00:00:00",
+							"Amount": "400",
+							"RunningBalance": "-1749.9",
+							"Description": "Counter Deposit 3009",
+							"TypeCodes": "dp",
+							"IsRefresh": "false",
+							"Status": "posted",
+							"Category": "Deposits"
+						}
+					]
+				},
+				"ProcessedStatus": "1",
+				"IsStarted": "true",
+				"IsCompleted": "true",
+				"Notes": "<ul style=\"margin-top: 3px; margin-bottom: 0px;\"><li><strong>Transactions</strong> : 90-days of transactions returned</li></ul>",
+				"Status": "3",
+				"StatusText": "Login, Verified",
+				"StatusCodeColor": "#228822",
+				"LastRefreshErrorMessage": "",
+				"IsError": "false",
+				"ErrorMessage": "",
+				"IsACHSupported": "false",
+				"AccountExpenses": {
+					"AccountExpense4": [
+						{
+							"Category": "Checks",
+							"Amount": "45",
+							"Percent": "8.2568807339449535"
+						},
+						{
+							"Category": "Transfers",
+							"Amount": "500",
+							"Percent": "91.743119266055047"
+						}
+					]
+				},
+				"ChartsId": "13128940"
+			}
+		],
+		"_xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+		"_xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
+	}
+}

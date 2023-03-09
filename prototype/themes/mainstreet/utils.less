@@ -1,0 +1,31 @@
+.wf-scrollbar() {
+    overflow: hidden;
+    &:hover {
+        overflow-y: auto;
+    };
+    &::-webkit-scrollbar * {
+      background:transparent;
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent; 
+        border-radius: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: rgba(0,0,0,.4); 
+    }
+}
+.alert-variant(@background; @border; @text-color) {
+    background-color: @background;
+    border-color: @border;
+    color: @text-color;
+    hr {
+        border-top-color: darken(@border, 5%);
+    }
+    .alert-link {
+        color: darken(@text-color, 10%);
+    }
+}

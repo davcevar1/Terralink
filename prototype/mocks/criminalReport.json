@@ -1,0 +1,154 @@
+{
+  "CrimReportResponseEx": {
+    "response": {
+      "Header": {
+        "Status": "0",
+        "TransactionId": "158897233R94924"
+      },
+      "CriminalRecords": {
+        "CriminalRecord": [
+          {
+            "OffenderId": "093PA-06-12646MO",
+            "CaseNumber": "3PA-280188-12646MO", 
+            "CaseFilingDate": {
+              "Year": "2006",
+              "Month": "03",
+              "Day": "21"
+            },
+            "DataSource": "CRIMINAL COURT",
+            "SSN": "77324xxxx",
+            "UniqueId": "999913497366",
+            "StateOfOrigin": "ALASKA",
+            "Address": {
+              "State": "AK",
+              "Zip5": "00000"
+            },
+            "Name": {
+              "First": "HOWARD",
+              "Middle": "A",
+              "Last": "KIRKARZI"
+            },
+            "DOB": {
+              "Year": "1969",
+              "Month": "12",
+              "Day": "23"
+            },
+            "CaseTypeDescription": "MINOR OFFENSE",
+            "AKAs": [{
+                "Name": {
+                  "First": "HOWARD",
+                  "Middle": "A",
+                  "Last": "KIRKARZI"
+                }
+            },{
+                "Name": {
+                  "First": "HOWARD",
+                  "Middle": "A",
+                  "Last": "KIRKARZI"
+                }
+            }],  
+            "Offenses": {
+              "Offense": [{
+                "Court": {
+                  "CaseNumber": "3PA-06-12646MO",
+                  "Description": "THIRD DISTRICT - PALMER",
+                  "Statute": "PROOF OF INSURANCE TO BE CARRIED AND EXHIBITED ON DEMAND"
+                }
+              }, {
+                "Court": {
+                  "CaseNumber": "3PA-06-12646MO",
+                  "Description": "THIRD DISTRICT - PALMER",
+                  "Statute": "PROOF OF INSURANCE TO BE CARRIED AND EXHIBITED ON DEMAND"
+                }
+              }]
+            }
+          },
+          {
+            "OffenderId": "093PA-04-07576MO",
+            "CaseNumber": "3PA-308963-07576MO",
+            "CaseFilingDate": {
+              "Year": "2004",
+              "Month": "05",
+              "Day": "22"
+            },
+            "DataSource": "CRIMINAL COURT",
+            "SSN": "77324xxxx",
+            "UniqueId": "999913497366",
+            "StateOfOrigin": "ALASKA",
+            "Address": {
+              "State": "AK",
+              "Zip5": "00000"
+            },
+            "Name": {
+              "First": "HOWARD",
+              "Middle": "A",
+              "Last": "KIRKARZI"
+            },
+            "DOB": {
+              "Year": "1969",
+              "Month": "12",
+              "Day": "23"
+            },
+            "CaseTypeDescription": "MINOR OFFENSE",
+            "Offenses": {
+              "Offense": {
+                "Court": {
+                  "CaseNumber": "3PA-04-07576MO",
+                  "Description": "THIRD DISTRICT - PALMER",
+                  "DispositionDate": {
+                    "Year": "2004",
+                    "Month": "09",
+                    "Day": "01"
+                  },
+                  "Statute": "CRUELTY TO ANIMALS PROHIBITED"
+                }
+              }
+            }
+          },
+          {
+            "OffenderId": "093AN-03-02631MO",
+            "CaseNumber": "3AN-225329-02631MO",
+            "CaseFilingDate": {
+              "Year": "2003",
+              "Month": "01",
+              "Day": "23"
+            },
+            "DataSource": "CRIMINAL COURT",
+            "SSN": "77324xxxx",
+            "UniqueId": "999913497366",
+            "StateOfOrigin": "ALASKA",
+            "Address": {
+              "State": "AK",
+              "Zip5": "00000"
+            },
+            "Name": {
+              "First": "HOWARD",
+              "Middle": "A",
+              "Last": "KIRKARZI"
+            },
+            "DOB": {
+              "Year": "1969",
+              "Month": "12",
+              "Day": "23"
+            },
+            "CaseTypeDescription": "MINOR OFFENSE",
+            "Offenses": {
+              "Offense": {
+                "Court": {
+                  "CaseNumber": "3AN-03-02631MO",
+                  "Description": "THIRD DISTRICT - ANCHORAGE",
+                  "DispositionDate": {
+                    "Year": "2004",
+                    "Month": "03",
+                    "Day": "02"
+                  },
+                  "Statute": "FAILURE TO STOP FOR STEADY RED SIGNAL"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

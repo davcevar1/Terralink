@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Terrabank</title>
+
+  <!-- To disable compatibility mode in Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Mobile tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="libraries/misc/dropzone.css" />
+  <link rel="stylesheet" href="themes/mainstreet.css" />
+  <style>
+    .list-group > .list-group-item:hover {
+      background-color: transparent;
+    }
+    .list-group > .list-group-item .dropzone:hover {
+      background-color: #f5f5f5;
+    }
+    .dropzone {
+      min-height: inherit;
+      border: 0;
+      background: transparent;
+      margin: -10px -15px;
+      margin-bottom: 0;
+      display: none;
+    }
+
+    .dropzone .dz-message {
+      display: none;
+    }
+
+    .dropzone .dz-preview .dz-details .dz-size span {
+      background: transparent;
+    }
+
+    .dropzone .dz-preview .dz-details .dz-filename span {
+      padding: 0;
+      background: transparent;
+    }
+
+    .dropzone .dz-preview:not(.dz-processing) .dz-progress {
+      display: none;
+    }
+
+    .dropzone .dz-preview .dz-remove {
+      bottom: 10px;
+      position: absolute;
+      z-index: 21;
+      text-align: center;
+      width: 100%;
+    }
+
+    .dropzone.dz-drag-hover {
+      border-color: #23527c;
+      z-index: 2;
+    }
+
+    .dropzone.dz-started .wf-note {
+      display: none;
+    }
+
+    body {
+      background-color: #f8f8f8;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    .btn.btn-link {
+      color: #990000;
+    }
+
+    .btn.btn-default {
+      border-color: #990000;
+      color: #990000;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-primary:hover {
+      background-color: #990000;
+      border-color: #990000;
+      color: #FFF;
+    }
+
+    .btn.btn-primary:hover {
+      border-color: #4e0000;
+    }
+
+    .form-control:focus {
+      border-color: #848484;
+      box-shadow: 0 0 0;
+    }
+
+    #navigation>.wf-content .wf-inbox,
+    #navigation>.wf-content .wf-navigation-wrapper {
+      background-color: #565656;
+    }
+
+    #navigation>.wf-content .list-group>.list-group-heading {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus,
+    .dropdown-menu>li>a:active,
+    #navigation>.wf-content>.list-group a:hover,
+    #navigation>.wf-content .btn-link:hover {
+      background-color: #990000;
+      color: #FFF;
+    }
+
+    #navigation>.wf-content .list-group>.wf-logo {
+      background-color: #990000;
+    }
+
+    .wf-title,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #990000;
+    }
+
+    .wf-steps-2 li.active,
+    .wf-steps-2 li.active::before {
+      background: #900;
+      border-color: #CCC;
+      color: #FFF;
+    }
+
+    .wf-steps-2 li:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .wf-steps-2 li:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .form-control[disabled],
+    fieldset[disabled] .form-control {
+      background: #f5f5f5;
+      border-color: #CCC;
+    }
+
+    fieldset[disabled] .control-label {
+      color: #CCC;
+    }
+
+    .modal .modal-content .modal-header,
+    .modal .modal-content .modal-footer {
+      border: 0;
+      background: transparent;
+    }
+    .modal-content .list-group {
+      padding-bottom: 5px;
+    }
+    .modal-content .list-group > .list-group-item {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+    .wf-options {
+      margin-left: 5px;
+      margin-top: -15px;
+      border-top: 1px dashed rgba(0,0,0,0);
+      padding: 0;
+      transition: border-color 200ms, padding-top 150ms, margin-top 150ms;
+    }
+    .wf-options .checkbox {
+      margin: 0;
+    }
+    .wf-upload .dropzone {
+      display: block;
+    }
+    .wf-upload .wf-dropzone-placeholder {
+      display: none;
+    }
+    .wf-upload .wf-options {
+      border-color: rgba(0,0,0,.1);
+      padding-top: 10px;
+      margin-top: 0;
+    }
+    #uploading .list-group {
+      overflow: auto;
+      max-height: calc(100vh - 125px);
+      margin: 0;
+    }
+    #uploading .modal-footer {
+      display: none;
+    }
+    #uploading.wf-error .list-group {
+      max-height: calc(100vh - 190px);
+    }
+    #uploading.wf-error .modal-footer {
+      display: block;
+    }
+    #uploading .list-group-item {
+      overflow: hidden;
+      border: 0;
+    }
+    #uploading .list-group-item .progress {
+      transition: height .2s, margin .2s;
+      height: 4px;
+      margin-bottom: 4px;
+      opacity: 1;
+    }
+    #uploading .list-group-item .wf-status {
+      transition: all .1s ease-in;
+      margin-right: -30px;
+      opacity: 0;
+    }
+    #uploading .list-group-item.wf-error {
+      color: #a94442;
+      background-color: #f2dede;
+    }
+    #uploading .list-group-item.wf-error .wf-status .fa-check-circle,
+    #uploading .list-group-item.wf-finished .wf-status .fa-times-circle {
+      display: none;
+    }
+    #uploading .list-group-item.wf-error .wf-status,
+    #uploading .list-group-item.wf-finished .wf-status {
+      margin-right: 0;
+      opacity: 1;
+    }
+    #uploading .list-group-item.wf-error .progress,
+    #uploading .list-group-item.wf-finished .progress {
+      height: 0;
+      margin: 0;
+      opacity: 0;
+    }
+    #uploading .list-group-item.wf-error .wf-status .fa-times-circle,
+    #uploading .list-group-item.wf-finished .wf-status .fa-check-circle {
+      display: block;
+    }
+    .wf-error-label {
+      overflow: hidden;
+      transition: max-height .2s ease-in;
+      max-height: 0;
+    }
+    .wf-file-size {
+      overflow: hidden;
+      transition: max-height .2s ease-in;
+      max-height: 20px;
+    }
+    .wf-icon {
+      transition: color .3s;
+    }
+    #uploading .list-group-item.wf-error .wf-error-label {
+      max-height: 20px;
+    }
+    #uploading .list-group-item.wf-error .wf-file-size {
+      max-height: 0;
+    }
+    #uploading .list-group-item.wf-error .wf-icon {
+      color: #a94442;
+    }
+  </style>
+
+  <script src="libraries/jquery/dist/jquery.min.js"></script>
+  <script src="libraries/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="libraries/misc/dropzone.js"></script>
+  <script>
+    $(function() {
+      Dropzone.autoDiscover = false;
+      $(".dropzone").dropzone({
+        url: "http://localhost",
+        uploadMultiple: true,
+        addRemoveLinks: true,
+        autoProcessQueue: false,
+        acceptedFiles: 'application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        init: function() {
+          this.on("error", function(file) {
+            if (!file.accepted) {
+              this.removeFile(file);
+              alert('Selected file has not a valid format.');
+            }
+          });
+        }
+      });
+    });
+
+    function upload(e) {
+      e.preventDefault();
+      var dropzones = $('.dropzone').map(function() {
+        return Dropzone.forElement(this);
+      }).toArray();
+      var processingList = $('#uploading .list-group'),
+          filesTotal = 0;
+      processingList.empty();
+      dropzones.forEach(function(dropzone, dropzoneIndex) {
+        filesTotal += dropzone.files.length;
+        dropzone.files.forEach(function(file, fileIndex) {
+          $('<li id="file-'+dropzoneIndex+'-'+fileIndex+'" data-progress="0" class="list-group-item wf-flex wf-middle wf-gutters"><div class="wf-icon text-muted"><span class="fa fa-file-text-o fa-2x"></span></div><div class="wf-grow"><div style="font-weight:bold;">'+file.name+'</div><div class="progress"><div class="progress-bar progress-bar-success" style="width: 0%;"></div></div><div class="wf-file-size text-muted small">'+humanFileSize(file.size)+'</div><div class="wf-error-label text-danger small">An unexpected error has occurred, the file did not reach the server</div></div><div class="wf-status"><span class="text-success fa fa-check-circle fa-2x"></span><span class="text-danger fa fa-times-circle fa-2x"></span></div></li>').appendTo(processingList);
+        });
+        dropzone.on('success', function() {
+          toComplete--;
+          if (toComplete === 0) {
+            uploadedDocuments = true;
+            completeUpload();
+          }
+          dropzone.off('success');
+        });
+        dropzone.processQueue();
+      });
+      $('#uploading').modal({backdrop:'static'});
+      $('#filesUpload').text(filesTotal);
+      simulateUpload(filesTotal);
+    };
+    function toggleUpload(e) {
+      var item = $(e.currentTarget).closest('.list-group-item');
+      if (e.currentTarget.checked) {
+        item.removeClass('wf-upload');
+      }else{
+        item.addClass('wf-upload');
+      }
+    }
+    function humanFileSize(size) {
+        var i = Math.floor( Math.log(size) / Math.log(1000) );
+        return ( size / Math.pow(1000, i) ).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+    };
+    function simulateUpload(filesTotal) {
+      var dropzones = $('.dropzone').map(function() {
+            return Dropzone.forElement(this);
+          }).toArray(),
+          processedFiles = 0;
+          successFiles = 0;
+      var interval = setInterval(function() {
+        dropzones.forEach(function(dropzone, dropzoneIndex) {
+          dropzone.files.forEach(function(file, fileIndex) {
+            var status = Math.floor(Math.random() * 6) + 1,
+                $file = $('#file-'+dropzoneIndex+'-'+fileIndex),
+                progress = (Math.floor(Math.random() * 6) + 1)+Number($file.data('progress'));
+            if (progress<100) {
+              $file.data('progress', progress);
+              $file.find('.progress-bar').css({width:progress+'%'});
+            }else if (!$file.data('processed')) {
+              processedFiles++;
+              $file.data('processed', true);
+              if (status>5) {
+                $file.addClass('wf-error');
+              }else{
+                $file.addClass('wf-finished');
+                successFiles++;
+                $('#filesUploaded').text(successFiles);
+              }
+            }
+          });
+        });
+        if (processedFiles>=filesTotal) {
+          clearInterval(interval);
+          if (processedFiles==successFiles) {
+            setTimeout(function() {
+              //location.href = 'loan-request-step7.html';
+            }, 1000);
+          }else{
+            $('#uploading').addClass('wf-error');
+          }
+        }
+      }, 200);
+    }
+  </script>
+</head>
+
+<body class="wf-shell">
+  <div id="shell" class="wf-view">
+    <div class="wf-content wf-fixed-top" style="padding-top:0;">
+      <div id="main-content">
+        <form class="wf-fixed-bottom">
+          <p><img src="images/logo_terrabank.png" class="img-responsive" style="max-height: 35px;" /></p>
+            <div class="panel panel-default">
+              <div class="panel-body" style="padding:15px;">
+                <div class="wf-flex wf-gutters">
+                  <div class="fa fa-check-circle text-success hidden-xs" style="font-size:28px; margin-top: 3px;"></div>
+                  <div class="wf-grow">
+                    <div class="text-success" style="margin:0; font-size:24px; border-bottom:1px solid #3c763d; padding-bottom:10px; margin-bottom:10px;">You have been <strong>Pre-Approved</strong> for our Small Business Line of Credit.</div>
+                    <div style="max-width: 683px;">Prior to Approval, your loan request will be reviewed by our Loan Specialists. Once we have received the requested financial information, you will be contacted within 48 hours.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>In order to complete your loan request, we will need the following financial information:</p>
+            <div class="panel panel-default">
+              <div class="list-group">
+                <div class="list-group-item wf-upload wf-required">
+                  <div class="dropzone dz-clickable">
+                    <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                      <div>
+                        <span class="fa fa-file-text-o fa-2x"></span>
+                      </div>
+                      <div class="wf-grow">
+                        <div class="wf-label">Two Years of Business Tax Returns</div>
+                        <div class="text-muted small">Upload this file(s) is mandatory</div>
+                      </div>
+                      <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                    </div>
+                    <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                  </div>
+                  <div class="wf-dropzone-placeholder wf-flex wf-gutters wf-middle" style="padding: 20px 20px; margin: -10px -15px; margin-bottom:0;">
+                    <div>
+                      <span class="fa fa-file-text-o fa-2x"></span>
+                    </div>
+                    <div class="wf-grow">
+                      <div class="wf-label">Two Years of Business Tax Returns</div>
+                    </div>
+                  </div>
+                  <div class="wf-options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" onclick="toggleUpload(event)" /> Use documents in bank posession
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item wf-upload wf-required">
+                  <div class="dropzone dz-clickable">
+                    <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                      <div>
+                        <span class="fa fa-file-text-o fa-2x"></span>
+                      </div>
+                      <div class="wf-grow">
+                        <div class="wf-label">Three Months of Business Bank Statements</div>
+                        <div class="text-muted small">Upload this file(s) is mandatory</div>
+                      </div>
+                      <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                    </div>
+                    <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                  </div>
+                  <div class="wf-dropzone-placeholder wf-flex wf-gutters wf-middle" style="padding: 20px 20px; margin: -10px -15px; margin-bottom:0;">
+                    <div>
+                      <span class="fa fa-file-text-o fa-2x"></span>
+                    </div>
+                    <div class="wf-grow">
+                      <div class="wf-label">Three Months of Business Bank Statements</div>
+                    </div>
+                  </div>
+                  <div class="wf-options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" onclick="toggleUpload(event)" /> Use documents in bank posession
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer wf-actions wf-flex wf-middle wf-gutters wf-right">
+                <!--
+                <a href="loan-request-approved-later.html" class="btn btn-default">I will upload documents later</a>
+                <a href="loan-request-approved-nodocuments.html" class="btn btn-default">I prefer not to upload documents</a>
+              -->
+                <button type="button" onclick="upload(event)" class="btn btn-primary">Upload documents now</button>
+              </div>
+            </div>
+
+            <p>Should you have any questions about your loan inquiry, please contact us at 1-800-448-4898.</p>
+            <p>Thank you for choosing <a href="https://www.terrabank.com/" style="font-weight:bold;">Terrabank, N.A.</a> for your financial needs.</p>
+
+            <p class="small text-muted">Notice: The Federal Equal Credit Opportunity Act prohibits creditors from discriminating against credit applicants on the basis of race, color, religion, national origin, sex, marital
+              status, age (provided the applicant has the capacity to enter into a binding contract); because all or part of the applicant's income derives from any public assistance program; or
+              because the applicant has in good faith exercised any right under the Consumer Credit Protection Act. The Federal agency that administers compliance with this law concerning this
+              creditor is: Office of the Comptroller of the Currency, Customer Assistance Group, 1301 McKinney Avenue, Suite 3450, Houston, TX 77010.</p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="uploading" class="modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="wf-flex wf-middle">
+            <div class="wf-grow">
+              <h2 class="modal-title">Uploading files</h2>
+              <p style="margin:0;">Please wait a moment while we upload your files.</p>
+            </div>
+            <div>
+              <span id="filesUploaded">0</span> / <span id="filesUpload"></span> Uploaded
+            </div>
+          </div>
+        </div>
+        <ul class="list-group"></ul>
+        <div class="modal-footer">
+          <div class="wf-flex wf-middle">
+            <div class="wf-grow text-left text-danger">Some files failed to upload, If you want to try again press "Retry".</div>
+            <div>
+              <button class="btn btn-primary">Retry</button>
+              <button class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

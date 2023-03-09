@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Terrabank</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    <style>
+        body {
+            background-color: #f8f8f8;
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        .btn.btn-link {
+            color: #990000;
+        }
+
+        .btn.btn-default {
+            border-color: #990000;
+            color: #990000;
+        }
+
+        .btn.btn-primary,
+        .btn.btn-primary:hover {
+            background-color: #990000;
+            border-color: #990000;
+            color: #FFF;
+        }
+
+        .btn.btn-primary:hover {
+            border-color: #4e0000;
+        }
+
+        .form-control:focus {
+            border-color: #848484;
+            box-shadow: 0 0 0;
+        }
+
+        #navigation > .wf-content .wf-inbox,
+        #navigation > .wf-content .wf-navigation-wrapper {
+            background-color: #565656;
+        }
+
+        #navigation > .wf-content .list-group > .list-group-heading {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus,
+        .dropdown-menu > li > a:active,
+        .list-group .list-group-item:hover,
+        .list-group .list-group-item:focus,
+        .list-group .list-group-item.active,
+        #navigation > .wf-content > .list-group a:hover,
+        #navigation > .wf-content .btn-link:hover {
+            background-color: #990000;
+            color: #FFF;
+        }
+
+        #navigation > .wf-content .list-group > .wf-logo {
+            background-color: #990000;
+        }
+
+        .wf-title,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #990000;
+        }
+
+        .wf-steps-2 li.active,
+        .wf-steps-2 li.active::before {
+            background: #900;
+            border-color: #CCC;
+            color: #FFF;
+        }
+        .wf-steps-2 li:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .wf-steps-2 li:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .form-control[disabled],
+        fieldset[disabled] .form-control {
+            background: #f5f5f5;
+            border-color: #CCC;
+        }
+
+        fieldset[disabled] .control-label {
+            color: #CCC;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var toggleVisible = function(e, selector) {
+                $(selector).prop('disabled', e.target.value != 'other');
+            },
+            setAgreeDisclaimer = function() {
+                $('[name="agree-disclaimer"]').prop('checked', true);
+            },
+            addOwner = function() {
+                var html = $('.owner-form').first().clone()[0].outerHTML,
+                    index = ($('.owner-form').length + 1);
+                html = html.replace(/owner1/g, 'owner' + index);
+                html = html.replace(/Owner 1/g, 'Owner ' + index);
+                $('.owner-form .panel-collapse').collapse('hide');
+                $(html).insertAfter($('.owner-form').last()).find('.panel-collapse').collapse('show');
+                $("html, body").animate({
+                    scrollTop: (44 * index) + 40
+                }, 'slower');
+            };
+        $(window).on('load resize scroll touchstart touchmove mousewheel', function() {
+            $(".dropdown-toggle").each(function() {
+                par = $(this).parents('.btn-group');
+                dropl = par.find('ul');
+                otop = $(this).offset().top + $(this).height() - $(window).scrollTop();
+                ulh = dropl.height();
+                obot = $(window).height() - $(this).height() - $(this).offset().top + $(window).scrollTop();
+                if ((obot < ulh) && (otop > ulh)) {
+                    par.addClass('dropup');
+                } else {
+                    par.removeClass('dropup');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" style="padding-top:0;">
+            <div id="main-content" style="max-width:750px;">
+                <form class="wf-fixed-bottom">
+                    <p style="margin-top:50px; margin-bottom:50px;" class="text-center"><img src="images/logo_terrabank.png" class="img-responsive" style="width: 400px; margin:auto;" /></p>
+
+                    <p class="lead">Thank you for providing your financial information.</p>
+
+                    <p class="lead">We will be reviewing the documents you have provided and a Loan Specialist will contact you within the next 1-2 business days.</p>
+
+                    <p>Should you have any questions, please feel free to contact us at <a href="tel:1-800-448-4898" style="font-weight:bold;">1-800-448-4898</a>.</p>
+
+                    <p>Thank you for choosing <a href="https://www.terrabank.com/" style="font-weight:bold;">Terrabank, N.A.</a> for your financial needs.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="disclaimer" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Disclaimer</h4>
+                </div>
+                <div class="modal-body">
+                    <p>The above-signed certify that he/she has full authority to act on behalf of the business (the "Applicant") identified on this Business Loan Application (the "Application), and that all information contained herein is true and correct in all respects Terrabank, N.A. (the "Bank") is authorized to verify any information provided in connection with the Application .Bank may obtain credit reports for all owners' guarantors expected to be personally liable, including consumer credit reports in connection with the Application, and may also do so for renewals, extensions, collection activity or as otherwise permitted by law. Under the federal Fair Credit Reporting Act, Bank may get or share information regarding Applicant, guarantor(s) or Applicant's owner(s) with Bank affiliates unless the above-signed tells Bank not to share. The above-signed may prohibit Bank from sharing information provided or obtained by Bank from a third party, by mailing a written request to Terrabank, N.A., Business Banking, 3191 Coral Way, Coral Gables, FL 33145. The Application will be Bank's property whether or not credit is granted. Applicant agrees that Bank may rely on a facsimile and/or electronic transmission of the Application and any other signed documents received by Bank by facsimile and/or electronic transmission relating to the credit granted pursuant to the Application.</p>
+
+                    <p>Such facsimiles and/or electronic transmission or any copy of such facsimiles or electronic transmission shall be binding on Applicant and shall for all purposes be considered original documents. The above-signed understands that making false statements or material omissions intended to conceal pertinent facts may be a financial crime requiring referral to the appropriate law enforcement officials. The above-signed further agree to notify Bank immediately of any change in name, address, or any material change in (a) any information contained in the Application. (b) the financial condition of any of the above-signed, or (c) the ability of any of the above-signed to perform their obligations to the Bank.</p>
+
+                    <h4>CUSTOMER IDENTIFICATION PROGRAM</h4>
+
+                    <p>In accordance with Section 326 of the USA PATRIOT Act, Terrabank, N.A has developed a Customer Identification Program which is intended to facilitate the prevention, detection and prosecution of international money laundering and the financing of terrorism. Section 326 of the Act requires financial institutions to set forth minimum standards that relate to the identification and verification of any person who applies for an account Under this Act a person is defined as any individual, corporation, partnership, trust, estate, association, syndicate and unincorporated organization or group.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="setAgreeDisclaimer();">I Agree</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</body>
+
+</html>

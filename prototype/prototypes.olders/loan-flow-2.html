@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Loan verification</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div class="container" style="max-width:900px;">
+				<div class="row">
+					<div class="col-xs-3">
+						<ul class="nav nav-pills nav-stacked">
+							<li><a href="#owner" data-toggle="tab">Owner</a></li>
+							<li><a href="#business" data-toggle="tab">Business</a></li>
+							<li><a href="#financial" data-toggle="tab">Financial</a></li>
+							<li class="active"><a href="#documents" data-toggle="tab">Documents</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-9">
+						<div class="tab-content">
+							<div id="owner" class="tab-pane">
+								<div class="panel panel-default">
+									<div class="panel-body" style="padding:30px;">
+										<div class="form-group">
+											<label class="control-label">Name</label>
+											<div class="wf-control">
+												John Thomas
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label class="control-label">Birthday</label>
+													<div class="wf-control">
+														14-06-2016
+													</div>
+												</div>    
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label class="control-label">Social Security Number</label>
+													<div class="wf-control">
+														1234567890
+													</div>
+												</div>    
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Residential Street Address</label>
+											<div class="wf-control">
+												265 Ryan Street
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<div class="form-group">
+													<label class="control-label">City</label>
+													<div class="wf-control">
+														Union
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-4">
+												<div class="form-group">
+													<label class="control-label">State</label>
+													<div class="wf-control">
+														NJ
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="form-group">
+													<label class="control-label">Zip Code</label>
+													<div class="wf-control">
+														07205
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Have you declared personal bankruptcy in the last 5 years?</label>
+											<div class="form-inline">
+												No
+											</div>   
+										</div>
+										<div class="form-group">
+											<label class="control-label">Have there been personal liens/judgements/collections in the last 5 years?</label>
+											<div class="form-inline">
+												No
+											</div>   
+										</div>
+										<div class="form-group">
+											<label class="control-label">Are there additional owners who have more than 10% ownership?</label>
+											<div class="form-inline">
+												No
+											</div>   
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="business" class="tab-pane">
+								<div class="panel panel-default">
+									<div class="panel-body" style="padding:30px;">
+										<div class="form-group ">
+											<label class="control-label">Business Name</label>
+											<div class="wf-control">
+												Frank's Auto Repair
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">EIN/Tax ID</label>
+											<div class="wf-control">
+												123-4563-9874
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Phone Number</label>
+											<div class="wf-control">
+												(908) 456 7899
+											</div>
+										</div>
+										<div class="form-group ">
+											<label class="control-label">Business Street Address</label>
+											<div class="wf-control">
+												234 Main Street
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<div class="form-group ">
+													<label class="control-label">City</label>
+													<div class="wf-control">
+														Elizabeth
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-4">
+												<div class="form-group ">
+													<label class="control-label">State</label>
+													<div class="wf-control">
+														NJ
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="form-group">
+													<label class="control-label">Zip Code</label>
+													<div class="wf-control">
+														072601
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group ">
+											<label class="control-label">Have you declared business bankruptcy in the last 5 years?</label>
+											<div class="form-inline">
+												No
+											</div>
+										</div>
+										<div class="form-group ">
+											<label class="control-label">Have there been business liens/judgements/collections in the last 5 years?</label>
+											<div class="form-inline">
+												No
+											</div>    
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="financial" class="tab-pane">
+								<div class="panel panel-default">
+									<div class="panel-body" style="padding:30px;">
+										<div class="form-group ">
+											<label class="control-label">Loan Amount Request</label>
+											<div class="wf-control">
+												$20,000 USD
+											</div>
+										</div>
+										<div class="form-group ">
+											<label class="control-label">Loan Purpose</label>
+											<div class="wf-control">
+												Purchase of machinery
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group ">
+													<label class="control-label">Years in this industry</label>
+													<div class="wf-control">
+														12 years
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group ">
+													<label class="control-label">Years in Business/Seasonality</label>
+													<div class="wf-control">
+														5 years
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label class="control-label">Annual revenues per year for the last 2 years</label>
+													<div class="wf-control">
+														<div>Year 1 - $70,000 USD</div>
+														<div>Year 2 - $75,123 USD</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label class="control-label">Annual before tax net profit per year for the last 2 years</label>
+													<div class="wf-control">
+														<div>Year 1 - $70,000 USD</div>
+														<div>Year 2 - $75,123 USD</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">List all business debt with monthly payment amounts</label>
+											<div class="wf-control">
+												<div class="wf-flex wf-gutters">
+													<div class="wf-grow">Mortgage</div>
+													<div>$1,700 USD</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="documents" class="tab-pane active">
+								<p>Please check each file and fill in the requested fields in each document.</p>
+								<div class="panel panel-default">
+									<div class="list-group">
+										<a href="#viewer" class="list-group-item" data-toggle="modal">
+											<div class="wf-flex wf-gutters wf-middle">
+												<div>
+													<span class="fa fa-check-circle text-success" title="Verified"></span>
+												</div>
+                                                <div>
+													<span class="fa fa-file-text-o fa-2x"></span>
+												</div>
+												<div class="wf-grow">
+													Three Months of Business Bank Statements
+												</div>
+												<div class="wf-note text-muted">3 files - 200KB</div>
+											</div>
+										</a>
+										<a href="#viewer" class="list-group-item" data-toggle="modal">
+											<div class="wf-flex wf-gutters wf-middle">
+                                                <div>
+													<span class="fa fa-minus-circle text-danger" title="Not accepted"></span>
+												</div>
+												<div>
+													<span class="fa fa-file-text-o fa-2x"></span>
+												</div>
+												<div class="wf-grow">
+													Two Years of Corporate Tax Returns
+												</div>
+												<div class="wf-note text-muted">2 files - 123KB</div>
+											</div>
+										</a>
+										<a href="#viewer" class="list-group-item" data-toggle="modal">
+											<div class="wf-flex wf-gutters wf-middle">
+                                                <div>
+													<span class="fa fa-circle text-muted" style="opacity:.4;"></span>
+												</div>
+												<div>
+													<span class="fa fa-file-text-o fa-2x"></span>
+												</div>
+												<div class="wf-grow">
+													Two Years of Personal Tax Returns and W2s
+												</div>
+												<div class="wf-note text-muted">2 files - 56KB</div>
+											</div>
+										</a>
+										<div class="list-group-item" data-toggle="modal" style="opacity:.5;">
+											<div class="wf-flex wf-gutters wf-middle">
+                                                <div>
+													<span class="fa fa-circle text-muted" style="opacity:.4;"></span>
+												</div>
+												<div>
+													<span class="fa fa-file-text-o fa-2x"></span>
+												</div>
+												<div class="wf-grow">
+													4506Ts For All Tax Years Provided
+												</div>
+												<div class="wf-note text-muted">No files</div>
+											</div>
+										</div>
+										<a href="#viewer" class="list-group-item" data-toggle="modal">
+											<div class="wf-flex wf-gutters wf-middle">
+                                                <div>
+													<span class="fa fa-circle text-muted" style="opacity:.4;"></span>
+												</div>
+												<div>
+													<span class="fa fa-file-text-o fa-2x"></span>
+												</div>
+												<div class="wf-grow">
+													Personal Financial Statement
+												</div>
+												<div class="wf-note text-muted">1 file - 34KB</div>
+											</div>
+										</a>
+										<a href="#viewer" class="list-group-item" data-toggle="modal">
+											<div class="wf-flex wf-gutters wf-middle">
+                                                <div>
+													<span class="fa fa-circle text-muted" style="opacity:.4;"></span>
+												</div>
+												<div>
+													<span class="fa fa-file-text-o fa-2x"></span>
+												</div>
+												<div class="wf-grow">
+													Commercial Credit Report
+												</div>
+												<div class="wf-note text-muted">1 file - 56KB</div>
+											</div>
+										</a>
+										<div class="list-group-item" data-toggle="modal" style="opacity:.5;">
+											<div class="wf-flex wf-gutters wf-middle">
+                                                <div>
+													<span class="fa fa-circle text-muted" style="opacity:.4;"></span>
+												</div>
+												<div>
+													<span class="fa fa-file-text-o fa-2x"></span>
+												</div>
+												<div class="wf-grow">
+													Consumer Credit Report
+												</div>
+												<div class="wf-note text-muted">No files</div>
+											</div>
+										</div>
+									</div>
+									<!--
+									<div class="panel-footer wf-actions">
+										<button class="btn btn-primary">Submit</button>
+									</div>
+									-->
+								</div>	
+							</div>
+						</div>	
+					</div>
+				</div>
+            </div>
+            <div class="navbar navbar-default navbar-fixed-bottom text-center">
+                <button type="button" class="btn btn-primary navbar-btn">Submit</button>
+            </div>
+        </div>
+        <div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Loan verification</div>
+        </div>
+    </div>
+    
+    <div id="viewer" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" style="width:98%;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Document viewer</h4>
+                </div>
+                <div class="modal-body" style="padding:0;">
+                    <div class="wf-flex" style="min-height:470px;">
+                        <div class="wf-grow" style="min-height:470px;">
+                            <iframe src="libraries/pdfjs/web/viewer.html?file=../../../data/example.pdf" style="width:100%; height:100%; border:0;"></iframe>
+                        </div>
+                        <div style="min-width:300px; padding:30px;">
+                            <div class="form-group">
+                                <div class="control-label">Business Name</div>
+                                <div class="wf-control">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-label">Business Activity</div>
+                                <div class="wf-control">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-label">Years in activity</div>
+                                <div class="wf-control">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="wf-flex">
+                        <div class="wf-grow text-left">
+                            <button class="btn btn-default" title="Previous"><span class="fa fa-arrow-left"></span></button>
+                            1 of 3 files
+                            <button class="btn btn-default" title="Next"><span class="fa fa-arrow-right"></span></button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <a href="#comment" class="btn btn-default" data-toggle="modal">Not accept</a>
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    <div id="comment" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Comment</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Add a comment on why this document was not accepted</p>
+                    <textarea class="form-control" style="height:150px;"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</body>
+
+</html>

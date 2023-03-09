@@ -1,0 +1,1257 @@
+{
+  "OrderProductResponse": {
+    "@ServiceVersionNumber": "4.0",
+    "TransactionDetail": {
+      "ServiceTransactionID": "Id-2e6cad59304a8e00a54c6c001cabae2f-2",
+      "TransactionTimestamp": "2017-09-04T11:07:28.829-04:00"
+    },
+    "TransactionResult": {
+      "SeverityText": "Information",
+      "ResultID": "CM000",
+      "ResultText": "Success"
+    },
+    "OrderProductResponseDetail": {
+      "InquiryDetail": {
+        "DUNSNumber": "060902413",
+        "CountryISOAlpha2Code": "US"
+      },
+      "Product": {
+        "DNBProductID": "PI_DTL",
+        "Organization": {
+          "SubjectHeader": {
+            "DUNSNumber": "060902413"
+          },
+          "Telecommunication": {
+            "TelephoneNumber": {
+              "TelecommunicationNumber": "(650) 253-0000",
+              "InternationalDialingCode": 1
+            }
+          },
+          "Location": {
+            "PrimaryAddress": {
+              "StreetAddressLine": [
+                {
+                  "LineText": "1600 Amphitheatre Pkwy"
+                }
+              ],
+              "PrimaryTownName": "Mountain View",
+              "CountryISOAlpha2Code": "US",
+              "TerritoryAbbreviatedName": "CA",
+              "PostalCode": "94043",
+              "TerritoryOfficialName": "California"
+            }
+          },
+          "OrganizationName": {
+            "OrganizationPrimaryName": [
+              {
+                "OrganizationName": {
+                  "$": "Google Inc."
+                }
+              }
+            ],
+            "TradeStyleName": [
+              {
+                "OrganizationName": {
+                  "$": "Google"
+                }
+              }
+            ]
+          },
+          "BusinessTrading": {
+            "Purchaser": {
+              "CurrentPaydexScore": {
+                "TwelveMonthsPaydex": {
+                  "PaydexScore": 74,
+                  "PaydexDate": {
+                    "$": "2017-09-04"
+                  },
+                  "TotalUniqueSuppliersUsedCount": 210,
+                  "TotalPaymentExperiencesUsedCount": 718
+                },
+                "ThreeMonthsPaydex": {
+                  "PaydexScore": 73,
+                  "PaydexDate": {
+                    "$": "2017-09-04"
+                  },
+                  "TotalUniqueSuppliersUsedCount": 137,
+                  "TotalPaymentExperiencesUsedCount": 311
+                }
+              },
+              "PaydexScoreHistory": {
+                "TwelveMonthsPaydex": [
+                  {
+                    "PaydexScore": 73,
+                    "PaydexDate": {
+                      "$": "2017-06-04"
+                    }
+                  }
+                ],
+                "ThreeMonthsPaydex": [
+                  {
+                    "PaydexScore": 73
+                  }
+                ]
+              },
+              "PurchaserDerivedData": [
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-08"
+                  },
+                  "ThreeMonthsDataCoveragePayments": {
+                    "PaymentPeriodSummary": [
+                      {
+                        "SummaryPeriod": "P3M"
+                      }
+                    ],
+                    "AccountsCount": 430,
+                    "PastDueExperiencesCount": 157,
+                    "UnfavorableExperiencesCount": 1,
+                    "MonthlyAverageOwedTotalAmount": {
+                      "$": 88432969
+                    },
+                    "MonthlyAveragePastDueTotalAmount": {
+                      "$": 19907279
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 30,
+                        "MonthlyAveragePastDueTotalAmount": {
+                          "$": 10372123
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 60,
+                        "MonthlyAveragePastDueTotalAmount": {
+                          "$": 5735177
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 90,
+                        "MonthlyAveragePastDueTotalAmount": {
+                          "$": 2911556
+                        }
+                      }
+                    ]
+                  },
+                  "TwelveMonthsDataCoveragePayments": {
+                    "PaymentPeriodSummary": [
+                      {
+                        "SummaryPeriod": "P12M",
+                        "PaymentsWithHighCredit": {
+                          "HighCreditMaximumAmount": {
+                            "$": 40000000
+                          },
+                          "AverageHighCreditAmount": {
+                            "$": 536086
+                          }
+                        }
+                      }
+                    ],
+                    "AccountsCount": 954,
+                    "PastDueExperiencesCount": 344,
+                    "UnfavorableExperiencesCount": 1,
+                    "MonthlyAverageOwedTotalAmount": {
+                      "$": 93092101
+                    },
+                    "MonthlyAveragePastDueTotalAmount": {
+                      "$": 21989154
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 30,
+                        "MonthlyAveragePastDueTotalAmount": {
+                          "$": 12432332
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 60,
+                        "MonthlyAveragePastDueTotalAmount": {
+                          "$": 7156518
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 90,
+                        "MonthlyAveragePastDueTotalAmount": {
+                          "$": 3899525
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-08"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "OwedTotalMaximumAmount": {
+                      "$": 27618451
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 8859854
+                    },
+                    "SuppliersCount": 150,
+                    "AccountsCount": 462,
+                    "OwedTotalAmount": {
+                      "$": 80493685
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 17511536
+                    },
+                    "CurrentAccountsCount": 172,
+                    "CurrentTotalAmount": {
+                      "$": 68946562
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 80,
+                        "TotalAmount": {
+                          "$": 6965609
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 33,
+                        "TotalAmount": {
+                          "$": 4396648
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 25,
+                        "TotalAmount": {
+                          "$": 2978547
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 29,
+                        "TotalAmount": {
+                          "$": 3083660
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 9,
+                        "TotalAmount": {
+                          "$": 28774
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 1347
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 3,
+                        "TotalAmount": {
+                          "$": 11971
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-07"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 43
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 27618451
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 8859854
+                    },
+                    "SuppliersCount": 161,
+                    "AccountsCount": 610,
+                    "OwedTotalAmount": {
+                      "$": 80679223
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 17551036
+                    },
+                    "CurrentAccountsCount": 178,
+                    "CurrentTotalAmount": {
+                      "$": 69102470
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 82,
+                        "TotalAmount": {
+                          "$": 6996704
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 35,
+                        "TotalAmount": {
+                          "$": 4398019
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 25,
+                        "TotalAmount": {
+                          "$": 2978547
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 31,
+                        "TotalAmount": {
+                          "$": 3094460
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 9,
+                        "TotalAmount": {
+                          "$": 28774
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 1347
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 3,
+                        "TotalAmount": {
+                          "$": 11971
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-06"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 42
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 18817922
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 8859854
+                    },
+                    "SuppliersCount": 173,
+                    "AccountsCount": 658,
+                    "OwedTotalAmount": {
+                      "$": 86810275
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 25158759
+                    },
+                    "CurrentAccountsCount": 192,
+                    "CurrentTotalAmount": {
+                      "$": 68495571
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 77,
+                        "TotalAmount": {
+                          "$": 15462246
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 36,
+                        "TotalAmount": {
+                          "$": 4235233
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 28,
+                        "TotalAmount": {
+                          "$": 2858499
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 29,
+                        "TotalAmount": {
+                          "$": 2490046
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 7,
+                        "TotalAmount": {
+                          "$": 28017
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 32850
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 3,
+                        "TotalAmount": {
+                          "$": 10654
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-05"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 87
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 29431034
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 1730000
+                    },
+                    "SuppliersCount": 177,
+                    "AccountsCount": 690,
+                    "OwedTotalAmount": {
+                      "$": 87397282
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 7685439
+                    },
+                    "CurrentAccountsCount": 193,
+                    "CurrentTotalAmount": {
+                      "$": 83736195
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 81,
+                        "TotalAmount": {
+                          "$": 4994461
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 42,
+                        "TotalAmount": {
+                          "$": 1621789
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 23,
+                        "TotalAmount": {
+                          "$": 109041
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 30,
+                        "TotalAmount": {
+                          "$": 870760
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 7,
+                        "TotalAmount": {
+                          "$": 20760
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 6,
+                        "TotalAmount": {
+                          "$": 26322
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 2,
+                        "TotalAmount": {
+                          "$": 1425
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-04"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 59
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 26391486
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 2455739
+                    },
+                    "SuppliersCount": 169,
+                    "AccountsCount": 715,
+                    "OwedTotalAmount": {
+                      "$": 87227542
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 9650403
+                    },
+                    "CurrentAccountsCount": 198,
+                    "CurrentTotalAmount": {
+                      "$": 80925889
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 88,
+                        "TotalAmount": {
+                          "$": 7705775
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 55,
+                        "TotalAmount": {
+                          "$": 1339693
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 38,
+                        "TotalAmount": {
+                          "$": 201942
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 25,
+                        "TotalAmount": {
+                          "$": 316857
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 8,
+                        "TotalAmount": {
+                          "$": 60959
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 13199
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 2,
+                        "TotalAmount": {
+                          "$": 1424
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-03"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 95
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 18101083
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 2167319
+                    },
+                    "SuppliersCount": 165,
+                    "AccountsCount": 594,
+                    "OwedTotalAmount": {
+                      "$": 61776305
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 7802019
+                    },
+                    "CurrentAccountsCount": 200,
+                    "CurrentTotalAmount": {
+                      "$": 53687862
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 116,
+                        "TotalAmount": {
+                          "$": 6250141
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 59,
+                        "TotalAmount": {
+                          "$": 319143
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 41,
+                        "TotalAmount": {
+                          "$": 180914
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 29,
+                        "TotalAmount": {
+                          "$": 506791
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 7,
+                        "TotalAmount": {
+                          "$": 464360
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 10773
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 27495
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-02"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 87
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 30324772
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 2590488
+                    },
+                    "SuppliersCount": 163,
+                    "AccountsCount": 595,
+                    "OwedTotalAmount": {
+                      "$": 75595633
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 11566351
+                    },
+                    "CurrentAccountsCount": 205,
+                    "CurrentTotalAmount": {
+                      "$": 63749212
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 102,
+                        "TotalAmount": {
+                          "$": 6003751
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 62,
+                        "TotalAmount": {
+                          "$": 2507956
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 38,
+                        "TotalAmount": {
+                          "$": 2167082
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 27,
+                        "TotalAmount": {
+                          "$": 144819
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 9,
+                        "TotalAmount": {
+                          "$": 672267
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 52229
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 4,
+                        "TotalAmount": {
+                          "$": 6813
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2017-01"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 109
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 26745408
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 1739411
+                    },
+                    "SuppliersCount": 171,
+                    "AccountsCount": 608,
+                    "OwedTotalAmount": {
+                      "$": 67074161
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 9988542
+                    },
+                    "CurrentAccountsCount": 203,
+                    "CurrentTotalAmount": {
+                      "$": 59995537
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 148,
+                        "TotalAmount": {
+                          "$": 5856359
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 69,
+                        "TotalAmount": {
+                          "$": 2337721
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 49,
+                        "TotalAmount": {
+                          "$": 309513
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 33,
+                        "TotalAmount": {
+                          "$": 229184
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 10,
+                        "TotalAmount": {
+                          "$": 1112531
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 6,
+                        "TotalAmount": {
+                          "$": 47458
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 9691
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2016-12"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 75
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 16823334
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 5722186
+                    },
+                    "SuppliersCount": 177,
+                    "AccountsCount": 621,
+                    "OwedTotalAmount": {
+                      "$": 70206518
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 14656984
+                    },
+                    "CurrentAccountsCount": 227,
+                    "CurrentTotalAmount": {
+                      "$": 54997479
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 148,
+                        "TotalAmount": {
+                          "$": 11040984
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 68,
+                        "TotalAmount": {
+                          "$": 619883
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 43,
+                        "TotalAmount": {
+                          "$": 214656
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 28,
+                        "TotalAmount": {
+                          "$": 144406
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 10,
+                        "TotalAmount": {
+                          "$": 2538451
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 3,
+                        "TotalAmount": {
+                          "$": 4679
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 6,
+                        "TotalAmount": {
+                          "$": 10825
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2016-11"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 82
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 31129725
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 5722186
+                    },
+                    "SuppliersCount": 171,
+                    "AccountsCount": 622,
+                    "OwedTotalAmount": {
+                      "$": 87176821
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 14953247
+                    },
+                    "CurrentAccountsCount": 204,
+                    "CurrentTotalAmount": {
+                      "$": 70240117
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 113,
+                        "TotalAmount": {
+                          "$": 11394704
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 57,
+                        "TotalAmount": {
+                          "$": 1076169
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 30,
+                        "TotalAmount": {
+                          "$": 434362
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 25,
+                        "TotalAmount": {
+                          "$": 224700
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 10,
+                        "TotalAmount": {
+                          "$": 2531041
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 39125
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 181,
+                        "DaysHighQuantity": 210,
+                        "ExperiencesCount": 1,
+                        "TotalAmount": {
+                          "$": 34
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 6,
+                        "TotalAmount": {
+                          "$": 9171
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2016-10"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 73
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 40477060
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 5722186
+                    },
+                    "SuppliersCount": 177,
+                    "AccountsCount": 631,
+                    "OwedTotalAmount": {
+                      "$": 92899436
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 17120386
+                    },
+                    "CurrentAccountsCount": 204,
+                    "CurrentTotalAmount": {
+                      "$": 75558468
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 107,
+                        "TotalAmount": {
+                          "$": 14459009
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 44,
+                        "TotalAmount": {
+                          "$": 506728
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 40,
+                        "TotalAmount": {
+                          "$": 435234
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 27,
+                        "TotalAmount": {
+                          "$": 2671255
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 8,
+                        "TotalAmount": {
+                          "$": 51579
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 11494
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 5,
+                        "TotalAmount": {
+                          "$": 7569
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TradeDataYearMonth": {
+                    "$": "2016-09"
+                  },
+                  "OneMonthDataCoveragePayments": {
+                    "CashPayments": {
+                      "ExperienceCount": 90
+                    },
+                    "OwedTotalMaximumAmount": {
+                      "$": 31471123
+                    },
+                    "PastDueTotalMaximumAmount": {
+                      "$": 3675194
+                    },
+                    "SuppliersCount": 179,
+                    "AccountsCount": 640,
+                    "OwedTotalAmount": {
+                      "$": 79614569
+                    },
+                    "TotalPastDueTotalAmount": {
+                      "$": 12919135
+                    },
+                    "CurrentAccountsCount": 225,
+                    "CurrentTotalAmount": {
+                      "$": 65478471
+                    },
+                    "PlacedForCollectionExperiencesCount": 1,
+                    "PlacedforCollectionPastDueTotalAmount": {
+                      "$": 1984
+                    },
+                    "SummarizedPastDue": [
+                      {
+                        "DaysLowQuantity": 1,
+                        "DaysHighQuantity": 30,
+                        "ExperiencesCount": 95,
+                        "TotalAmount": {
+                          "$": 7322065
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 31,
+                        "DaysHighQuantity": 60,
+                        "ExperiencesCount": 51,
+                        "TotalAmount": {
+                          "$": 2074809
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 61,
+                        "DaysHighQuantity": 90,
+                        "ExperiencesCount": 35,
+                        "TotalAmount": {
+                          "$": 756562
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 91,
+                        "DaysHighQuantity": 120,
+                        "ExperiencesCount": 30,
+                        "TotalAmount": {
+                          "$": 2653958
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 121,
+                        "DaysHighQuantity": 150,
+                        "ExperiencesCount": 8,
+                        "TotalAmount": {
+                          "$": 11326
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 151,
+                        "DaysHighQuantity": 180,
+                        "ExperiencesCount": 3,
+                        "TotalAmount": {
+                          "$": 11782
+                        }
+                      },
+                      {
+                        "DaysLowQuantity": 211,
+                        "DaysHighQuantity": 240,
+                        "ExperiencesCount": 4,
+                        "TotalAmount": {
+                          "$": 7233
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

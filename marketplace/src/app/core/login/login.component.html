@@ -1,0 +1,89 @@
+<layout-base>
+  <div class="alert alert-info text-center" style="border-radius: 0; border-top: 0;" *ngIf="url=='/checkout'" i18n>Para continuar con tu compra es necesario que ingreses con tu cuenta o te registres para obtener una.</div>
+  <div class="container p-4 d-sm-flex justify-content-around">
+    <form *ngIf="!submitting" [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="mr-sm-5">
+      <h2 i18n>¿Ya eres usuario?</h2>
+      <p class="text-muted" i18n>Ingresa tus datos para que accedas a tu cuenta.</p>
+      <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label" i18n>Usuario</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" formControlName="username" autofocus />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label" i18n>Contraseña</label>
+        <div class="col-sm-8">
+          <input type="password" class="form-control" formControlName="password" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 offset-sm-4">
+          <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" i18n>Ingresar</button>
+          <button type="button" class="btn btn-link" i18n>¿Olvidaste tu contraseña?</button>
+        </div>
+      </div>
+      <div class="d-none d-sm-block">
+        <hr />
+        <h4 i18n>¿Olvidaste tu contraseña?</h4>
+        <p class="text-muted" i18n>Si olvidaste tu contraseña, ingresa tu correo electrónico, y te enviaremos un email con un "Código de activación" para acceder a tu cuenta.</p>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" i18n>Correo electrónico</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 offset-sm-4">
+            <div class="form-group">
+              <button type="button" class="btn btn-outline-primary" i18n>Solicitar código</button>
+              <button type="button" class="btn btn-link" i18n>Ya tengo código</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <hr class="my-5 d-block d-sm-none" />
+    <form *ngIf="!submitting" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+      <h2 i18n>¿Aún no te has registrado?</h2>
+      <p class="text-muted" i18n>Regístrate para que puedas hacer compras online, revisar tu historial de compras y más.</p>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" i18n>Nombre</label>
+        <div class="col-sm-9">
+          <div class="form-row">
+            <div class="col">
+              <input type="text" class="form-control" formControlName="firstName" placeholder="Nombres" i18n-placeholder="Nombres"/>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Apellidos" i18n-placeholder="Apellidos"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" i18n>Usuario</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" formControlName="username" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" i18n>Contraseña</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" formControlName="password" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" i18n>Confirmar contraseña</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" formControlName="confirmPassword" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-9 offset-sm-3">
+          <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid" i18n>Registrarse</button>
+        </div>
+      </div>
+    </form>
+    <img *ngIf="submitting" src="assets/loading.svg" style="width:32px;" />
+  </div>
+</layout-base>

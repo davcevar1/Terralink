@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.0.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_7_0_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>7.0.0+</version>
+	</compatibility>
+	<theme id="mainstreet" name="mainstreet">
+		<template-extension>ftl</template-extension>
+		<portlet-decorator id="barebone" name="Barebone">
+			<portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="borderless" name="Borderless">
+			<portlet-decorator-css-class>portlet-borderless</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="decorate" name="Decorate">
+			<default-portlet-decorator>true</default-portlet-decorator>
+			<portlet-decorator-css-class>portlet-decorate</portlet-decorator-css-class>
+		</portlet-decorator>
+		<settings>
+			<setting 
+				configurable="true"
+				key="background-color"
+				type="text"
+				value="#ecf2f6">
+			<![CDATA[
+			]]>
+			</setting>
+			<setting 
+				configurable="true"
+				key="heading-color"
+				type="text"
+				value="#1c62b7">
+			<![CDATA[
+			]]>
+			</setting>
+			<setting 
+				configurable="true"
+				key="link-color"
+				type="text"
+				value="#1c62b7">
+			<![CDATA[
+			]]>
+			</setting>
+			<setting 
+				configurable="true"
+				key="selection-color"
+				type="text"
+				value="#1c62b7">
+			<![CDATA[
+			]]>
+			</setting>
+			<setting 
+				configurable="true"
+				key="logo-background-color"
+				type="text"
+				value="#1c62b7">
+			<![CDATA[
+			]]>
+			</setting>
+			<setting 
+				configurable="true"
+				key="navigation-background-color"
+				type="text"
+				value="#354052">
+			<![CDATA[
+			]]>
+			</setting>
+			<setting 
+				configurable="true"
+				key="navigation-heading-color"
+				type="text"
+				value="rgba(255,255,255,.5)">
+			<![CDATA[
+			]]>
+			</setting>
+            <setting 
+				configurable="true"
+				key="logo-light-background"
+				type="text"
+				value="">
+			<![CDATA[
+			]]>
+			</setting>
+		</settings>
+	</theme>
+</look-and-feel>

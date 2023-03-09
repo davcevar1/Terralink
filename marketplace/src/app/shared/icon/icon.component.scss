@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+:host {
+  line-height: 0;
+  display: inline-block;
+}
+svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: none;
+}

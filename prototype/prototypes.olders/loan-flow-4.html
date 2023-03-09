@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Offering ticket</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body class="wf-shell" data-spy="scroll" data-target="#navigation" data-offset="90">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div class="container">
+                <div class="wf-flex wf-gutters">
+                    <div id="navigation" style="width:160px;">
+                        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="0" style="width:160px;">
+                            <li class="active"><a href="#info">Información</a></li>
+                            <li><a href="#history">Historial crediticio</a></li>
+                            <li><a href="#capital">Situación patrimonial</a></li>
+                            <li><a href="#econom">Situación económica</a></li>
+                            <li><a href="#guarantors">Garantes</a></li>
+                            <li><a href="#risk">Riesgo crediticio</a></li>
+                        </ul>
+                    </div>
+                    <div class="wf-grow">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div>
+                                            <label>Solicitud #:</label> 123455</div>
+                                        <div>
+                                            <label>Fecha:</label> 12/12/2016</div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div>
+                                            <label>Nombre oficial:</label> Juan Martinez</div>
+                                        <div>
+                                            <label>Oficial #:</label> 3425234</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="info" class="row" style="padding-top: 90px; margin-top: -90px;">
+                            <div class="col-sm-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" style="font-weight:bold;">Información Socio Demográfica</div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Titular</th>
+                                                <th>Conyuge</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Nombre:</th>
+                                                <td>SOLANO OCHOA LUIS ENRIQUE</td>
+                                                <td>NAULA CARRION EMPERATIRZ AMELIA</td>
+                                            </tr>
+                                            <tr>
+                                                <th>CI /RUC:</th>
+                                                <td>170368386-0</td>
+                                                <td>010205430-1</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Ocupación:</th>
+                                                <td>ALQUI. MAQUI. PESADA</td>
+                                                <td>COSTURERA</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Empresa:</th>
+                                                <td>PROPIA</td>
+                                                <td>PROPIA</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Estabilidad laboral:</th>
+                                                <td>14 años</td>
+                                                <td>6 años</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Edad:</th>
+                                                <td>64 años</td>
+                                                <td>52 años</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Estado civil:</th>
+                                                <td>Casado</td>
+                                                <td>6 años</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" style="font-weight:bold;">Propuesta Económica</div>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th>Clasificación:</th>
+                                                <td colspan="2">INMOBILIARIO / ConstruyeMAZ fácil</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Objetivo:</th>
+                                                <td colspan="2">170368386-0</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Monto:</th>
+                                                <td colspan="2">ALQUI. MAQUI. PESADA</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Plazo:</th>
+                                                <td colspan="2">PROPIA</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Cuota:</th>
+                                                <td colspan="2">14 años</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Forma de pago:</th>
+                                                <td colspan="2">Mensual</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tasa:</th>
+                                                <td>10.78%
+                                                    <div class="small text-muted">Nominal</div>
+                                                </td>
+                                                <td>11.33%
+                                                    <div class="small text-muted">Efectiva</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Cupo total:</th>
+                                                <td colspan="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Calificación:</th>
+                                                <td colspan="2">680</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="history" style="padding-top: 90px; margin-top: -90px;">
+                            <div class="panel panel-default">
+                            <div class="panel-heading" style="font-weight:bold;">Historial crediticio en la institución</div>
+                            <div class="panel-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                            <td>Tipo</td>
+                                            <td>Monto</td>
+                                            <td>Fecha Conces.</td>
+                                            <td>Plazo</td>
+                                            <td>Puntualidad</td>
+                                            <td>Saldo</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Créditos cancelados</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Operaciones vigentes</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Garantías vigentes</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Vigentes a cancelarse</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        </div>
+                        <div id="capital" style="padding-top: 90px; margin-top: -90px;">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="font-weight:bold;">Situación patrimonial</div>
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <td></td>
+                                                <td>Tipo</td>
+                                                <td>Monto</td>
+                                                <td>Fecha Conces.</td>
+                                                <td>Plazo</td>
+                                                <td>Puntualidad</td>
+                                                <td>Saldo</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Créditos cancelados</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Operaciones vigentes</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Garantías vigentes</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Vigentes a cancelarse</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="econom" style="padding-top: 90px; margin-top: -90px;">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="font-weight:bold;">Análisis de la situación económica del cliente</div>
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <td></td>
+                                                <td>Tipo</td>
+                                                <td>Monto</td>
+                                                <td>Fecha Conces.</td>
+                                                <td>Plazo</td>
+                                                <td>Puntualidad</td>
+                                                <td>Saldo</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Créditos cancelados</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Operaciones vigentes</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Garantías vigentes</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Vigentes a cancelarse</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-default navbar-fixed-bottom text-center">
+                <a href="#recommend" class="btn btn-default navbar-btn" data-toggle="modal" style="min-width:120px;">Imprimir</a>
+                <div class="navbar-btn dropup" style="display:inline-block;">
+                    <button type="button" class="btn btn-primary" data-toggle="dropdown" style="min-width:120px;">
+                        Acción <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Aprobar</a></li>
+                        <li><a href="#">Rechazar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Offering ticket</div>
+        </div>
+    </div>
+</body>
+
+</html>

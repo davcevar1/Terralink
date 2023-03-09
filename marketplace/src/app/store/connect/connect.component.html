@@ -1,0 +1,42 @@
+<form>
+  <div class="p-3 bg-light border-bottom sticky-top text-center">
+    <h5 class="m-0">Conéctese con su banco</h5>
+  </div>
+  <div *ngIf="!pinRequested" class="container p-4">
+    <p i18n>Seleccione su banco, he ingrese el nombre de usuario de su banco.<p>
+    <div class="form-group">
+      <div class="mb-3 d-flex">
+        <div class="card" [ngClass]="{'border-primary':selected}">
+          <div class="card-body">
+            <h5 class="card-title">Mainstreet Bank</h5>
+            <div class="text-center">
+              <img class="logo" src="./assets/logo_mainstreet-bank.svg" style="height:100px;" />
+              <icon class="check" name="check" style="font-size: 48px; border-radius: 100px; border: 4px solid #007bff; color: #007bff; position: absolute; left: 50%; margin-left: -28px; top: 50%; margin-top: -28px;"></icon>
+            </div>
+            <div class="text-center mt-3">
+              <button type="button" class="btn btn-link" (click)="selectBank()" i18n>Seleccionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label i18n>Nombre de usuario:</label>
+      <input type="text" class="form-control" />
+    </div>
+  </div>
+  <div *ngIf="pinRequested" class="container p-5">
+    <p class="alert alert-info text-center" i18n>Ingrese el PIN enviado por su banco para autorizar la conexión a su banco.</p>
+    <div class="form-group">
+      <input type="password" class="pin form-control form-control-lg text-center" maxlength="4" />
+    </div>
+    <div class="small text-muted text-center" i18n>El PIN enviado tiene una duración de 2 minutos.</div>
+    <div class="text-center my-4">
+      <button class="btn btn-link btn-sm" i18n>Reenviar PIN</button>
+    </div>
+  </div>
+  <div class="p-3 bg-light border-top text-center" style="position:fixed; bottom:0; left:0; right:0;">
+    <button class="btn btn-primary" *ngIf="!pinRequested" (click)="requestPin()" i18n>Continuar</button>
+    <button class="btn btn-primary" *ngIf="pinRequested" (click)="authorize()" i18n>Autorizar</button>
+  </div>
+</form>

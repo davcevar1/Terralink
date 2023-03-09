@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="themes/cobis-ui/terrabank.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="controller">
+    <div class="cb-view">
+        <div class="cb-breadcrumb" style="margin-bottom:30px;">
+            <ol class="breadcrumb">
+                <li>Loans Report</li>
+            </ol>
+        </div>
+        <div class="cb-view-container cb-group-layout container">
+            <div class="cb-group cb-group-simple">
+                <div class="form-vertical">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="control-label">Code</div>
+                                <div class="cb-control">
+                                    <div class="cb-flex cb-gutters">
+                                        <div>
+                                            <select class="form-control">
+                                                <option>Application ID</option>
+                                                <option>Tax ID</option>
+                                                <option>Core ID</option>
+                                                <option>Social Security #</option>
+                                            </select>
+                                        </div>    
+                                        <div class="cb-grow">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="control-label">Start date</div>
+                                <div class="cb-control">
+                                    <div class="cb-flex cb-gutters">
+                                        <div class="cb-grow">
+                                            <input type="date" kendo-datepicker />
+                                        </div>
+                                        <div class="cb-grow">
+                                            <input type="date" kendo-datepicker />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="control-label">Status</div>
+                                <div class="cb-control">
+                                    <select class="form-control">
+                                        <option></option>
+                                        <option>Approved</option>
+                                        <option>Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="control-label">Officer</div>
+                                <div class="cb-control">
+                                    <select kendo-drop-down-list></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <hr />
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <div class="form-group">
+                                <div class="cb-control">
+                                    <button class="btn btn-primary btn-block" ng-click="results=true">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cb-group cb-group-simple">
+                <div ng-if="results">
+                    <kendo-grid options="loans"></kendo-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var librariesUrl = 'libraries/';
+    </script>
+    <script src="libraries/require.config.js"></script>
+    <script data-main="loan-report" src="libraries/require/require.js"></script>
+</body>
+
+</html>

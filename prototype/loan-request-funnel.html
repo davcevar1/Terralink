@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="themes/cobis-ui/terrabank.css" rel="stylesheet" />
+  <style>
+    .ng-cloak {
+      display: none;
+    }
+
+    .cb-scrollable {
+      position: relative;
+    }
+
+    .cb-card {
+      background-color: #FFF;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 0;
+    }
+
+    .cb-card>.cb-card-body {
+      padding: 15px 30px;
+    }
+
+    .cb-card .cb-title {
+      margin: 0;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .cb-card .cb-amount {
+      font-size: 22px;
+    }
+
+    .cb-processes {
+      grid-template-areas: '. . .';
+      margin: auto;
+      padding: 30px;
+    }
+
+    .cb-funnel {
+      margin: auto;
+      padding: 30px;
+      display: grid;
+      grid-gap: 30px;
+      grid-template-areas: '. .';
+    }
+
+    .cb-funnel .btn:focus,
+    .cb-funnel .btn:active {
+      outline: none;
+    }
+
+    .cb-funnel .btn:not(.active) {
+      border-color: transparent;
+      background-color: transparent;
+    }
+    .cb-funnel.slide-animate.ng-enter {
+      top: 0;
+    }
+
+    .btn.active {
+      background-color: #e6e6e6;
+    }
+
+    .slide-animate.ng-enter,
+    .slide-animate.ng-leave {
+      transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s;
+    }
+
+    .slide-animate.ng-enter {
+      transform: translate(100vw);
+      transition-delay: .2s;
+      position: absolute;
+    }
+    .slide-animate.ng-leave.ng-leave-active {
+      transform: scale(.95) translateY(10px);
+      opacity: 0;
+    }
+
+    .slide-animate.ng-leave,
+    .slide-animate.ng-enter.ng-enter-active {
+      transform: translate(0);
+    }
+  </style>
+  <style>
+    .k-listview.list-group {
+      margin-bottom: 0;
+    }
+
+    .k-listview.list-group li:last-child {
+      border-bottom: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .cb-header {
+      background: #e5e5e5;
+      border: 0;
+      color: #666666;
+      text-transform: uppercase;
+      font-size: 11px;
+      padding: 5px 15px;
+      padding-right: 45px;
+    }
+
+    .cb-fields>div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .list-group-item .dropdown>.btn {
+      border: 0;
+    }
+
+    @media (min-width: 768px) {
+      .cb-fields>div {
+        width: 20%;
+      }
+      .k-listview.list-group li:first-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .list-group-item>div {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body ng-controller="controller" class="ng-cloak">
+  <div class="cb-viewport cb-flex cb-column" ng-class="{'cb-has-process':process}">
+    <div class="cb-toolbar cb-toolbar-top">
+      <div class="cb-toolbar-content">
+        <div class="cb-grow cb-flex cb-middle cb-gutters">
+        </div>
+        <div class="cb-flex cb-middle cb-gutters-tiny">
+          <div>Fecha</div>
+          <div><input type="date" kendo-date-picker ng-model="startAt" /></div>
+          <div>-</div>
+          <div><input type="date" kendo-date-picker ng-model="endAt" /></div>
+        </div>
+      </div>
+    </div>
+    <div class="cb-breadcrumb">
+      <ul class="breadcrumb" style="background:#FFF;">
+        <li ng-if="!process">Procesos</li>
+        <li ng-if="process"><a href="#" ng-click="setProcess(null)">Procesos</a></li>
+        <li ng-if="process && !step">{{ process.name }}</li>
+        <li ng-if="process && step"><a href="#" ng-click="setDetail(null, null)">{{ process.name }}</a></li>
+        <li ng-if="process && step">{{ step.name }} ({{ status.name }})</li>
+      </ul>
+    </div>
+    <div class="cb-scrollable cb-grow cb-flex cb-middle cb-center">
+      <div class="cb-processes cb-grid-layout slide-animate" ng-if="!process">
+        <button class="btn btn-default text-center cb-card" ng-repeat="process in processes" ng-click="setProcess(process)">
+          <div class="cb-card-body">
+            <h4 class="cb-title">{{ process.name }}</h4>
+            <div class="cb-flex cb-column-rules">
+              <div ng-repeat="status in process.statuses">
+                <div class="cb-name" ng-class="status.nameClass">{{ status.name }}</div>
+                <div class="cb-amount">{{ status.amount }}</div>
+                <div class="cb-requests small text-muted">{{ status.requestCount }} solicitudes</div>
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="cb-funnel cb-flex slide-animate" ng-if="process">
+        <div class="cb-funnel-steps">
+          <div ng-repeat="step in process.steps">
+            <div class="cb-card text-center cb-flex cb-middle cb-center">
+              <div class="cb-card-body">
+                <h4 class="cb-title">{{ step.name }}</h4>
+                <div class="cb-flex cb-column-rules" style="margin: 0 -12px;">
+                  <div ng-repeat="stepStatus in step.statuses">
+                    <button ng-disabled="stepStatus.requestCount==0" ng-click="setDetail(step, stepStatus)" ng-class="{active:stepStatus==status}" class="btn btn-default" style="margin: -6px 0;">
+                    <div class="cb-name" ng-class="stepStatus.nameClass">{{ stepStatus.name }}</div>
+                    <div class="cb-amount">{{ stepStatus.amount }}</div>
+                    <div class="cb-requests small text-muted">{{ stepStatus.requestCount }} solicitudes</div>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center" ng-if="($index+1)<process.steps.length">
+              <img src="images/arrow-funnel.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="cb-detail" ng-if="step && status">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4 class="cb-grow" style="margin:0;">Consolidado por empresas</h4>
+              <di class="row">
+                <div class="col-sm-6">
+                  <div kendo-chart k-options="companies_quantity" style="height: 300px;"></div>
+                </div>
+                <div class="col-sm-6">
+                  <div kendo-chart k-options="companies_amount" style="height: 300px;"></div>
+                </div>
+            </div>
+          </div>
+          <div>
+            <div class="cb-header cb-flex cb-middle cb-fields hidden-xs">
+              <div><span>Alternate Code</span></div>
+              <div><span>Business Name</span></div>
+              <div><span>TAX ID</span></div>
+              <div><span>Start Date</span></div>
+              <div><span>Status</span></div>
+            </div>
+            <ul class="list-group k-widget k-listview" id="listView">
+              <li class="list-group-item" ng-repeat="request in status.requestData">
+                <div class="cb-flex cb-middle">
+                  <div class="cb-flex-sm-up cb-middle cb-grow cb-fields">
+                    <div title="{{ request.alternateCode }}">
+                      <strong class="visible-xs-inline"><span translate="APPINFO.GRID.ALTERNATE_CODE">Código alterno</span>:</strong> {{ request.alternateCode }}
+                    </div>
+                    <div title="{{ request.businessName }}">
+                      <strong class="visible-xs-inline"><span translate="APPINFO.GRID.BUSINESS_NAME">Nombre</span>:</strong> {{ request.businessName }}
+                    </div>
+                    <div title="{{ request.taxId }}">
+                      <strong class="visible-xs-inline"><span translate="APPINFO.GRID.TAX_ID">RUC</span>:</strong> {{ request.taxId }}
+                    </div>
+                    <div title="{{ request.startAt }}">
+                      <strong class="visible-xs-inline"><span translate="APPINFO.GRID.START_DATE">Fecha de inicio</span>:</strong> {{ request.startAt }}
+                    </div>
+                    <div title="{{ request.status }}">
+                      <strong class="visible-xs-inline"><span translate="APPINFO.GRID.STATUS">Estado</span>:</strong> {{ request.status }}
+                    </div>
+                  </div>
+                  <div>
+                    <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="fa fa-ellipsis-v"></span>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-item">
+                          <a href="" ng-click="viewInstanceInformation(dataItem)">
+                            <span translate="">Detalle del proceso</span>
+                          </a>
+                        </li>
+                        <li class="dropdown-item">
+                          <a href="" ng-click="viewApplicationInformation(dataItem)">
+                            <span translate="">Detalle de la aplicación</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div style="border-top-left-radius: 0px; border-top-right-radius: 0px;" data-role="pager" class="k-pager-wrap k-widget">
+              <span class="k-pager-info k-label">1 - {{ status.requestCount<=10? status.requestCount : 10 }} de {{ status.requestCount }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var librariesUrl = 'libraries/';
+  </script>
+  <script src="libraries/require.config.js"></script>
+  <script data-main="loan-request-funnel" src="libraries/require/require.js"></script>
+</body>
+
+</html>

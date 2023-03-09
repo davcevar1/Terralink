@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Terrabank</title>
+
+  <!-- To disable compatibility mode in Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Mobile tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="themes/mainstreet.css" />
+  <link rel="stylesheet" href="loan-request-terra.css" />
+  <style>
+    .cb-preprocess-message {
+      padding: 0 !important;
+    }
+
+    .cb-preprocess-message .k-window-titlebar {
+      display: none;
+    }
+
+    #submit-message-kendo {
+      display: none;
+    }
+
+    #submit-message-kendo.k-window-content {
+      display: block;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body class="wf-shell" ng-controller="controller">
+  <div id="shell" class="wf-view">
+    <div class="wf-content wf-fixed-top" style="padding-top:0;">
+      <div id="main-content">
+        <form id="step4" class="wf-fixed-bottom">
+          <p><img src="images/logo_terrabank.png" class="img-responsive" style="max-height: 35px;" /></p>
+          <div>
+            <ul class="wf-steps-2" style="margin-top:0;">
+              <li ng-repeat="step in steps" ng-class="{active:lastStep>=($index+1), current:currentStep==($index+1)}">
+                <a ng-if="lastStep>$index" ng-href="{{ step.url }}"><span class="{{ step.icon }}"></span> <span class="hidden-xs">{{ step.label }}</span></a>
+                <div ng-if="lastStep<=$index"><span class="{{ step.icon }}"></span> <span class="hidden-xs">{{ step.label }}</span></div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-weight:bold; font-size:12px; color:#990000; text-align:right;">* Indicates required field</p>
+            <div id="owners" class="panel-group">
+              <div class="owner-form panel panel-default" ng-repeat="owner in owners">
+                <div class="panel-heading" ng-if="owners.length>1">
+                  <h4 class="panel-title wf-flex wf-middle wf-gutters">
+                    <a href="#owner1" class="wf-name" data-toggle="collapse" data-parent="#owners">{{ owner.firstName }} {{ owner.middleName }} {{ owner.lastName }}</a>
+                    <div class="wf-grow">
+                      <div class="badge wf-percentage" ng-if="owner.percentage">{{ owner.percentage }}%</div>
+                    </div>
+                    <div>
+                      <button class="close" ng-click="removeOwner(owner)"><span class="fa fa-times"></span></button>
+                    </div>
+                  </h4>
+                </div>
+                <div id="owner1" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required" ng-class="{'has-error':getOwnersPercentage()>100}">
+                          <div class="control-label">Percentage of ownership</div>
+                          <div class="wf-control">
+                            <div class="input-group">
+                              <input name="percentage" type="number" kendo-numeric-text-box k-min="1" k-max="100" k-spinners="false" ng-model="owner.percentage" required />
+                              <span class="input-group-addon">%</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8" ng-if="owners.length>1">
+                        <div class="form-group">
+                          <div class="control-label">&nbsp;</div>
+                          <div class="form-control-static" ng-if="getOwnersPercentage()<=100"><strong>{{ getOwnersPercentage() }}%</strong> total ownership percentage entered in {{ owners.length }} owners</div>
+                          <div class="form-control-static text-danger" ng-if="getOwnersPercentage()>100"><strong>{{ getOwnersPercentage() }}%</strong> total ownership percentage is not valid</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">First Name</div>
+                          <div class="wf-control">
+                            <input name="firstName" type="text" class="form-control" ng-model="owner.firstName" required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">Middle Name</div>
+                          <div class="wf-control">
+                            <input name="middleName" type="text" class="form-control" ng-model="owner.middleName" required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">Last Name</div>
+                          <div class="wf-control">
+                            <input name="lastName" type="text" class="form-control" ng-model="owner.lastName" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" ng-show="owner.percentage>=10">
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">Social Security #</div>
+                          <div class="wf-control">
+                            <input type="text" class="form-control" kendo-masked-text-box k-mask="'999-99-9999'" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">Date of Birth</div>
+                          <div class="wf-control">
+                            <input type="date" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">Phone Number</div>
+                          <div class="wf-control">
+                            <input type="text" class="form-control" kendo-masked-text-box k-mask="'(999) 999-9999'" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group wf-required" ng-show="owner.percentage>=10">
+                      <div class="control-label">Residential Street Address</div>
+                      <div class="wf-control">
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="row" ng-show="owner.percentage>=10">
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">City</div>
+                          <div class="wf-control">
+                            <input type="text" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">State</div>
+                          <div class="wf-control">
+                            <select class="form-control" name="state" required>
+                              <option></option>
+                              <option value="AL">Alabama</option>
+                              <option value="AK">Alaska</option>
+                              <option value="AZ">Arizona</option>
+                              <option value="AR">Arkansas</option>
+                              <option value="CA">California</option>
+                              <option value="CO">Colorado</option>
+                              <option value="CT">Connecticut</option>
+                              <option value="DE">Delaware</option>
+                              <option value="DC">District Of Columbia</option>
+                              <option value="FL">Florida</option>
+                              <option value="GA">Georgia</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="ID">Idaho</option>
+                              <option value="IL">Illinois</option>
+                              <option value="IN">Indiana</option>
+                              <option value="IA">Iowa</option>
+                              <option value="KS">Kansas</option>
+                              <option value="KY">Kentucky</option>
+                              <option value="LA">Louisiana</option>
+                              <option value="ME">Maine</option>
+                              <option value="MD">Maryland</option>
+                              <option value="MA">Massachusetts</option>
+                              <option value="MI">Michigan</option>
+                              <option value="MN">Minnesota</option>
+                              <option value="MS">Mississippi</option>
+                              <option value="MO">Missouri</option>
+                              <option value="MT">Montana</option>
+                              <option value="NE">Nebraska</option>
+                              <option value="NV">Nevada</option>
+                              <option value="NH">New Hampshire</option>
+                              <option value="NJ">New Jersey</option>
+                              <option value="NM">New Mexico</option>
+                              <option value="NY">New York</option>
+                              <option value="NC">North Carolina</option>
+                              <option value="ND">North Dakota</option>
+                              <option value="OH">Ohio</option>
+                              <option value="OK">Oklahoma</option>
+                              <option value="OR">Oregon</option>
+                              <option value="PA">Pennsylvania</option>
+                              <option value="RI">Rhode Island</option>
+                              <option value="SC">South Carolina</option>
+                              <option value="SD">South Dakota</option>
+                              <option value="TN">Tennessee</option>
+                              <option value="TX">Texas</option>
+                              <option value="UT">Utah</option>
+                              <option value="VT">Vermont</option>
+                              <option value="VA">Virginia</option>
+                              <option value="WA">Washington</option>
+                              <option value="WV">West Virginia</option>
+                              <option value="WI">Wisconsin</option>
+                              <option value="WY">Wyoming</option>
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">Zip Code</div>
+                          <div class="wf-control">
+                            <input type="text" class="form-control" kendo-masked-text-box k-mask="'99999'" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group wf-required">
+                          <div class="control-label">Years of Experience in the Same Industry</div>
+                          <div class="wf-control">
+                            <input type="number" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div ng-if="showOwnershipError" class="panel-footer alert alert-danger" style="border: 0; border-top-left-radius: 0; border-top-right-radius: 0; margin: 0;">
+                  <span class="fa fa-exclamation-circle"></span> To continue, please enter information for all owners so that 100% of ownership is accounted for. Please enter information for the remaining {{ 100-getOwnersPercentage() }}%.
+                </div>
+              </div>
+            </div>
+
+            <div id="panel-add-owner" class="wf-flex-sm-up wf-gutters wf-middle" style="margin-bottom:30px;" ng-show="owners.length<4 && getOwnersPercentage()<100">
+              <div>
+                <button type="button" class="btn btn-default" ng-click="addOwner()"><span class="fa fa-plus"></span> Add additional owner</button>
+              </div>
+            </div>
+
+            <p>You are about to submit your application for a Small Business Line of Credit. By selecting "I Agree" you are acknowledging the <a href="#disclaimer" style="font-weight:bold;" data-toggle="modal">Terms and Conditions</a> and are
+              authorizing
+              Terrabank, N.A. to perform an inquiry of your credit history.</p>
+            <div class="form-group">
+              <div class="checkbox" style="white-space:nowrap; text-align:center;">
+                <label>
+                  <input name="agreement" type="checkbox" name="agree-disclaimer" /> I Agree
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="wf-toolbar wf-toolbar-bottom wf-center">
+            <div class="wf-actions wf-flex wf-gutters wf-center wf-grow">
+              <a href="loan-request-step3.html" class="btn btn-default wf-grow-sm-down"><span class="fa fa-angle-left"></span> Back</a>
+              <button type="button" class="btn btn-default">Save for later</button>
+              <button type="submit" class="btn btn-primary wf-grow-sm-down">Submit <span class="fa fa-angle-right"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="submit-message" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-body" style="font-size:16px;">
+          <div class="wf-flex wf-gutters">
+            <div><span class="fa fa-spin fa-circle-o-notch fa-2x"></span></div>
+            <div>The information review process will start in a few seconds, if there is a problem, do not worry that you will receive an email with the result.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="submit-message-kendo" tabindex="-1">
+    <p ng-show="state.selectedBusinessOwner == ''">To continue with the process it is necessary that you authorize us to make the credit score validation to one of the following owners, please select one:</p>
+    <div class="form-group" ng-show="state.selectedBusinessOwner == ''">
+      <div class="radio" ng-repeat="owner in (owners | filter: ownersCreditScore) track by $index">
+        <label>
+          <input type="radio" name="creditScoreOwners" value="{{ owner.firstName }} {{ owner.lastName }}" ng-model="state.selectedBusinessOwner">
+          {{ owner.firstName }} {{ owner.lastName }}
+        </label>
+      </div>
+    </div>
+    <div class="wf-flex alert alert-warning" ng-if="state.selectedBusinessOwner">
+      <div class="wf-grow">I certify that I am <strong>{{ state.selectedBusinessOwner }}</strong>, and that I authorize you to obtain a credit history via a tri-merge credit report, and financial account balances, and references.</div>
+      <button type="button" class="close" ng-click="state.selectedBusinessOwner = ''">
+        <span class="fa fa-times"></span>
+      </button>
+    </div>
+    <p ng-if="state.selectedBusinessOwner">The information review process will start when you click continue.</p>
+    <div class="text-center" style="margin-top:20px;">
+      <button type="button" class="btn btn-default" ng-click="closeModal('submit-message-kendo')">Cancel</button>
+      <button class="btn btn-primary" style="min-width: 100px;" ng-click="gotoStep5()" ng-if="state.selectedBusinessOwner">Continue</button>
+    </div>
+  </div>
+
+  <div id="disclaimer" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Disclaimer</h4>
+        </div>
+        <div class="modal-body">
+          <p>The above-signed certify that he/she has full authority to act on behalf of the business (the "Applicant") identified on this Business Loan Application (the "Application), and that all information contained herein is true and correct in
+            all
+            respects Terrabank, N.A. (the "Bank") is authorized to verify any information provided in connection with the Application .Bank may obtain credit reports for all owners' guarantors expected to be personally liable, including consumer
+            credit
+            reports in connection with the Application, and may also do so for renewals, extensions, collection activity or as otherwise permitted by law. Under the federal Fair Credit Reporting Act, Bank may get or share information regarding
+            Applicant,
+            guarantor(s) or Applicant's owner(s) with Bank affiliates unless the above-signed tells Bank not to share. The above-signed may prohibit Bank from sharing information provided or obtained by Bank from a third party, by mailing a written
+            request
+            to Terrabank, N.A., Business Banking, 3191 Coral Way, Coral Gables, FL 33145. The Application will be Bank's property whether or not credit is granted. Applicant agrees that Bank may rely on a facsimile and/or electronic transmission of
+            the
+            Application and any other signed documents received by Bank by facsimile and/or electronic transmission relating to the credit granted pursuant to the Application.</p>
+
+          <p>Such facsimiles and/or electronic transmission or any copy of such facsimiles or electronic transmission shall be binding on Applicant and shall for all purposes be considered original documents. The above-signed understands that making
+            false
+            statements or material omissions intended to conceal pertinent facts may be a financial crime requiring referral to the appropriate law enforcement officials. The above-signed further agree to notify Bank immediately of any change in
+            name,
+            address, or any material change in (a) any information contained in the Application. (b) the financial condition of any of the above-signed, or (c) the ability of any of the above-signed to perform their obligations to the Bank.</p>
+
+          <h4>CUSTOMER IDENTIFICATION PROGRAM</h4>
+
+          <p>In accordance with Section 326 of the USA PATRIOT Act, Terrabank, N.A has developed a Customer Identification Program which is intended to facilitate the prevention, detection and prosecution of international money laundering and the
+            financing
+            of terrorism. Section 326 of the Act requires financial institutions to set forth minimum standards that relate to the identification and verification of any person who applies for an account Under this Act a person is defined as any
+            individual,
+            corporation, partnership, trust, estate, association, syndicate and unincorporated organization or group.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="setAgreeDisclaimer();">I Agree</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <script>
+    var librariesUrl = 'libraries/';
+  </script>
+  <script src="libraries/require.config.js"></script>
+  <script data-main="loan-request" src="libraries/require/require.js"></script>
+</body>
+
+</html>

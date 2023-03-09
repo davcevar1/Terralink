@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Loan request - Owner information</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../themes/mainstreet.css" />
+    <style>
+        #ownerships,
+        #pager {
+            display: none;
+        }
+
+        .wf-additional #ownerships,
+        .wf-additional #pager {
+            display: block;
+        }
+    </style>
+
+    <script src="../libraries/jquery/dist/jquery.min.js"></script>
+    <script src="../libraries/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        var setAdditional = function(e) {
+                if ($('#chkAdditional').prop('checked')) {
+                    $('body').addClass('wf-additional');
+                } else {
+                    $('body').removeClass('wf-additional');
+                }
+            },
+            residenceType = function(e, selector) {
+                if ($('[name="'+e.target.name+'"]:checked').val()=='yes') {
+                    $(selector).removeClass('hidden');
+                }else{
+                    $(selector).addClass('hidden');
+                }
+            };
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div class="container" style="max-width:550px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="wf-flex wf-steps">
+                            <a href="loan-request-business.html" class="wf-grow">
+                                Business
+                            </a>
+                            <div class="wf-grow wf-active">
+                                Owner
+                            </div>
+                            <div class="wf-grow">
+                                Other info
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body" style="padding:30px;">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">First Name</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="control-label">Middle Name</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Last Name</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Social Security #</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Phone</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="control-label">Date of Birth</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group wf-required">
+                            <div class="control-label">Residential Street Address</div>
+                            <div class="wf-control">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">City</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">State</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="control-label">Zip Code</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Ownership/Since(Year)</div>
+                                    <div class="wf-control">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" />
+                                                    <span class="input-group-addon">%</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="number" placeholder="Year" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Experience in Same Industry</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">Years</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Gross Annual Income</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Cash &amp; Savings</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Total Personal Liabilities</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Total Personal Assets</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                        <div class="text-muted small">Excluding business</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Residence Type</div>
+                                    <div class="form-inline">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="owner-home" value="no" required /> Own
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="owner-home" value="yes" /> Rent
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="owner" class="form-group">
+                                    <div class="control-label">Monthly Payment</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group wf-required">
+							<fieldset style="margin-top:20px;">
+                                <legend style="margin-bottom:5px;">Bank Accounts</legend>
+                                <div class="form-group">
+                                    <a href="#account" data-toggle="modal" class="btn btn-default"><span class="fa fa-plus"></span> Add bank account</a>
+                                </div>
+                                <ul class="list-group">
+                                    <div class="list-group-item" data-toggle="modal">
+                                        <div class="wf-flex">
+                                            <div class="wf-grow">
+                                                <div>$30,000.00</div>
+                                                <div class="small text-muted">#1234567890 (Bank of America)</div>
+                                            </div>
+                                            <div class="wf-menu">
+                                                <div class="dropdown">
+                                                    <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a href="#account" data-toggle="modal">Edit</a></li>
+                                                        <li><a href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </fieldset>
+						</div>
+                        <hr />
+                        <div class="form-group wf-required">
+                            <div class="control-label">Are there additional owners who have more than 10% ownership?</div>
+                            <div class="form-inline">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="judgements" value="no" required onclick="setAdditional(event)" /> No
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" id="chkAdditional" name="judgements" value="yes" onclick="setAdditional(event)" /> Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ownerships" class="form-group wf-required">
+                            <fieldset style="margin-top:20px;">
+                                <legend style="margin-bottom:5px;">Additional owner(s)</legend>
+                                <div class="form-group">
+                                    <a href="#additional" data-toggle="modal" class="btn btn-default"><span class="fa fa-plus"></span> Add additional owner</a>
+                                </div>
+                                <ul class="list-group">
+                                    <div class="list-group-item" data-toggle="modal">
+                                        <div class="wf-flex">
+                                            <div class="wf-grow">
+                                                <div>Jeniffer Johnson</div>
+                                                <div class="small text-muted">123-45-1235</div>
+                                            </div>
+                                            <div class="wf-menu">
+                                                <div class="dropdown">
+                                                    <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a href="#additional" data-toggle="modal">Edit</a></li>
+                                                        <li><a href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </fieldset>
+                        </div>
+                        <hr />
+                        <div class="form-group wf-required">
+                            <fieldset style="margin-top:20px;">
+                                <legend style="margin-bottom:5px;">Guarantor(s)</legend>
+                                <div class="form-group">
+                                    <a href="#additional" data-toggle="modal" class="btn btn-default"><span class="fa fa-plus"></span> Add guarantor</a>
+                                </div>
+                                <ul class="list-group">
+                                    <div class="list-group-item" data-toggle="modal">
+                                        <div class="wf-flex">
+                                            <div class="wf-grow">
+                                                <div>Peter Jackson</div>
+                                                <div class="small text-muted">123-45-1235</div>
+                                            </div>
+                                            <div class="wf-menu">
+                                                <div class="dropdown">
+                                                    <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a href="#additional" data-toggle="modal">Edit</a></li>
+                                                        <li><a href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </fieldset>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label class="control-label">Do any of the following apply to any owner/guarantor?</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" /> Currently involved with any legal claims
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" onclick="bankruptcyDate(event);" /> Declared bankruptcy
+                                </label>
+                            </div>
+                            <div class="form-group hidden" id="bankruptcy-date">
+                                <input type="date" class="form-control" style="width:155px;" />
+                                <div class="small text-muted">Date of your bankruptcy</div>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" />Is an executive officer, director or principal shareholder of a financial institution
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" /> Convicted of a felony
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" onclick="contingentlyLiableAmount(event);" /> Contingently liable as a guarantor for other business debt
+                                </label>
+                            </div>
+                            <div class="form-group hidden" id="contingently-liable-amount">
+                                <div class="input-group" style="width:200px;">
+                                    <input type="number" class="form-control" />
+                                    <span class="input-group-addon">USD</span>
+                                </div>
+                                <div class="small text-muted">Amount</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer wf-actions">
+                        <a href="loan-request-financial.html" class="btn btn-primary">Continue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Loan request - Owner information</div>
+        </div>
+    </div>
+
+    <div id="additional" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" style="max-width:521px;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Additional owner</h4>
+                </div>
+                <div class="modal-body" style="padding:30px;">
+                    <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">First Name</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="control-label">Middle Name</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Last Name</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Social Security #</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Phone</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="control-label">Date of Birth</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group wf-required">
+                            <div class="control-label">Residential Street Address</div>
+                            <div class="wf-control">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">City</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">State</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="control-label">Zip Code</div>
+                                    <div class="wf-control">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Ownership/Since(Year)</div>
+                                    <div class="wf-control">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" />
+                                                    <span class="input-group-addon">%</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="number" placeholder="Year" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Experience in Same Industry</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">Years</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Gross Annual Income</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Cash &amp; Savings</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Total Personal Liabilities</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="control-label">Total Personal Assets</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                        <div class="text-muted small">Excluding business</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group wf-required">
+                                    <div class="control-label">Residence Type</div>
+                                    <div class="form-inline">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="owner-home" value="no" required /> Own
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="owner-home" value="yes" /> Rent
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="owner" class="form-group">
+                                    <div class="control-label">Monthly Payment</div>
+                                    <div class="wf-control">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-addon">USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group wf-required">
+							<fieldset style="margin-top:20px;">
+                                <legend style="margin-bottom:5px;">Bank Accounts</legend>
+                                <div class="form-group">
+                                    <a href="#account" data-toggle="modal" class="btn btn-default"><span class="fa fa-plus"></span> Add bank account</a>
+                                </div>
+                                <ul class="list-group">
+                                    <div class="list-group-item" data-toggle="modal">
+                                        <div class="wf-flex">
+                                            <div class="wf-grow">
+                                                <div>$30,000.00</div>
+                                                <div class="small text-muted">#1234567890 (Bank of America)</div>
+                                            </div>
+                                            <div class="wf-menu">
+                                                <div class="dropdown">
+                                                    <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a href="#account" data-toggle="modal">Edit</a></li>
+                                                        <li><a href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </fieldset>
+						</div>
+                        <hr />
+                        <div class="form-group">
+                            <label class="control-label">Do any of the following apply to owner/guarantor?</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" /> Currently involved with any legal claims
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" onclick="bankruptcyDate(event);" /> Declared bankruptcy
+                                </label>
+                            </div>
+                            <div class="form-group hidden" id="bankruptcy-date">
+                                <input type="date" class="form-control" style="width:155px;" />
+                                <div class="small text-muted">Date of your bankruptcy</div>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" />Is an executive officer, director or principal shareholder of a financial institution
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" /> Convicted of a felony
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="yes" onclick="contingentlyLiableAmount(event);" /> Contingently liable as a guarantor for other business debt
+                                </label>
+                            </div>
+                            <div class="form-group hidden" id="contingently-liable-amount">
+                                <div class="input-group" style="width:200px;">
+                                    <input type="number" class="form-control" />
+                                    <span class="input-group-addon">USD</span>
+                                </div>
+                                <div class="small text-muted">Amount</div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</body>
+
+</html>

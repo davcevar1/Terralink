@@ -1,0 +1,2689 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Terralink</title>
+
+  <!-- To disable compatibility mode in Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Mobile tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="themes/mainstreet.css" />
+  <style>
+    body {
+      background-color: #f8f8f8;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    .btn.btn-link {
+      color: #990000;
+    }
+
+    tspan {
+      font-family: sans-serif;
+    }
+
+    .btn.btn-default,
+    .btn.btn-default:hover,
+    .btn.btn-default:focus,
+    .btn.btn-default:active {
+      border-color: #990000;
+      color: #990000;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-primary:hover,
+    .btn.btn-primary:focus,
+    .btn.btn-primary:active {
+      background-color: #990000;
+      border-color: #990000;
+      color: #FFF;
+    }
+
+    #navigation>.wf-content .wf-inbox,
+    #navigation>.wf-content .wf-navigation-wrapper {
+      background-color: #565656;
+    }
+
+    #navigation>.wf-content .list-group>.list-group-heading {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus,
+    .dropdown-menu>li>a:active,
+    .list-group a.list-group-item:hover,
+    .list-group a.list-group-item:focus,
+    .list-group a.list-group-item.active,
+    #navigation>.wf-content>.list-group a:hover,
+    #navigation>.wf-content .btn-link:hover {
+      background-color: #990000;
+      color: #FFF;
+    }
+
+    .wf-page-header,
+    #navigation>.wf-content .list-group>.wf-logo {
+      background-color: #990000;
+    }
+
+    .wf-title,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #990000;
+    }
+
+    .wf-page-header>.wf-logo {
+      background-image: url(/image/layout_set_logo?img_id=228611&amp;t=1498671767449);
+    }
+
+    .wf-steps-2>li {
+      background: #f5f5f5;
+      border: 1px solid #CCC;
+      color: #CCC;
+    }
+
+    .wf-steps-2>li::before {
+      background: #f5f5f5;
+    }
+
+    .wf-steps-2>li.active {
+      background: #FFF;
+      border-color: #990000;
+      color: #990000;
+    }
+
+    .wf-steps-2>li.active::before {
+      background: #FFF;
+      border-color: #990000;
+    }
+  </style>
+  <style>
+    .btn {
+      border-width: 2px;
+      border-radius: 100px;
+    }
+
+    .wf-viewport {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      position: fixed;
+      overflow: auto;
+    }
+
+    #diagram {
+      transition: transform .8s;
+      transform: translateX(-100%);
+      background: #FFF;
+      border-right: 1px solid #CCC;
+    }
+
+    .wf-btn-diagram,
+    .wf-diagram-message {
+      transition: transform .6s;
+    }
+
+    .wf-diagram-opened #diagram {
+      transform: translateX(0);
+    }
+
+    .wf-diagram-opened .wf-btn-diagram,
+    .wf-diagram-opened .wf-diagram-message {
+      transform: translateX(-150%);
+    }
+
+    .wf-started .wf-diagram-message {
+      display: none;
+    }
+
+    #diagram:not(.wf-maximize)>div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #diagram:not(.wf-maximize) svg {
+      flex: 1;
+    }
+
+    #diagram:not(.wf-maximize) #minimize {
+      display: none;
+    }
+
+    #diagram.wf-maximize svg {
+      width: 4208px;
+    }
+
+    #diagram.wf-maximize #maximize {
+      display: none;
+    }
+
+    #diagram #close {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 0;
+    }
+
+    #diagram #maximize,
+    #diagram #minimize {
+      position: fixed;
+      right: 84px;
+      top: 15px;
+      padding: 11px 14px;
+    }
+
+    #workflow>svg {
+      height: 100vh;
+    }
+
+    #workflow>svg use+g {
+      pointer-events: none;
+    }
+
+    .link {
+      cursor: pointer;
+    }
+  </style>
+
+  <script src="libraries/jquery/dist/jquery.min.js"></script>
+  <script src="libraries/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="libraries/misc/SvgZoom.js"></script>
+  <script>
+    $(function() {
+      var load = function(url) {
+        $('body').removeClass('wf-diagram-opened').addClass('wf-started');
+        setTimeout(function() {
+          $('#viewer')[0].src = url;
+        }, 400);
+      };
+      var svgZoom = new SvgZoom('#workflow > svg', {
+        mouseWheel: true,
+        zoomSpeed: 0.065,
+        maxZoom: Number.POSITIVE_INFINITY,
+        minZoom: 0.5,
+        initZoom: 1,
+        center: true,
+        viewClass: 'svgzoom-view',
+        zoomSelector: '',
+        dragCursorStyle: 'move',
+        onZoomed: $.noop
+      });
+      var path = location.host == 'localhost:8080' ? '/cobis-ui/views/' : '/cobiscorp/cobis-ui/views/';
+      $('#open').on('click', function(e) {
+        $('body').addClass('wf-diagram-opened');
+      });
+      $('#close').on('click', function(e) {
+        $('body').removeClass('wf-diagram-opened');
+      });
+      $('#maximize').on('click', function(e) {
+        $('#diagram').addClass('wf-maximize');
+      });
+      $('#minimize').on('click', function(e) {
+        $('#diagram').removeClass('wf-maximize');
+      });
+
+      // New Account Request
+      $(`
+        #5b877d70-f417-41b1-b113-adaaf777ec9c
+      `).on('click', function(e) {
+        load('terralink-request.html');
+      });
+
+      //Account Request from Loan
+      $(`
+        #c8ae29dd-d907-44af-aabb-fa5f50509d9e
+      `).on('click', function(e) {
+        load('terralink-from-loan.html');
+      });
+
+      //Has Account YES
+      $(`
+        #b602b820-c0e7-4c60-b910-c58e9e6dab43
+      `).on('click', function(e) {
+        load('terralink-from-loan.html?hasAccount=yes');
+      });
+
+      //Has Account NO
+      $(`
+        #4340354e-6fa3-4820-8112-e845b1c1da61
+      `).on('click', function(e) {
+        load('terralink-from-loan.html?hasAccount=no');
+      });
+
+      // Validar cuenta
+      $(`
+        #ecd88b40-953d-4c71-b395-d62b1e1f753a
+      `).on('click', function(e) {
+        load(path + 'originacion/account-exists.html?hasOLB=yes&tabs=account');
+      });
+
+      //Carga y firma de documentos BOL
+      $(`
+        #56d16a04-9d53-493a-b2d9-067311775873
+      `).on('click', function(e) {
+        load('terralink-documents-online-banking.html');
+      });
+
+      // Validación informacion BOL
+      $(`
+        #44469ad5-6654-467a-a139-750d4a659b97
+      `).on('click', function(e) {
+        load(path + 'originacion/account-exists.html?hasOLB=yes&disabledOLB=true&active=documents');
+      });
+
+      //Confirmation existing account
+      $(`
+        #6ce384eb-fd9a-484f-86f8-bddd64bf399f
+      `).on('click', function(e) {
+        load('terralink-documents-confirm.html');
+      });
+
+      //Retry ofac
+      $(`
+        #4b1bcd92-1112-4932-9e27-446d1f51ec19
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?error=ofac&active=indicators&indicators=ofac&actions=1&tabs=indicators,business,signers');
+      });
+
+      //Manual ofac
+      $(`
+        #e9a363be-f795-438e-a58e-a5fd5981cc07
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=indicators&indicators=ofac&actions=2&tabs=indicators,business,signers');
+      });
+
+      //Central ofac
+      $(`
+        #2b24862d-1280-44e4-b5e8-42220d7af8dc
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?central=true&active=central&indicators=ofac&actions=3&tabs=indicators,business,signers');
+      });
+
+      //Retry lexis nexis
+      $(`
+        #7147f473-ef9b-4722-aef9-4b7521524323
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?error=lexisnexis&active=indicators&indicators=ofac,lexisnexis&actions=1&tabs=indicators,business,signers');
+      });
+
+      //Manual lexis nexis
+      $(`
+        #60bdcfad-f3e3-43aa-bb49-f57a3cef80f5
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=indicators&indicators=ofac,lexisnexis&actions=2&tabs=indicators,business,signers');
+      });
+
+      //Central lexis nexis
+      $(`
+        #2296c1b9-5803-497b-a6cd-b05b7e8ed29e
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?central=true&active=central&indicators=ofac,lexisnexis&actions=3&tabs=indicators,business,signers');
+      });
+
+      //Retry ChexSystems
+      $(`
+        #6ef059f5-294a-4081-be78-d82e8a1555e2
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?error=chexsystems&active=indicators&indicators=ofac,lexisnexis,chexsystems&actions=1&tabs=indicators,business,signers');
+      });
+
+      //Manual ChexSystems
+      $(`
+        #9cf7df86-43a2-4248-8777-5cfdc45b3d5f
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=indicators&indicators=ofac,lexisnexis,chexsystems&actions=2&tabs=indicators,business,signers');
+      });
+
+      //Central ChexSystems
+      $(`
+        #ddbd59ad-8790-43dc-9f87-aa0678a23cee
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?central=true&active=central&indicators=ofac,lexisnexis,chexsystems&actions=3&tabs=indicators,business,signers');
+      });
+
+      //Retry BizChex
+      $(`
+        #f8e0677b-ecd1-4b45-b361-ce69a5937af9
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?error=bizchex&active=indicators&indicators=ofac,lexisnexis,chexsystems,bizchex&actions=1&tabs=indicators,business,signers');
+      });
+
+      //Manual BizChex
+      $(`
+        #efb61b6a-192e-4b24-91fa-61f58bda7da2
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=indicators&indicators=ofac,lexisnexis,chexsystems,bizchex&actions=2&tabs=indicators,business,signers');
+      });
+
+      //Central BizChex
+      $(`
+        #51866b53-43ba-427a-8db8-92608ae76efc
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?central=true&active=central&indicators=ofac,lexisnexis,chexsystems,bizchex&actions=3&tabs=indicators,business,signers');
+      });
+
+      //Retry DecisionLogic
+      $(`
+        #e2f9b8dc-ae53-4bdf-8169-2fb7973f7041
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?error=decisionlogic&active=indicators&indicators=ofac,lexisnexis,chexsystems,bizchex,decisionlogic&actions=1&tabs=indicators,business,signers');
+      });
+
+      //Manual DecisionLogic
+      $(`
+        #4c49eaf8-bfc4-4c18-bdc4-a5b41a5e22f5
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=indicators&indicators=ofac,lexisnexis,chexsystems,bizchex,decisionlogic&actions=2&tabs=indicators,business,signers');
+      });
+
+      //Central DecisionLogic
+      $(`
+        #7aa31a62-5b9f-4f4c-b588-7a9882f3c2c6
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?central=true&active=central&indicators=ofac,lexisnexis,chexsystems,bizchex,decisionlogic&actions=3&tabs=indicators,business,signers');
+      });
+
+      // Carga de Documentos
+      $(`
+        #b39890ae-d6eb-442f-ad9e-d336b3a546bd
+      `).on('click', function(e) {
+        load('terralink-documents.html');
+      });
+
+      // Estación central documentos
+      $(`
+        #ad65dac6-adda-436b-9ed2-00374621ba47
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?central=true&active=central&actions=3&tabs=indicators,business,signers,documents');
+      });
+
+      //Manual Global Validation
+      $(`
+        #5258d42b-a361-461c-8c91-c5f19132fde4
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=documents&actions=5&tabs=account-new,indicators,business,signers,documents');
+      });
+
+      // Registro de rechazo automático
+      $(`
+        #db217c94-d58c-4f57-aab9-25c06e393358
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=indicators&actions=3&tabs=indicators,business,signers,documents&status=Rejected');
+      });
+
+      // Revisar paquete de la aplicación
+      $(`
+        #f947cb00-fbca-4233-960f-ba761974a8b9
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=documents&adddocuments=true&actions=5&tabs=account-new,indicators,business,signers,documents&documentStatus=A');
+      });
+
+      // Revisar application management
+      $(`
+        #4d479845-6845-4253-8402-6a32dbcfd9a1
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=documents&adddocuments=true&actions=5&tabs=account-new,indicators,business,signers,documents&documentStatus=A');
+      });
+
+      // Revisar application BSA
+      $(`
+        #62200084-1aa1-45c5-8fb8-8dc06435b174
+      `).on('click', function(e) {
+        load(path + 'originacion/account-from-loan.html?active=documents&adddocuments=true&actions=5&tabs=account-new,indicators,business,signers,documents&documentStatus=A');
+      });
+
+      //Email request denied
+      $(
+        `
+        #747103cb-9290-45d4-81bb-a50c704401c7,
+        #67e9817e-5814-407b-bd88-8ee16691878f,
+        #78b753e3-0fff-4435-8896-48de861c3180,
+        #361937cb-9193-413d-ae08-dc848368ab62,
+        #c83b14ca-4692-485b-8de0-b53bd59bf3ad,
+        #e4e85e39-2da2-4ce5-a9a1-9c8258a506b4,
+        #ac59db27-fdcd-4a76-84bd-9270e88b378d,
+        #48e0350b-93f8-45c7-8913-bac6c291cded
+      `
+      ).on('click', function(e) {
+        load('terralink-email-declined.html');
+      });
+
+      //Email request approved
+      $(`
+        #df3ac711-edff-4081-bd5a-7750b55b8be0
+      `).on('click', function(e) {
+        load('terralink-email-approved.html');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wf-viewport">
+    <iframe id="viewer" style="width:100%; height: 100%; border: 0; display: block;"></iframe>
+  </div>
+  <div id="diagram" class="wf-viewport">
+    <div id="workflow" class="wf-viewport">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 9800 2723">
+  <defs id="defs669">
+    <path id="4327f2a7-c495-4f30-85cc-1c5cb80d5f5aHeaderPath" fill-rule="evenodd" d="M26 2588.8h2556.8v50H26z"/>
+    <clipPath id="03fa00ae-50cd-4967-be23-7944a6265589HeaderClipPath">
+      <use id="use5" xlink:href="#4327f2a7-c495-4f30-85cc-1c5cb80d5f5aHeaderPath"/>
+    </clipPath>
+    <path id="4b5b15b3-80f2-47ab-b3cb-ae4de1674a7dHeaderPath" fill-rule="evenodd" d="M76 338h306v30H76z"/>
+    <clipPath id="3d60ecf1-51b0-44f6-95bb-6f8c8850881cHeaderClipPath">
+      <use id="use9" xlink:href="#4b5b15b3-80f2-47ab-b3cb-ae4de1674a7dHeaderPath"/>
+    </clipPath>
+    <path id="1f565b2f-0aad-4656-9041-427cf8e31b9cHeaderPath" fill-rule="evenodd" d="M76 583.2h245.2v30H76z"/>
+    <clipPath id="312a41c6-c06c-4cae-9bad-5453ff6c6e4cHeaderClipPath">
+      <use id="use13" xlink:href="#1f565b2f-0aad-4656-9041-427cf8e31b9cHeaderPath"/>
+    </clipPath>
+    <path id="0cf7ec44-5163-417c-b621-f8bc68061a66HeaderPath" fill-rule="evenodd" d="M76 1195.7h612.5v30H76z"/>
+    <clipPath id="e9c4b03f-7760-497e-a7cd-09423481ff18HeaderClipPath">
+      <use id="use17" xlink:href="#0cf7ec44-5163-417c-b621-f8bc68061a66HeaderPath"/>
+    </clipPath>
+    <path id="f7448c24-5639-415f-a3c7-076a149976aeHeaderPath" fill-rule="evenodd" d="M76 1532.3h336.6v30H76z"/>
+    <clipPath id="dc6b1617-acec-4841-a21e-c69a5ca4e109HeaderClipPath">
+      <use id="use21" xlink:href="#f7448c24-5639-415f-a3c7-076a149976aeHeaderPath"/>
+    </clipPath>
+    <path id="b04e47f7-fae7-4013-a3df-c3f93530b163HeaderPath" fill-rule="evenodd" d="M76 1884.7h352.4v30H76z"/>
+    <clipPath id="bf613768-6da1-4777-907a-785a8d5bb57eHeaderClipPath">
+      <use id="use25" xlink:href="#b04e47f7-fae7-4013-a3df-c3f93530b163HeaderPath"/>
+    </clipPath>
+    <path id="bc10c242-8420-4c38-b56d-edfc5c236011HeaderPath" fill-rule="evenodd" d="M76 2157.5h272.8v30H76z"/>
+    <clipPath id="43e63792-d501-4e60-a3fe-60d95f475bf1HeaderClipPath">
+      <use id="use29" xlink:href="#bc10c242-8420-4c38-b56d-edfc5c236011HeaderPath"/>
+    </clipPath>
+    <path id="4952a4f4-413d-4de2-80fd-9eb74e4162ccHeaderPath" fill-rule="evenodd" d="M76 2389h231.5v30H76z"/>
+    <clipPath id="16f4701a-279e-412c-a8e2-3ba584cb094aHeaderClipPath">
+      <use id="use33" xlink:href="#4952a4f4-413d-4de2-80fd-9eb74e4162ccHeaderPath"/>
+    </clipPath>
+    <path id="93d498b5-a4bd-43ed-a8d8-b34708199030HeaderPath" fill-rule="evenodd" d="M76 2588.8h199.8v30H76z"/>
+    <clipPath id="448fe6e5-7a85-4915-8e8e-fc3745c3fffeHeaderClipPath">
+      <use id="use37" xlink:href="#93d498b5-a4bd-43ed-a8d8-b34708199030HeaderPath"/>
+    </clipPath>
+    <ellipse id="def19" cx="15" cy="15" rx="15" ry="15"/>
+    <clipPath id="def20">
+      <use id="use41" xlink:href="#def19"/>
+    </clipPath>
+    <path id="def21" fill-rule="evenodd" d="M7 0h113c3.87 0 7 3.13 7 7v51c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def22">
+      <use id="use45" xlink:href="#def21"/>
+    </clipPath>
+    <path id="def23" d="M0 20L20 0l20 20-20 20L0 20z"/>
+    <clipPath id="def24">
+      <use id="use49" xlink:href="#def23"/>
+    </clipPath>
+    <path id="def25" fill-rule="evenodd" d="M7 0h77c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def26">
+      <use id="use53" xlink:href="#def25"/>
+    </clipPath>
+    <clipPath id="def27">
+      <use id="use56" xlink:href="#def23"/>
+    </clipPath>
+    <path id="def28" fill-rule="evenodd" d="M7 0h76c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def29">
+      <use id="use60" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def30">
+      <use id="use63" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def31">
+      <use id="use66" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def32" fill-rule="evenodd" d="M7 0h101c3.87 0 7 3.13 7 7v56c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def33">
+      <use id="use70" xlink:href="#def32"/>
+    </clipPath>
+    <clipPath id="def34">
+      <use id="use73" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def35">
+      <use id="use76" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def36" fill-rule="evenodd" d="M7 0h117c3.87 0 7 3.13 7 7v50c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def37">
+      <use id="use80" xlink:href="#def36"/>
+    </clipPath>
+    <path id="def38" fill-rule="evenodd" d="M7 0h133c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def39">
+      <use id="use84" xlink:href="#def38"/>
+    </clipPath>
+    <clipPath id="def40">
+      <use id="use87" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def41">
+      <use id="use90" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def42">
+      <use id="use93" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def43">
+      <use id="use96" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def44">
+      <use id="use99" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def45">
+      <use id="use102" xlink:href="#def23"/>
+    </clipPath>
+    <path id="def46" fill-rule="evenodd" d="M7 0h131c3.87 0 7 3.13 7 7v51c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def47">
+      <use id="use106" xlink:href="#def46"/>
+    </clipPath>
+    <path id="def48" fill-rule="evenodd" d="M7 0h144c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def49">
+      <use id="use110" xlink:href="#def48"/>
+    </clipPath>
+    <clipPath id="def50">
+      <use id="use113" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def51">
+      <use id="use116" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def52">
+      <use id="use119" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def53">
+      <use id="use122" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def54">
+      <use id="use125" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def55">
+      <use id="use128" xlink:href="#def23"/>
+    </clipPath>
+    <path id="def56" fill-rule="evenodd" d="M7 0h120c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def57">
+      <use id="use132" xlink:href="#def56"/>
+    </clipPath>
+    <path id="def58" fill-rule="evenodd" d="M7 0h114c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def59">
+      <use id="use136" xlink:href="#def58"/>
+    </clipPath>
+    <clipPath id="def60">
+      <use id="use139" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def61">
+      <use id="use142" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def62">
+      <use id="use145" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def63">
+      <use id="use148" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def64">
+      <use id="use151" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def65">
+      <use id="use154" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def66">
+      <use id="use157" xlink:href="#def58"/>
+    </clipPath>
+    <clipPath id="def67">
+      <use id="use160" xlink:href="#def23"/>
+    </clipPath>
+    <path id="def68" fill-rule="evenodd" d="M7 0h82c3.87 0 7 3.13 7 7v53c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def69">
+      <use id="use164" xlink:href="#def68"/>
+    </clipPath>
+    <clipPath id="def70">
+      <use id="use167" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def71">
+      <use id="use170" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def72">
+      <use id="use173" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def73" fill-rule="evenodd" d="M7 0h146c3.87 0 7 3.13 7 7v54c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def74">
+      <use id="use177" xlink:href="#def73"/>
+    </clipPath>
+    <clipPath id="def75">
+      <use id="use180" xlink:href="#def23"/>
+    </clipPath>
+    <path id="def76" d="M0 30L30 0l30 30-30 30L0 30z"/>
+    <clipPath id="def77">
+      <use id="use184" xlink:href="#def76"/>
+    </clipPath>
+    <path id="def78" fill-rule="evenodd" d="M7 0h121c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def79">
+      <use id="use188" xlink:href="#def78"/>
+    </clipPath>
+    <clipPath id="def80">
+      <use id="use191" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def81">
+      <use id="use194" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def82">
+      <use id="use197" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def83">
+      <use id="use200" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def84">
+      <use id="use203" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def85" fill-rule="evenodd" d="M7 0h108c3.87 0 7 3.13 7 7v47c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def86">
+      <use id="use207" xlink:href="#def85"/>
+    </clipPath>
+    <clipPath id="def87">
+      <use id="use210" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def88" fill-rule="evenodd" d="M7 0h120c3.87 0 7 3.13 7 7v57c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def89">
+      <use id="use214" xlink:href="#def88"/>
+    </clipPath>
+    <clipPath id="def90">
+      <use id="use217" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def91">
+      <use id="use220" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def92" fill-rule="evenodd" d="M7 0h104c3.87 0 7 3.13 7 7v51c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def93">
+      <use id="use224" xlink:href="#def92"/>
+    </clipPath>
+    <clipPath id="def94">
+      <use id="use227" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def95">
+      <use id="use230" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def96">
+      <use id="use233" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def97">
+      <use id="use236" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def98">
+      <use id="use239" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def99">
+      <use id="use242" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def100" fill-rule="evenodd" d="M7 0h86c3.87 0 7 3.13 7 7v53c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def101">
+      <use id="use246" xlink:href="#def100"/>
+    </clipPath>
+    <clipPath id="def102">
+      <use id="use249" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def103">
+      <use id="use252" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def104">
+      <use id="use255" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def105">
+      <use id="use258" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def106">
+      <use id="use261" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def107">
+      <use id="use264" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def108">
+      <use id="use267" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def109">
+      <use id="use270" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def110">
+      <use id="use273" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def111">
+      <use id="use276" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def112">
+      <use id="use279" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def113">
+      <use id="use282" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def114">
+      <use id="use285" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def115">
+      <use id="use288" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def116">
+      <use id="use291" xlink:href="#def19"/>
+    </clipPath>
+    <path id="def117" fill-rule="evenodd" d="M7 0h116c3.87 0 7 3.13 7 7v42c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def118">
+      <use id="use295" xlink:href="#def117"/>
+    </clipPath>
+    <path id="def119" fill-rule="evenodd" d="M7 0h104c3.87 0 7 3.13 7 7v114c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def120">
+      <use id="use299" xlink:href="#def119"/>
+    </clipPath>
+    <path id="def121" fill-rule="evenodd" d="M7 0h101c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def122">
+      <use id="use303" xlink:href="#def121"/>
+    </clipPath>
+    <clipPath id="def123">
+      <use id="use306" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def124">
+      <use id="use309" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def125">
+      <use id="use312" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def126">
+      <use id="use315" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def127">
+      <use id="use318" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def128">
+      <use id="use321" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def129">
+      <use id="use324" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def130">
+      <use id="use327" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def131" fill-rule="evenodd" d="M7 0h98c3.87 0 7 3.13 7 7v68c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def132">
+      <use id="use331" xlink:href="#def131"/>
+    </clipPath>
+    <path id="def133" fill-rule="evenodd" d="M7 0h101c3.87 0 7 3.13 7 7v52c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def134">
+      <use id="use335" xlink:href="#def133"/>
+    </clipPath>
+    <clipPath id="def135">
+      <use id="use338" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def136">
+      <use id="use341" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def137">
+      <use id="use344" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def138">
+      <use id="use347" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def139">
+      <use id="use350" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def140">
+      <use id="use353" xlink:href="#def36"/>
+    </clipPath>
+    <clipPath id="def141">
+      <use id="use356" xlink:href="#def92"/>
+    </clipPath>
+    <clipPath id="def142">
+      <use id="use359" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def143">
+      <use id="use362" xlink:href="#def32"/>
+    </clipPath>
+    <clipPath id="def144">
+      <use id="use365" xlink:href="#def48"/>
+    </clipPath>
+    <clipPath id="def145">
+      <use id="use368" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def146">
+      <use id="use371" xlink:href="#def19"/>
+    </clipPath>
+    <clipPath id="def147">
+      <use id="use374" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def148">
+      <use id="use377" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def149">
+      <use id="use380" xlink:href="#def28"/>
+    </clipPath>
+    <path id="def150" fill-rule="evenodd" d="M7 0h124c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def151">
+      <use id="use384" xlink:href="#def150"/>
+    </clipPath>
+    <clipPath id="def152">
+      <use id="use387" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def153">
+      <use id="use390" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def154">
+      <use id="use393" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def155">
+      <use id="use396" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def156">
+      <use id="use399" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def157">
+      <use id="use402" xlink:href="#def28"/>
+    </clipPath>
+    <clipPath id="def158">
+      <use id="use405" xlink:href="#def19"/>
+    </clipPath>
+    <path id="def159" fill-rule="evenodd" d="M7 0h107c3.87 0 7 3.13 7 7v64c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def160">
+      <use id="use409" xlink:href="#def159"/>
+    </clipPath>
+    <path id="def161" fill-rule="evenodd" d="M7 0h123c3.87 0 7 3.13 7 7v46c0 3.87-3.13 7-7 7H7c-3.87 0-7-3.13-7-7V7c0-3.87 3.13-7 7-7z"/>
+    <clipPath id="def162">
+      <use id="use413" xlink:href="#def161"/>
+    </clipPath>
+    <clipPath id="def163">
+      <use id="use416" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def164">
+      <use id="use419" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def165">
+      <use id="use422" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def166">
+      <use id="use425" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def167">
+      <use id="use428" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def168">
+      <use id="use431" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def169">
+      <use id="use434" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def170">
+      <use id="use437" xlink:href="#def23"/>
+    </clipPath>
+    <clipPath id="def171">
+      <use id="use440" xlink:href="#def28"/>
+    </clipPath>
+    <marker id="defMarkerShadow" fill-opacity=".1" markerHeight="8" markerWidth="10" orient="auto" refX="10" refY="4">
+      <path id="path443" fill-rule="evenodd" d="M9 4L1 9l2-5-2-5z"/>
+    </marker>
+    <marker id="defMarker" markerHeight="8" markerWidth="10" orient="auto" refX="10" refY="4">
+      <path id="path446" fill-rule="evenodd" d="M9 4L1 9l2-5-2-5z"/>
+    </marker>
+    <path id="def174" d="M0 0h50v30H0z"/>
+    <clipPath id="def175">
+      <use id="use450" xlink:href="#def174"/>
+    </clipPath>
+    <path id="def176" d="M0 0h78v45H0z"/>
+    <clipPath id="def177">
+      <use id="use454" xlink:href="#def176"/>
+    </clipPath>
+    <path id="def178" d="M0 0h85v45H0z"/>
+    <clipPath id="def179">
+      <use id="use458" xlink:href="#def178"/>
+    </clipPath>
+    <clipPath id="def180">
+      <use id="use461" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def181">
+      <use id="use464" xlink:href="#def174"/>
+    </clipPath>
+    <path id="def182" d="M0 0h74v30H0z"/>
+    <clipPath id="def183">
+      <use id="use468" xlink:href="#def182"/>
+    </clipPath>
+    <path id="def184" d="M0 0h99v45H0z"/>
+    <clipPath id="def185">
+      <use id="use472" xlink:href="#def184"/>
+    </clipPath>
+    <clipPath id="def186">
+      <use id="use475" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def187">
+      <use id="use478" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def188">
+      <use id="use481" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def189">
+      <use id="use484" xlink:href="#def178"/>
+    </clipPath>
+    <clipPath id="def190">
+      <use id="use487" xlink:href="#def178"/>
+    </clipPath>
+    <clipPath id="def191">
+      <use id="use490" xlink:href="#def178"/>
+    </clipPath>
+    <path id="def192" d="M0 0h118v44H0z"/>
+    <clipPath id="def193">
+      <use id="use494" xlink:href="#def192"/>
+    </clipPath>
+    <clipPath id="def194">
+      <use id="use497" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def195">
+      <use id="use500" xlink:href="#def176"/>
+    </clipPath>
+    <path id="def196" d="M0 0h79v30H0z"/>
+    <clipPath id="def197">
+      <use id="use504" xlink:href="#def196"/>
+    </clipPath>
+    <clipPath id="def198">
+      <use id="use507" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def199">
+      <use id="use510" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def200">
+      <use id="use513" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def201">
+      <use id="use516" xlink:href="#def176"/>
+    </clipPath>
+    <clipPath id="def202">
+      <use id="use519" xlink:href="#def196"/>
+    </clipPath>
+    <clipPath id="def203">
+      <use id="use522" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def204">
+      <use id="use525" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def205">
+      <use id="use528" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def206">
+      <use id="use531" xlink:href="#def176"/>
+    </clipPath>
+    <clipPath id="def207">
+      <use id="use534" xlink:href="#def196"/>
+    </clipPath>
+    <clipPath id="def208">
+      <use id="use537" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def209">
+      <use id="use540" xlink:href="#def174"/>
+    </clipPath>
+    <path id="def210" d="M0 0h60v30H0z"/>
+    <clipPath id="def211">
+      <use id="use544" xlink:href="#def210"/>
+    </clipPath>
+    <clipPath id="def212">
+      <use id="use547" xlink:href="#def176"/>
+    </clipPath>
+    <clipPath id="def213">
+      <use id="use550" xlink:href="#def196"/>
+    </clipPath>
+    <clipPath id="def214">
+      <use id="use553" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def215">
+      <use id="use556" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def216">
+      <use id="use559" xlink:href="#def182"/>
+    </clipPath>
+    <clipPath id="def217">
+      <use id="use562" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def218">
+      <use id="use565" xlink:href="#def174"/>
+    </clipPath>
+    <clipPath id="def219">
+      <use id="use568" xlink:href="#def174"/>
+    </clipPath>
+    <path id="def220" d="M0 0h70v30H0z"/>
+    <clipPath id="def221">
+      <use id="use572" xlink:href="#def220"/>
+    </clipPath>
+    <path id="def222" d="M0 0h95v59H0z"/>
+    <clipPath id="def223">
+      <use id="use576" xlink:href="#def222"/>
+    </clipPath>
+    <path id="def224" d="M0 0h120v59H0z"/>
+    <clipPath id="def225">
+      <use id="use580" xlink:href="#def224"/>
+    </clipPath>
+    <path id="def226" d="M0 0h127v59H0z"/>
+    <clipPath id="def227">
+      <use id="use584" xlink:href="#def226"/>
+    </clipPath>
+    <path id="def228" d="M0 0h114v59H0z"/>
+    <clipPath id="def229">
+      <use id="use588" xlink:href="#def228"/>
+    </clipPath>
+    <path id="def230" d="M0 0h112v59H0z"/>
+    <clipPath id="def231">
+      <use id="use592" xlink:href="#def230"/>
+    </clipPath>
+    <path id="def232" d="M0 0h82v59H0z"/>
+    <clipPath id="def233">
+      <use id="use596" xlink:href="#def232"/>
+    </clipPath>
+    <path id="def234" d="M0 0h110v59H0z"/>
+    <clipPath id="def235">
+      <use id="use600" xlink:href="#def234"/>
+    </clipPath>
+    <path id="def236" d="M0 0h63v45H0z"/>
+    <clipPath id="def237">
+      <use id="use604" xlink:href="#def236"/>
+    </clipPath>
+    <path id="def238" d="M0 0h84v59H0z"/>
+    <clipPath id="def239">
+      <use id="use608" xlink:href="#def238"/>
+    </clipPath>
+    <clipPath id="def240">
+      <use id="use611" xlink:href="#def220"/>
+    </clipPath>
+    <path id="def241" d="M0 0h90v60H0z"/>
+    <clipPath id="def242">
+      <use id="use615" xlink:href="#def241"/>
+    </clipPath>
+    <path id="def243" d="M0 0h89v59H0z"/>
+    <clipPath id="def244">
+      <use id="use619" xlink:href="#def243"/>
+    </clipPath>
+    <path id="def245" d="M0 0h89v45H0z"/>
+    <clipPath id="def246">
+      <use id="use623" xlink:href="#def245"/>
+    </clipPath>
+    <clipPath id="def247">
+      <use id="use626" xlink:href="#def220"/>
+    </clipPath>
+    <path id="def248" d="M0 0h80v59H0z"/>
+    <clipPath id="def249">
+      <use id="use630" xlink:href="#def248"/>
+    </clipPath>
+    <path id="def250" d="M0 0h98v59H0z"/>
+    <clipPath id="def251">
+      <use id="use634" xlink:href="#def250"/>
+    </clipPath>
+    <clipPath id="def252">
+      <use id="use637" xlink:href="#def220"/>
+    </clipPath>
+    <clipPath id="def253">
+      <use id="use640" xlink:href="#def243"/>
+    </clipPath>
+    <clipPath id="def254">
+      <use id="use643" xlink:href="#def222"/>
+    </clipPath>
+    <clipPath id="def255">
+      <use id="use646" xlink:href="#def220"/>
+    </clipPath>
+    <clipPath id="def256">
+      <use id="use649" xlink:href="#def243"/>
+    </clipPath>
+    <clipPath id="def257">
+      <use id="use652" xlink:href="#def250"/>
+    </clipPath>
+    <clipPath id="def258">
+      <use id="use655" xlink:href="#def220"/>
+    </clipPath>
+    <clipPath id="def259">
+      <use id="use658" xlink:href="#def248"/>
+    </clipPath>
+    <path id="def260" d="M0 0h86v30H0z"/>
+    <clipPath id="def261">
+      <use id="use662" xlink:href="#def260"/>
+    </clipPath>
+    <path id="def262" d="M0 0h69v45H0z"/>
+    <clipPath id="def263">
+      <use id="use666" xlink:href="#def262"/>
+    </clipPath>
+  </defs>
+  <g id="g679">
+    <rect id="rect671" width="9754" height="2556.8" x="26" y="32" fill="#fff" stroke="#000" rx="0" ry="0"/>
+    <path id="line673" stroke="#000" d="M76 32v2556.8"/>
+    <text id="text677" clip-path="url(#03fa00ae-50cd-4967-be23-7944a6265589HeaderClipPath)" font-family="Segoe UI" font-size="8pt" font-weight="700" transform="rotate(-90 26 2588.8)">
+      <tspan id="tspan675" x="1282.664" y="2607.842">Terralink</tspan>
+    </text>
+  </g>
+  <g id="g689">
+    <rect id="rect681" width="9704" height="306" x="76" y="32" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line683" stroke="#505050" d="M106 32v306"/>
+    <text id="text687" clip-path="url(#3d60ecf1-51b0-44f6-95bb-6f8c8850881cHeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 338)">
+      <tspan id="tspan685" x="180.47" y="388.083">Prospecto</tspan>
+    </text>
+  </g>
+  <g id="g699">
+    <rect id="rect691" width="9704" height="245.2" x="76" y="338" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line693" stroke="#505050" d="M106 338v245.2"/>
+    <text id="text697" clip-path="url(#312a41c6-c06c-4cae-9bad-5453ff6c6e4cHeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 583.2)">
+      <tspan id="tspan695" x="165.086" y="633.283">Cliente</tspan>
+    </text>
+  </g>
+  <g id="g709">
+    <rect id="rect701" width="9704" height="612.5" x="76" y="583.2" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line703" stroke="#505050" d="M106 583.2v612.5"/>
+    <text id="text707" clip-path="url(#e9c4b03f-7760-497e-a7cd-09423481ff18HeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 1195.7)">
+      <tspan id="tspan705" x="325.814" y="1245.783">MainStreet</tspan>
+    </text>
+  </g>
+  <g id="g719">
+    <rect id="rect711" width="9704" height="336.6" x="76" y="1195.7" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line713" stroke="#505050" d="M106 1195.7v336.6"/>
+    <text id="text717" clip-path="url(#dc6b1617-acec-4841-a21e-c69a5ca4e109HeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 1532.3)">
+      <tspan id="tspan715" x="111.87" y="1582.383">Banco- Underwriter (CSR)</tspan>
+    </text>
+  </g>
+  <g id="g729">
+    <rect id="rect721" width="9704" height="352.4" x="76" y="1532.3" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line723" stroke="#505050" d="M106 1532.3v352.4"/>
+    <text id="text727" clip-path="url(#bf613768-6da1-4777-907a-785a8d5bb57eHeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 1884.7)">
+      <tspan id="tspan725" x="117.848" y="1934.783">Banco - Traffic Controller </tspan>
+    </text>
+  </g>
+  <g id="g739">
+    <rect id="rect731" width="9704" height="272.8" x="76" y="1884.7" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line733" stroke="#505050" d="M106 1884.7v272.8"/>
+    <text id="text737" clip-path="url(#43e63792-d501-4e60-a3fe-60d95f475bf1HeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 2157.5)">
+      <tspan id="tspan735" x="90.074" y="2207.583">Banco - Account Officer</tspan>
+    </text>
+  </g>
+  <g id="g749">
+    <rect id="rect741" width="9704" height="231.5" x="76" y="2157.5" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line743" stroke="#505050" d="M106 2157.5V2389"/>
+    <text id="text747" clip-path="url(#16f4701a-279e-412c-a8e2-3ba584cb094aHeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 2389)">
+      <tspan id="tspan745" x="81.721" y="2439.083">Banco - Management</tspan>
+    </text>
+  </g>
+  <g id="g759">
+    <rect id="rect751" width="9704" height="199.8" x="76" y="2389" fill="none" stroke="#505050" rx="0" ry="0"/>
+    <path id="line753" stroke="#505050" d="M106 2389v199.8"/>
+    <text id="text757" clip-path="url(#448fe6e5-7a85-4915-8e8e-fc3745c3fffeHeaderClipPath)" font-family="Segoe UI" font-size="16pt" font-weight="700" transform="rotate(-90 76 2588.8)">
+      <tspan id="tspan755" x="159.147" y="2638.883">BSA</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg1" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop761" offset="0%" stop-color="#fff"/>
+    <stop id="stop763" offset="100%" stop-color="#e6ff97"/>
+  </linearGradient>
+  <use id="b45d31e0-d6c8-4b08-afec-3413b4ffed7d" x="155" y="83" fill="url(#lg1)" stroke="#62a716" stroke-width="2" xlink:href="#def19"/>
+  <linearGradient id="lg2" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop768" offset="0%" stop-color="#fff"/>
+    <stop id="stop770" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="5b877d70-f417-41b1-b113-adaaf777ec9c" x="199" y="187.5" fill="url(#lg2)" stroke="#0f002a" stroke-width="2" xlink:href="#def21"/>
+  <g id="5b877d70-f417-41b1-b113-adaaf777ec9cContainer" transform="translate(199 187.5)">
+    <text id="5b877d70-f417-41b1-b113-adaaf777ec9cText" clip-path="url(#def22)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan774" x="11" y="27">Pantalla de Aplicación </tspan> <tspan id="tspan776" x="22" y="41">para Prospectos</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg3" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop780" offset="0%" stop-color="#fff"/>
+    <stop id="stop782" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="f716f5b6-aff3-4ecf-a268-8def3c4321c6" x="995" y="208" fill="url(#lg3)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg4" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop787" offset="0%" stop-color="#fff"/>
+    <stop id="stop789" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="c8ae29dd-d907-44af-aabb-fa5f50509d9e" x="161" y="415" fill="url(#lg4)" stroke="#0f002a" stroke-width="2" xlink:href="#def25"/>
+  <g id="c8ae29dd-d907-44af-aabb-fa5f50509d9eContainer" transform="translate(161 415)">
+    <text id="c8ae29dd-d907-44af-aabb-fa5f50509d9eText" clip-path="url(#def26)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan793" x="10" y="18">Validacion de si </tspan> <tspan id="tspan795" x="10" y="32">tiene cuenta en </tspan> <tspan id="tspan797" x="23" y="46">el Banco</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg5" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop801" offset="0%" stop-color="#fff"/>
+    <stop id="stop803" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="c0a053df-085d-4cb3-a824-29574711b159" x="306" y="425" fill="url(#lg5)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg6" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop808" offset="0%" stop-color="#fff"/>
+    <stop id="stop810" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="b602b820-c0e7-4c60-b910-c58e9e6dab43" x="380" y="510" fill="url(#lg6)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="b602b820-c0e7-4c60-b910-c58e9e6dab43Container" transform="translate(380 510)">
+    <text id="b602b820-c0e7-4c60-b910-c58e9e6dab43Text" clip-path="url(#def29)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan814" x="18" y="18">Completar </tspan> <tspan id="tspan816" x="6" y="32">Información de </tspan> <tspan id="tspan818" x="20" y="46">la Cuenta</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg7" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop822" offset="0%" stop-color="#fff"/>
+    <stop id="stop824" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="6ce384eb-fd9a-484f-86f8-bddd64bf399f" x="532" y="510" fill="url(#lg7)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="6ce384eb-fd9a-484f-86f8-bddd64bf399fContainer" transform="translate(532 510)">
+    <text id="6ce384eb-fd9a-484f-86f8-bddd64bf399fText" clip-path="url(#def30)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan828" x="16" y="25">Pantalla de </tspan> <tspan id="tspan830" x="14" y="39">Notificación</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg8" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop834" offset="0%" stop-color="#fff"/>
+    <stop id="stop836" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="4340354e-6fa3-4820-8112-e845b1c1da61" x="531" y="415" fill="url(#lg8)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="4340354e-6fa3-4820-8112-e845b1c1da61Container" transform="translate(531 415)">
+    <text id="4340354e-6fa3-4820-8112-e845b1c1da61Text" clip-path="url(#def31)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan840" x="22" y="25">Carga de </tspan> <tspan id="tspan842" x="26" y="39">Signers</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg9" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop846" offset="0%" stop-color="#fff"/>
+    <stop id="stop848" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="4fb4a257-191f-49d7-85f4-dc3f8ca96b2a" x="1123" y="811" fill="url(#lg9)" stroke="#03689a" stroke-width="2" xlink:href="#def32"/>
+  <g id="4fb4a257-191f-49d7-85f4-dc3f8ca96b2aContainer" transform="translate(1123 811)">
+    <text id="4fb4a257-191f-49d7-85f4-dc3f8ca96b2aText" clip-path="url(#def33)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan852" x="16" y="23">Recuperar OFAC </tspan> <tspan id="tspan854" x="14" y="37">para los Signers y </tspan> <tspan id="tspan856" x="17" y="51">para el Negocio</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg10" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop860" offset="0%" stop-color="#fff"/>
+    <stop id="stop862" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="cf9d686c-1b4e-4cc9-9b19-ec44c982a98f" x="1402" y="826" fill="url(#lg10)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg11" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop867" offset="0%" stop-color="#fff"/>
+    <stop id="stop869" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="4b1bcd92-1112-4932-9e27-446d1f51ec19" x="1148" y="1274" fill="url(#lg11)" stroke="#931c00" stroke-width="2" xlink:href="#def28"/>
+  <g id="4b1bcd92-1112-4932-9e27-446d1f51ec19Container" transform="translate(1148 1274)">
+    <text id="4b1bcd92-1112-4932-9e27-446d1f51ec19Text" clip-path="url(#def35)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan873" x="19" y="18">Reintento </tspan> <tspan id="tspan875" x="17" y="32">Manual de </tspan> <tspan id="tspan877" x="31" y="46">OFAC</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg12" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop881" offset="0%" stop-color="#fff"/>
+    <stop id="stop883" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="c9cba4de-8ef2-40dc-8fec-944b19bc552a" x="1699" y="814" fill="url(#lg12)" stroke="#03689a" stroke-width="2" xlink:href="#def36"/>
+  <g id="c9cba4de-8ef2-40dc-8fec-944b19bc552aContainer" transform="translate(1699 814)">
+    <text id="c9cba4de-8ef2-40dc-8fec-944b19bc552aText" clip-path="url(#def37)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan887" x="11" y="14">Recuperar Información </tspan> <tspan id="tspan889" x="19" y="27">de LexisNexis para </tspan> <tspan id="tspan891" x="9" y="41">todos los Signers y para </tspan> <tspan id="tspan893" x="38" y="55">el Negocio</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg13" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop897" offset="0%" stop-color="#fff"/>
+    <stop id="stop899" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="2b24862d-1280-44e4-b5e8-42220d7af8dc" x="1262" y="1622.4" fill="url(#lg13)" stroke="#931c00" stroke-width="2" xlink:href="#def38"/>
+  <g id="2b24862d-1280-44e4-b5e8-42220d7af8dcContainer" transform="translate(1262 1622.4)">
+    <text id="2b24862d-1280-44e4-b5e8-42220d7af8dcText" clip-path="url(#def39)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan903" x="9" y="25">Estacion Central Validacion </tspan> <tspan id="tspan905" x="26" y="39">Proveedor Externo</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg14" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop909" offset="0%" stop-color="#fff"/>
+    <stop id="stop911" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="f96c3f0f-9da5-4501-bc36-4260a40bd77e" x="1676" y="1138" fill="url(#lg14)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg15" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop916" offset="0%" stop-color="#fff"/>
+    <stop id="stop918" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="f9efb39f-ed8e-41ac-a842-b85cf5d138cb" x="1531" y="1033" fill="url(#lg15)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg16" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop923" offset="0%" stop-color="#fff"/>
+    <stop id="stop925" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="5fe8245d-a3c7-47fa-a214-d8e791337726" x="1646" y="1011" fill="url(#lg16)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg17" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop930" offset="0%" stop-color="#fff"/>
+    <stop id="stop932" offset="100%" stop-color="#ccc1d9"/>
+  </linearGradient>
+  <use id="747103cb-9290-45d4-81bb-a50c704401c7" x="1484" y="932" fill="url(#lg17)" stroke="#7c7189" stroke-width="2" xlink:href="#def28"/>
+  <g id="747103cb-9290-45d4-81bb-a50c704401c7Container" transform="translate(1484 932)">
+    <text id="747103cb-9290-45d4-81bb-a50c704401c7Text" clip-path="url(#def43)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan936" x="6" y="25">Enviar Carta de </tspan> <tspan id="tspan938" x="15" y="39">Declinación</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg18" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop942" offset="0%" stop-color="#fff"/>
+    <stop id="stop944" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="7147f473-ef9b-4722-aef9-4b7521524323" x="1827" y="1260.8" fill="url(#lg18)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="7147f473-ef9b-4722-aef9-4b7521524323Container" transform="translate(1827 1260.8)">
+    <text id="7147f473-ef9b-4722-aef9-4b7521524323Text" clip-path="url(#def44)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan948" x="19" y="18">Reintento </tspan> <tspan id="tspan950" x="12" y="32">Manual Lexis </tspan> <tspan id="tspan952" x="31" y="46">Nexis</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg19" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop956" offset="0%" stop-color="#fff"/>
+    <stop id="stop958" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="a7862094-5b69-482c-8dad-c027153b28a7" x="2041" y="826" fill="url(#lg19)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg20" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop963" offset="0%" stop-color="#fff"/>
+    <stop id="stop965" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="7b75137a-ea0a-4922-b32d-71125191ff0b" x="2381" y="813.5" fill="url(#lg20)" stroke="#03689a" stroke-width="2" xlink:href="#def46"/>
+  <g id="7b75137a-ea0a-4922-b32d-71125191ff0bContainer" transform="translate(2381 813.5)">
+    <text id="7b75137a-ea0a-4922-b32d-71125191ff0bText" clip-path="url(#def47)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan969" x="21" y="27">Obtener Reporte para </tspan> <tspan id="tspan971" x="25" y="41">Negocio de BizChex</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg21" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop975" offset="0%" stop-color="#fff"/>
+    <stop id="stop977" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="2296c1b9-5803-497b-a6cd-b05b7e8ed29e" x="2027.667" y="1600.4" fill="url(#lg21)" stroke="#931c00" stroke-width="2" xlink:href="#def48"/>
+  <g id="2296c1b9-5803-497b-a6cd-b05b7e8ed29eContainer" transform="translate(2027.667 1600.4)">
+    <text id="2296c1b9-5803-497b-a6cd-b05b7e8ed29eText" clip-path="url(#def49)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan981" x="15" y="25">Estacion Central Validacion </tspan> <tspan id="tspan983" x="32" y="39">Proveedor Externo</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg22" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop987" offset="0%" stop-color="#fff"/>
+    <stop id="stop989" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="bacfb477-21ad-49bc-95d1-33c1e4b15dac" x="2361" y="1134" fill="url(#lg22)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg23" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop994" offset="0%" stop-color="#fff"/>
+    <stop id="stop996" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="2ad4294c-e860-43ff-91ec-cb195a459561" x="2198" y="1016" fill="url(#lg23)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg24" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1001" offset="0%" stop-color="#fff"/>
+    <stop id="stop1003" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="b1e9e44f-97d0-462c-adee-2e0a161a7600" x="2294" y="989" fill="url(#lg24)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg25" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1008" offset="0%" stop-color="#fff"/>
+    <stop id="stop1010" offset="100%" stop-color="#ccc1d9"/>
+  </linearGradient>
+  <use id="67e9817e-5814-407b-bd88-8ee16691878f" x="2173" y="917" fill="url(#lg25)" stroke="#7c7189" stroke-width="2" xlink:href="#def28"/>
+  <g id="67e9817e-5814-407b-bd88-8ee16691878fContainer" transform="translate(2173 917)">
+    <text id="67e9817e-5814-407b-bd88-8ee16691878fText" clip-path="url(#def53)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1014" x="6" y="25">Enviar Carta de </tspan> <tspan id="tspan1016" x="15" y="39">Declinación</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg26" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1020" offset="0%" stop-color="#fff"/>
+    <stop id="stop1022" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="6ef059f5-294a-4081-be78-d82e8a1555e2" x="2506" y="1255.8" fill="url(#lg26)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="6ef059f5-294a-4081-be78-d82e8a1555e2Container" transform="translate(2506 1255.8)">
+    <text id="6ef059f5-294a-4081-be78-d82e8a1555e2Text" clip-path="url(#def54)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1026" x="19" y="25">Reintento </tspan> <tspan id="tspan1028" x="12" y="39">ChexSystems</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg27" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1032" offset="0%" stop-color="#fff"/>
+    <stop id="stop1034" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="43e70a93-db3b-4df5-9c39-d646d887cfb9" x="2707" y="826" fill="url(#lg27)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg28" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1039" offset="0%" stop-color="#fff"/>
+    <stop id="stop1041" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="b91062f5-3840-4ce3-919a-ed945c230918" x="3077" y="816" fill="url(#lg28)" stroke="#03689a" stroke-width="2" xlink:href="#def56"/>
+  <g id="b91062f5-3840-4ce3-919a-ed945c230918Container" transform="translate(3077 816)">
+    <text id="b91062f5-3840-4ce3-919a-ed945c230918Text" clip-path="url(#def57)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1045" x="22" y="18">Obtener Consumer </tspan> <tspan id="tspan1047" x="11" y="32">Report de ChexSystems </tspan> <tspan id="tspan1049" x="14" y="46">para todos los Signers </tspan>
+    </text>
+  </g>
+  <linearGradient id="lg29" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1053" offset="0%" stop-color="#fff"/>
+    <stop id="stop1055" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="ddbd59ad-8790-43dc-9f87-aa0678a23cee" x="2663" y="1625.4" fill="url(#lg29)" stroke="#931c00" stroke-width="2" xlink:href="#def58"/>
+  <g id="ddbd59ad-8790-43dc-9f87-aa0678a23ceeContainer" transform="translate(2663 1625.4)">
+    <text id="ddbd59ad-8790-43dc-9f87-aa0678a23ceeText" clip-path="url(#def59)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1059" x="29" y="18">Estaion Cetnral </tspan> <tspan id="tspan1061" x="15" y="32">Validacion Proveedor </tspan> <tspan id="tspan1063" x="44" y="46">Externo</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg30" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1067" offset="0%" stop-color="#fff"/>
+    <stop id="stop1069" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="891c3593-b8d0-4f58-a200-99e32f141860" x="3015" y="1150" fill="url(#lg30)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg31" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1074" offset="0%" stop-color="#fff"/>
+    <stop id="stop1076" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="d3b2754b-ffb4-4503-ba04-f6d0658b3224" x="2833" y="1030" fill="url(#lg31)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg32" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1081" offset="0%" stop-color="#fff"/>
+    <stop id="stop1083" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="4b95235c-e0be-4eb6-894e-da8b55bd56a1" x="2913" y="1035" fill="url(#lg32)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg33" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1088" offset="0%" stop-color="#fff"/>
+    <stop id="stop1090" offset="100%" stop-color="#ccc1d9"/>
+  </linearGradient>
+  <use id="78b753e3-0fff-4435-8896-48de861c3180" x="2808" y="942" fill="url(#lg33)" stroke="#7c7189" stroke-width="2" xlink:href="#def28"/>
+  <g id="78b753e3-0fff-4435-8896-48de861c3180Container" transform="translate(2808 942)">
+    <text id="78b753e3-0fff-4435-8896-48de861c3180Text" clip-path="url(#def63)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1094" x="6" y="25">Enviar Carta de </tspan> <tspan id="tspan1096" x="15" y="39">Declinación</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg34" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1100" offset="0%" stop-color="#fff"/>
+    <stop id="stop1102" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="f8e0677b-ecd1-4b45-b361-ce69a5937af9" x="3262" y="1265.8" fill="url(#lg34)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="f8e0677b-ecd1-4b45-b361-ce69a5937af9Container" transform="translate(3262 1265.8)">
+    <text id="f8e0677b-ecd1-4b45-b361-ce69a5937af9Text" clip-path="url(#def64)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1106" x="19" y="25">Reintento </tspan> <tspan id="tspan1108" x="25" y="39">BizChex</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg35" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1112" offset="0%" stop-color="#fff"/>
+    <stop id="stop1114" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="c624527c-cae0-4d33-a4e7-589520eae807" x="3381" y="826" fill="url(#lg35)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg36" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1119" offset="0%" stop-color="#fff"/>
+    <stop id="stop1121" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="51866b53-43ba-427a-8db8-92608ae76efc" x="3399" y="1605" fill="url(#lg36)" stroke="#931c00" stroke-width="2" xlink:href="#def58"/>
+  <g id="51866b53-43ba-427a-8db8-92608ae76efcContainer" transform="translate(3399 1605)">
+    <text id="51866b53-43ba-427a-8db8-92608ae76efcText" clip-path="url(#def66)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1125" x="26" y="18">Estacion Central </tspan> <tspan id="tspan1127" x="15" y="32">Validacion Proveedor </tspan> <tspan id="tspan1129" x="44" y="46">Externo</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg37" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1133" offset="0%" stop-color="#fff"/>
+    <stop id="stop1135" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="624ea993-ceb1-4a9b-838c-79ea1ee925cc" x="3676" y="1245.8" fill="url(#lg37)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg38" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1140" offset="0%" stop-color="#fff"/>
+    <stop id="stop1142" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="5258d42b-a361-461c-8c91-c5f19132fde4" x="4899" y="1361.8" fill="url(#lg38)" stroke="#0f002a" stroke-width="2" xlink:href="#def68"/>
+  <g id="5258d42b-a361-461c-8c91-c5f19132fde4Container" transform="translate(4899 1361.8)">
+    <text id="5258d42b-a361-461c-8c91-c5f19132fde4Text" clip-path="url(#def69)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1146" x="30" y="14">Revisar </tspan> <tspan id="tspan1148" x="14" y="28">Aplicacion CSR </tspan> <tspan id="tspan1150" x="13" y="42">and complete </tspan> <tspan id="tspan1152" x="39" y="56">KYC</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg39" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1156" offset="0%" stop-color="#fff"/>
+    <stop id="stop1158" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="350b2ec7-c3ac-4fb2-8a16-82a566ec86ab" x="3511" y="1018" fill="url(#lg39)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg40" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1163" offset="0%" stop-color="#fff"/>
+    <stop id="stop1165" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="9784fc4d-b831-49f3-b8c1-3ebe8d0cde9f" x="3585" y="1023" fill="url(#lg40)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg41" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1170" offset="0%" stop-color="#fff"/>
+    <stop id="stop1172" offset="100%" stop-color="#ccc1d9"/>
+  </linearGradient>
+  <use id="361937cb-9193-413d-ae08-dc848368ab62" x="3486" y="911" fill="url(#lg41)" stroke="#7c7189" stroke-width="2" xlink:href="#def28"/>
+  <g id="361937cb-9193-413d-ae08-dc848368ab62Container" transform="translate(3486 911)">
+    <text id="361937cb-9193-413d-ae08-dc848368ab62Text" clip-path="url(#def72)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1176" x="6" y="25">Enviar Carta de </tspan> <tspan id="tspan1178" x="15" y="39">Declinación</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg42" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1182" offset="0%" stop-color="#fff"/>
+    <stop id="stop1184" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="9dbad94a-9255-482c-bc62-0b5aaabc4ef1" x="3743" y="812" fill="url(#lg42)" stroke="#03689a" stroke-width="2" xlink:href="#def73"/>
+  <g id="9dbad94a-9255-482c-bc62-0b5aaabc4ef1Container" transform="translate(3743 812)">
+    <text id="9dbad94a-9255-482c-bc62-0b5aaabc4ef1Text" clip-path="url(#def74)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1188" x="23" y="22">Obtener Información de </tspan> <tspan id="tspan1190" x="20" y="36">cuentas de DecisionLogic </tspan> <tspan id="tspan1192" x="51" y="50">para Titular</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg43" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1196" offset="0%" stop-color="#fff"/>
+    <stop id="stop1198" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="3854af50-5c15-4f71-9ac9-10512cda1f27" x="4105" y="826" fill="url(#lg43)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg44" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1203" offset="0%" stop-color="#fff"/>
+    <stop id="stop1205" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="925ab4b4-f311-4e66-a7ad-4d8f231bde1a" x="4531" y="834" fill="url(#lg44)" stroke="#a6a61d" stroke-width="2" xlink:href="#def76"/>
+  <linearGradient id="lg45" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1210" offset="0%" stop-color="#fff"/>
+    <stop id="stop1212" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="7aa31a62-5b9f-4f4c-b588-7a9882f3c2c6" x="4054.5" y="1582.4" fill="url(#lg45)" stroke="#931c00" stroke-width="2" xlink:href="#def78"/>
+  <g id="7aa31a62-5b9f-4f4c-b588-7a9882f3c2c6Container" transform="translate(4054.5 1582.4)">
+    <text id="7aa31a62-5b9f-4f4c-b588-7a9882f3c2c6Text" clip-path="url(#def79)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1216" x="30" y="18">Estacion Central </tspan> <tspan id="tspan1218" x="18" y="32">Validacion Proveedor </tspan> <tspan id="tspan1220" x="48" y="46">Externo</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg46" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1224" offset="0%" stop-color="#fff"/>
+    <stop id="stop1226" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="e2f9b8dc-ae53-4bdf-8169-2fb7973f7041" x="3939" y="1245.8" fill="url(#lg46)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="e2f9b8dc-ae53-4bdf-8169-2fb7973f7041Container" transform="translate(3939 1245.8)">
+    <text id="e2f9b8dc-ae53-4bdf-8169-2fb7973f7041Text" clip-path="url(#def80)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1230" x="19" y="25">Reintento </tspan> <tspan id="tspan1232" x="8" y="39">Decision Logic</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg47" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1236" offset="0%" stop-color="#fff"/>
+    <stop id="stop1238" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="f6e3db11-5c80-46bc-ae7f-f9a9681a4707" x="4429" y="1247.8" fill="url(#lg47)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg48" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1243" offset="0%" stop-color="#fff"/>
+    <stop id="stop1245" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="08f3d793-3bdf-4f1e-b2a3-e7a5fab39177" x="4211" y="1081" fill="url(#lg48)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg49" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1250" offset="0%" stop-color="#fff"/>
+    <stop id="stop1252" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="b217d043-b13b-48a3-875d-634acb3af0ca" x="4315" y="1086" fill="url(#lg49)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg50" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1257" offset="0%" stop-color="#fff"/>
+    <stop id="stop1259" offset="100%" stop-color="#ccc1d9"/>
+  </linearGradient>
+  <use id="c83b14ca-4692-485b-8de0-b53bd59bf3ad" x="4203" y="966" fill="url(#lg50)" stroke="#7c7189" stroke-width="2" xlink:href="#def28"/>
+  <g id="c83b14ca-4692-485b-8de0-b53bd59bf3adContainer" transform="translate(4203 966)">
+    <text id="c83b14ca-4692-485b-8de0-b53bd59bf3adText" clip-path="url(#def84)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1263" x="6" y="25">Enviar Carta de </tspan> <tspan id="tspan1265" x="13" y="39">Declinaciión</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg51" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1269" offset="0%" stop-color="#fff"/>
+    <stop id="stop1271" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="f947cb00-fbca-4233-960f-ba761974a8b9" x="5158" y="2036" fill="url(#lg51)" stroke="#0f002a" stroke-width="2" xlink:href="#def85"/>
+  <g id="f947cb00-fbca-4233-960f-ba761974a8b9Container" transform="translate(5158 2036)">
+    <text id="f947cb00-fbca-4233-960f-ba761974a8b9Text" clip-path="url(#def86)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1275" x="10" y="25">Revisar Paquete de la </tspan> <tspan id="tspan1277" x="35" y="39">Aplicación</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg52" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1281" offset="0%" stop-color="#fff"/>
+    <stop id="stop1283" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="4d479845-6845-4253-8402-6a32dbcfd9a1" x="5555" y="2210" fill="url(#lg52)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="4d479845-6845-4253-8402-6a32dbcfd9a1Container" transform="translate(5555 2210)">
+    <text id="4d479845-6845-4253-8402-6a32dbcfd9a1Text" clip-path="url(#def87)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1287" x="27" y="18">Revisar </tspan> <tspan id="tspan1289" x="19" y="32">Aplicación </tspan> <tspan id="tspan1291" x="11" y="46">Management</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg53" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1295" offset="0%" stop-color="#fff"/>
+    <stop id="stop1297" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="ecd88b40-953d-4c71-b395-d62b1e1f753a" x="341" y="1361.3" fill="url(#lg53)" stroke="#931c00" stroke-width="2" xlink:href="#def88"/>
+  <g id="ecd88b40-953d-4c71-b395-d62b1e1f753aContainer" transform="translate(341 1361.3)">
+    <text id="ecd88b40-953d-4c71-b395-d62b1e1f753aText" clip-path="url(#def89)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1301" x="34" y="37">Validar Cuenta</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg54" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1305" offset="0%" stop-color="#fff"/>
+    <stop id="stop1307" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="67653c49-f651-4884-98c4-70887be9fbfe" x="580" y="1376.8" fill="url(#lg54)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg55" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1312" offset="0%" stop-color="#fff"/>
+    <stop id="stop1314" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="238cb5d8-df4e-47ae-8c7a-e94969bf38dd" x="341" y="725" fill="url(#lg55)" stroke="#03689a" stroke-width="2" xlink:href="#def28"/>
+  <g id="238cb5d8-df4e-47ae-8c7a-e94969bf38ddContainer" transform="translate(341 725)">
+    <text id="238cb5d8-df4e-47ae-8c7a-e94969bf38ddText" clip-path="url(#def91)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1318" x="29" y="18">Enviar </tspan> <tspan id="tspan1320" x="8" y="32">Notificación al </tspan> <tspan id="tspan1322" x="27" y="46">Cliente</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg56" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1326" offset="0%" stop-color="#fff"/>
+    <stop id="stop1328" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="96e086f3-a731-4235-aaca-e6b536b51dbf" x="1835" y="593" fill="url(#lg56)" stroke="#03689a" stroke-width="2" xlink:href="#def92"/>
+  <g id="96e086f3-a731-4235-aaca-e6b536b51dbfContainer" transform="translate(1835 593)">
+    <text id="96e086f3-a731-4235-aaca-e6b536b51dbfText" clip-path="url(#def93)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1332" x="9" y="27">Carta de Notificacion </tspan> <tspan id="tspan1334" x="35" y="41">al Cliente</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg57" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1338" offset="0%" stop-color="#fff"/>
+    <stop id="stop1340" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="db217c94-d58c-4f57-aab9-25c06e393358" x="1939" y="1341.8" fill="url(#lg57)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="db217c94-d58c-4f57-aab9-25c06e393358Container" transform="translate(1939 1341.8)">
+    <text id="db217c94-d58c-4f57-aab9-25c06e393358Text" clip-path="url(#def94)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1344" x="15" y="18">Registro de </tspan> <tspan id="tspan1346" x="23" y="32">Rechazo </tspan> <tspan id="tspan1348" x="16" y="46">Automático</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg58" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1352" offset="0%" stop-color="#fff"/>
+    <stop id="stop1354" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="a9d985cd-ce00-4bc4-aae4-5f560451edf7" x="1969" y="1438.8" fill="url(#lg58)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg59" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1359" offset="0%" stop-color="#fff"/>
+    <stop id="stop1361" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="62200084-1aa1-45c5-8fb8-8dc06435b174" x="5887" y="2450.4" fill="url(#lg59)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="62200084-1aa1-45c5-8fb8-8dc06435b174Container" transform="translate(5887 2450.4)">
+    <text id="62200084-1aa1-45c5-8fb8-8dc06435b174Text" clip-path="url(#def96)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1365" x="27" y="25">Revisar </tspan> <tspan id="tspan1367" x="11" y="39">Aplicación BSA</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg60" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1371" offset="0%" stop-color="#fff"/>
+    <stop id="stop1373" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="852163a3-aa1f-440d-a2c7-d3d05052e212" x="4541" y="744" fill="url(#lg60)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg61" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1378" offset="0%" stop-color="#fff"/>
+    <stop id="stop1380" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="5d789020-0a1b-44b8-8527-e71325676706" x="5459" y="973" fill="url(#lg61)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg62" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1385" offset="0%" stop-color="#fff"/>
+    <stop id="stop1387" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="29960889-bff2-4f5f-ae70-6903b0598b43" x="6221.6" y="805" fill="url(#lg62)" stroke="#03689a" stroke-width="2" xlink:href="#def28"/>
+  <g id="29960889-bff2-4f5f-ae70-6903b0598b43Container" transform="translate(6221.6 805)">
+    <text id="29960889-bff2-4f5f-ae70-6903b0598b43Text" clip-path="url(#def99)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1391" x="23" y="18">Envio de </tspan> <tspan id="tspan1393" x="12" y="32">Documentos </tspan> <tspan id="tspan1395" x="18" y="46">para Firma</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg63" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1399" offset="0%" stop-color="#fff"/>
+    <stop id="stop1401" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="9975792e-605b-4db7-a1eb-0f239b78bdfe" x="6236" y="416" fill="url(#lg63)" stroke="#931c00" stroke-width="2" xlink:href="#def100"/>
+  <g id="9975792e-605b-4db7-a1eb-0f239b78bdfeContainer" transform="translate(6236 416)">
+    <text id="9975792e-605b-4db7-a1eb-0f239b78bdfeText" clip-path="url(#def101)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1405" x="7" y="14">Carga y Firma de </tspan> <tspan id="tspan1407" x="17" y="28">Documentos </tspan> <tspan id="tspan1409" x="9" y="42">Solicitados por el </tspan> <tspan id="tspan1411" x="34" y="56">Banco</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg64" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1415" offset="0%" stop-color="#fff"/>
+    <stop id="stop1417" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="c67f0947-4713-46e1-a282-bd06ada43fa8" x="5532" y="973" fill="url(#lg64)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg65" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1422" offset="0%" stop-color="#fff"/>
+    <stop id="stop1424" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="e9a363be-f795-438e-a58e-a5fd5981cc07" x="1492" y="1367" fill="url(#lg65)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="e9a363be-f795-438e-a58e-a5fd5981cc07Container" transform="translate(1492 1367)">
+    <text id="e9a363be-f795-438e-a58e-a5fd5981cc07Text" clip-path="url(#def103)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1428" x="19" y="25">Validacion </tspan> <tspan id="tspan1430" x="25" y="39">Manual</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg66" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1434" offset="0%" stop-color="#fff"/>
+    <stop id="stop1436" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="60bdcfad-f3e3-43aa-bb49-f57a3cef80f5" x="2214" y="1382" fill="url(#lg66)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="60bdcfad-f3e3-43aa-bb49-f57a3cef80f5Container" transform="translate(2214 1382)">
+    <text id="60bdcfad-f3e3-43aa-bb49-f57a3cef80f5Text" clip-path="url(#def104)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1440" x="19" y="25">Validacion </tspan> <tspan id="tspan1442" x="25" y="39">Manual</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg67" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1446" offset="0%" stop-color="#fff"/>
+    <stop id="stop1448" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="9cf7df86-43a2-4248-8777-5cfdc45b3d5f" x="2865" y="1376" fill="url(#lg67)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="9cf7df86-43a2-4248-8777-5cfdc45b3d5fContainer" transform="translate(2865 1376)">
+    <text id="9cf7df86-43a2-4248-8777-5cfdc45b3d5fText" clip-path="url(#def105)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1452" x="19" y="25">Validacion </tspan> <tspan id="tspan1454" x="25" y="39">Manual</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg68" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1458" offset="0%" stop-color="#fff"/>
+    <stop id="stop1460" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="efb61b6a-192e-4b24-91fa-61f58bda7da2" x="3547" y="1393.8" fill="url(#lg68)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="efb61b6a-192e-4b24-91fa-61f58bda7da2Container" transform="translate(3547 1393.8)">
+    <text id="efb61b6a-192e-4b24-91fa-61f58bda7da2Text" clip-path="url(#def106)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1464" x="19" y="25">Validacion </tspan> <tspan id="tspan1466" x="25" y="39">Manual</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg69" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1470" offset="0%" stop-color="#fff"/>
+    <stop id="stop1472" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="4c49eaf8-bfc4-4c18-bdc4-a5b41a5e22f5" x="4239" y="1394.8" fill="url(#lg69)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="4c49eaf8-bfc4-4c18-bdc4-a5b41a5e22f5Container" transform="translate(4239 1394.8)">
+    <text id="4c49eaf8-bfc4-4c18-bdc4-a5b41a5e22f5Text" clip-path="url(#def107)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1476" x="19" y="25">Validacion </tspan> <tspan id="tspan1478" x="25" y="39">Manual</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg70" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1482" offset="0%" stop-color="#fff"/>
+    <stop id="stop1484" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="c5dec88b-e6c1-4897-8483-c1a9c08c7a5e" x="2041" y="703" fill="url(#lg70)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg71" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1489" offset="0%" stop-color="#fff"/>
+    <stop id="stop1491" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="120c2d3f-b069-488b-8f73-16258d0fa2cd" x="2041" y="646" fill="url(#lg71)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg72" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1496" offset="0%" stop-color="#fff"/>
+    <stop id="stop1498" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="5a5ef696-3445-4524-bacb-cee4a03a9b0d" x="724" y="942" fill="url(#lg72)" stroke="#03689a" stroke-width="2" xlink:href="#def28"/>
+  <g id="5a5ef696-3445-4524-bacb-cee4a03a9b0dContainer" transform="translate(724 942)">
+    <text id="5a5ef696-3445-4524-bacb-cee4a03a9b0dText" clip-path="url(#def110)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1502" x="24" y="18">Solicitar </tspan> <tspan id="tspan1504" x="11" y="32">Aprobacion de </tspan> <tspan id="tspan1506" x="34" y="46">BOL</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg73" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1510" offset="0%" stop-color="#fff"/>
+    <stop id="stop1512" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="56d16a04-9d53-493a-b2d9-067311775873" x="751" y="469" fill="url(#lg73)" stroke="#931c00" stroke-width="2" xlink:href="#def28"/>
+  <g id="56d16a04-9d53-493a-b2d9-067311775873Container" transform="translate(751 469)">
+    <text id="56d16a04-9d53-493a-b2d9-067311775873Text" clip-path="url(#def111)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1516" x="11" y="18">Carga y Firma </tspan> <tspan id="tspan1518" x="12" y="32">Documentos </tspan> <tspan id="tspan1520" x="34" y="46">BOL</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg74" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1524" offset="0%" stop-color="#fff"/>
+    <stop id="stop1526" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="0d34dd33-0cc3-4704-b126-759483323318" x="708" y="1078" fill="url(#lg74)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg75" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1531" offset="0%" stop-color="#fff"/>
+    <stop id="stop1533" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="851eb40b-29b2-4433-bfe1-480ae79c25ce" x="830" y="1083" fill="url(#lg75)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg76" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1538" offset="0%" stop-color="#fff"/>
+    <stop id="stop1540" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="44469ad5-6654-467a-a139-750d4a659b97" x="874" y="1370.8" fill="url(#lg76)" stroke="#931c00" stroke-width="2" xlink:href="#def28"/>
+  <g id="44469ad5-6654-467a-a139-750d4a659b97Container" transform="translate(874 1370.8)">
+    <text id="44469ad5-6654-467a-a139-750d4a659b97Text" clip-path="url(#def114)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1544" x="28" y="18">Validar </tspan> <tspan id="tspan1546" x="14" y="32">Informacion </tspan> <tspan id="tspan1548" x="34" y="46">OLB</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg77" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1552" offset="0%" stop-color="#fff"/>
+    <stop id="stop1554" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="0050e5a6-12d6-43c1-a1d9-e8872fda25f0" x="955" y="1030" fill="url(#lg77)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg78" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1559" offset="0%" stop-color="#fff"/>
+    <stop id="stop1561" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="f5ca5bf9-2e63-4f5b-ab78-e0f7f5887e1e" x="986" y="908" fill="url(#lg78)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg79" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1566" offset="0%" stop-color="#fff"/>
+    <stop id="stop1568" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="83824049-5dee-4c5c-994f-cea64b592e4f" x="4646" y="824" fill="url(#lg79)" stroke="#03689a" stroke-width="2" xlink:href="#def117"/>
+  <g id="83824049-5dee-4c5c-994f-cea64b592e4fContainer" transform="translate(4646 824)">
+    <text id="83824049-5dee-4c5c-994f-cea64b592e4fText" clip-path="url(#def118)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1572" x="13" y="23">Notificacion de Carga </tspan> <tspan id="tspan1574" x="24" y="37">de Documentos</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg80" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1578" offset="0%" stop-color="#fff"/>
+    <stop id="stop1580" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="b39890ae-d6eb-442f-ad9e-d336b3a546bd" x="4652" y="429" fill="url(#lg80)" stroke="#931c00" stroke-width="2" xlink:href="#def119"/>
+  <g id="b39890ae-d6eb-442f-ad9e-d336b3a546bdContainer" transform="translate(4652 429)">
+    <text id="b39890ae-d6eb-442f-ad9e-d336b3a546bdText" clip-path="url(#def120)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1584" x="36" y="59">Carga de </tspan> <tspan id="tspan1586" x="26" y="73">Documentos </tspan>
+    </text>
+  </g>
+  <linearGradient id="lg81" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1590" offset="0%" stop-color="#fff"/>
+    <stop id="stop1592" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="ad65dac6-adda-436b-9ed2-00374621ba47" x="4793" y="1591" fill="url(#lg81)" stroke="#931c00" stroke-width="2" xlink:href="#def121"/>
+  <g id="ad65dac6-adda-436b-9ed2-00374621ba47Container" transform="translate(4793 1591)">
+    <text id="ad65dac6-adda-436b-9ed2-00374621ba47Text" clip-path="url(#def122)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1596" x="20" y="18">Estacion Central </tspan> <tspan id="tspan1598" x="27" y="32">Validacion de </tspan> <tspan id="tspan1600" x="25" y="46">Documentos</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg82" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1604" offset="0%" stop-color="#fff"/>
+    <stop id="stop1606" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="2698d7fc-f932-42c1-8686-38dde2c12876" x="5009" y="1258.8" fill="url(#lg82)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg83" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1611" offset="0%" stop-color="#fff"/>
+    <stop id="stop1613" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="6ca48ca2-bcad-43b8-91b5-43d8030f23f8" x="5223" y="1918" fill="url(#lg83)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg84" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1618" offset="0%" stop-color="#fff"/>
+    <stop id="stop1620" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="5b5e8a9c-bfeb-4732-bfed-20717be04ed5" x="5721" y="2284" fill="url(#lg84)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg85" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1625" offset="0%" stop-color="#fff"/>
+    <stop id="stop1627" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="e9f2ba64-7286-42f2-9076-21b98aadcc51" x="6045" y="2508.4" fill="url(#lg85)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg86" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1632" offset="0%" stop-color="#fff"/>
+    <stop id="stop1634" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="fffefaea-f97b-4345-a0a7-ebdcbb3ee1b8" x="6223" y="1662" fill="url(#lg86)" stroke="#931c00" stroke-width="2" xlink:href="#def28"/>
+  <g id="fffefaea-f97b-4345-a0a7-ebdcbb3ee1b8Container" transform="translate(6223 1662)">
+    <text id="fffefaea-f97b-4345-a0a7-ebdcbb3ee1b8Text" clip-path="url(#def127)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1638" x="23" y="14">Estacion </tspan> <tspan id="tspan1640" x="27" y="25">Central </tspan> <tspan id="tspan1642" x="13" y="39">Revision Final </tspan> <tspan id="tspan1644" x="13" y="53">Paquete KYC</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg87" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1648" offset="0%" stop-color="#fff"/>
+    <stop id="stop1650" offset="100%" stop-color="#7030a0"/>
+  </linearGradient>
+  <use id="e7ed664c-b9a5-4f96-8ab1-8e4171836d4f" x="6491" y="1335" fill="url(#lg87)" stroke="#200050" stroke-width="2" xlink:href="#def28"/>
+  <g id="e7ed664c-b9a5-4f96-8ab1-8e4171836d4fContainer" transform="translate(6491 1335)">
+    <text id="e7ed664c-b9a5-4f96-8ab1-8e4171836d4fText" clip-path="url(#def128)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1654" x="13" y="25">Revision Final </tspan> <tspan id="tspan1656" x="33" y="39">KYC2</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg88" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1660" offset="0%" stop-color="#fff"/>
+    <stop id="stop1662" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="1bbca1d1-54a9-47d1-9417-c86f20146c8e" x="6662" y="1259" fill="url(#lg88)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg89" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1667" offset="0%" stop-color="#fff"/>
+    <stop id="stop1669" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="f277107b-399e-4521-bece-43505f506a71" x="6777" y="998" fill="url(#lg89)" stroke="#03689a" stroke-width="2" xlink:href="#def28"/>
+  <g id="f277107b-399e-4521-bece-43505f506a71Container" transform="translate(6777 998)">
+    <text id="f277107b-399e-4521-bece-43505f506a71Text" clip-path="url(#def130)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1673" x="15" y="25">Generacion </tspan> <tspan id="tspan1675" x="30" y="39">Acct #</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg90" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1679" offset="0%" stop-color="#fff"/>
+    <stop id="stop1681" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="7d49a2e3-c58d-4d86-b726-b216aaa77e33" x="6766" y="835" fill="url(#lg90)" stroke="#03689a" stroke-width="2" xlink:href="#def131"/>
+  <g id="7d49a2e3-c58d-4d86-b726-b216aaa77e33Container" transform="translate(6766 835)">
+    <text id="7d49a2e3-c58d-4d86-b726-b216aaa77e33Text" clip-path="url(#def132)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1685" x="17" y="21">Notificacion de </tspan> <tspan id="tspan1687" x="19" y="36">Aprobacion con </tspan> <tspan id="tspan1689" x="13" y="50">Instrucciones para </tspan> <tspan id="tspan1691" x="20" y="64">Deposito Inicial</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg91" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1695" offset="0%" stop-color="#fff"/>
+    <stop id="stop1697" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="c3ec9484-f334-4ae2-823f-8ffb12e07cde" x="6764.5" y="451" fill="url(#lg91)" stroke="#931c00" stroke-width="2" xlink:href="#def133"/>
+  <g id="c3ec9484-f334-4ae2-823f-8ffb12e07cdeContainer" transform="translate(6764.5 451)">
+    <text id="c3ec9484-f334-4ae2-823f-8ffb12e07cdeText" clip-path="url(#def134)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1701" x="10" y="21">Acepta Acuerdos y </tspan> <tspan id="tspan1703" x="9" y="35">Disclosures y Envia </tspan> <tspan id="tspan1705" x="21" y="49">Deposito Inicial</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg92" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1709" offset="0%" stop-color="#fff"/>
+    <stop id="stop1711" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="f08bddc4-0101-41ee-a855-eacf42e58e54" x="7001" y="1295" fill="url(#lg92)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="f08bddc4-0101-41ee-a855-eacf42e58e54Container" transform="translate(7001 1295)">
+    <text id="f08bddc4-0101-41ee-a855-eacf42e58e54Text" clip-path="url(#def135)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1715" x="19" y="18">Reintento </tspan> <tspan id="tspan1717" x="17" y="32">Manual de </tspan> <tspan id="tspan1719" x="31" y="46">OFAC</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg93" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1723" offset="0%" stop-color="#fff"/>
+    <stop id="stop1725" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="5a9e4cc1-7d8d-4f4e-bdd1-e3645cf51781" x="7526" y="723" fill="url(#lg93)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg94" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1730" offset="0%" stop-color="#fff"/>
+    <stop id="stop1732" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="795445ef-dac8-41a3-828d-d9ea06f8b4a0" x="7676" y="1374" fill="url(#lg94)" stroke="#931c00" stroke-width="2" xlink:href="#def28"/>
+  <g id="795445ef-dac8-41a3-828d-d9ea06f8b4a0Container" transform="translate(7676 1374)">
+    <text id="795445ef-dac8-41a3-828d-d9ea06f8b4a0Text" clip-path="url(#def137)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1736" x="15" y="18">Registro de </tspan> <tspan id="tspan1738" x="23" y="32">Rechazo </tspan> <tspan id="tspan1740" x="16" y="46">Automático</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg95" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1744" offset="0%" stop-color="#fff"/>
+    <stop id="stop1746" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="9e11779c-b18f-48b6-877d-e1e5e0a35cf4" x="7283" y="1285" fill="url(#lg95)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="9e11779c-b18f-48b6-877d-e1e5e0a35cf4Container" transform="translate(7283 1285)">
+    <text id="9e11779c-b18f-48b6-877d-e1e5e0a35cf4Text" clip-path="url(#def138)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1750" x="19" y="18">Reintento </tspan> <tspan id="tspan1752" x="12" y="32">Manual Lexis </tspan> <tspan id="tspan1754" x="31" y="46">Nexis</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg96" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1758" offset="0%" stop-color="#fff"/>
+    <stop id="stop1760" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="bc77f3e1-9f3a-43eb-b3db-a1e306511137" x="7526" y="857" fill="url(#lg96)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg97" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1765" offset="0%" stop-color="#fff"/>
+    <stop id="stop1767" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="9a718c51-4635-407c-982d-55988ef64663" x="7262" y="845" fill="url(#lg97)" stroke="#03689a" stroke-width="2" xlink:href="#def36"/>
+  <g id="9a718c51-4635-407c-982d-55988ef64663Container" transform="translate(7262 845)">
+    <text id="9a718c51-4635-407c-982d-55988ef64663Text" clip-path="url(#def140)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1771" x="11" y="14">Recuperar Información </tspan> <tspan id="tspan1773" x="19" y="27">de LexisNexis para </tspan> <tspan id="tspan1775" x="9" y="41">todos los Signers y para </tspan> <tspan id="tspan1777" x="38" y="55">el Negocio</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg98" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1781" offset="0%" stop-color="#fff"/>
+    <stop id="stop1783" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="eaa7a69e-8c64-4a37-af4a-d41b143a3769" x="7302" y="615" fill="url(#lg98)" stroke="#03689a" stroke-width="2" xlink:href="#def92"/>
+  <g id="eaa7a69e-8c64-4a37-af4a-d41b143a3769Container" transform="translate(7302 615)">
+    <text id="eaa7a69e-8c64-4a37-af4a-d41b143a3769Text" clip-path="url(#def141)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1787" x="9" y="27">Carta de Notificacion </tspan> <tspan id="tspan1789" x="35" y="41">al Cliente</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg99" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1793" offset="0%" stop-color="#fff"/>
+    <stop id="stop1795" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="155cd5c9-030e-4c80-98c9-bdc25a7ed601" x="7706" y="1471" fill="url(#lg99)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg100" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1800" offset="0%" stop-color="#fff"/>
+    <stop id="stop1802" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="fda114c6-ca44-48b2-a099-18ddcc4f1cb2" x="7001" y="842" fill="url(#lg100)" stroke="#03689a" stroke-width="2" xlink:href="#def32"/>
+  <g id="fda114c6-ca44-48b2-a099-18ddcc4f1cb2Container" transform="translate(7001 842)">
+    <text id="fda114c6-ca44-48b2-a099-18ddcc4f1cb2Text" clip-path="url(#def143)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1806" x="16" y="23">Recuperar OFAC </tspan> <tspan id="tspan1808" x="14" y="37">para los Signers y </tspan> <tspan id="tspan1810" x="17" y="51">para el Negocio</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg101" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1814" offset="0%" stop-color="#fff"/>
+    <stop id="stop1816" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="04301b65-eb08-47b8-bb01-3a02b9f3c082" x="7577" y="1603" fill="url(#lg101)" stroke="#931c00" stroke-width="2" xlink:href="#def48"/>
+  <g id="04301b65-eb08-47b8-bb01-3a02b9f3c082Container" transform="translate(7577 1603)">
+    <text id="04301b65-eb08-47b8-bb01-3a02b9f3c082Text" clip-path="url(#def144)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1820" x="15" y="25">Estacion Central Validacion </tspan> <tspan id="tspan1822" x="32" y="39">Proveedor Externo</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg102" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1826" offset="0%" stop-color="#fff"/>
+    <stop id="stop1828" offset="100%" stop-color="#ccc1d9"/>
+  </linearGradient>
+  <use id="c5ac1433-753c-4e2e-a0fa-0f14ee90c89c" x="7854" y="895" fill="url(#lg102)" stroke="#7c7189" stroke-width="2" xlink:href="#def28"/>
+  <g id="c5ac1433-753c-4e2e-a0fa-0f14ee90c89cContainer" transform="translate(7854 895)">
+    <text id="c5ac1433-753c-4e2e-a0fa-0f14ee90c89cText" clip-path="url(#def145)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1832" x="6" y="25">Enviar Carta de </tspan> <tspan id="tspan1834" x="15" y="39">Declinación</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg103" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1838" offset="0%" stop-color="#fff"/>
+    <stop id="stop1840" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="cd85297a-98eb-4369-9916-d3052ea35289" x="7975" y="967" fill="url(#lg103)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg104" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1845" offset="0%" stop-color="#fff"/>
+    <stop id="stop1847" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="8b037597-a376-4778-a09d-9ab77e93aed1" x="7879" y="994" fill="url(#lg104)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg105" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1852" offset="0%" stop-color="#fff"/>
+    <stop id="stop1854" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="cf52f70c-c78d-4cea-9fc6-969a981257e6" x="8042" y="1112" fill="url(#lg105)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg106" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1859" offset="0%" stop-color="#fff"/>
+    <stop id="stop1861" offset="100%" stop-color="#5f497a"/>
+  </linearGradient>
+  <use id="4777aab5-4e22-42f4-ba8a-bae0098d5581" x="7876" y="1375" fill="url(#lg106)" stroke="#0f002a" stroke-width="2" xlink:href="#def28"/>
+  <g id="4777aab5-4e22-42f4-ba8a-bae0098d5581Container" transform="translate(7876 1375)">
+    <text id="4777aab5-4e22-42f4-ba8a-bae0098d5581Text" clip-path="url(#def149)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1865" x="19" y="25">Validacion </tspan> <tspan id="tspan1867" x="25" y="39">Manual</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg107" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1871" offset="0%" stop-color="#fff"/>
+    <stop id="stop1873" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="ee1d5c6a-1775-4825-aeb1-6268de49a4d4" x="7886" y="2478.4" fill="url(#lg107)" stroke="#428000" stroke-width="2" xlink:href="#def150"/>
+  <g id="ee1d5c6a-1775-4825-aeb1-6268de49a4d4Container" transform="translate(7886 2478.4)">
+    <text id="ee1d5c6a-1775-4825-aeb1-6268de49a4d4Text" clip-path="url(#def151)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1877" x="20" y="18">Revision del Paquete </tspan> <tspan id="tspan1879" x="11" y="32">comlpeto (Hits OFAC + </tspan> <tspan id="tspan1881" x="40" y="46">LEXIS NEXIS</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg108" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1885" offset="0%" stop-color="#fff"/>
+    <stop id="stop1887" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="7deb098b-aca1-40e1-9443-d57069299aab" x="8181" y="1052" fill="url(#lg108)" stroke="#03689a" stroke-width="2" xlink:href="#def28"/>
+  <g id="7deb098b-aca1-40e1-9443-d57069299aabContainer" transform="translate(8181 1052)">
+    <text id="7deb098b-aca1-40e1-9443-d57069299aabText" clip-path="url(#def152)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1891" x="9" y="25">Abrir Cuenta en </tspan> <tspan id="tspan1893" x="22" y="39">Bankway</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg109" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1897" offset="0%" stop-color="#fff"/>
+    <stop id="stop1899" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="0df3b07c-b0a1-41d9-88b9-256df405c8d8" x="8323" y="2439.4" fill="url(#lg109)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="0df3b07c-b0a1-41d9-88b9-256df405c8d8Container" transform="translate(8323 2439.4)">
+    <text id="0df3b07c-b0a1-41d9-88b9-256df405c8d8Text" clip-path="url(#def153)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1903" x="12" y="18">Revision Final </tspan> <tspan id="tspan1905" x="6" y="32">del Paquete de </tspan> <tspan id="tspan1907" x="20" y="46">la Cuenta</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg110" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1911" offset="0%" stop-color="#fff"/>
+    <stop id="stop1913" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="a23d6c1c-9033-4c27-aef4-8130774fe8ad" x="8475" y="2449.4" fill="url(#lg110)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg111" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1918" offset="0%" stop-color="#fff"/>
+    <stop id="stop1920" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="4ffbd0fb-b008-4055-a859-a8d255ee824a" x="8576" y="2439.4" fill="url(#lg111)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="4ffbd0fb-b008-4055-a859-a8d255ee824aContainer" transform="translate(8576 2439.4)">
+    <text id="4ffbd0fb-b008-4055-a859-a8d255ee824aText" clip-path="url(#def155)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1924" x="24" y="18">Guardar </tspan> <tspan id="tspan1926" x="18" y="32">Archivo en </tspan> <tspan id="tspan1928" x="14" y="46">Accusystems</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg112" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1932" offset="0%" stop-color="#fff"/>
+    <stop id="stop1934" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="19f3b877-e61d-4808-8a20-2326e3c9681d" x="8719" y="2439.4" fill="url(#lg112)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="19f3b877-e61d-4808-8a20-2326e3c9681dContainer" transform="translate(8719 2439.4)">
+    <text id="19f3b877-e61d-4808-8a20-2326e3c9681dText" clip-path="url(#def156)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1938" x="17" y="25">Ingreso en </tspan> <tspan id="tspan1940" x="31" y="39">Prime</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg113" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1944" offset="0%" stop-color="#fff"/>
+    <stop id="stop1946" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="339447ec-caa0-44e7-8a6c-a28d67ec90ab" x="8879" y="2439.4" fill="url(#lg113)" stroke="#428000" stroke-width="2" xlink:href="#def28"/>
+  <g id="339447ec-caa0-44e7-8a6c-a28d67ec90abContainer" transform="translate(8879 2439.4)">
+    <text id="339447ec-caa0-44e7-8a6c-a28d67ec90abText" clip-path="url(#def157)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1950" x="13" y="32">Validacion CIF</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg114" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1954" offset="0%" stop-color="#fff"/>
+    <stop id="stop1956" offset="100%" stop-color="#eaa"/>
+  </linearGradient>
+  <use id="f6b21d87-cd60-458d-b875-10f26c7dd2d1" x="9082" y="2454.4" fill="url(#lg114)" stroke="#900" stroke-width="3" xlink:href="#def19"/>
+  <linearGradient id="lg115" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1961" offset="0%" stop-color="#fff"/>
+    <stop id="stop1963" offset="100%" stop-color="#ecefff"/>
+  </linearGradient>
+  <use id="d757b586-9c12-498b-abdc-2ee96db9e649" x="8522" y="890" fill="url(#lg115)" stroke="#03689a" stroke-width="2" xlink:href="#def159"/>
+  <g id="d757b586-9c12-498b-abdc-2ee96db9e649Container" transform="translate(8522 890)">
+    <text id="d757b586-9c12-498b-abdc-2ee96db9e649Text" clip-path="url(#def160)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1967" x="8" y="27">Notificacion al Cliente </tspan> <tspan id="tspan1969" x="15" y="41">para Correccion de </tspan> <tspan id="tspan1971" x="15" y="55">Excepción Técnica</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg116" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1975" offset="0%" stop-color="#fff"/>
+    <stop id="stop1977" offset="100%" stop-color="#92d050"/>
+  </linearGradient>
+  <use id="55f0522e-1600-4fa8-85fd-f03aa21672c5" x="8538" y="450" fill="url(#lg116)" stroke="#428000" stroke-width="2" xlink:href="#def161"/>
+  <g id="55f0522e-1600-4fa8-85fd-f03aa21672c5Container" transform="translate(8538 450)">
+    <text id="55f0522e-1600-4fa8-85fd-f03aa21672c5Text" clip-path="url(#def162)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan1981" x="10" y="18">Correccion de Excepcion </tspan> <tspan id="tspan1983" x="14" y="32">Tecnica de Informacion </tspan> <tspan id="tspan1985" x="47" y="46">Faltante</tspan>
+    </text>
+  </g>
+  <linearGradient id="lg117" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1989" offset="0%" stop-color="#fff"/>
+    <stop id="stop1991" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="05612829-eb22-49ed-affa-55cec14ae5f3" x="1335" y="1122" fill="url(#lg117)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg118" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop1996" offset="0%" stop-color="#fff"/>
+    <stop id="stop1998" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="7e9de6a9-165b-4381-822d-90ba33ede0ef" x="2086.666" y="1118.333" fill="url(#lg118)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg119" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop2003" offset="0%" stop-color="#fff"/>
+    <stop id="stop2005" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="ea88a2ac-9956-422f-8b26-9bc1d7f494d7" x="2651.666" y="1063.333" fill="url(#lg119)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg120" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop2010" offset="0%" stop-color="#fff"/>
+    <stop id="stop2012" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="26ca6701-ca4c-426a-94e3-7e26a2692927" x="3381" y="1100" fill="url(#lg120)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg121" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop2017" offset="0%" stop-color="#fff"/>
+    <stop id="stop2019" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="760fa7ed-908a-4e61-b6d4-b48424a7d3cb" x="4102" y="1092" fill="url(#lg121)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg122" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop2024" offset="0%" stop-color="#fff"/>
+    <stop id="stop2026" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="c0acc74c-78f6-486e-b6ab-e59174d575aa" x="4803" y="1298" fill="url(#lg122)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg123" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop2031" offset="0%" stop-color="#fff"/>
+    <stop id="stop2033" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="560bddff-3588-4f06-b1d4-7fb292cca51a" x="6332" y="1407" fill="url(#lg123)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg124" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop2038" offset="0%" stop-color="#fff"/>
+    <stop id="stop2040" offset="100%" stop-color="#ffc"/>
+  </linearGradient>
+  <use id="30345bed-f2c9-4601-bb1d-feb3f81c07b7" x="7482" y="1367" fill="url(#lg124)" stroke="#a6a61d" stroke-width="2" xlink:href="#def23"/>
+  <linearGradient id="lg125" x2="160%" gradientTransform="rotate(45)" gradientUnits="objectBoundingBox">
+    <stop id="stop2045" offset="0%" stop-color="#fff"/>
+    <stop id="stop2047" offset="100%" stop-color="#e36c09"/>
+  </linearGradient>
+  <use id="13a797a7-fa1c-4015-a792-2304233c8fcf" x="1849" y="410" fill="url(#lg125)" stroke="#931c00" stroke-width="2" xlink:href="#def28"/>
+  <g id="13a797a7-fa1c-4015-a792-2304233c8fcfContainer" transform="translate(1849 410)">
+    <text id="13a797a7-fa1c-4015-a792-2304233c8fcfText" clip-path="url(#def171)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2051" x="23" y="18">Carta de </tspan> <tspan id="tspan2053" x="15" y="32">Declinación </tspan> <tspan id="tspan2055" x="17" y="46">automática</tspan>
+    </text>
+  </g>
+  <path id="b9901e42-8617-4649-8acc-35161975bad8" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h74.313L77 2.686V17h77" transform="translate(7522 1387)"/>
+  <path id="5203b217-0a7f-419c-bc99-22d57ae9d06c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M346 823V2.686L343.313 0H0" transform="translate(6336 436)"/>
+  <path id="4b961c26-60bc-4ad7-8129-cf5d05102cbc" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M162 100H2.686L0 97.314V0" transform="translate(2853 1070)"/>
+  <path id="18359372-d823-45d7-a169-c1513d1d2bea" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 94V0" transform="translate(7546 763)"/>
+  <path id="1e1783e0-a6d4-41ac-b878-ddd62b0b7508" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M3 0v113H0v113" transform="translate(4122 866)"/>
+  <path id="a712bd47-c1e8-4f1b-b4ab-45117bddd5c9" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h202" transform="translate(3903 846)"/>
+  <path id="93d71396-e5ec-4418-a4e1-50ed1d47f2f1" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M.001 380V202L0 196v-3.314L2.687 190h18.627L24 187.314V184h.001V0" transform="translate(8582 510)"/>
+  <path id="a5735737-c1ab-4d3c-aae0-b6061b058744" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h53" transform="translate(8666 2469)"/>
+  <path id="d3ad55ef-1a9a-4969-887d-c019d74ba1f3" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h70" transform="translate(8809 2469)"/>
+  <path id="1456ba07-a3e1-49c0-b80c-1617a72ac79e" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 322V0" transform="translate(6266 483)"/>
+  <path id="aed95175-d411-4b79-b046-bf97e4fce96b" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M2044 103V2.686L2041.313 0H0" transform="translate(2081 723)"/>
+  <path id="df6b9938-a92f-4cc8-a90c-6c7921d90423" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v37" transform="translate(7721 1434)"/>
+  <path id="6b6e6685-d3ad-4a5e-9e13-dd34b6c4edba" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 445h11.314L14 442.314V2.686L11.314 0H0" transform="translate(1238 859)"/>
+  <path id="710d188b-fb4e-4750-af59-ab150cdbb621" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M253 406V2.686L250.314 0H0" transform="translate(4776 852)"/>
+  <path id="8dfc0023-54f5-4aa0-8fec-8d82b950a1bd" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v404.314L2.686 407H25" transform="translate(2481 878)"/>
+  <path id="e1236653-960c-44eb-93fc-ea3880a20f27" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 76V43.186L2.686 40.5h35.628L41 37.814V0" transform="translate(728 1002)"/>
+  <path id="2c1fa141-632a-4900-b301-31211fd4e14c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v258.314L2.686 261h50.627L56 263.686V522" transform="translate(2671 1103)"/>
+  <path id="96aa85e7-2e58-4c0f-b06c-ed46e1db847e" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M473 1425V2.686L470.313 0H0" transform="translate(4770 493)"/>
+  <path id="3776ed41-28cb-4b11-9e50-bfaf042b377c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M1 318V159H0V0" transform="translate(6821 517)"/>
+  <path id="c24bd04e-3edb-4509-b7d2-ad42016a9ef6" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h62" transform="translate(8413 2469)"/>
+  <path id="cd822648-873c-4722-a5a4-5fc74bd043db" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 62h351.313L354 59.314V2.686L351.313 0H209" transform="translate(6372 1365)"/>
+  <path id="ea333279-f79b-4f67-8d32-9938344212dd" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 276h49.313L52 273.314V0" transform="translate(2401 878)"/>
+  <path id="dad21f9b-c3f5-456f-8f8e-1c64b1b61252" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v123.314L2.686 126h39.627L45 128.686V252" transform="translate(2061 866)"/>
+  <path id="d8a2a854-dc32-4778-8b0b-d1c41d7679fe" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h211" transform="translate(1830 846)"/>
+  <path id="b9c13d93-ac4e-49cf-98eb-65e82db99cb7" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v109.314L2.686 112h147.628l2.686 2.686V224" transform="translate(2106 1158)"/>
+  <path id="69a49cfb-6772-46c0-9844-503e3f9dd547" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h164" transform="translate(1238 846)"/>
+  <path id="6063d38c-b0e8-42cf-aae3-354654df5e38" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v123.814l2.686 2.686h21.627L27 129.186V253" transform="translate(4823 1338)"/>
+  <path id="21770cfc-622e-4f8e-a9ba-4078a3d8a577" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h170" transform="translate(3211 846)"/>
+  <path id="c8ec90bc-ccf2-4c74-9507-715756f117fb" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M143 98H2.686L0 95.314V0" transform="translate(2218 1056)"/>
+  <path id="339ed753-4e14-4930-b356-72b5e6f7112f" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 50h46.813l2.687-2.686V2.686L52.186 0H99" transform="translate(8082 1082)"/>
+  <path id="7d4669a5-3910-404d-b7ca-5b60f1ff70d4" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h34.313L37 2.686V90" transform="translate(4293 996)"/>
+  <path id="a7c62e34-0ecf-4009-a91b-c7a4f5c30b01" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 123V0" transform="translate(1894 470)"/>
+  <path id="cc94b3ac-1e35-49be-8de5-0a6d64db1b50" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h84.314L87 2.686V61" transform="translate(1574 950)"/>
+  <path id="948f9c2e-5256-43eb-86cd-b393fef614c1" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M141 78H95.686L93 75.314V2.686L90.314 0H0" transform="translate(814 972)"/>
+  <path id="12a92b79-7137-4a8d-86dd-f9ea3a3517f6" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M198 146H2.686L0 143.314V0" transform="translate(4231 1121)"/>
+  <path id="8890106a-1d41-462d-a266-11ef2cb8a0fd" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v278.814l2.686 2.686h159.628l2.686 2.686V563" transform="translate(1015 248)"/>
+  <path id="ecdf39c8-da1e-43df-90e6-c741976e3171" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v421.314L2.686 424H38" transform="translate(1789 878)"/>
+  <path id="903e0e92-e8a7-4118-bd7c-89b8ce62d239" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h27.313L30 2.686V63" transform="translate(2898 972)"/>
+  <path id="975d8527-1f8c-4f30-b61a-a83e047d1698" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M169 621V2.686L166.314 0H0" transform="translate(431 755)"/>
+  <path id="80cafcf0-c0b2-4b65-bb78-179be1beb3d7" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h62" transform="translate(470 540)"/>
+  <path id="70597a13-381d-4da1-9d4c-be5d2dd836a8" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M991 1837h241.313l2.687-2.687V2.686L1232.313 0H0" transform="translate(4770 467)"/>
+  <path id="87db317a-e92d-4fc6-988e-d77ca972d571" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 238h74.313L77 235.314V0" transform="translate(2304 1174)"/>
+  <path id="b82895b7-b0b4-42e1-a16a-25a98a7d13e1" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M242 1291H2.686L0 1288.313V0" transform="translate(5479 1013)"/>
+  <path id="858ebb68-5e83-4525-a191-ca8f50a6fe9c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M22 41V23.186L19.314 20.5H2.686L0 17.814V0" transform="translate(1529 992)"/>
+  <path id="fc0c5bd4-ecca-4ad1-967b-b477aa59ef62" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v107h2.761L5 109.239v5.522L2.761 117H0v325" transform="translate(2106 1158)"/>
+  <path id="1ada7e7b-b7b4-43d3-9488-4f00dd794260" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 81V0" transform="translate(6822 917)"/>
+  <path id="675c31cd-1e54-4c43-acad-62026d00f6fb" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v154.314L2.686 157h30.628L36 159.686V302" transform="translate(170 113)"/>
+  <path id="f5c16a9e-a01b-4cb1-acbb-34390c5a55e5" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h90.5v1H181" transform="translate(2526 845)"/>
+  <path id="a7bd28d6-cfce-49a5-9301-e419cba88c89" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h146" transform="translate(7116 877)"/>
+  <path id="797cb773-0f73-4d5b-a919-74489b093f98" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M56 0v95.814L53.314 98.5H2.687L0 101.186V197" transform="translate(2671 866)"/>
+  <path id="7a02c754-38f1-4546-ae2d-413232fbf961" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v223.314L2.686 226H75" transform="translate(7502 1407)"/>
+  <path id="78ccaa0f-bce3-4750-8ab3-6431c5f40d7b" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h42.313L45 2.686V85.314L47.686 88H65" transform="translate(4581 764)"/>
+  <path id="33d00079-fa81-497e-ba33-f209cf30e505" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 47V0" transform="translate(3531 971)"/>
+  <path id="f760fce5-9058-4add-a02f-638bd56f8169" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 27h34.814l2.686-2.686V2.686L40.186 0H75" transform="translate(1571 1026)"/>
+  <path id="69981f8c-fc61-4a9b-ad14-a8d9cadf2138" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h52.314L55 2.686v249.628L57.686 255H117" transform="translate(1375 1142)"/>
+  <path id="8df27e5c-411e-4f25-b140-fe548b35f4a9" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M135 280H2.686L0 277.314V0" transform="translate(206 475)"/>
+  <path id="c3044b3f-b260-4a49-932b-313e1770ddcc" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 225h125.314l2.686-2.686V0" transform="translate(1409 1427)"/>
+  <path id="feccdadc-72fc-439f-aeea-9251d10986c6" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h105.314L108 2.686V308.314l2.686 2.686H174" transform="translate(2691 1083)"/>
+  <path id="db5eba4b-78b8-4544-bc0f-b85f50e3c2dc" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M14 0H2.686L0 2.686V455.314L2.686 458H39" transform="translate(1109 846)"/>
+  <path id="b05c4a82-3bb5-4a7e-9e1e-977c1fbfdbb8" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 103V2.686L2.686 0H619" transform="translate(1422 723)"/>
+  <path id="5c1df8c6-46c0-4720-b89b-9532087f983b" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 353V61.686L2.687 59H109.314L112 56.314V53l.001-53" transform="translate(4449 894)"/>
+  <path id="90d8a961-7137-411c-b40b-513e0b24fb63" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 413V252.686L2.686 250h21.628L27 247.314V0" transform="translate(769 529)"/>
+  <path id="52d736ba-c7df-41b5-ad8f-d8d731b2fe83" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M108 21V2.686L105.314 0H0" transform="translate(1953 625)"/>
+  <path id="d12cf1bc-d9f4-4d8b-a2b8-ed34f8a7220a" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M67 0v125.314L64.314 128H2.686L0 130.686V256" transform="translate(1355 866)"/>
+  <path id="5eaabd08-6f03-4bec-8fdd-363ad444528b" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h133" transform="translate(7393 877)"/>
+  <path id="22a9ad16-fdc5-43d4-88be-27c27cb77eab" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 219h111.314l2.686-2.686V0" transform="translate(1582 1178)"/>
+  <path id="57f1d13c-96ed-4fcd-a9d4-9940620d8dfa" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M1320 103V2.686L1317.313 0H0" transform="translate(2081 723)"/>
+  <path id="9e42bd53-a4af-4b60-b186-e7c46b662d23" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h43.313L46 2.686V42" transform="translate(2263 947)"/>
+  <path id="5296122f-537d-45cd-8a4a-38269608d93d" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h54" transform="translate(252 445)"/>
+  <path id="5de9b57a-ef8c-451e-ade0-3364d99d0793" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v60h2.761L5 62.239v5.522L2.761 70H0v113h2.761L5 185.238v5.523L2.761 193H0v152.314L2.686 348h66.628L72 350.686V683" transform="translate(1894 658)"/>
+  <path id="9627fe35-be7e-4e2a-9356-e1c4a8db0568" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h105" transform="translate(475 1396)"/>
+  <path id="f6f44d36-14fc-4c52-b4a9-2af884891169" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M.001 1481V742L0 736v-3.314L2.687 730h81.627L87 727.314V724h.001V0" transform="translate(8495 968)"/>
+  <path id="d1f54fba-923c-4e1b-b5aa-d427f0bf2106" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 50V0" transform="translate(4561 784)"/>
+  <path id="e946ab67-6383-4ca0-8faf-96422571e60e" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0H76.313l2.686 2.686V6H79v1351" transform="translate(8271 1082)"/>
+  <path id="ca4d31b9-236a-4665-86cb-9957b0ba0c30" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h93.313L96 2.687V44" transform="translate(5645 2240)"/>
+  <path id="d3cfe373-ccfc-4df8-9f41-6e7844d99cea" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v765.313L2.686 768H129" transform="translate(5029 1298)"/>
+  <path id="c3a76f83-d71b-4509-a49b-a06127fa989d" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v224.314L2.686 227h80.627L86 229.686V465" transform="translate(3401 1140)"/>
+  <path id="01844abe-b985-4729-b1b9-544929b4665a" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M125 85H2.686L0 82.314V0" transform="translate(1551 1073)"/>
+  <path id="d912ed54-7572-424d-9734-99318ae973f4" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h64" transform="translate(4251 1101)"/>
+  <path id="cff7af4a-ef40-451c-9657-7b04551bf32c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h21.313L24 2.686V82" transform="translate(3576 941)"/>
+  <path id="0372769c-a003-444f-b9f1-b8e2e882708e" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 56V2.686L2.687 0H126.001" transform="translate(6536 1279)"/>
+  <path id="fe80d5eb-2aea-4a62-8f38-849578fdbeeb" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h34" transform="translate(3551 1038)"/>
+  <path id="ae756760-e83f-4447-bb3e-6abc5f689f20" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 17V0" transform="translate(2061 686)"/>
+  <path id="7f766f57-f21a-427b-8f6e-d77cf77ab89c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M44 0v221.814l-2.686 2.686H2.687L0 227.186V470" transform="translate(7502 897)"/>
+  <path id="d8ab7dcb-3e48-4952-8500-b1f2bbcb6e6c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 78V34.186L2.687 31.5H21.314L24 28.814V0" transform="translate(5219 1958)"/>
+  <path id="6c40a46d-a677-4048-b9e5-186776dbb13b" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h46.313L49 2.686V309.314L51.686 312H97" transform="translate(4142 1112)"/>
+  <path id="b597b160-4059-4e0c-9268-675d182906d2" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h50.313L53 2.686V304h2.761L58 306.239v5.523L55.761 314H53v441" transform="translate(4770 543)"/>
+  <path id="eae32c65-048b-4409-b758-e2d48e556cf5" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h33" transform="translate(5499 993)"/>
+  <path id="8fae3d4c-a53f-4ee3-bb69-bd01a7bc3b71" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h176.314L179 2.686V358" transform="translate(6879 484)"/>
+  <path id="94f888a3-fc2a-4f5f-804e-a80290bd8fbd" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 1356h35.313l2.687-2.687V0" transform="translate(8024 1152)"/>
+  <path id="46c09023-8a38-49f4-bf21-ba8d7253c6d5" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M14 0H2.687L0 2.686V434.314L2.687 437H35" transform="translate(7248 889)"/>
+  <path id="dd7ec3e4-be5c-4569-99c3-655bdef9408c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 92V48.686L2.686 46h20.628L26 43.314V0" transform="translate(975 938)"/>
+  <path id="2dcb1aba-9bd8-439b-8e04-e92c5d5c80b7" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 83V2.686L2.687 0H62" transform="translate(4947 1278)"/>
+  <path id="95213ac3-2324-4bb7-a087-2271b5f1e056" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M143 98H2.686L0 95.314V0" transform="translate(7899 1034)"/>
+  <path id="fbd94c6e-30eb-4aa4-8791-de6ccd558341" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h85.313L88 2.687V28" transform="translate(5977 2480)"/>
+  <path id="596c5c42-3d86-4c9b-b568-34b824dd30d9" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 297h254.314l2.686-2.686V37h-2.762L252 34.761v-5.522L254.238 27H257V0" transform="translate(6313 1395)"/>
+  <path id="71f5bb50-428f-42af-b19d-c2bbdd22d6fc" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 163h322.313l2.687-2.686V7.686L327.686 5H428V2.239L430.238 0h5.523L438 2.239V5h211" transform="translate(5572 835)"/>
+  <path id="b4adbbdc-ff79-4a35-b39f-fd5bb55e6114" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M1315 2086h11.313l2.687-2.687V398h-2.762l-2.238-2.239v-5.522l2.238-2.239H1329V2.686L1326.313 0H0" transform="translate(4770 442)"/>
+  <path id="91be55e9-8ed8-4c11-a77f-7851ddbff8c2" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v607.814l2.686 2.686h24.627L30 613.186V1197" transform="translate(5552 1013)"/>
+  <path id="6dbfe83a-7d62-45ea-afeb-f830623d248a" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 32h25.313L28 29.314V2.686L30.686 0H56" transform="translate(2238 1004)"/>
+  <path id="75697400-d356-4a2b-a10b-1457c3d9823d" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M2480 21V2.686L2477.313 0H2049v2.761L2046.761 5h-5.523L2039 2.761V0h-714v2.761L1322.761 5h-5.522L1315 2.761V0H0" transform="translate(2081 723)"/>
+  <path id="795957f2-1502-4319-b197-b0bfe8e31c32" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 280h45.314L48 277.314V0" transform="translate(1716 878)"/>
+  <path id="ad84b402-e1cd-4d64-94de-094328a8a9c2" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v416.314L2.686 419H93" transform="translate(3169 876)"/>
+  <path id="57c86337-cd25-4357-b3f4-329f4e01e9b3" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M169 0v180h2.761l2.239 2.238v5.523L171.761 190H169v365.314L166.314 558H2.686L0 560.686V791" transform="translate(408 570)"/>
+  <path id="3732b0eb-e6d7-40f2-978a-23cc312500a4" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h28.813L31.5 2.686V73.314L34.186 76H56" transform="translate(4843 1318)"/>
+  <path id="1e67e213-a203-4d33-b8f8-be1916793e92" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v72.314L2.686 75H54" transform="translate(326 465)"/>
+  <path id="45a7438a-b347-4cfe-8553-0a2cd7b697ea" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 385h41.313L44 382.314V0" transform="translate(3716 880)"/>
+  <path id="e357719d-7cff-44eb-8032-484268366315" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 216h67.813l2.687-2.686V2.686L73.186 0H141" transform="translate(7735 1405)"/>
+  <path id="6e3711f0-fd53-4f27-9d7b-9cc0447faaff" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 32h25.313L28 29.314V2.686L30.686 0H56" transform="translate(7919 982)"/>
+  <path id="01c843ca-1b30-4be4-8ce7-e28e86a5fe10" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v37" transform="translate(1984 1401)"/>
+  <path id="3511c884-aa8b-4415-a476-ada5b7f6ffc6" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M3471 250V2.686L3468.313 0H3167v2.761L3164.761 5h-5.523L3157 2.761V0h-410v2.761L2744.761 5h-5.523L2737 2.761V0h-252v2.761L2482.761 5h-5.523L2475 2.761V0h-426v2.761L2046.761 5h-5.523L2039 2.761V0h-714v2.761L1322.761 5h-5.522L1315 2.761V0H0" transform="translate(2081 723)"/>
+  <path id="f7457998-683c-4dee-b91a-bed589146755" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h168.314L171 2.686V273" transform="translate(3421 1120)"/>
+  <path id="185c9e36-9fbe-4b6d-b803-4fdebf0c7af2" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h82" transform="translate(748 1098)"/>
+  <path id="a3e01190-c624-4b9d-ae64-964a79a9c244" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 193h36.313L39 190.314V0" transform="translate(4908 1428)"/>
+  <path id="7b958db9-78b5-4a3f-b533-babcd0ec2082" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M20 0v227.314L17.314 230H2.686L0 232.686V460" transform="translate(1335 1162)"/>
+  <path id="97d6d8df-72b2-43b0-8489-21ff823db0c3" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h374.313L377 2.686V1306h2.761l2.239 2.239v5.522l-2.239 2.239H377v141" transform="translate(5572 993)"/>
+  <path id="ef6ac3e9-afbf-43c6-9458-66da072c08dc" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h190.314L193 2.686V18h193" transform="translate(4145 846)"/>
+  <path id="f0ff2021-6daa-45b7-bdca-e0aa6ac13023" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v234" transform="translate(3401 866)"/>
+  <path id="11309bc8-b0a7-477f-9ccf-4ac3649a9329" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M42 402V2.686L39.314 0H0" transform="translate(1830 858)"/>
+  <path id="84873636-767c-46bb-ab47-616bd5b8e1b6" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 300V153.686L2.686 151h50.628L56 148.314V0" transform="translate(919 1070)"/>
+  <path id="f8b12095-c147-49e5-a9f9-2c7424876603" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h74.314L77 2.686V89" transform="translate(185 98)"/>
+  <path id="ff0507f7-93d8-4b75-b8c4-0905798fdceb" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h43.313L46 2.686V42" transform="translate(7944 925)"/>
+  <path id="557d4405-44d5-4b50-b704-1e287b854663" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 219h116.314l2.686-2.686V0" transform="translate(2791 1436)"/>
+  <path id="228d38ed-ceb0-46ff-bea6-69f8e42440d6" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M439 14V2.686L436.314 0H2.686L0 2.686V221" transform="translate(576 194)"/>
+  <path id="435bd4c2-75e5-40b1-8c9a-b8a98ad5220b" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 228h113.314l2.686-2.686V2.686L118.686 0H374" transform="translate(621 228)"/>
+  <path id="5f6eb8af-d3fc-4ba6-9c0b-4ae2ab2a19df" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M82 0H2.687L0 2.686V235" transform="translate(6250 1427)"/>
+  <path id="48c5ad5c-e6f6-4b23-bf4c-c02811708018" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M14 0H2.687L0 2.686V445.314L2.687 448H14" transform="translate(6987 877)"/>
+  <path id="9bd13ced-3a69-45cc-8d78-135c435fde79" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v519.814l2.686 2.686h46.627L52 525.186V1043" transform="translate(7903 1435)"/>
+  <path id="3d28705b-356a-491d-8a7a-cbb0f837820f" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 216h77.313L80 213.314V0" transform="translate(2955 1190)"/>
+  <path id="676b899a-fe22-46bd-aa6d-4a395ea0cf11" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 188h71.313L74 185.314V0" transform="translate(2185 1442)"/>
+  <path id="e5d37f95-a3b4-431c-9a42-b7d1b43a8e0b" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h113" transform="translate(8969 2469)"/>
+  <path id="e2860d9b-def7-4d1d-8fda-a7c037a9370d" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M1 0v215H0v235" transform="translate(4121 1132)"/>
+  <path id="596f79b2-0aee-4689-99ab-bde378939732" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M67 0H2.686L0 2.686V898.314L2.686 901H190" transform="translate(684 499)"/>
+  <path id="2767b0f8-1f32-4961-9057-1891d800f2a0" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h257" transform="translate(1442 846)"/>
+  <path id="8d2d0ae8-6c92-4acf-ad8f-4ca438ae21f6" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v449.314L2.686 452h22.627L28 454.686V924" transform="translate(6324 483)"/>
+  <path id="78cc4934-11b2-43a3-b74b-760e2c53c35c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 303h39.314L42 300.314V7.686L44.686 5H59V2.239L61.239 0h5.522L69 2.239V5h19" transform="translate(620 1098)"/>
+  <path id="57e74af8-42ed-4fb7-9025-7307e8e561aa" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M106 96H55.686L53 93.314V2.686L50.313 0H0" transform="translate(7420 647)"/>
+  <path id="5386a127-400f-4bfe-862c-caef5760f612" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M25 397V2.686L22.313 0H0" transform="translate(2526 858)"/>
+  <path id="22e1c264-094b-4064-969b-ed76fabd6d96" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 83V0" transform="translate(2061 743)"/>
+  <path id="dcdbe5d4-9de6-40a9-a839-39e84ac16214" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 28V0" transform="translate(2853 1002)"/>
+  <path id="5715da50-e6c5-4beb-aa56-de67a4bc5b98" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 39V0" transform="translate(7899 955)"/>
+  <path id="20cdfef8-c9a8-4b1a-ac90-667f37a3c1dd" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h61" transform="translate(8515 2469)"/>
+  <path id="62e56536-7fb5-4f70-8b2a-1c4b48601fcf" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 137h117.314l2.685-2.686V131H120V0" transform="translate(4329 1287)"/>
+  <path id="e43b6c43-1b16-4eef-9944-6682aa130d7d" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h322" transform="translate(3421 846)"/>
+  <path id="62790b33-c12a-4256-9b92-6737cabef593" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h185" transform="translate(346 445)"/>
+  <path id="34b82e83-93ae-4524-9d3f-72813f34f2fd" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 182h62.313L65 179.314V0" transform="translate(3527 1453)"/>
+  <path id="109f1736-4da4-4e25-97a9-525417124e88" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h40" transform="translate(2873 1050)"/>
+  <path id="c1fb4672-692f-42b6-b3a4-06c76645ebc0" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M63 386V2.686L60.313 0H0" transform="translate(3903 859)"/>
+  <path id="7997bb83-52e2-4002-81b8-578b126e1f74" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 294h86.313L89 291.314V0" transform="translate(3055 876)"/>
+  <path id="2aec74e9-a123-407b-accb-95011cd2fb00" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h280.313L283 2.686V740" transform="translate(7420 634)"/>
+  <path id="e07c47b6-c992-4fc6-a921-c3c59f1a141c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M40 0H2.686L0 2.686V52h2.761L5 54.239v5.522L2.761 62H0v113h2.761L5 177.239v5.523L2.761 185H0v490" transform="translate(2001 666)"/>
+  <path id="45f4a76c-d1b7-44ee-a822-da32b83e6720" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 138h56.313L59 135.314V0" transform="translate(3637 1285)"/>
+  <path id="482df287-547e-4a37-9843-3d77a7afc865" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 435h36.313L39 432.314V2.686L36.313 0H25" transform="translate(7091 890)"/>
+  <path id="6d3f48b7-dd7f-4d22-b46c-6508d07297bf" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M96 408V2.686L93.313 0H0" transform="translate(3211 857)"/>
+  <path id="25a2bbd1-be99-4ff7-bfe5-695ec144473c" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 945h155.314l2.686-2.686V2.686L160.686 0H196" transform="translate(5263 993)"/>
+  <path id="1e14277a-b266-4653-9dfc-e5971978c422" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M165 187V46.186l-2.686-2.686H2.686L0 40.814V0" transform="translate(3531 1058)"/>
+  <path id="380d07a1-611e-4b9e-92e2-9f60ce643d61" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 1h150V0h150" transform="translate(2081 845)"/>
+  <path id="14212e4b-8119-4d1e-95a0-0ef08059e0fd" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 5h132V2.239L134.238 0h5.523L142 2.239V5h27.314L172 7.686V636" transform="translate(7566 743)"/>
+  <path id="5f765e7f-907b-4c49-a372-1176c74b2639" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0v392.314L2.686 395H148" transform="translate(3791 880)"/>
+  <path id="832206f3-96b9-49e3-8cc4-feaf5bf03e3f" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 0h330" transform="translate(2747 846)"/>
+  <path id="7d0267a6-0031-4c2d-8d93-9cc446a1c186" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M5 267v-96H2.239L0 168.761v-5.523L2.239 161H5v-51.814l2.687-2.686H29.314L32 103.814V0" transform="translate(4660 557)"/>
+  <path id="ac14e153-50ab-4743-ace2-a35cee5a4644" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M153.001 0H2.687L0 2.686V6h.001v1953" transform="translate(8385 480)"/>
+  <path id="93ba8387-df50-494c-834b-ed6f58dc4732" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 251h34.813l2.687-2.686V2.686L40.186 0H75" transform="translate(6702 1028)"/>
+  <path id="2ef76f09-c5de-4bdc-9daa-947208927119" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M646 103V2.686L643.313 0H0" transform="translate(2081 723)"/>
+  <path id="bef6bfad-f7ac-4882-ae72-379410c1d975" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M571 1515H7.687L5 1512.313V1296H2.239L0 1293.761v-5.522L2.239 1286H5V0" transform="translate(5479 1013)"/>
+  <path id="3b29d3b8-eb8d-4938-aef6-8848b33365f1" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 426h31.313L34 423.314V2.686L31.313 0H20" transform="translate(7373 889)"/>
+  <path id="cfe20cd7-3488-4b8c-a195-f4a124363bd4" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 39V0" transform="translate(2218 977)"/>
+  <path id="f2ca9af2-a45c-45a2-bb33-3e277c87aa53" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 158h92.313L95 155.314V0" transform="translate(4189 1454)"/>
+  <path id="2c242267-4194-4527-aa6a-a1ddc5f96439" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 55V30.186L2.687 27.5H17V0" transform="translate(4231 1026)"/>
+  <path id="59319741-ae3e-430e-81be-222cef3dd0e2" fill="none" stroke="#000" marker-end="url(#defMarker)" d="M0 45V2.686L2.686 0H868.314L871 2.686V382.5h2.761l2.239 2.238v5.523l-2.239 2.239H871V669" transform="translate(287 142)"/>
+  <g id="Text_54f14b5a-8412-4350-b76c-8fddacafba4eContainer" transform="translate(7927 999)">
+    <text id="Text_54f14b5a-8412-4350-b76c-8fddacafba4eText" clip-path="url(#def175)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2569" x="7" y="14">NO</tspan>
+    </text>
+  </g>
+  <g id="Text_e912bae2-e775-4063-a23a-e11794f9341bContainer" transform="translate(7949 1097)">
+    <text id="Text_e912bae2-e775-4063-a23a-e11794f9341bText" clip-path="url(#def177)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2573" x="7" y="14">NO </tspan> <tspan id="tspan2575" x="7" y="29">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_296d24dc-ca52-48f5-b658-5db6841da47dContainer" transform="translate(7545 810)">
+    <text id="Text_296d24dc-ca52-48f5-b658-5db6841da47dText" clip-path="url(#def179)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2579" x="7" y="14">RECHAZO </tspan> <tspan id="tspan2581" x="7" y="29">AUTOMATICO</tspan>
+    </text>
+  </g>
+  <g id="Text_ef70b32f-e2c4-4c60-a0de-825da8096610Container" transform="translate(6936 1015)">
+    <text id="Text_ef70b32f-e2c4-4c60-a0de-825da8096610Text" clip-path="url(#def180)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2585" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_535f58b2-ab53-4f5b-8073-5fa3259fbfa8Container" transform="translate(7248 1002)">
+    <text id="Text_535f58b2-ab53-4f5b-8073-5fa3259fbfa8Text" clip-path="url(#def181)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2589" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_ba3cb337-1d5f-4d56-9052-2c8eb4e92f1eContainer" transform="translate(7132 1031)">
+    <text id="Text_ba3cb337-1d5f-4d56-9052-2c8eb4e92f1eText" clip-path="url(#def183)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2593" x="7" y="14">REINTENTO</tspan>
+    </text>
+  </g>
+  <g id="Text_88d01389-85a1-47d9-a2d0-0f48fb65e5b0Container" transform="translate(5029 1056)">
+    <text id="Text_88d01389-85a1-47d9-a2d0-0f48fb65e5b0Text" clip-path="url(#def185)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2597" x="7" y="14">Documentacion </tspan> <tspan id="tspan2599" x="7" y="29">Incompleta</tspan>
+    </text>
+  </g>
+  <g id="Text_5090b53d-683f-47da-9b45-a5501ab2b5adContainer" transform="translate(789 1098)">
+    <text id="Text_5090b53d-683f-47da-9b45-a5501ab2b5adText" clip-path="url(#def186)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2603" x="7" y="14">SI</tspan>
+    </text>
+  </g>
+  <g id="Text_54cdd21e-035e-4ffd-9273-7a5d1485e020Container" transform="translate(749 1043)">
+    <text id="Text_54cdd21e-035e-4ffd-9273-7a5d1485e020Text" clip-path="url(#def187)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2607" x="7" y="14">NO</tspan>
+    </text>
+  </g>
+  <g id="Text_99bf48dd-c71d-440d-bd06-b087c4d4f3cfContainer" transform="translate(5368 1489)">
+    <text id="Text_99bf48dd-c71d-440d-bd06-b087c4d4f3cfText" clip-path="url(#def188)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2611" x="7" y="14">NO</tspan>
+    </text>
+  </g>
+  <g id="Text_dce6a02c-63b3-4750-9bc8-bd5674c1e09dContainer" transform="translate(1423 775)">
+    <text id="Text_dce6a02c-63b3-4750-9bc8-bd5674c1e09dText" clip-path="url(#def189)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2615" x="7" y="14">RECHAZO </tspan> <tspan id="tspan2617" x="7" y="29">AUTOMATICO</tspan>
+    </text>
+  </g>
+  <g id="Text_068d24fd-2c38-4872-95fd-6cb36bc5efa5Container" transform="translate(4125 775)">
+    <text id="Text_068d24fd-2c38-4872-95fd-6cb36bc5efa5Text" clip-path="url(#def190)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2621" x="7" y="14">RECHAZO </tspan> <tspan id="tspan2623" x="7" y="29">AUTOMATICO</tspan>
+    </text>
+  </g>
+  <g id="Text_6977c38e-be26-4fab-909e-eae1a9e205a1Container" transform="translate(2060 785)">
+    <text id="Text_6977c38e-be26-4fab-909e-eae1a9e205a1Text" clip-path="url(#def191)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2627" x="7" y="14">RECHAZO </tspan> <tspan id="tspan2629" x="7" y="29">AUTOMATICO</tspan>
+    </text>
+  </g>
+  <g id="Text_2a24b073-a68b-43ba-94a8-05badb9dcf01Container" transform="translate(5096 1284)">
+    <text id="Text_2a24b073-a68b-43ba-94a8-05badb9dcf01Text" clip-path="url(#def193)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2633" x="7" y="14">Documentacion </tspan> <tspan id="tspan2635" x="7" y="29">Completa</tspan>
+    </text>
+  </g>
+  <g id="Text_f830c6ff-c59f-4fc3-bb88-10bb816f9c95Container" transform="translate(4283 1101)">
+    <text id="Text_f830c6ff-c59f-4fc3-bb88-10bb816f9c95Text" clip-path="url(#def194)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2639" x="7" y="14">NO</tspan>
+    </text>
+  </g>
+  <g id="Text_527439a0-998a-46ea-babe-5ce7975c5e79Container" transform="translate(4330 1268)">
+    <text id="Text_527439a0-998a-46ea-babe-5ce7975c5e79Text" clip-path="url(#def195)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2643" x="7" y="14">NO </tspan> <tspan id="tspan2645" x="7" y="29">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_2a5893ce-cee4-4a9d-8587-f9738acc89feContainer" transform="translate(4505 1037)">
+    <text id="Text_2a5893ce-cee4-4a9d-8587-f9738acc89feText" clip-path="url(#def197)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2649" x="7" y="14">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_109a0810-a24b-403f-ba32-f21ac66aeea9Container" transform="translate(3790 1041)">
+    <text id="Text_109a0810-a24b-403f-ba32-f21ac66aeea9Text" clip-path="url(#def198)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2653" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_ed91bfcf-7b94-4920-90c7-3c02c836b23fContainer" transform="translate(3169 980)">
+    <text id="Text_ed91bfcf-7b94-4920-90c7-3c02c836b23fText" clip-path="url(#def199)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2657" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_571b7d85-0fce-482d-9645-a6618b8b98acContainer" transform="translate(2893 1049)">
+    <text id="Text_571b7d85-0fce-482d-9645-a6618b8b98acText" clip-path="url(#def200)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2661" x="7" y="14">NO</tspan>
+    </text>
+  </g>
+  <g id="Text_ecdb0de6-8c33-4331-b6c1-3a2af83f6bb5Container" transform="translate(2935 1170)">
+    <text id="Text_ecdb0de6-8c33-4331-b6c1-3a2af83f6bb5Text" clip-path="url(#def201)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2665" x="7" y="14">NO </tspan> <tspan id="tspan2667" x="7" y="29">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_ca259674-1319-4f32-bcad-bf9d14f95435Container" transform="translate(3099 1170)">
+    <text id="Text_ca259674-1319-4f32-bcad-bf9d14f95435Text" clip-path="url(#def202)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2671" x="7" y="14">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_81e303be-ab26-482b-b0d8-6f14b264215dContainer" transform="translate(2911 846)">
+    <text id="Text_81e303be-ab26-482b-b0d8-6f14b264215dText" clip-path="url(#def203)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2675" x="7" y="14">EXITO</tspan>
+    </text>
+  </g>
+  <g id="Text_e767f9c5-a0bd-45ef-a151-fb098d3a22daContainer" transform="translate(2481 978)">
+    <text id="Text_e767f9c5-a0bd-45ef-a151-fb098d3a22daText" clip-path="url(#def204)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2679" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_1b564975-f001-44e0-939e-7785d72c143aContainer" transform="translate(2298 1021)">
+    <text id="Text_1b564975-f001-44e0-939e-7785d72c143aText" clip-path="url(#def205)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2683" x="7" y="14">NO</tspan>
+    </text>
+  </g>
+  <g id="Text_6882d9db-a94f-4c84-8608-c937a394072cContainer" transform="translate(2268 1119)">
+    <text id="Text_6882d9db-a94f-4c84-8608-c937a394072cText" clip-path="url(#def206)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2687" x="7" y="14">NO </tspan> <tspan id="tspan2689" x="7" y="29">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_4bd38c03-364c-4f9b-a937-c5def204cfa2Container" transform="translate(2428 1154)">
+    <text id="Text_4bd38c03-364c-4f9b-a937-c5def204cfa2Text" clip-path="url(#def207)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2693" x="7" y="14">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_c7f2c44a-aa3a-4af3-8749-1722c3bc5668Container" transform="translate(2251 844)">
+    <text id="Text_c7f2c44a-aa3a-4af3-8749-1722c3bc5668Text" clip-path="url(#def208)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2697" x="7" y="14">EXITO</tspan>
+    </text>
+  </g>
+  <g id="Text_48af2645-80b3-4552-a144-af12feac42d0Container" transform="translate(1789 985)">
+    <text id="Text_48af2645-80b3-4552-a144-af12feac42d0Text" clip-path="url(#def209)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2701" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_15be6c0e-ef6e-45c7-99fe-ff3e206afe32Container" transform="translate(1628 1010)">
+    <text id="Text_15be6c0e-ef6e-45c7-99fe-ff3e206afe32Text" clip-path="url(#def211)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2705" x="7" y="14">Sin Carta</tspan>
+    </text>
+  </g>
+  <g id="Text_93e5efc4-3af7-4d90-ad1e-cb8b5c8fa028Container" transform="translate(1613 1158)">
+    <text id="Text_93e5efc4-3af7-4d90-ad1e-cb8b5c8fa028Text" clip-path="url(#def212)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2709" x="7" y="14">NO </tspan> <tspan id="tspan2711" x="7" y="29">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_e751c102-ae36-43f3-9378-a8ed822639dbContainer" transform="translate(1741 1158)">
+    <text id="Text_e751c102-ae36-43f3-9378-a8ed822639dbText" clip-path="url(#def213)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2715" x="7" y="14">CONTINUAR</tspan>
+    </text>
+  </g>
+  <g id="Text_ffecb5ea-f37a-4d2e-aae1-a1740bd5276dContainer" transform="translate(1389 991)">
+    <text id="Text_ffecb5ea-f37a-4d2e-aae1-a1740bd5276dText" clip-path="url(#def214)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2719" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_2f416182-9e99-45d8-b5d1-037120076b92Container" transform="translate(1677 880)">
+    <text id="Text_2f416182-9e99-45d8-b5d1-037120076b92Text" clip-path="url(#def215)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2723" x="7" y="14">EXITO</tspan>
+    </text>
+  </g>
+  <g id="Text_502145fc-3695-4f82-b8c7-7a5c8bfb4c44Container" transform="translate(1254 1006)">
+    <text id="Text_502145fc-3695-4f82-b8c7-7a5c8bfb4c44Text" clip-path="url(#def216)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2727" x="7" y="14">REINTENTO</tspan>
+    </text>
+  </g>
+  <g id="Text_337c9e01-4431-4739-96f7-74850fae540fContainer" transform="translate(554 972)">
+    <text id="Text_337c9e01-4431-4739-96f7-74850fae540fText" clip-path="url(#def217)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2731" x="7" y="14">ERROR</tspan>
+    </text>
+  </g>
+  <g id="Text_2110823d-25fd-493e-b1be-ea26f68f263aContainer" transform="translate(440 445)">
+    <text id="Text_2110823d-25fd-493e-b1be-ea26f68f263aText" clip-path="url(#def218)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2735" x="7" y="14">No</tspan>
+    </text>
+  </g>
+  <g id="Text_f3d72f49-1a78-40f7-aaaf-de183ddc7d74Container" transform="translate(327 499)">
+    <text id="Text_f3d72f49-1a78-40f7-aaaf-de183ddc7d74Text" clip-path="url(#def219)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2739" x="7" y="14">Yes</tspan>
+    </text>
+  </g>
+  <g id="Text_cf52f70c-c78d-4cea-9fc6-969a981257e6Container" transform="translate(8017 1158)">
+    <text id="Text_cf52f70c-c78d-4cea-9fc6-969a981257e6Text" clip-path="url(#def221)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2743" x="6" y="14">Continuar?</tspan>
+    </text>
+  </g>
+  <g id="Text_8b037597-a376-4778-a09d-9ab77e93aed1Container" transform="translate(7857 1038)">
+    <text id="Text_8b037597-a376-4778-a09d-9ab77e93aed1Text" clip-path="url(#def223)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2747" x="7" y="14">Enviiar Carta de </tspan> <tspan id="tspan2749" x="15" y="29">Declinación?</tspan>
+    </text>
+  </g>
+  <g id="Text_bc77f3e1-9f3a-43eb-b3db-a1e306511137Container" transform="translate(7487 902)">
+    <text id="Text_bc77f3e1-9f3a-43eb-b3db-a1e306511137Text" clip-path="url(#def225)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2753" x="23" y="14">Validar Regla de </tspan> <tspan id="tspan2755" x="20" y="29">Negocio Doble: </tspan> <tspan id="tspan2757" x="12" y="43">OFAC + Lexis Nexis</tspan>
+    </text>
+  </g>
+  <g id="Text_e9f2ba64-7286-42f2-9076-21b98aadcc51Container" transform="translate(6003 2551)">
+    <text id="Text_e9f2ba64-7286-42f2-9076-21b98aadcc51Text" clip-path="url(#def227)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2761" x="40" y="14">Requiere </tspan> <tspan id="tspan2763" x="23" y="29">Documentacion </tspan> <tspan id="tspan2765" x="40" y="43">Adicional</tspan>
+    </text>
+  </g>
+  <g id="Text_5b5e8a9c-bfeb-4732-bfed-20717be04ed5Container" transform="translate(5697 2330)">
+    <text id="Text_5b5e8a9c-bfeb-4732-bfed-20717be04ed5Text" clip-path="url(#def229)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2769" x="34" y="14">Requiere </tspan> <tspan id="tspan2771" x="16" y="29">Documentacion </tspan> <tspan id="tspan2773" x="33" y="43">Adicional</tspan>
+    </text>
+  </g>
+  <g id="Text_6ca48ca2-bcad-43b8-91b5-43d8030f23f8Container" transform="translate(5199 1964)">
+    <text id="Text_6ca48ca2-bcad-43b8-91b5-43d8030f23f8Text" clip-path="url(#def231)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2777" x="33" y="14">Requiere </tspan> <tspan id="tspan2779" x="15" y="29">Documentacion </tspan> <tspan id="tspan2781" x="32" y="43">Adicional</tspan>
+    </text>
+  </g>
+  <g id="Text_0d34dd33-0cc3-4704-b126-759483323318Container" transform="translate(683 1124)">
+    <text id="Text_0d34dd33-0cc3-4704-b126-759483323318Text" clip-path="url(#def233)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2785" x="22" y="14">Cuenta </tspan> <tspan id="tspan2787" x="7" y="29">Asociada con </tspan> <tspan id="tspan2789" x="25" y="43">OLB??</tspan>
+    </text>
+  </g>
+  <g id="Text_c5dec88b-e6c1-4897-8483-c1a9c08c7a5eContainer" transform="translate(2003 748)">
+    <text id="Text_c5dec88b-e6c1-4897-8483-c1a9c08c7a5eText" clip-path="url(#def235)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2793" x="16" y="14">Enviar Carta de </tspan> <tspan id="tspan2795" x="22" y="29">Declinacion?</tspan>
+    </text>
+  </g>
+  <g id="Text_67653c49-f651-4884-98c4-70887be9fbfeContainer" transform="translate(555 1423)">
+    <text id="Text_67653c49-f651-4884-98c4-70887be9fbfeText" clip-path="url(#def237)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2799" x="13" y="14">Cuenta </tspan> <tspan id="tspan2801" x="7" y="29">Correcta?</tspan>
+    </text>
+  </g>
+  <g id="Text_08f3d793-3bdf-4f1e-b2a3-e7a5fab39177Container" transform="translate(4186 1127)">
+    <text id="Text_08f3d793-3bdf-4f1e-b2a3-e7a5fab39177Text" clip-path="url(#def239)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2805" x="11" y="14">Enviar Carta </tspan> <tspan id="tspan2807" x="35" y="29">de </tspan> <tspan id="tspan2809" x="7" y="43">Decvlinación?</tspan>
+    </text>
+  </g>
+  <g id="Text_f6e3db11-5c80-46bc-ae7f-f9a9681a4707Container" transform="translate(4404 1294)">
+    <text id="Text_f6e3db11-5c80-46bc-ae7f-f9a9681a4707Text" clip-path="url(#def240)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2813" x="6" y="14">Continuar?</tspan>
+    </text>
+  </g>
+  <g id="Text_925ab4b4-f311-4e66-a7ad-4d8f231bde1aContainer" transform="translate(4518 898)">
+    <text id="Text_925ab4b4-f311-4e66-a7ad-4d8f231bde1aText" clip-path="url(#def242)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2817" x="22" y="14">Regla de </tspan> <tspan id="tspan2819" x="5" y="29">Negocio Global</tspan>
+    </text>
+  </g>
+  <g id="Text_3854af50-5c15-4f71-9ac9-10512cda1f27Container" transform="translate(4081 872)">
+    <text id="Text_3854af50-5c15-4f71-9ac9-10512cda1f27Text" clip-path="url(#def244)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2823" x="15" y="14">Validar Regla </tspan> <tspan id="tspan2825" x="7" y="29">de Negocio de </tspan> <tspan id="tspan2827" x="9" y="43">DecisionLogic</tspan>
+    </text>
+  </g>
+  <g id="Text_350b2ec7-c3ac-4fb2-8a16-82a566ec86abContainer" transform="translate(3487 1064)">
+    <text id="Text_350b2ec7-c3ac-4fb2-8a16-82a566ec86abText" clip-path="url(#def246)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2831" x="6" y="14">Enviar Carta de </tspan> <tspan id="tspan2833" x="14" y="29">Declinación</tspan>
+    </text>
+  </g>
+  <g id="Text_624ea993-ceb1-4a9b-838c-79ea1ee925ccContainer" transform="translate(3660 1292)">
+    <text id="Text_624ea993-ceb1-4a9b-838c-79ea1ee925ccText" clip-path="url(#def247)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2837" x="6" y="14">Continuar?</tspan>
+    </text>
+  </g>
+  <g id="Text_c624527c-cae0-4d33-a4e7-589520eae807Container" transform="translate(3355 872)">
+    <text id="Text_c624527c-cae0-4d33-a4e7-589520eae807Text" clip-path="url(#def249)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2841" x="10" y="14">Validar Regla </tspan> <tspan id="tspan2843" x="12" y="29">deNegocio </tspan> <tspan id="tspan2845" x="20" y="43">BizChex</tspan>
+    </text>
+  </g>
+  <g id="Text_d3b2754b-ffb4-4503-ba04-f6d0658b3224Container" transform="translate(2813 1075)">
+    <text id="Text_d3b2754b-ffb4-4503-ba04-f6d0658b3224Text" clip-path="url(#def251)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2849" x="10" y="14">Enviar Carta de </tspan> <tspan id="tspan2851" x="16" y="29">Declinación?</tspan>
+    </text>
+  </g>
+  <g id="Text_891c3593-b8d0-4f58-a200-99e32f141860Container" transform="translate(2990 1196)">
+    <text id="Text_891c3593-b8d0-4f58-a200-99e32f141860Text" clip-path="url(#def252)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2855" x="6" y="14">Continuar?</tspan>
+    </text>
+  </g>
+  <g id="Text_43e70a93-db3b-4df5-9c39-d646d887cfb9Container" transform="translate(2683 872)">
+    <text id="Text_43e70a93-db3b-4df5-9c39-d646d887cfb9Text" clip-path="url(#def253)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2859" x="15" y="14">Validar Regla </tspan> <tspan id="tspan2861" x="7" y="29">de Negocio de </tspan> <tspan id="tspan2863" x="12" y="43">ChexSystems</tspan>
+    </text>
+  </g>
+  <g id="Text_2ad4294c-e860-43ff-91ec-cb195a459561Container" transform="translate(2176 1060)">
+    <text id="Text_2ad4294c-e860-43ff-91ec-cb195a459561Text" clip-path="url(#def254)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2867" x="7" y="14">Enviiar Carta de </tspan> <tspan id="tspan2869" x="15" y="29">Declinación?</tspan>
+    </text>
+  </g>
+  <g id="Text_bacfb477-21ad-49bc-95d1-33c1e4b15dacContainer" transform="translate(2336 1180)">
+    <text id="Text_bacfb477-21ad-49bc-95d1-33c1e4b15dacText" clip-path="url(#def255)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2873" x="6" y="14">Continuar?</tspan>
+    </text>
+  </g>
+  <g id="Text_a7862094-5b69-482c-8dad-c027153b28a7Container" transform="translate(2021 871)">
+    <text id="Text_a7862094-5b69-482c-8dad-c027153b28a7Text" clip-path="url(#def256)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2877" x="15" y="14">Validar Regla </tspan> <tspan id="tspan2879" x="7" y="29">de Negocio de </tspan> <tspan id="tspan2881" x="17" y="43">Lexis Nexis</tspan>
+    </text>
+  </g>
+  <g id="Text_f9efb39f-ed8e-41ac-a842-b85cf5d138cbContainer" transform="translate(1508 1077)">
+    <text id="Text_f9efb39f-ed8e-41ac-a842-b85cf5d138cbText" clip-path="url(#def257)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2885" x="10" y="14">Enviar Carta de </tspan> <tspan id="tspan2887" x="16" y="29">Declinación?</tspan>
+    </text>
+  </g>
+  <g id="Text_f96c3f0f-9da5-4501-bc36-4260a40bd77eContainer" transform="translate(1651 1184)">
+    <text id="Text_f96c3f0f-9da5-4501-bc36-4260a40bd77eText" clip-path="url(#def258)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2891" x="6" y="14">Continuar?</tspan>
+    </text>
+  </g>
+  <g id="Text_cf9d686c-1b4e-4cc9-9b19-ec44c982a98fContainer" transform="translate(1382 872)">
+    <text id="Text_cf9d686c-1b4e-4cc9-9b19-ec44c982a98fText" clip-path="url(#def259)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2895" x="10" y="14">Validar Regla </tspan> <tspan id="tspan2897" x="10" y="29">de Negocio </tspan> <tspan id="tspan2899" x="26" y="43">OFAC</tspan>
+    </text>
+  </g>
+  <g id="Text_c0a053df-085d-4cb3-a824-29574711b159Container" transform="translate(283 471)">
+    <text id="Text_c0a053df-085d-4cb3-a824-29574711b159Text" clip-path="url(#def261)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2903" x="7" y="14">Tiene Cuenta?</tspan>
+    </text>
+  </g>
+  <g id="Text_f716f5b6-aff3-4ecf-a268-8def3c4321c6Container" transform="translate(980 254)">
+    <text id="Text_f716f5b6-aff3-4ecf-a268-8def3c4321c6Text" clip-path="url(#def263)" font-family="Segoe UI" font-size="8pt">
+      <tspan id="tspan2907" x="21" y="14">Form </tspan> <tspan id="tspan2909" x="7" y="29">Complete?</tspan>
+    </text>
+  </g>
+</svg>
+    </div>
+    <button id="close" class="btn btn-primary" title="Close"><span style="font-size:30px; line-height:30px;">&times;</span></button>
+  </div>
+  <div class="wf-btn-diagram" style="position: fixed; left: 0; top: 50%; margin-top:-25px"><button id="open" style="width:50px; height:50px; position: relative; margin-left:-25px; text-align:right; padding-right: 7px; border-radius: 100px;" class="btn btn-default"
+      title="Process diagram"><span class="glyphicon glyphicon-chevron-right"></span></button></div>
+  <div class="wf-diagram-message" style="position:fixed; left:50px; top:50%; margin-top: -16px; font-size: 22px;"><span class="glyphicon glyphicon-chevron-left"></span> Click to start</div>
+</body>
+
+</html>

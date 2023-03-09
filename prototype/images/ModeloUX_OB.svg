@@ -1,0 +1,896 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1872" height="1201px" viewBox="14, 14, 1872, 1201" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1">
+  <defs>
+    <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow3da479c2-3139-4260-8472-1d489054fe32">
+      <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+    </marker>
+  </defs>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 30, 30)" id="gfx-ffc05c97-e9a5-4ba2-9ab1-d434cea66e17" display="block" class="djs-element djs-shape" data-element-id="ffc05c97-e9a5-4ba2-9ab1-d434cea66e17">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="1023" height="434" opacity="0" fill-opacity="0" style="fill:transparent;" />
+          <path d="M1023 0 L0 0 L0 434 L1023 434 z M50 0 L50 434" stroke-width="1px" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+      <svg width="50" height="434" class="djs-svg-text">
+        <text transform="matrix(-1.83697E-16, -1, 1, -1.83697E-16, 0, 434)" font-family="'Segoe UI'" font-size="13.2815px" font-style="normal" font-weight="bold" lineHeight="1.2" textDirection="270" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="165.4688" y="28.75">User Experiencie</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 32, 516)" id="gfx-0fcea65b-c7ec-4fce-81ea-6c16c2c1f7da" display="block" class="djs-element djs-shape" data-element-id="0fcea65b-c7ec-4fce-81ea-6c16c2c1f7da">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="1838" height="553" opacity="0" fill-opacity="0" style="fill:transparent;" />
+          <path d="M1838 0 L0 0 L0 553 L1838 553 z M50 0 L50 553" stroke-width="1px" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+      <svg width="50" height="553" class="djs-svg-text">
+        <text transform="matrix(-1.83697E-16, -1, 1, -1.83697E-16, 0, 553)" font-family="'Segoe UI'" font-size="13.2815px" font-style="normal" font-weight="bold" lineHeight="1.2" textDirection="270" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="220.6469" y="28.75">Onboarding Team</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 195, 53)" id="gfx-db24c34f-9eb9-4f30-a83f-00acfa55e576" display="block" class="djs-element djs-shape" data-element-id="db24c34f-9eb9-4f30-a83f-00acfa55e576">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="131" height="76" rx="8" stroke-width="2px" class="" style="fill:#ECEFFF;stroke:#03689A;" />
+          <g />
+        </g>
+      </g>
+      <svg width="131" height="72" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="15.9378px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="26.56176" y="33.5">Completar </tspan>
+          <tspan x="30.39261" y="51.5">aplicación</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 525, 192)" id="gfx-9774decc-4dd2-4f2b-a6a5-0decf6ac4141" display="block" class="djs-element djs-shape" data-element-id="9774decc-4dd2-4f2b-a6a5-0decf6ac4141">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#ECEFFF;stroke:#03689A;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="23.37112" y="26.75">Solicitud </tspan>
+          <tspan x="22.56734" y="39.75">aprobada</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 345, 291)" id="gfx-9bdfdeea-4774-43a8-a348-e7b3eb6ef6cf" display="block" class="djs-element djs-shape" data-element-id="9bdfdeea-4774-43a8-a348-e7b3eb6ef6cf">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#FAC08F;stroke:#AA703F;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="13.6171" y="13.75">Proporcionje </tspan>
+          <tspan x="13.43562" y="26.75">información/ </tspan>
+          <tspan x="14.33012" y="39.75">documentos </tspan>
+          <tspan x="22.75144" y="52.75">adionales</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 699, 192)" id="gfx-f39f20c8-785f-4374-8b4b-3c4d3f77ee88" display="block" class="djs-element djs-shape" data-element-id="f39f20c8-785f-4374-8b4b-3c4d3f77ee88">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="108" height="83" rx="8" stroke-width="2px" class="" style="fill:#FBD5B5;stroke:#AB8565;" />
+          <g />
+        </g>
+      </g>
+      <svg width="108" height="79" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="10.90816" y="25.25">Documentos para </tspan>
+          <tspan x="13.63057" y="38.25">ser firmados con </tspan>
+          <tspan x="14.65473" y="51.25">instrucciones de </tspan>
+          <tspan x="19.34764" y="64.25">financiamiento</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 226, 603)" id="gfx-e2236931-55cb-44dc-b2c3-c6a55bd76bb7" display="block" class="djs-element djs-shape" data-element-id="e2236931-55cb-44dc-b2c3-c6a55bd76bb7">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#ECEFFF;stroke:#03689A;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="19.41714" y="26.75">Aplicación </tspan>
+          <tspan x="25.22753" y="39.75">Recibida</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 378, 543)" id="gfx-e34f8a69-6b5d-45d3-a4ed-106dc04a57e8" display="block" class="djs-element djs-shape" data-element-id="e34f8a69-6b5d-45d3-a4ed-106dc04a57e8">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#FAC08F;stroke:#AA703F;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="27.11766" y="20.25">Revisar </tspan>
+          <tspan x="19.91496" y="33.25">solicitud y </tspan>
+          <tspan x="8.592323" y="46.25">documentación</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 378, 725)" id="gfx-694cd3fd-e93b-4819-8f0f-4f5796c17d07" display="block" class="djs-element djs-shape" data-element-id="694cd3fd-e93b-4819-8f0f-4f5796c17d07">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#FAC08F;stroke:#AA703F;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="24.95531" y="13.75">Solicitar </tspan>
+          <tspan x="11.48067" y="26.75">información y </tspan>
+          <tspan x="7.137779" y="39.75">documentación </tspan>
+          <tspan x="24.04264" y="52.75">adicional</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 378, 929)" id="gfx-7e1e42a4-9a70-4f59-9128-6c0669084e57" display="block" class="djs-element djs-shape" data-element-id="7e1e42a4-9a70-4f59-9128-6c0669084e57">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#FAC08F;stroke:#AA703F;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="12.60075" y="20.25">Se determina </tspan>
+          <tspan x="5.882881" y="33.25">que la cuenta no</tspan>
+          <tspan x="11.45215" y="46.25">se puede abrir</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 587, 543)" id="gfx-3735b39a-6223-4700-9ec4-97475727c9a2" display="block" class="djs-element djs-shape" data-element-id="3735b39a-6223-4700-9ec4-97475727c9a2">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#CCC1D9;stroke:#7C7189;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="13.60933" y="33.25">Revisión KYC </tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 587, 699)" id="gfx-64410da5-05ba-4554-a0e5-8c0f615b837e" display="block" class="djs-element djs-shape" data-element-id="64410da5-05ba-4554-a0e5-8c0f615b837e">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="111" height="85" rx="8" stroke-width="2px" class="" style="fill:#ECEFFF;stroke:#03689A;" />
+          <g />
+        </g>
+      </g>
+      <svg width="111" height="81" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="12.53262" y="32.75">Revisar solicitud y </tspan>
+          <tspan x="17.63778" y="45.75">documentación </tspan>
+          <tspan x="36.90206" y="58.75">recibida</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 758, 543)" id="gfx-23e7b585-2d6a-49ae-aac7-615f16401aeb" display="block" class="djs-element djs-shape" data-element-id="23e7b585-2d6a-49ae-aac7-615f16401aeb">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="104" height="75" rx="8" stroke-width="2px" class="" style="fill:#CCC1D9;stroke:#7C7189;" />
+          <g />
+        </g>
+      </g>
+      <svg width="104" height="71" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="9.750801" y="27.75">Enviar a BSA para </tspan>
+          <tspan x="18.644" y="40.75">la aprobación </tspan>
+          <tspan x="7.728455" y="53.75">previa de la cuenta</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 1014, 652)" id="gfx-fc7fb0c6-65e7-490d-bcc6-2fda46742154" display="block" class="djs-element djs-shape" data-element-id="fc7fb0c6-65e7-490d-bcc6-2fda46742154">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="180" rx="8" stroke-width="2px" class="" style="fill:#D7E3BC;stroke:#87936C;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="176" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="29.47708" y="73.75">Enviar </tspan>
+          <tspan x="7.137779" y="86.75">documentación </tspan>
+          <tspan x="15.00425" y="99.75">de la cuenta </tspan>
+          <tspan x="21.10503" y="112.75">para firma</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 1192, 724)" id="gfx-814ad92d-b6ef-4df4-b290-0f206a77ab3f" display="block" class="djs-element djs-shape" data-element-id="814ad92d-b6ef-4df4-b290-0f206a77ab3f">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#C3D69B;stroke:#73864B;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="9.243126" y="26.75">El sistema crea </tspan>
+          <tspan x="10.74173" y="39.75">un registro CIF</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 1412, 724)" id="gfx-511505b9-73a2-4fc0-80a5-24ad7861e400" display="block" class="djs-element djs-shape" data-element-id="511505b9-73a2-4fc0-80a5-24ad7861e400">
+      <g class="djs-visual">
+        <g>
+          <rect x="0" y="0" width="90" height="60" rx="8" stroke-width="2px" class="" style="fill:#C3D69B;stroke:#73864B;" />
+          <g />
+        </g>
+      </g>
+      <svg width="90" height="56" class="djs-svg-text">
+        <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+          <tspan x="7.645973" y="26.75">El sistema carga</tspan>
+          <tspan x="17.63852" y="39.75">Acusystems</tspan>
+        </text>
+      </svg>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 112, 70)" id="gfx-7124a953-f172-405f-af22-e379b44512dc" display="block" class="djs-element djs-shape" data-element-id="7124a953-f172-405f-af22-e379b44512dc">
+      <g class="djs-visual">
+        <g>
+          <g transform="translate(-8.90625, -8.90625) scale(1.5)">
+            <path d="M16 25.2 C10.9 25.2 6.8 21.1 6.8 16 C6.8 10.9 10.9 6.8 16 6.8 C21.1 6.8 25.2 10.9 25.2 16 C25.2 21.1 21.1 25.2 16 25.2 L16 25.2 z" style="fill:#E6FF97;" />
+            <path d="M15.9 7 C20.9 7 24.9 11 24.9 16 C24.9 21 20.9 25 15.9 25 C10.9 25 6.9 21 6.9 16 C6.9 11 10.9 7 15.9 7 M15.9 6 C10.4 6 5.9 10.5 5.9 16 C5.9 21.5 10.4 26 15.9 26 C21.4 26 25.9 21.5 25.9 16 C25.9 10.5 21.4 6 15.9 6 z" stroke-width="0.2px" class="" style="fill:#62A716;stroke:#62A716;" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 146, 618)" id="gfx-18e4e278-0ae7-4a37-aff2-af384de0dde9" display="block" class="djs-element djs-shape" data-element-id="18e4e278-0ae7-4a37-aff2-af384de0dde9">
+      <g class="djs-visual">
+        <g>
+          <g transform="translate(-8.90625, -8.90625) scale(1.5)">
+            <path d="M16 25.2 C10.9 25.2 6.8 21.1 6.8 16 C6.8 10.9 10.9 6.8 16 6.8 C21.1 6.8 25.2 10.9 25.2 16 C25.2 21.1 21.1 25.2 16 25.2 L16 25.2 z" style="fill:#E6FF97;" />
+            <path d="M15.9 7 C20.9 7 24.9 11 24.9 16 C24.9 21 20.9 25 15.9 25 C10.9 25 6.9 21 6.9 16 C6.9 11 10.9 7 15.9 7 M15.9 6 C10.4 6 5.9 10.5 5.9 16 C5.9 21.5 10.4 26 15.9 26 C21.4 26 25.9 21.5 25.9 16 C25.9 10.5 21.4 6 15.9 6 z" stroke-width="0.2px" class="" style="fill:#62A716;stroke:#62A716;" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 176, 282)" id="gfx-40b50441-5d4f-4355-8527-ec81a8224445" display="block" class="djs-element djs-shape" data-element-id="40b50441-5d4f-4355-8527-ec81a8224445">
+      <g class="djs-visual">
+        <g>
+          <g transform="translate(-8.90625, -8.90625) scale(1.5)">
+            <path d="M16 25.2 A9.2 9.2 0 1 1 25.2 16 A9.2 9.2 0 0 1 16 25.2 z" style="fill:#EEAAAA;" />
+            <path d="M16 7.5 A8.5 8.5 0 1 1 7.5 16 A8.5 8.5 0 0 1 16 7.5 M16 6 A10 10 0 1 0 26 16 A10 10 0 0 0 16 6 z" stroke-width="0.4px" class="" style="fill:#990000;stroke:#990000;" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 146, 320)" id="gfx-a8ad5dd7-a93e-4720-9f66-f61431c7a4dd" display="block" class="djs-element djs-shape" data-element-id="a8ad5dd7-a93e-4720-9f66-f61431c7a4dd">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="90" height="40" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="90" height="35" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="19.41714" y="14.75">Aplicación </tspan>
+            <tspan x="21.65728" y="27.75">denegada</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 408, 100)" id="gfx-84e02bdb-0515-4149-ac2f-38c483f4cc37" display="block" class="djs-element djs-shape" data-element-id="84e02bdb-0515-4149-ac2f-38c483f4cc37">
+      <g class="djs-visual">
+        <g>
+          <path d="M0 20 L20 40 L40 20 L20 0 z" stroke-width="1.8px" class="" style="fill:#FFFFCC;stroke:#A6A61D;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 371, 148)" id="gfx-8a722a8d-32ee-4e69-b4c9-2ddc8f3f9710" display="block" class="djs-element djs-shape" data-element-id="8a722a8d-32ee-4e69-b4c9-2ddc8f3f9710">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="113" height="36" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="113" height="31" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="6.827705" y="14.75">Recibe Confirmación </tspan>
+            <tspan x="43.11093" y="27.75">(24 h)</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 157, 722)" id="gfx-ac5f7a1b-e765-4285-9867-4c3abe2f8ad3" display="block" class="djs-element djs-shape" data-element-id="ac5f7a1b-e765-4285-9867-4c3abe2f8ad3">
+      <g class="djs-visual">
+        <g>
+          <path d="M0 20 L20 40 L40 20 L20 0 z" stroke-width="1.8px" class="" style="fill:#FFFFCC;stroke:#A6A61D;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 128, 770)" id="gfx-9e05f14b-a86a-4e7d-bb29-3f8eba25001f" display="block" class="djs-element djs-shape" data-element-id="9e05f14b-a86a-4e7d-bb29-3f8eba25001f">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="98" height="66" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="98" height="61" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="7.023056" y="14.75">Falta Información </tspan>
+            <tspan x="46.61983" y="27.75">?</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 790, 785)" id="gfx-1ce5e0df-d1fc-4bb3-9368-ba145f6c3253" display="block" class="djs-element djs-shape" data-element-id="1ce5e0df-d1fc-4bb3-9368-ba145f6c3253">
+      <g class="djs-visual">
+        <g>
+          <path d="M0 20 L20 40 L40 20 L20 0 z" stroke-width="1.8px" class="" style="fill:#FFFFCC;stroke:#A6A61D;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 765, 833)" id="gfx-d4575c62-275a-490f-9b97-8e7567f48736" display="block" class="djs-element djs-shape" data-element-id="d4575c62-275a-490f-9b97-8e7567f48736">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="90" height="30" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="90" height="25" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="40.89306" y="14.75">Si</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 623, 844)" id="gfx-a8bad0fe-6167-42a8-8208-4826fed8b9a5" display="block" class="djs-element djs-shape" data-element-id="a8bad0fe-6167-42a8-8208-4826fed8b9a5">
+      <g class="djs-visual">
+        <g>
+          <path d="M0 20 L20 40 L40 20 L20 0 z" stroke-width="1.8px" class="" style="fill:#FFFFCC;stroke:#A6A61D;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 598, 892)" id="gfx-7eb3ab4c-b434-46eb-b5dd-672cd81065ef" display="block" class="djs-element djs-shape" data-element-id="7eb3ab4c-b434-46eb-b5dd-672cd81065ef">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="90" height="30" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="90" height="25" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="37.91655" y="14.75">No</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 787, 648)" id="gfx-f89d3ba6-b608-4032-abf2-5ca36a322164" display="block" class="djs-element djs-shape" data-element-id="f89d3ba6-b608-4032-abf2-5ca36a322164">
+      <g class="djs-visual">
+        <g>
+          <path d="M0 20 L20 40 L40 20 L20 0 z" stroke-width="1.8px" class="" style="fill:#FFFFCC;stroke:#A6A61D;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 762, 696)" id="gfx-29d41b5e-baba-4e52-adec-cbda7317663a" display="block" class="djs-element djs-shape" data-element-id="29d41b5e-baba-4e52-adec-cbda7317663a">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="90" height="30" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="90" height="25" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="12.8963" y="14.75">No Aprobado</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 912, 561)" id="gfx-d9bff583-e2f9-48bc-82b4-323ccd56627e" display="block" class="djs-element djs-shape" data-element-id="d9bff583-e2f9-48bc-82b4-323ccd56627e">
+      <g class="djs-visual">
+        <g>
+          <path d="M0 20 L20 40 L40 20 L20 0 z" stroke-width="1.8px" class="" style="fill:#FFFFCC;stroke:#A6A61D;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 887, 609)" id="gfx-9c0611da-96aa-4b1c-9036-740d983f51f6" display="block" class="djs-element djs-shape" data-element-id="9c0611da-96aa-4b1c-9036-740d983f51f6">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="90" height="30" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="90" height="25" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="21.4343" y="14.75">Aprobado</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 918, 192)" id="gfx-1f36f342-dd2f-4c79-b53c-f3f2bbac966d" display="block" class="djs-element djs-shape" data-element-id="1f36f342-dd2f-4c79-b53c-f3f2bbac966d">
+      <g class="djs-visual">
+        <g>
+          <g transform="translate(-17.8125, -17.8125) scale(3)">
+            <path d="M15.9 25.5 A9.5 9.5 0 1 1 25.4 16 A9.6 9.6 0 0 1 15.9 25.5 z" style="fill:#FEFAEF;" />
+            <path d="M15.9 7 A9 9 0 1 1 6.9 16 A9 9 0 0 1 15.9 7 M15.9 6 A10 10 0 1 0 25.9 16 A10 10 0 0 0 15.9 6 z" class="" style="fill:#969149;" />
+            <path d="M15.9 8.8 A7.2 7.2 0 1 1 8.7 16 A7.3 7.3 0 0 1 15.9 8.8 M15.9 7.8 A8.2 8.2 0 0 0 15.9 24.2 A8.2 8.2 0 1 0 15.9 7.800001 z" class="" style="fill:#969149;" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 903, 260)" id="gfx-215e88d2-cb99-402e-817d-347a0c180491" display="block" class="djs-element djs-shape" data-element-id="215e88d2-cb99-402e-817d-347a0c180491">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="90" height="30" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="90" height="25" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="10.73655" y="14.75">Cuenta abierta</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 1332, 739)" id="gfx-9bf0b086-1a44-4793-8c3b-9e5fcada28b0" display="block" class="djs-element djs-shape" data-element-id="9bf0b086-1a44-4793-8c3b-9e5fcada28b0">
+      <g class="djs-visual">
+        <g>
+          <g transform="translate(-8.90625, -8.90625) scale(1.5)">
+            <path d="M15.9 25.5 A9.5 9.5 0 1 1 25.4 16 A9.6 9.6 0 0 1 15.9 25.5 z" style="fill:#FEFAEF;" />
+            <path d="M15.9 7 A9 9 0 1 1 6.9 16 A9 9 0 0 1 15.9 7 M15.9 6 A10 10 0 1 0 25.9 16 A10 10 0 0 0 15.9 6 z" class="" style="fill:#969149;" />
+            <path d="M15.9 8.8 A7.2 7.2 0 1 1 8.7 16 A7.3 7.3 0 0 1 15.9 8.8 M15.9 7.8 A8.2 8.2 0 0 0 15.9 24.2 A8.2 8.2 0 1 0 15.9 7.800001 z" class="" style="fill:#969149;" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g transform="matrix(1, 0, 0, 1, 1302, 777)" id="gfx-0356d2b4-937f-4383-bf79-ab40931769a4" display="block" class="djs-element djs-shape" data-element-id="0356d2b4-937f-4383-bf79-ab40931769a4">
+      <g class="djs-visual">
+        <rect x="0" y="0" width="90" height="30" fill-opacity="0" stroke-opacity="0" style="fill:#FFFFFF;stroke:transparent;" />
+        <svg width="90" height="25" class="djs-svg-text">
+          <text font-family="'Segoe UI'" font-size="10.6252px" font-style="normal" font-weight="normal" lineHeight="1.2" textDirection="0" textAlign="center" class="djs-label" style="fill:black;">
+            <tspan x="6.468849" y="14.75">Abre una cuenta</tspan>
+          </text>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-3da479c2-3139-4260-8472-1d489054fe32" display="block" class="djs-element djs-connection" data-element-id="3da479c2-3139-4260-8472-1d489054fe32">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow3da479c2-3139-4260-8472-1d489054fe32#1">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M142 85 L168 85 L168 91 L194 91" marker-end="url(#arrowSecuenceFlow3da479c2-3139-4260-8472-1d489054fe32)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-c0f96b1e-9148-4c42-a494-767a0f1ad4c2" display="block" class="djs-element djs-connection" data-element-id="c0f96b1e-9148-4c42-a494-767a0f1ad4c2">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowc0f96b1e-9148-4c42-a494-767a0f1ad4c2">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M326 91 L361 91 C361 91 367 91 367 97 L367 114 C367 114 367 120 373 120 L408 120" marker-end="url(#arrowSecuenceFlowc0f96b1e-9148-4c42-a494-767a0f1ad4c2)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-04514325-9b45-4135-9340-09e7123a6b05" display="block" class="djs-element djs-connection" data-element-id="04514325-9b45-4135-9340-09e7123a6b05">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow04514325-9b45-4135-9340-09e7123a6b05">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M448 120 L506 120 C506 120 512 120 512 126 L512 216 C512 216 512 222 518 222 L525 222" marker-end="url(#arrowSecuenceFlow04514325-9b45-4135-9340-09e7123a6b05)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-a2de63e9-8260-4eae-8306-4f58c4b10bd2" display="block" class="djs-element djs-connection" data-element-id="a2de63e9-8260-4eae-8306-4f58c4b10bd2">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowa2de63e9-8260-4eae-8306-4f58c4b10bd2">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M428 140 L428 195 C428 195 428 201 422 201 L396 201 C396 201 390 201 390 207 L390 291" marker-end="url(#arrowSecuenceFlowa2de63e9-8260-4eae-8306-4f58c4b10bd2)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-3990db5b-6979-4ee2-be5d-f6628fdd1029" display="block" class="djs-element djs-connection" data-element-id="3990db5b-6979-4ee2-be5d-f6628fdd1029">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow3990db5b-6979-4ee2-be5d-f6628fdd1029">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M428 140 L428 176 C428 176 428 182 422 182 L197 182 C197 182 191 182 191 188 L191 282" marker-end="url(#arrowSecuenceFlow3990db5b-6979-4ee2-be5d-f6628fdd1029)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-44b2e93f-1efa-40b5-849f-98e25b6cf84c" display="block" class="djs-element djs-connection" data-element-id="44b2e93f-1efa-40b5-849f-98e25b6cf84c">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow44b2e93f-1efa-40b5-849f-98e25b6cf84c">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M435 321 L564 321 C564 321 570 321 570 315 L570 252" marker-end="url(#arrowSecuenceFlow44b2e93f-1efa-40b5-849f-98e25b6cf84c)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-54cb34d8-23a5-476f-803e-244bc061b02e" display="block" class="djs-element djs-connection" data-element-id="54cb34d8-23a5-476f-803e-244bc061b02e">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow54cb34d8-23a5-476f-803e-244bc061b02e">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M615 222 L657 222 L657 234 L699 234" marker-end="url(#arrowSecuenceFlow54cb34d8-23a5-476f-803e-244bc061b02e)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-f253069d-56b6-42b7-8b4e-ed227997926a" display="block" class="djs-element djs-connection" data-element-id="f253069d-56b6-42b7-8b4e-ed227997926a">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowf253069d-56b6-42b7-8b4e-ed227997926a">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M807 234 L863 234 L863 222 L918 222" marker-end="url(#arrowSecuenceFlowf253069d-56b6-42b7-8b4e-ed227997926a)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-49be6fa3-224d-469c-b6e1-cdd44f43493a" display="block" class="djs-element djs-connection" data-element-id="49be6fa3-224d-469c-b6e1-cdd44f43493a">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow49be6fa3-224d-469c-b6e1-cdd44f43493a">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M176 633 L226 633" marker-end="url(#arrowSecuenceFlow49be6fa3-224d-469c-b6e1-cdd44f43493a)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-fd7ec64e-d293-487b-a153-4fcc0aa329a3" display="block" class="djs-element djs-connection" data-element-id="fd7ec64e-d293-487b-a153-4fcc0aa329a3">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowfd7ec64e-d293-487b-a153-4fcc0aa329a3">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M316 633 L335 633 C335 633 341 633 341 627 L341 579 C341 579 341 573 347 573 L378 573" marker-end="url(#arrowSecuenceFlowfd7ec64e-d293-487b-a153-4fcc0aa329a3)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-a0d20c69-4406-491d-ad32-f50b77d7b056" display="block" class="djs-element djs-connection" data-element-id="a0d20c69-4406-491d-ad32-f50b77d7b056">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowa0d20c69-4406-491d-ad32-f50b77d7b056">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M271 663 L271 687 C271 687 271 693 265 693 L183 693 C183 693 177 693 177 699 L177 722" marker-end="url(#arrowSecuenceFlowa0d20c69-4406-491d-ad32-f50b77d7b056)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-99a0f168-cf65-44af-977c-fc23d0c6c6dc" display="block" class="djs-element djs-connection" data-element-id="99a0f168-cf65-44af-977c-fc23d0c6c6dc">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow99a0f168-cf65-44af-977c-fc23d0c6c6dc">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M197 742 L318 742 C318 742 324 742 324 748 L324 749 C324 749 324 755 330 755 L378 755" marker-end="url(#arrowSecuenceFlow99a0f168-cf65-44af-977c-fc23d0c6c6dc)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-3b5805ac-54b5-4696-bbbe-7758b1aa059e" display="block" class="djs-element djs-connection" data-element-id="3b5805ac-54b5-4696-bbbe-7758b1aa059e">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow3b5805ac-54b5-4696-bbbe-7758b1aa059e">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M271 663 L271 953 C271 953 271 959 277 959 L378 959" marker-end="url(#arrowSecuenceFlow3b5805ac-54b5-4696-bbbe-7758b1aa059e)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-63ddec1f-d3ae-4a8c-81d9-72e50f4e89ed" display="block" class="djs-element djs-connection" data-element-id="63ddec1f-d3ae-4a8c-81d9-72e50f4e89ed">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow63ddec1f-d3ae-4a8c-81d9-72e50f4e89ed">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M468 573 L587 573" marker-end="url(#arrowSecuenceFlow63ddec1f-d3ae-4a8c-81d9-72e50f4e89ed)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-80508304-6476-4d23-81cf-6786277ca875" display="block" class="djs-element djs-connection" data-element-id="80508304-6476-4d23-81cf-6786277ca875">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow80508304-6476-4d23-81cf-6786277ca875">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M468 755 L521 755 L521 743 L586 743" marker-end="url(#arrowSecuenceFlow80508304-6476-4d23-81cf-6786277ca875)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-72f4a580-6c61-4a6b-9527-777b68eaf457" display="block" class="djs-element djs-connection" data-element-id="72f4a580-6c61-4a6b-9527-777b68eaf457">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow72f4a580-6c61-4a6b-9527-777b68eaf457">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M632 603 L632 699" marker-end="url(#arrowSecuenceFlow72f4a580-6c61-4a6b-9527-777b68eaf457)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-b872ee72-8118-45cf-94f8-18c5fb431b9f" display="block" class="djs-element djs-connection" data-element-id="b872ee72-8118-45cf-94f8-18c5fb431b9f">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowb872ee72-8118-45cf-94f8-18c5fb431b9f">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M698 742 L727 742 C727 742 733 742 733 748 L733 799 C733 799 733 805 739 805 L790 805" marker-end="url(#arrowSecuenceFlowb872ee72-8118-45cf-94f8-18c5fb431b9f)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-f56d712d-96f9-406d-98bb-1f6f311ec79a" display="block" class="djs-element djs-connection" data-element-id="f56d712d-96f9-406d-98bb-1f6f311ec79a">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowf56d712d-96f9-406d-98bb-1f6f311ec79a">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M643 784 L643 844" marker-end="url(#arrowSecuenceFlowf56d712d-96f9-406d-98bb-1f6f311ec79a)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-97873718-df5d-44d0-beb1-4af3eb31ac9e" display="block" class="djs-element djs-connection" data-element-id="97873718-df5d-44d0-beb1-4af3eb31ac9e">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow97873718-df5d-44d0-beb1-4af3eb31ac9e">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M623 864 L423 864 C423 864 417 864 417 858 L417 785" marker-end="url(#arrowSecuenceFlow97873718-df5d-44d0-beb1-4af3eb31ac9e)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-8456526d-208b-4df3-b5c5-490dd6339af2" display="block" class="djs-element djs-connection" data-element-id="8456526d-208b-4df3-b5c5-490dd6339af2">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow8456526d-208b-4df3-b5c5-490dd6339af2">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M677 573 L709 573 L709 581 L756 581" marker-end="url(#arrowSecuenceFlow8456526d-208b-4df3-b5c5-490dd6339af2)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-a361c708-bf10-46c0-a34c-229d2d1efc6e" display="block" class="djs-element djs-connection" data-element-id="a361c708-bf10-46c0-a34c-229d2d1efc6e">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowa361c708-bf10-46c0-a34c-229d2d1efc6e">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M830 805 L888 805 C888 805 894 805 894 799 L894 784 C894 784 894 778 900 778 L1014 778" marker-end="url(#arrowSecuenceFlowa361c708-bf10-46c0-a34c-229d2d1efc6e)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-1dd1d986-ac72-4805-93f2-621e0eda7e40" display="block" class="djs-element djs-connection" data-element-id="1dd1d986-ac72-4805-93f2-621e0eda7e40">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow1dd1d986-ac72-4805-93f2-621e0eda7e40">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M810 618 L810 633 L807 633 L807 648" marker-end="url(#arrowSecuenceFlow1dd1d986-ac72-4805-93f2-621e0eda7e40)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-fe53add1-df30-4aa7-b0be-e7e2b5bb96dd" display="block" class="djs-element djs-connection" data-element-id="fe53add1-df30-4aa7-b0be-e7e2b5bb96dd">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlowfe53add1-df30-4aa7-b0be-e7e2b5bb96dd">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M862 581 L912 581" marker-end="url(#arrowSecuenceFlowfe53add1-df30-4aa7-b0be-e7e2b5bb96dd)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-659f60b7-77f8-4142-9f28-93a957a0438c" display="block" class="djs-element djs-connection" data-element-id="659f60b7-77f8-4142-9f28-93a957a0438c">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow659f60b7-77f8-4142-9f28-93a957a0438c">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M952 581 L1053 581 C1053 581 1059 581 1059 587 L1059 652" marker-end="url(#arrowSecuenceFlow659f60b7-77f8-4142-9f28-93a957a0438c)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-8d824d13-875d-49cc-bcf7-36ac391cfc5f" display="block" class="djs-element djs-connection" data-element-id="8d824d13-875d-49cc-bcf7-36ac391cfc5f">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow8d824d13-875d-49cc-bcf7-36ac391cfc5f">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M787 668 L429 668 C429 668 423 668 423 674 L423 725" marker-end="url(#arrowSecuenceFlow8d824d13-875d-49cc-bcf7-36ac391cfc5f)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-4f9de2b7-2623-4a39-b91d-3c033c3703fb" display="block" class="djs-element djs-connection" data-element-id="4f9de2b7-2623-4a39-b91d-3c033c3703fb">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow4f9de2b7-2623-4a39-b91d-3c033c3703fb">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M1104 742 L1135 742 L1135 754 L1192 754" marker-end="url(#arrowSecuenceFlow4f9de2b7-2623-4a39-b91d-3c033c3703fb)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-24157cd1-e668-461d-bca0-3f49413a54c9" display="block" class="djs-element djs-connection" data-element-id="24157cd1-e668-461d-bca0-3f49413a54c9">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow24157cd1-e668-461d-bca0-3f49413a54c9">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M1282 754 L1332 754" marker-end="url(#arrowSecuenceFlow24157cd1-e668-461d-bca0-3f49413a54c9)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="djs-group">
+    <g id="gfx-711ddc63-d6bc-4c3f-9ff1-c01814002b5c" display="block" class="djs-element djs-connection" data-element-id="711ddc63-d6bc-4c3f-9ff1-c01814002b5c">
+      <g class="djs-visual">
+        <g>
+          <defs>
+            <marker refX="9.8" refY="6" orient="auto" markerWidth="12" markerHeight="12" markerUnits="strokeWidth" id="arrowSecuenceFlow711ddc63-d6bc-4c3f-9ff1-c01814002b5c">
+              <path d="M0 0 L2 6 L0 12 L10 6 z" style="fill:black;" />
+            </marker>
+          </defs>
+          <path d="M1362 754 L1412 754" marker-end="url(#arrowSecuenceFlow711ddc63-d6bc-4c3f-9ff1-c01814002b5c)" stroke-width="1px" stroke-linejoin="round" shape-rendering="crispEdges" fill-opacity="0" class="" style="fill:transparent;stroke:black;" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(14, 14)" class="djs-group" xmlns="http://www.w3.org/2000/svg">
+    <image x="1662" y="1071" width="190" height="60" xlink:href="data:image/png;base64,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" opacity="0.4" />
+  </g>
+</svg>

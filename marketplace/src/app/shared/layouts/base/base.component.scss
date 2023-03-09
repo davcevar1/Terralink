@@ -1,0 +1,55 @@
+@import '../../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../../node_modules/bootstrap/scss/variables';
+@import '../../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+icon {
+  font-size: 24px;
+}
+.searchbox {
+  icon {
+    position: absolute;
+    margin: 7px;
+    color: #6b747d;
+  }
+  input {
+    text-indent: 22px;
+  }
+}
+.cart-dropdown {
+  &.show {
+    > button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background: #FFF;
+      position: relative;
+      z-index: 1001;
+      border-color: #d3d9df;
+      border-bottom-color: #FFF;
+      outline: none;
+    }
+    .dropdown-menu {
+      border-top-right-radius: 0;
+    }
+  }
+  > .btn {
+    .badge {
+      @include media-breakpoint-down(sm) {
+        position: absolute;
+        margin-left: -12px;
+        margin-top: 3px;
+      }
+    }
+  }
+  .dropdown-menu {
+    width: 450px;
+    margin-top: -1px;
+    @include media-breakpoint-down(sm) {
+      width: 97.7vw;
+    }
+  }
+}
+.empty-cart {
+  min-height: 200px;
+}
+.btn.dropdown-toggle::after {
+  content: none;
+}

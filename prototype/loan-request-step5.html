@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Terrabank</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    <style>
+        body {
+            background-color: #f8f8f8;
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        .btn.btn-link {
+            color: #990000;
+        }
+
+        .btn.btn-default {
+            border-color: #990000;
+            color: #990000;
+        }
+
+        .btn.btn-primary,
+        .btn.btn-primary:hover {
+            background-color: #990000;
+            border-color: #990000;
+            color: #FFF;
+        }
+
+        .btn.btn-primary:hover {
+            border-color: #4e0000;
+        }
+
+        .form-control:focus {
+            border-color: #848484;
+            box-shadow: 0 0 0;
+        }
+
+        #navigation > .wf-content .wf-inbox,
+        #navigation > .wf-content .wf-navigation-wrapper {
+            background-color: #565656;
+        }
+
+        #navigation > .wf-content .list-group > .list-group-heading {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus,
+        .dropdown-menu > li > a:active,
+        .list-group .list-group-item:hover,
+        .list-group .list-group-item:focus,
+        .list-group .list-group-item.active,
+        #navigation > .wf-content > .list-group a:hover,
+        #navigation > .wf-content .btn-link:hover {
+            background-color: #990000;
+            color: #FFF;
+        }
+
+        #navigation > .wf-content .list-group > .wf-logo {
+            background-color: #990000;
+        }
+
+        .wf-title,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #990000;
+        }
+
+        .wf-steps-2 li.active,
+        .wf-steps-2 li.active::before {
+            background: #900;
+            border-color: #CCC;
+            color: #FFF;
+        }
+
+        .wf-steps-2 li:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .wf-steps-2 li:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .form-control[disabled],
+        fieldset[disabled] .form-control {
+            background: #f5f5f5;
+            border-color: #CCC;
+        }
+
+        fieldset[disabled] .control-label {
+            color: #CCC;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script>
+		$(function() {
+			var count = 1;
+				changeStep = function() {
+					if (count==4) {
+						interval = setInterval(function(){
+							location.href = 'loan-request-approved.html';
+							clearInterval(interval);
+						}, 1000);
+					}
+					$('.wf-process').addClass(count>3? 'wf-completed' : 'wf-step'+count);
+					count ++;
+				},
+				interval = setInterval(function(){
+					changeStep();
+				}, 10000);
+			changeStep();
+		});
+	</script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" style="padding-top:0;">
+            <div id="main-content" style="max-width:750px;">
+                <form class="wf-fixed-bottom">
+                    <p><img src="images/logo_terrabank.png" class="img-responsive" style="max-height: 35px;" /></p>
+
+                    <p class="lead" style="margin-bottom:60px;">We are reviewing your information, this may take a few minutes.</p>
+
+                    <style>
+						.wf-process {
+							border: 1px solid #CCC;
+							border-radius: 5px;
+							background: #FFF;
+							padding-top: 20px;
+							padding-bottom: 20px;
+						}
+                        .wf-process > div {
+                            transform: scale(.5) translateX(100px);
+							opacity: 0;
+							filter: blur(2px);
+                            transition: transform .5s, opacity .5s, filter .5s;
+                        }
+                        .wf-process.wf-step1 > div:first-child,
+						.wf-process.wf-step2 > div:nth-child(-n+2),
+						.wf-process.wf-step3 > div:nth-child(-n+3) {
+							transform: scale(1);
+							opacity: 1;
+							filter: blur(0);
+						}
+						.wf-process.wf-step1 > div:first-child .wf-icon-process,
+						.wf-process.wf-step2 > div:nth-child(2) .wf-icon-process,
+						.wf-process.wf-step3 > div:nth-child(3) .wf-icon-process {
+							display: block;
+						}
+						.wf-process.wf-step2 > div:nth-child(-n+1) .wf-icon-process,
+						.wf-process.wf-step3 > div:nth-child(-n+2) .wf-icon-process,
+						.wf-process.wf-completed > div:nth-child(-n+3) .wf-icon-process {
+							display: none;
+						}
+						.wf-process.wf-step2 > div:nth-child(-n+1) .wf-icon-ready,
+						.wf-process.wf-step3 > div:nth-child(-n+2) .wf-icon-ready,
+						.wf-process.wf-completed > div:nth-child(-n+3) .wf-icon-ready {
+							display: block;
+						}
+						.wf-process.wf-step2 > div:nth-child(-n+1) .wf-label,
+						.wf-process.wf-step3 > div:nth-child(-n+2) .wf-label,
+						.wf-process.wf-completed > div:nth-child(-n+3) .wf-label {
+							color: #990000;
+						}
+						.wf-process.wf-step1 > div:first-child .wf-icon-hold,
+						.wf-process.wf-step2 > div:nth-child(-n+2) .wf-icon-hold,
+						.wf-process.wf-step3 > div:nth-child(-n+3) .wf-icon-hold {
+							display: none;
+						}
+						.wf-process > div > .wf-label {
+							font-size: 21px;
+							transition: color .5s;
+							color: #858585;
+						}
+						.wf-process > div > .wf-icon-ready {
+							border: 2px solid #990000;
+							border-radius: 100px;
+						    width: 40px;
+							height: 40px;
+							line-height: 38px;
+							margin: 4px auto;
+							display: none;
+							background: #990000;
+							color: #FFF;
+						}
+						.wf-process > div > .wf-icon-hold {
+							border: 2px solid #CCC;
+							border-radius: 100px;
+						    width: 40px;
+							height: 40px;
+							margin: 4px auto;
+						}
+						.wf-process > div > .wf-icon-process {
+							width: 48px;
+							height: 48px;
+							margin: auto;
+							display: none;
+						}
+                    </style>
+					<div class="wf-process wf-flex">
+						<div class="wf-grow text-center">
+							<div class="wf-icon-hold"></div>
+							<div class="wf-icon-ready"><span class="glyphicon glyphicon-ok"></span></div>
+							<style>
+								@keyframes anim-2 {
+								  0% {
+									rx: 0;
+									opacity: 0;
+								  }
+								  50% {
+									rx: 50;
+								  }
+								  100% {
+									rx: 0;
+									opacity: 1;
+								  }
+								}
+								#rect-1 {
+									animation: anim-2 1s infinite;
+								}
+							</style>
+							<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="wf-icon-process">
+								<g transform="translate(50 50)">
+								  <g transform="scale(0.707504 0.707504)">
+									<animateTransform attributeName="transform" type="scale" calcMode="spline" values="0.8;0.5;0.8" keyTimes="0;0.5;1" dur="2s" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="0s" repeatCount="indefinite"></animateTransform>
+									<rect id="rect-1" x="-45" y="-45" width="90" height="90" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2" rx="20" transform="rotate(456.754)">
+									  <animate attributeName="rx" calcMode="linear" values="0;50;0" keyTimes="0;0.5;1" dur="2s" begin="0s" repeatCount="indefinite"></animate>
+									  <animate attributeName="stroke-width" calcMode="linear" values="2;4;2" keyTimes="0;0.5;1" dur="2s" begin="0s" repeatCount="indefinite"></animate>
+									  <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 0 0;270 0 0;540 0 0" keyTimes="0;0.5;1" dur="2s" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" begin="0s" repeatCount="indefinite"></animateTransform>
+									</rect>
+								  </g>
+								</g>
+							</svg>
+							<div class="wf-label">Verifying Identity</div>
+						</div>
+						<div class="wf-grow text-center">
+							<div class="wf-icon-hold"></div>
+							<div class="wf-icon-ready"><span class="glyphicon glyphicon-ok"></span></div>
+							<style>
+								@keyframes anim-1 {
+								  0% {
+									d: M50 25L80 25L80 75L50 75;
+									opacity: 0;
+								  }
+								  50% {
+									d: M50 25L50 20L50 80L50 75;
+								  }
+								  51% {
+									d: M50 25L80 25L80 75L50 75;
+								  }
+								  100% {
+									d: M50 25L80 25L80 75L50 75;
+									opacity: 1;
+								  }
+								}
+								#path-1 {
+									animation: anim-1 1s infinite;
+								}
+							</style>
+							<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="wf-icon-process">
+								<path d="M20 25L80 25L80 75L20 75Z" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2"></path>
+								<path id="path-1" d="M 50 25 L 80 25 L 80 75 L 50 75" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 25L80 25L80 75L50 75;M50 25L50 20L50 80L50 75;M50 25L80 25L80 75L50 75;M50 25L80 25L80 75L50 75" keyTimes="0;0.5;0.501;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+								  <animate attributeName="opacity" calcMode="linear" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 25 L 74.04 24.0067 L 74.04 75.9933 L 50 75" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 25L80 25L80 75L50 75;M50 25L50 20L50 80L50 75;M50 25L80 25L80 75L50 75;M50 25L80 25L80 75L50 75" keyTimes="0;0.5;0.501;1" dur="1" begin="-0.166s" repeatCount="indefinite"></animate>
+								  <animate attributeName="opacity" calcMode="linear" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1" begin="-0.166s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 25 L 64.2 22.3667 L 64.2 77.6333 L 50 75" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 25L80 25L80 75L50 75;M50 25L50 20L50 80L50 75;M50 25L80 25L80 75L50 75;M50 25L80 25L80 75L50 75" keyTimes="0;0.5;0.501;1" dur="1" begin="-0.33s" repeatCount="indefinite"></animate>
+								  <animate attributeName="opacity" calcMode="linear" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1" begin="-0.33s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 25 L 20 25 L 20 75 L 50 75" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 25L20 25L20 75L50 75;M50 25L20 25L20 75L50 75;M50 25L50 20L50 80L50 75;M50 25L20 25L20 75L50 75" keyTimes="0;0.499;0.5;1" dur="1" begin="-0.33s" repeatCount="indefinite"></animate>
+								  <animate attributeName="opacity" calcMode="linear" values="0;0;1;1" keyTimes="0;0.4999;0.5;1" dur="1" begin="-0.33s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 25 L 20 25 L 20 75 L 50 75" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 25L20 25L20 75L50 75;M50 25L20 25L20 75L50 75;M50 25L50 20L50 80L50 75;M50 25L20 25L20 75L50 75" keyTimes="0;0.499;0.5;1" dur="1" begin="-0.166s" repeatCount="indefinite"></animate>
+								  <animate attributeName="opacity" calcMode="linear" values="0;0;1;1" keyTimes="0;0.4999;0.5;1" dur="1" begin="-0.166s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 25 L 24 24.3333 L 24 75.6667 L 50 75" ng-attr-fill="{{config.fill}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 25L20 25L20 75L50 75;M50 25L20 25L20 75L50 75;M50 25L50 20L50 80L50 75;M50 25L20 25L20 75L50 75" keyTimes="0;0.499;0.5;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+								  <animate attributeName="opacity" calcMode="linear" values="0;0;1;1" keyTimes="0;0.4999;0.5;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+								</path>
+							</svg>
+							<div class="wf-label">Reviewing Data</div>
+						</div>
+						<div class="wf-grow text-center">
+							<div class="wf-icon-hold"></div>
+							<div class="wf-icon-ready"><span class="glyphicon glyphicon-ok"></span></div>
+							<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="wf-icon-process">
+								<defs>
+								  <mask id="mask">
+									<path d="M50 13L75 30L75 70L50 87L25 70L25 30L50 13Z" fill="#fff" stroke="#000" ng-attr-stroke-width="{{config.width}}" stroke-width="2"></path>
+								  </mask>
+								</defs>
+								<path d="M50 13L75 30L75 70L50 87L25 70L25 30L50 13Z" ng-attr-fill="{{config.fill1}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2"></path>
+								<path d="M 50 13 L 53.1667 30 L 53.1667 70 L 50 87 L 38.1667 70 L 38.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.2s" repeatCount="indefinite"></animate>
+								  <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.2s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 13 L 40.1667 30 L 40.1667 70 L 50 87 L 25.1667 70 L 25.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.4s" repeatCount="indefinite"></animate>
+								  <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.4s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 13 L 27.1667 30 L 27.1667 70 L 50 87 L 12.1667 70 L 12.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.6s" repeatCount="indefinite"></animate>
+								  <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.6s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 13 L 79.1667 30 L 79.1667 70 L 50 87 L 64.1667 70 L 64.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="-0.8s" repeatCount="indefinite"></animate>
+								  <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="-0.8s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M 50 13 L 66.1667 30 L 66.1667 70 L 50 87 L 51.1667 70 L 51.1667 30 Z" mask="url(#mask)" fill="#ffffff" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" stroke="#990000" stroke-width="2">
+								  <animate attributeName="d" calcMode="linear" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" keyTimes="0;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+								  <animate attributeName="fill" calcMode="linear" values="#ffffff;#fff;#990000" keyTimes="0;0.5;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+								</path>
+								<path d="M25 30L75 30" ng-attr-fill="{{config.fill1}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2"></path>
+								<path d="M25 70L75 70" ng-attr-fill="{{config.fill1}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-width="{{config.width}}" fill="#ffffff" stroke="#990000" stroke-width="2"></path>
+							</svg>
+							<div class="wf-label">Analyzing Business</div>
+						</div>
+					</div>
+
+					<p style="margin-top:60px;">You can wait on the screen or return when we notify you by email that the process has been completed.</p>
+
+                    <p>Thank you for choosing <a href="https://www.terrabank.com/" style="font-weight:bold;">Terrabank, N.A.</a> for your financial needs.</p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

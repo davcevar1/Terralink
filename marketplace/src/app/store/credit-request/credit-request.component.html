@@ -1,0 +1,199 @@
+<layout-checkout>
+  <form [formGroup]="creditRequestForm" (ngSubmit)="submit()" *ngIf="!submitted && catalog" class="container">
+    <fieldset>
+      <legend i18n>Información Personal</legend>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Fecha de nacimiento</label>
+            <input type="date" class="form-control" formControlName="birthdate" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Nacionalidad</label>
+            <select class="form-control" formControlName="nationality">
+              <option *ngFor="let c of catalog.nationalities.values" [ngValue]="c.code">{{c.value}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Género</label>
+            <select class="form-control" formControlName="gender">
+              <option *ngFor="let c of catalog.gender.values" [ngValue]="c.code">{{c.value}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Estado civil</label>
+            <select class="form-control" formControlName="maritalStatus">
+              <option *ngFor="let c of catalog.marital_status.values" [ngValue]="c.code">{{c.value}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Dirección</label>
+            <input type="text" class="form-control" formControlName="address"/>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Ciudad</label>
+            <select class="form-control" formControlName="city">
+              <option *ngFor="let c of catalog.cities.values" [ngValue]="c.code">{{c.value}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Vivienda</label>
+            <select class="form-control" formControlName="housing">
+              <option *ngFor="let c of catalog.housing.values" [ngValue]="c.code">{{c.value}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Cargas familiares</label>
+            <input type="text" class="form-control" formControlName="familyResponsibilities"/>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Nivel académico</label>
+            <select class="form-control" formControlName="academicLevel">
+              <option *ngFor="let c of catalog.academic_level.values" [ngValue]="c.code">{{c.value}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend i18n>Información Laboral</legend>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Actividad actual</label>
+            <input type="text" class="form-control" formControlName="currentActivity" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Empresa</label>
+            <input type="text" class="form-control" formControlName="currentCompany" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Años de trabajo</label>
+            <input type="text" class="form-control" formControlName="currentLaborYears"/>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Actividad anterior</label>
+            <input type="text" class="form-control" formControlName="previousActivity"/>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Empresa</label>
+            <input type="text" class="form-control" formControlName="previousCompany" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Años de trabajo</label>
+            <input type="text" class="form-control" formControlName="previousLaborYears" />
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset *ngIf="creditRequestForm.value.marital_status=='married'">
+      <legend i18n>Información Conyuge</legend>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label i18n>Nombres</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label i18n>Apellidos</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Cédula o RUC</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Fecha de nacimiento</label>
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Nacionalidad</label>
+            <select class="form-control">
+              <option i18n>Ecuatoriana</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset *ngIf="creditRequestForm.value.marital_status=='married'">
+      <legend i18n>Información Laboral Cónyuge</legend>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Actividad actual</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Empresa</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Años de trabajo</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Actividad anterior</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Empresa</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label i18n>Años de trabajo</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <hr class="mt-5" />
+    <div class="form-group mt-4 text-center">
+      <button type="submit" class="btn btn-primary btn-lg mr-3" i18n>Continuar</button>
+      <a routerLink="/cart" class="btn btn-outline-secondary btn-lg" i18n>Cancelar</a>
+    </div>
+  </form>
+</layout-checkout>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="ltr" dir="ltr" lang="en-US">
+
+<head>
+    <title>Welcome - Customers - Liferay</title>
+    <meta content="initial-scale=1.0, width=device-width" name="viewport" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    <style>
+        .wf-search-box {
+            position:relative;
+        }
+        .wf-search-box input {
+            border: 0;
+            box-shadow: 0 0;
+            width: 250px;
+            background-color: rgba(255,255,255,.2);
+            transition: background-color .2s, width .2s;
+        }
+        .wf-search-box input::placeholder {
+            color: rgba(255,255,255,.5);
+        }
+        .wf-search-box input:focus::placeholder {
+            color: rgba(0,0,0,.5);
+        }
+        .wf-search-box input:focus {
+            background-color: #FFF;
+            width: 450px;
+        }
+        .wf-view .wf-toolbar.wf-toolbar-top .wf-actions.wf-search-box input + button {
+            color: #FFF; 
+            background: transparent; 
+            border-bottom-left-radius: 0; 
+            position: absolute; 
+            top:0; 
+            right:10px;
+            transition: color .2s;
+        }
+        .wf-view .wf-toolbar.wf-toolbar-top .wf-actions.wf-search-box input:focus + button {
+            color: #333;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $(document).on('click', '[data-action]', function (e) {
+            var $self = $(this),
+                action = $self.data('action');
+            switch (action) {
+                case 'toggle-navigation':
+                    e.preventDefault();
+                    $('body').toggleClass('wf-navigation');
+                    break;
+            }
+        });
+    </script>
+</head>
+
+<body class="wf-shell" style="background:#ecf2f6;">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top">
+            <div class="container" style="padding:30px;">
+                <h1 style="margin-top:0; margin-bottom:30px;">Help &amp; Support</h1>
+                
+                <div class="wf-flex-sm-up wf-gutters">
+                        <div class="wf-flex wf-gutters wf-grow" style="margin-bottom:15px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+                                    <use xlink:href="themes/default/images/icons.svg#book" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="margin:0; font-size:20px;">User Guide</h3>
+                                <p>Gain in-depth knowledge of all the features, customization and implementation procedures with the User Guide.</p>
+                                <a href="help-content.html" style="font-weight:bold;">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="wf-flex wf-gutters wf-grow" style="margin-bottom:30px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+                                    <use xlink:href="themes/default/images/icons.svg#questions" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="margin:0; font-size:20px;">Frequently Asked Questions</h3>
+                                <p>This section has detailed answers to some of the frequently asked questions to help you resolve the most common problems.</p>
+                                <a href="#" style="font-weight:bold;">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+				<div class="wf-flex-sm-up wf-gutters">
+					<div class="wf-flex wf-gutters wf-grow" style="margin-bottom:30px;">
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+								<use xlink:href="themes/default/images/icons.svg#email" />
+							</svg>
+						</div>
+						<div>
+							<h3 style="margin:0; font-size:20px;">Email</h3>
+							<p>Have a question to ask? Mail it to <strong><a href="mailto:support@mainstreet.com">support@mainstreet.com</a></strong> and we'll get back to you.</p>
+						</div>
+					</div>
+					<div class="wf-flex wf-gutters wf-grow" style="margin-bottom:30px;">
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+								<use xlink:href="themes/default/images/icons.svg#phone-circle" />
+							</svg>
+						</div>
+						<div>
+							<h3 style="margin:0; font-size:20px;">Call Us</h3>
+							<p>If you are on US call us to<br /> <strong>(908) 236 5478</strong>.</p>
+						</div>
+					</div>   
+				</div>
+            </div>    
+        </div>
+        <div class="wf-toolbar wf-toolbar-top" style="background:#1c62b7; box-shadow: 0 0;">
+			<div class="wf-logo wf-flex wf-middle wf-center" style="background:#1c62b7; margin-left:30px;">
+				<a class="logo default-logo" href="/group/customers/home"><img src="images/logo_mainstreet.png" style="height:24px;" alt="" /> </a>
+			</div>
+            <div class="wf-grow">&nbsp;</div>
+            <div class="wf-actions wf-search-box">
+                <input type="search" class="form-control" style="height: 38px; padding: 8px 12px;" placeholder="Type a search criteria" />
+                <button class="btn btn-default" title="Search"><span class="fa fa-search"></span></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

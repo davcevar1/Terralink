@@ -1,0 +1,12 @@
+<div class="p-4">
+  <div class="steps">
+    <ng-container *ngFor="let step of data; let i = index">
+      <div *ngIf="i>allowed" [ngClass]="{active:i<=current}">
+        <div class="d-none d-sm-block">{{ step.label }}</div>
+      </div>
+      <a *ngIf="i<=allowed" [routerLink]="step.url" [ngClass]="{active:i<=current}">
+        <div class="d-none d-sm-block">{{ step.label }}</div>
+      </a>
+    </ng-container>
+  </div>
+</div>

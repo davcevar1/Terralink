@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="themes/cobis-ui/terrabank.css" rel="stylesheet" />
+  <link href="libraries/misc/json-formatter.min.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="controller">
+  <div class="cb-view">
+    <div class="cb-view-container-root cb-view-container cb-group-layout container-fluid">
+      <div class="container-fluid" style="max-width:600px;">
+        <div class="cb-flex cb-gutters">
+          <div class="cb-grow form-group" style="margin-bottom:0;">
+            <input type="text" class="form-control input-lg" placeholder="Type a search criteria" />
+          </div>
+          <div>
+            <select class="form-control input-lg" ng-model="dateRange">
+              <option value="today">Today</option>
+              <option value="yesterday">Yesterday</option>
+              <option value="last-week">Last week</option>
+              <option value="last-month">Last month</option>
+              <option value="custom">Custom...</option>
+            </select>
+          </div>
+          <div ng-if="!isAdvanced">
+            <button class="btn btn-primary btn-lg" ng-click="find()"><span class="fa fa-search"></span></button>
+          </div>
+        </div>
+        <div id="filters" class="cb-flex cb-gutters" ng-class="{'cb-gap-bottom':!isAdvanced}">
+          <div class="cb-grow text-right">
+            <button class="btn btn-link" ng-click="isAdvanced = !isAdvanced">{{ isAdvanced? 'Basic search' : 'Advanced search' }}</button>
+          </div>
+        </div>
+      </div>
+      <div ng-if="isAdvanced" class="container-fluid" style="margin-top: 15px; margin-left: -30px; margin-right: -30px; padding-left: 30px; padding-right: 30px; padding-top: 15px; border-top: 1px solid #ddd;">
+        <div class="row cb-flex cb-wrap cb-gap-bottom">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <div class="control-label">
+                Date range
+              </div>
+              <div class="cb-control cb-flex cb-gutters cb-middle">
+                <div class="cb-grow"><input type="date" kendo-datepicker /></div>
+                <div>/</div>
+                <div class="cb-grow"><input type="date" kendo-datepicker /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div ng-show="showResults">
+          <div class="list-group">
+            <a href="#" class="list-group-item" ng-click="showDetail(result)" ng-repeat="result in results">
+              <div class="cb-flex">
+                <div class="cb-grow">
+                  <div><span title="Cause">{{ result.cause }}</span></div>
+                  <div class="small text-muted"><span title="Número"><span title="Environment">{{ result.context.environment }}</span> - <span title="Name">{{ result.context.username }}</span></div>
+                </div>
+                <div class="text-right">
+                  <div></div>
+                  <div class="small text-muted" title="Date">{{ result.date | date:'M/d/yyyy h:mm a Z' }}</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="showResults || isAdvanced" class="cb-navbar cb-navbar-bottom" style="margin-bottom: -15px;">
+      <nav class="navbar navbar-default navbar-fixed-bottom" style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+        <button ng-show="isAdvanced" class="btn btn-primary navbar-btn" ng-click="find()">Search</button>
+      </nav>
+    </div>
+    <div class="cb-view-loading cb-hidden">
+      <div class="cb-view-loading-icon"></div>
+    </div>
+  </div>
+
+  <div id="detail" class="modal fade">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Exception</h4>
+        </div>
+        <div class="modal-body">
+          <div class="cb-group cb-group-collapsible">
+            <ul kendo-panel-bar>
+              <li class="k-state-active">
+                <span>Description</span>
+                <div>
+                  <div style="margin-bottom:10px; font-size:18px;">{{ detail.cause }}</div>
+                  <div style="margin-bottom:20px;"><strong>Log date</strong>: {{ detail.date | date:'M/d/yyyy h:mm a Z' }}</div>
+                  <h4 style="font-size:16px;" class="text-success">Solutions</h4>
+                  <ul>
+                    <li>Check status of current application and wait it finished to start a new request.</li>
+                    <li>Check if information is filled correctly. <a href="#" style="font-weight:bold;">More detail</a></li>
+                  </ul>
+                  <h4 style="font-size:16px;" class="text-warning">Minimum information required</h4>
+                  <ul>
+                    <li>Do you upload a encrypted file?</li>
+                    <li>Do you upload a file lower 10mb size?</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="k-state-active">
+                <span>Context</span>
+                <div style="overflow:auto;">
+                  <json-formatter json="detail.context" open="2" style="margin-bottom:20px;"></json-formatter>
+                </div>
+              </li>
+              <li class="k-state-active">
+                <span>Data</span>
+                <div style="overflow:auto;">
+                  <json-formatter json="detail.data" open="2" style="margin-bottom:20px;"></json-formatter>
+                </div>
+              </li>
+              <li>
+                <span>Device</span>
+                <div>
+                  <div style="margin-bottom:20px;">
+                    <div><strong>Navigator:</strong> Chrome version 65.0.3325.181 (Build oficial) (64 bits)</div>
+                    <div><strong>Operation System:</strong> MacOS High Sierra version 10.13.2 (17C88)</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <span>Stack trace</span>
+                <div><pre>{{ detail.stackTrace }}</pre></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var librariesUrl = 'libraries/';
+  </script>
+  <script src="libraries/require.config.js"></script>
+  <script data-main="error-log" src="libraries/require/require.js"></script>
+</body>
+
+</html>

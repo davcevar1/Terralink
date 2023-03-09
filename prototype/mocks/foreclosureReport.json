@@ -1,0 +1,107 @@
+{
+  "ForeclosureReportResponseEx": {
+    "response": {
+      "Header": {
+        "Status": "0",
+        "TransactionId": "158897223R94827"
+      },
+      "Foreclosures": {
+        "Foreclosure": [
+          {
+            "BusinessIds": {
+              "DotID": "0",
+              "EmpID": "0",
+              "POWID": "0",
+              "ProxID": "0",
+              "SeleID": "0",
+              "OrgID": "0",
+              "UltID": "0"
+            },
+            "ForeclosureId": "79008030905002LONDONLEONA",
+            "DeedType": "Foreclosure",
+            "SiteAddress": {
+              "StreetName": "PETERERO",
+              "City": "BLACKRIVER",
+              "State": "MI",
+              "Zip5": "13040",
+              "Zip4": "2308",
+              "County": "WAYNE"
+            },
+            "Plaintiffs": { "Plaintiff": "PLAINTIFF" },
+            "Defendants": {
+              "Defendant": {
+                "Name": {
+                  "First": "LEON",
+                  "Middle": "A",
+                  "Last": "GAGLEWALL",
+                  "Prefix": "MR"
+                },
+                "UniqueId": "999903003912"
+              }
+            },
+            "RecordingDate": {
+              "Year": "2004",
+              "Month": "09",
+              "Day": "16"
+            },
+            "DocumentYear": "2004",
+            "DocumentNumber": "4221253",
+            "DocumentBook": "695832",
+            "DocumentPages": "873119",
+            "DocumentType": "SHERIFF'S DEED",
+            "LandUsage": "Single Family Residence / Townhouse",
+            "ParcelNumber": "X9-008-03-0905-002",
+            "YearBuilt": "0"
+          },
+          {
+            "BusinessIds": {
+              "DotID": "0",
+              "EmpID": "0",
+              "POWID": "0",
+              "ProxID": "0",
+              "SeleID": "0",
+              "OrgID": "0",
+              "UltID": "0"
+            },
+            "ForeclosureId": "79008030905002LONDONLEONA",
+            "DeedType": "Foreclosure",
+            "SiteAddress": {
+              "StreetName": "PETERERO",
+              "City": "BLACKRIVER",
+              "State": "MI",
+              "Zip5": "13040",
+              "Zip4": "2308",
+              "County": "WAYNE"
+            },
+            "Plaintiffs": { "Plaintiff": "PLAINTIFF" },
+            "Defendants": {
+              "Defendant": {
+                "Name": {
+                  "First": "LEON",
+                  "Middle": "A",
+                  "Last": "GAGLEWALL",
+                  "Prefix": "MR"
+                },
+                "SSN": "77306xxxx",
+                "UniqueId": "999903003912"
+              }
+            },
+            "RecordingDate": {
+              "Year": "2004",
+              "Month": "09",
+              "Day": "16"
+            },
+            "DocumentYear": "2004",
+            "DocumentNumber": "4221253",
+            "DocumentBook": "695832",
+            "DocumentPages": "873119",
+            "DocumentType": "SHERIFF'S DEED",
+            "LandUsage": "Single Family Residence / Townhouse",
+            "ParcelNumber": "X9-008-03-0905-002",
+            "YearBuilt": "0"
+          }
+        ]
+      }
+    }
+  }
+}

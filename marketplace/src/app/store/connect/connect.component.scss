@@ -1,0 +1,14 @@
+.logo {
+  .border-primary & {
+    opacity: .3;
+  }
+}
+.check {
+  display: none;
+  .border-primary & {
+    display: block;
+  }
+}
+.pin {
+  letter-spacing: 1rem;
+}

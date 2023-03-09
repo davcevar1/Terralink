@@ -1,0 +1,148 @@
+{
+    "ForeclosureSearchResponseEx": {
+        "response": {
+            "Records": {
+                "Record": [{
+                    "Defendants": {
+                        "Defendant": {
+                            "Name": {
+                                "First": "LEON",
+                                "Prefix": "MR",
+                                "Middle": "A",
+                                "Last": "GAGLEWALL"
+                            },
+                            "UniqueId": 999903003912,
+                            "SSN": "77306xxxx"
+                        }
+                    },
+                    "Plaintiffs": {
+                        "Plaintiff": "PLAINTIFF"
+                    },
+                    "DocumentType": "SHERIFF'S DEED",
+                    "DeedType": "Foreclosure",
+                    "ForeclosureId": "79008030905002LONDONLEONA",
+                    "AlsoFound": 0,
+                    "SiteAddress": {
+                        "State": "MI",
+                        "Zip4": 2308,
+                        "Zip5": 13040,
+                        "County": "WAYNE",
+                        "City": "BLACKRIVER",
+                        "StreetName": "PETERERO"
+                    },
+                    "RecordingDate": {
+                        "Month": "09",
+                        "Day": 16,
+                        "Year": 2004
+                    }
+                }, {
+                    "Defendants": {
+                        "Defendant": {
+                            "Name": {
+                                "First": "LEON",
+                                "Prefix": "MR",
+                                "Middle": "A",
+                                "Last": "GAGLEWALL"
+                            },
+                            "UniqueId": 999903003912,
+                            "SSN": "77306xxxx"
+                        }
+                    },
+                    "Plaintiffs": {
+                        "Plaintiff": "PLAINTIFF"
+                    },
+                    "DocumentType": "SHERIFF'S DEED",
+                    "DeedType": "Foreclosure",
+                    "ForeclosureId": "0435304005LONDONLEONA",
+                    "AlsoFound": 0,
+                    "SiteAddress": {
+                        "State": "MI",
+                        "Zip4": 3125,
+                        "Zip5": 92474,
+                        "StreetSuffix": "LN",
+                        "County": "MACOMB",
+                        "City": "KIRKHILL",
+                        "StreetNumber": 11812,
+                        "StreetName": "ULAKOVA"
+                    },
+                    "RecordingDate": {
+                        "Month": "09",
+                        "Day": "06",
+                        "Year": 2004
+                    }
+                }, {
+                    "Defendants": {
+                        "Defendant": {
+                            "Name": {
+                                "First": "LEON",
+                                "Prefix": "MR",
+                                "Middle": "A",
+                                "Last": "GAGLEWALL"
+                            },
+                            "UniqueId": 999903003912
+                        }
+                    },
+                    "Plaintiffs": {
+                        "Plaintiff": "PLAINTIFF"
+                    },
+                    "DocumentType": "SHERIFF'S DEED",
+                    "DeedType": "Foreclosure",
+                    "ForeclosureId": "79008030905002LONDONLEONA",
+                    "AlsoFound": 0,
+                    "SiteAddress": {
+                        "State": "MI",
+                        "Zip4": 2308,
+                        "Zip5": 13040,
+                        "County": "WAYNE",
+                        "City": "BLACKRIVER",
+                        "StreetName": "PETERERO"
+                    },
+                    "RecordingDate": {
+                        "Month": "09",
+                        "Day": 16,
+                        "Year": 2004
+                    }
+                }, {
+                    "Defendants": {
+                        "Defendant": {
+                            "Name": {
+                                "First": "LEON",
+                                "Prefix": "MR",
+                                "Middle": "A",
+                                "Last": "GAGLEWALL"
+                            },
+                            "UniqueId": 999903003912
+                        }
+                    },
+                    "Plaintiffs": {
+                        "Plaintiff": "PLAINTIFF"
+                    },
+                    "DocumentType": "SHERIFF'S DEED",
+                    "DeedType": "Foreclosure",
+                    "ForeclosureId": "0435304005LONDONLEONA",
+                    "AlsoFound": 0,
+                    "SiteAddress": {
+                        "State": "MI",
+                        "Zip4": 3125,
+                        "Zip5": 92474,
+                        "StreetSuffix": "LN",
+                        "County": "MACOMB",
+                        "City": "KIRKHILL",
+                        "StreetNumber": 11812,
+                        "StreetName": "ULAKOVA"
+                    },
+                    "RecordingDate": {
+                        "Month": "09",
+                        "Day": "06",
+                        "Year": 2004
+                    }
+                }]
+            },
+            "Header": {
+                "Status": 0,
+                "TransactionId": "158877293R6164"
+            },
+            "RecordCount": 4
+        }
+    }
+}

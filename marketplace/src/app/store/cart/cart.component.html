@@ -1,0 +1,34 @@
+<layout-base>
+  <div class="container pt-4" style="min-height:500px;">
+    <h2 i18n>Carrito de compras</h2>
+    <div class="row" *ngIf="cartStateService.items.length>0">
+      <div class="col-sm-9">
+        <div class="card">
+          <div class="list-group list-group-flush">
+            <app-order-item [item]="item" class="list-group-item" *ngFor="let item of cartStateService.items"></app-order-item>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card mt-3 mt-sm-0">
+          <div class="list-group list-group-flush">
+            <div class="list-group-item text-right p-3">
+              <div><span i18n>Subtotal:</span> {{ cartStateService.total/1.12 | currency }} USD</div>
+              <div><span i18n>Impuestos:</span> {{ (cartStateService.total - cartStateService.total/1.12) | currency }} USD</div>
+              <strong><span i18n>Total:</span> {{ cartStateService.total | currency }} USD</strong>
+            </div>
+            <div class="list-group-item text-center p-3">
+              <a routerLink="/" class="btn btn-outline-secondary btn-block mb-2" i18n>Continuar comprando</a>
+              <a routerLink="/checkout" class="btn btn-primary btn-lg btn-block" i18n>Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-info" *ngIf="cartStateService.items.length==0" i18n>No tienes productos en tu carrito todavía</div>
+    <h5 class="mt-4" i18n>También te puede interesar</h5>
+    <div class="py-3 grid">
+      <app-product-card *ngFor="let product of crossSell" [product]="product"></app-product-card>
+    </div>
+  </div>
+</layout-base>

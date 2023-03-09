@@ -1,0 +1,79 @@
+{
+    "LienJudgmentSearchResponseEx": {
+        "response": {
+            "Records": {
+                "Record": [{
+                    "MultipleDefendant": false,
+                    "MatchedParty": {
+                        "PartyType": "D",
+                        "Address": {
+                            "State": "FL",
+                            "Zip4": 1020,
+                            "StreetSuffix": "ST",
+                            "Zip5": 76386,
+                            "City": "SARDVALE",
+                            "StreetNumber": 1804,
+                            "StreetName": "YULSON"
+                        },
+                        "ParsedParty": {
+                            "CompanyName": "HOLKIMUR AGENCY"
+                        }
+                    },
+                    "ExternalKey": "HGCV2006000040ALGENM1",
+                    "TMSId": "HGCV2006000040ALGENM1",
+                    "FilingJurisdictionName": "ALABAMA",
+                    "FilingJurisdiction": "AL",
+                    "Filings": {
+                        "Filing": {
+                            "Agency": "GENEVA CIRCUIT",
+                            "Number": "CV4006000040",
+                            "Type": "CIVIL NEW FILING",
+                            "AgencyState": "AL",
+                            "OriginFilingDate": {
+                                "Month": 4,
+                                "Day": 20,
+                                "Year": 2006
+                            },
+                            "AgencyCounty": "GENEVA"
+                        }
+                    },
+                    "OriginFilingDate": {
+                        "Month": 4,
+                        "Day": 20,
+                        "Year": 2006
+                    },
+                    "Debtors": {
+                        "Debtor": {
+                            "OriginName": "HOLKIMUR AGENCY",
+                            "Addresses": {
+                                "Address": {
+                                    "State": "FL",
+                                    "Zip4": 1020,
+                                    "StreetSuffix": "ST",
+                                    "Zip5": 76386,
+                                    "County": "SANTA ROSA",
+                                    "City": "SARDVALE",
+                                    "StreetNumber": 1804,
+                                    "StreetName": "YULSON"
+                                }
+                            },
+                            "ParsedParties": {
+                                "Party": {
+                                    "PersonFilterId": 3106283352,
+                                    "CompanyName": "HOLKIMUR AGENCY",
+                                    "BusinessId": 999931085525
+                                }
+                            }
+                        }
+                    },
+                    "Eviction": "N"
+                }]
+            },
+            "Header": {
+                "Status": 0,
+                "TransactionId": "158876073R7382"
+            },
+            "RecordCount": 1
+        }
+    }
+}

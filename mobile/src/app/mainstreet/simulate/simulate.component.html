@@ -1,0 +1,50 @@
+<nav class="navbar navbar-dark bg-primary sticky-top">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a [routerLink]="['/simulate']" class="nav-link">
+        <svg class="icon"><use xlink:href="assets/factoricons-regular.svg#angle-left" /></svg>
+      </a>
+    </li>
+  </ul>
+  <span class="navbar-brand mr-auto">
+    Simular crédito
+  </span>
+</nav>
+<div class="container pt-3">
+  <div class="card mb-3 text-center">
+    <div class="card-header">Orden #089-2345</div>
+    <div class="card-body" style="font-size: 1.5rem;">$116,350.00 USD</div>
+  </div>
+  <div class="card mb-3 text-center">
+    <div class="card-header">Plazo</div>
+    <div class="card-body">
+      <div style="position:relative;">
+        <input type="range" min="0" max="5" step="1" class="form-control" />
+        <div class="d-flex wf-middle" style="min-height: 20px;">
+          <div class="w-100 text-muted text-left small">1 mes</div>
+          <div style="font-size: 1.5rem; white-space: nowrap;">24 meses</div>
+          <div class="w-100 text-muted text-right small">36 meses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row text-center">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">Cuota</div>
+        <div class="card-body" style="font-size: 1.5rem; white-space: nowrap;">1,500 USD</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">Interés</div>
+        <div class="card-body" style="font-size: 1.5rem; white-space: nowrap;">11%</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="min-height:54px;">
+  <nav class="navbar navbar-light bg-light fixed-bottom">
+    <a [routerLink]="['/credit']" class="btn btn-success btn-block px-4" style="color:#FFF;">Solicitar crédito</a>
+  </nav>
+</div>

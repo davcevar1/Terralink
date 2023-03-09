@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Users</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" ng-view>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="panel panel-default">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Enter a username" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" title="Search"><span class="fa fa-search"></span></button>
+                                        </span>
+                                    </div>    
+                                </li>
+                                <a href="#" class="list-group-item">
+                                    <div class="wf-flex">
+                                        <div class="wf-icons">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <div class="wf-grow">
+                                            Add user
+                                        </div>
+                                    </div>
+                                </a>
+                                <li class="list-group-item">
+                                    <div class="wf-flex">
+                                        <div class="wf-icons">
+                                            <span class="text-success fa fa-check" title="Active"></span>
+                                        </div>
+                                        <div class="wf-grow">
+                                            <div>frank</div>
+                                            <div class="small text-muted">Frank, Johnson (frank@store1.com)</div>
+                                        </div>    
+										<div class="wf-menu">
+											<div class="dropdown">
+												<button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#">Edit</a></li>
+													<li><a href="#">Delete</a></li>
+												</ul>
+											</div>
+										</div>	
+                                    </div>    
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="wf-flex">
+                                        <div class="wf-icons">
+                                            <span class="text-danger fa fa-times" title="Active"></span>
+                                        </div>
+                                        <div class="wf-grow">
+                                            <div>joe</div>
+                                            <div class="small text-muted">Joe, Williams (joe@store2.com)</div>
+                                        </div>    
+                                        <div class="dropdown wf-menu">
+                                            <button title="Options" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="#">Edit</a></li>
+                                                <li><a href="#">Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+                                </li>
+                                <li class="list-group-item">
+                                    <ul class="pager" style="margin:0;">
+                                        <li><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">User</div>
+                            <form class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group wf-required">
+                                            <div class="control-label">Username</div>
+                                            <div>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group wf-required">
+                                            <div class="control-label">Email</div>
+                                            <div>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group wf-required">
+                                            <div class="control-label">First name</div>
+                                            <div>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group wf-required">
+                                            <div class="control-label">Lastname</div>
+                                            <div>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <fieldset>
+                                            <legend>Products</legend>
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" /> All products
+                                                    </label>
+                                                </div>
+                                                <div style="background:#CCC; color:#999; line-height:150px; text-align:center;">Replace with products tree</div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <fieldset>
+                                            <legend>Roles</legend>
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" checked /> Administrator
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" checked /> User
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>    
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="panel-footer wf-actions">
+                                <div class="wf-flex">
+                                    <div class="wf-grow text-left">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" checked /> Active
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="wf-grow">
+                                        <button class="btn btn-link text-danger">Delete</button>
+                                        <button class="btn btn-primary">Save</button>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">
+                Users 
+            </div>
+            <div class="wf-actions">
+                <div class="dropdown">
+                    <button class="btn btn-default" data-toggle="dropdown"><span class="fa fa-question-circle"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">Related Help Topics</li>
+                        <li><a href="#">Administer users</a></li>
+                        <li><a href="#">Set user permissions</a></li>
+                        <li><a href="#">Block users</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#help" data-toggle="modal">Help &amp; Support Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="small text-muted hidden-xs" style="margin-right:10px;">Customized for</div>
+            <div><img src="images/acme-logo.png" style="max-height:40px; margin-right:15px;" /></div>
+        </div>
+	</div>
+    
+    <div id="help" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" style="margin: 0; font-size: 22px;">Help &amp; Support</h4>
+                    <p>Do you have questions? Find here the answers</p>
+                    <div class="input-group" style="max-width:400px; margin:auto;">
+                        <input type="text" class="form-control" placeholder="Type keywords to find in our Documentation" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" title="Search"><span class="fa fa-search"></span></button>
+                        </span>
+                    </div>
+                    
+                </div>
+                <div class="modal-body" style="padding:30px;">
+                    <div class="wf-flex-sm-up wf-gutters">
+                        <div class="wf-flex wf-gutters wf-grow" style="margin-bottom:15px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+                                    <use xlink:href="themes/default/images/icons.svg#book" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="margin:0; font-size:20px;">User Guide</h3>
+                                <p>Gain in-depth knowledge of all the features, customization and implementation procedures with the User Guide.</p>
+                                <a href="#" style="font-weight:bold;">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="wf-flex wf-gutters wf-grow" style="margin-bottom:30px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+                                    <use xlink:href="themes/default/images/icons.svg#questions" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="margin:0; font-size:20px;">Frequently Asked Questions</h3>
+                                <p>This section has detailed answers to some of the frequently asked questions to help you resolve the most common problems.</p>
+                                <a href="#" style="font-weight:bold;">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wf-flex-sm-up wf-gutters">
+                        <div class="wf-flex wf-gutters wf-grow" style="margin-bottom:30px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+                                    <use xlink:href="themes/default/images/icons.svg#email" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="margin:0; font-size:20px;">Email</h3>
+                                <p>Have a question to ask? Mail it to <strong><a href="mailto:support@mainstreet.com">support@mainstreet.com</a></strong> and we'll get back to you.</p>
+                            </div>
+                        </div>
+                        <div class="wf-flex wf-gutters wf-grow" style="margin-bottom:30px;">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="wf-icon" style="width:32px; height:32px;">
+                                    <use xlink:href="themes/default/images/icons.svg#phone-circle" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="margin:0; font-size:20px;">Call Us</h3>
+                                <p>If you are on US call us to<br /> <strong>(908) 236 5478</strong>.</p>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

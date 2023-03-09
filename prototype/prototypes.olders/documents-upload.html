@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-controller="shellController">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Loan documents</title>
+
+    <!-- To disable compatibility mode in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="libraries/misc/dropzone.css" />
+    <link rel="stylesheet" href="themes/mainstreet.css" />
+    <style>
+        .dropzone {
+            min-height: inherit;
+        }
+        .dropzone .dz-message {
+            display: none;
+        }
+        .dropzone.dz-drag-hover {
+            border-color: #23527c;
+            z-index: 2;
+        }
+        .dropzone.dz-started .wf-note {
+            display: none;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="libraries/misc/dropzone.js"></script>
+    <script>
+        $(function(){
+            Dropzone.autoDiscover = false;
+            $(".dropzone").dropzone({
+                url: "/file/post",
+                uploadMultiple: true,
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                acceptedFiles: 'application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+				init: function() {
+					this.on("error", function(file){
+						if (!file.accepted) {
+							this.removeFile(file);
+							alert('Selected file has not a valid format.');
+						}
+					});
+				}
+			});
+        });
+        function clickParent(elm) {
+            debugger;
+        }
+    </script>
+</head>
+
+<body class="wf-shell">
+    <div id="shell" class="wf-view">
+        <div class="wf-content wf-fixed-top" ng-view>
+            <div class="container" style="max-width:700px;">
+                <div class="alert alert-info">
+                    <strong>Great news!</strong> You meet the initial requirements. To continue, please provide the following documentation requested below:
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Business</div>
+                    <div class="list-group">
+                        <div class="list-group-item dropzone wf-required">
+                            <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                                <div>
+                                    <span class="fa fa-file-text-o fa-2x"></span>
+                                </div>
+                                <div class="wf-grow">
+                                    <div class="wf-label">Three Years of Corporate Tax Returns</div>
+                                    <div class="text-muted small">This file(s) is mandatory</div>
+                                </div>
+                                <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                            </div>
+                        </div>
+                        <div class="list-group-item dropzone wf-required">
+                            <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                                <div>
+                                    <span class="fa fa-file-text-o fa-2x"></span>
+                                </div>
+                                <div class="wf-grow">
+                                    <div class="wf-label">Three Months of Business Bank Statements</div>
+                                    <div class="text-muted small">This file(s) is mandatory</div>
+                                </div>
+                                <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                            </div>    
+                        </div>
+                        <div class="list-group-item dropzone">
+                            <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                                <div>
+                                    <span class="fa fa-file-text-o fa-2x"></span>
+                                </div>
+                                <div class="wf-grow wf-label">
+                                    Corporative documents
+                                </div>
+                                <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Repetir esta seccion por cada propietario -->
+                    <div class="panel-heading">Peter Jackson</div>
+                    <div class="list-group">
+                        <div class="list-group-item dropzone wf-required">
+                            <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                                <div>
+                                    <span class="fa fa-file-text-o fa-2x"></span>
+                                </div>
+                                <div class="wf-grow">
+                                    <div class="wf-label">Three Years of Personal Tax Returns</div>
+                                    <div class="text-muted small">This file(s) is mandatory</div>
+                                </div>
+                                <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                            </div>
+                        </div>
+                        <div class="list-group-item dropzone wf-required">
+                            <div class="wf-flex wf-gutters wf-middle wf-clickable" onclick="$(event.currentTarget).parent().click()">
+                                <div>
+                                    <span class="fa fa-file-text-o fa-2x"></span>
+                                </div>
+                                <div class="wf-grow">
+                                    <div class="wf-label">Three Months of Personal Bank Statements</div>
+                                    <div class="text-muted small">This file(s) is mandatory</div>
+                                </div>
+                                <div class="wf-note text-muted hidden-xs">Drop or click to upload files</div>
+                            </div>    
+                        </div>
+                    </div>
+                    <!-- /Final de seccion -->
+                    
+                    <div class="panel-footer wf-actions">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="wf-toolbar wf-toolbar-top">
+            <div class="wf-title">Loan documents</div>
+        </div>
+    </div>
+</body>
+
+</html>

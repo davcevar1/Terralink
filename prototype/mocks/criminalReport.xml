@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CrimReportResponseEx>
+	<response>
+		<Header>
+			<Status>0</Status>
+			<TransactionId>158897233R94924</TransactionId>
+		</Header>
+		<CriminalRecords>
+			<CriminalRecord>
+				<OffenderId>093PA-06-12646MO</OffenderId>
+				<CaseNumber>3PA-280188-12646MO</CaseNumber>
+				<CaseFilingDate>
+					<Year>2006</Year>
+					<Month>03</Month>
+					<Day>21</Day>
+				</CaseFilingDate>
+				<DataSource>CRIMINAL COURT</DataSource>
+				<SSN>77324xxxx</SSN>
+				<UniqueId>999913497366</UniqueId>
+				<StateOfOrigin>ALASKA</StateOfOrigin>
+				<Address>
+					<State>AK</State>
+					<Zip5>00000</Zip5>
+				</Address>
+				<Name>
+					<First>HOWARD</First>
+					<Middle>A</Middle>
+					<Last>KIRKARZI</Last>
+				</Name>
+				<DOB>
+					<Year>1969</Year>
+					<Month>12</Month>
+					<Day>23</Day>
+				</DOB>
+				<CaseTypeDescription>MINOR OFFENSE</CaseTypeDescription>
+				<Offenses>
+					<Offense>
+						<Court>
+							<CaseNumber>3PA-06-12646MO</CaseNumber>
+							<Description>THIRD DISTRICT - PALMER</Description>
+							<Statute>PROOF OF INSURANCE TO BE CARRIED AND EXHIBITED ON DEMAND</Statute>
+						</Court>
+					</Offense>
+				</Offenses>
+			</CriminalRecord>
+			<CriminalRecord>
+				<OffenderId>093PA-04-07576MO</OffenderId>
+				<CaseNumber>3PA-308963-07576MO</CaseNumber>
+				<CaseFilingDate>
+					<Year>2004</Year>
+					<Month>05</Month>
+					<Day>22</Day>
+				</CaseFilingDate>
+				<DataSource>CRIMINAL COURT</DataSource>
+				<SSN>77324xxxx</SSN>
+				<UniqueId>999913497366</UniqueId>
+				<StateOfOrigin>ALASKA</StateOfOrigin>
+				<Address>
+					<State>AK</State>
+					<Zip5>00000</Zip5>
+				</Address>
+				<Name>
+					<First>HOWARD</First>
+					<Middle>A</Middle>
+					<Last>KIRKARZI</Last>
+				</Name>
+				<DOB>
+					<Year>1969</Year>
+					<Month>12</Month>
+					<Day>23</Day>
+				</DOB>
+				<CaseTypeDescription>MINOR OFFENSE</CaseTypeDescription>
+				<Offenses>
+					<Offense>
+						<Court>
+							<CaseNumber>3PA-04-07576MO</CaseNumber>
+							<Description>THIRD DISTRICT - PALMER</Description>
+							<DispositionDate>
+								<Year>2004</Year>
+								<Month>09</Month>
+								<Day>01</Day>
+							</DispositionDate>
+							<Statute>CRUELTY TO ANIMALS PROHIBITED</Statute>
+						</Court>
+					</Offense>
+				</Offenses>
+			</CriminalRecord>
+			<CriminalRecord>
+				<OffenderId>093AN-03-02631MO</OffenderId>
+				<CaseNumber>3AN-225329-02631MO</CaseNumber>
+				<CaseFilingDate>
+					<Year>2003</Year>
+					<Month>01</Month>
+					<Day>23</Day>
+				</CaseFilingDate>
+				<DataSource>CRIMINAL COURT</DataSource>
+				<SSN>77324xxxx</SSN>
+				<UniqueId>999913497366</UniqueId>
+				<StateOfOrigin>ALASKA</StateOfOrigin>
+				<Address>
+					<State>AK</State>
+					<Zip5>00000</Zip5>
+				</Address>
+				<Name>
+					<First>HOWARD</First>
+					<Middle>A</Middle>
+					<Last>KIRKARZI</Last>
+				</Name>
+				<DOB>
+					<Year>1969</Year>
+					<Month>12</Month>
+					<Day>23</Day>
+				</DOB>
+				<CaseTypeDescription>MINOR OFFENSE</CaseTypeDescription>
+				<Offenses>
+					<Offense>
+						<Court>
+							<CaseNumber>3AN-03-02631MO</CaseNumber>
+							<Description>THIRD DISTRICT - ANCHORAGE</Description>
+							<DispositionDate>
+								<Year>2004</Year>
+								<Month>03</Month>
+								<Day>02</Day>
+							</DispositionDate>
+							<Statute>FAILURE TO STOP FOR STEADY RED SIGNAL</Statute>
+						</Court>
+					</Offense>
+				</Offenses>
+			</CriminalRecord>
+		</CriminalRecords>
+	</response>
+</CrimReportResponseEx>

@@ -1,0 +1,221 @@
+<layout-checkout>
+  <form [formGroup]="checkoutForm" (ngSubmit)="submit()" class="container">
+    <div class="row" *ngIf="!submitted">
+      <div class="col">
+        <fieldset>
+          <legend i18n>Información personal</legend>
+          <div>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Nombre</label>
+              <div class="col-sm-8">
+                <div class="form-row">
+                  <div class="col"><input type="text" class="form-control" placeholder="{{user.firstName}}" formControlName="firstName" /></div>
+                  <div class="col"><input type="text" class="form-control" placeholder="Apellidos" formControlName="lastName" i18n-placeholder="Apellidos"/></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" i18n>Identificación</label>
+              <div class="col-sm-8">
+                <div class="form-row">
+                  <div class="col">
+                    <select class="custom-select" formControlName="identificationType">
+                      <option selected value="1" i18n>Cédula</option>
+                      <option i18n>Pasaporte</option>
+                    </select>
+                  </div>
+                  <div class="col"><input type="text" class="form-control" placeholder="Número" formControlName="identificationNumber" i18n-placeholder="Número"/></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" i18n>Email</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control" formControlName="email" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" i18n>Teléfono</label>
+              <div class="col-sm-8">
+                <input type="tel" class="form-control" formControlName="phone"/>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <hr />
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" i18n>Formas de pago</label>
+            <div class="col-sm-8">
+              <div class="form-check" *ngFor="let paymentMethod of paymentMethods; let i=index">
+                <input class="form-check-input" type="radio" formControlName="paymentMethod" [id]="'payment-method-'+i" [value]="paymentMethod.type" >
+                <label class="form-check-label" [for]="'payment-method-'+i">
+                  {{ paymentMethod.name }}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="!authorized && checkoutForm.controls.paymentMethod.value=='debit' && !linkedAccount">
+            <div class="col-sm-8 offset-sm-4">
+              <div class="alert alert-info mt-3 small d-flex align-items-center">
+                <div class="flex-grow-1 mr-3" i18n>Para este método de pago es requerido que enlace su cuenta de banco.</div>
+                <div><button type="button" class="btn btn-info btn-sm" (click)="linkBank()" i18n>Enlazar cuenta</button></div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="authorized && checkoutForm.controls.paymentMethod.value=='debit'">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Número de cuenta</label>
+              <div class="col-sm-8">
+                <select class="custom-select">
+                  <option i18n>XXXX-XXXX-XXXX-3456 - Compras maquinaria</option>
+                  <option i18n>XXXX-XXXX-XXXX-8765 - Gastos corrientes</option>
+                </select>
+                <div class="small text-muted" i18n>El débito de su cuenta se realizará cuando la orden de compra sea procesada (24h a 48h hábiles), en caso de no tener fondos la cuenta, la orden se anulará.</div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="checkoutForm.controls.paymentMethod.value=='creditCard'">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" i18n>Número de tarjeta</label>
+              <div class="col-sm-8">
+                <div class="form-row">
+                  <div class="col-9">
+                    <input type="number" class="form-control" placeholder="Número" i18n-placeholder="Número"/>
+                  </div>
+                  <div class="col-3">
+                    <input type="number" class="form-control" placeholder="CVV" i18n/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+            <label class="col-sm-4 col-form-label" i18n>Fecha expiración</label>
+            <div class="col-sm-8">
+              <div class="form-row">
+                <div class="col-6">
+                  <select class="form-control">
+                    <option disabled  i18n>Mes</option>
+                    <option i18n>01 - Enero</option>
+                    <option i18n>02 - Febrero</option>
+                    <option i18n>03 - Marzo</option>
+                    <option i18n>04 - Abril</option>
+                    <option i18n>05 - Mayo</option>
+                    <option i18n>06 - Junio</option>
+                    <option i18n>07 - Julio</option>
+                    <option i18n>08 - Agosto</option>
+                    <option i18n>09 - Septiembre</option>
+                    <option i18n>10 - Octubre</option>
+                    <option i18n>11 - Noviembre</option>
+                    <option i18n>12 - Diciembre</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  <input type="number" class="form-control" placeholder="Año" min="2018"  i18n-placeholder="Año"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </fieldset>
+        <div *ngIf="checkoutForm.controls.paymentMethod.value=='credit'">
+          <fieldset>
+            <legend i18n>Datos financieros</legend>
+            <div>
+              <!--
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Ingresos anuales</label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <kendo-numerictextbox class="form-control text-right" [value]="value" [min]="0" [max]="100" [spinners]="false"></kendo-numerictextbox>
+                    <div class="input-group-append">
+                      <span class="input-group-text">USD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Egresos anuales</label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <kendo-numerictextbox class="form-control text-right" [value]="value" [min]="0" [max]="100" [spinners]="false"></kendo-numerictextbox>
+                    <div class="input-group-append">
+                      <span class="input-group-text">USD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              -->
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                  <span i18n>Financiamiento</span>
+                  <div class="small text-muted">
+                    <span i18n>Ingrese el plazo del crédito que requiere solicitar</span>
+                  </div>
+                </label>
+                <div class="col-sm-8">
+                  <div class="card mb-3 text-center">
+                    <div class="card-header py-1" i18n>Plazo</div>
+                    <div class="card-body py-2">
+                      <div style="position:relative;">
+                        <div class="text-center" style="font-size: 1.5rem;">{{ checkoutForm.value.term }} meses</div>
+                        <input type="range" min="3" max="36" step="1" class="form-control" formControlName="term" />
+                        <div class="d-flex wf-middle" style="min-height: 20px;">
+                          <div class="w-100 text-muted text-left small" i18n>3 mes</div>
+                          <div class="w-100 text-muted text-right small" i18n>36 meses</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row text-center">
+                    <div class="col">
+                      <div class="card">
+                        <div class="card-header py-1" i18n>Cuota mensual</div>
+                        <div class="card-body py-2" style="font-size: 1.5rem; white-space: nowrap;">{{ (getADSA(cartStateService.total, checkoutForm.value.term, rate)/12) | currency }} USD</div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <div class="card-header py-1" i18n>Interés</div>
+                        <div class="card-body py-2" style="font-size: 1.5rem; white-space: nowrap;">{{ rate }}%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <hr />
+        <div class="form-group row">
+          <div class="col-sm-8 offset-sm-4">
+            <button type="submit" class="btn btn-primary btn-lg mr-3" i18n>Continuar</button>
+            <a routerLink="/cart" class="btn btn-outline-secondary btn-lg" i18n>Cancelar</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <fieldset class="sticky-top">
+          <legend i18n>Productos</legend>
+          <div class="card">
+            <div class="list-group list-group-flush">
+              <app-order-item [item]="item" [editable]="false" class="list-group-item" *ngFor="let item of cartItems"></app-order-item>
+              <div class="list-group-item text-right p-3">
+                <div><span>Subtotal:</span> {{ cartStateService.total/1.12 | currency }} USD</div>
+                <div><span>Impuestos:</span> {{ (cartStateService.total - cartStateService.total/1.12) | currency }} USD</div>
+                <strong><span i18n>Total:</span> {{ cartStateService.total | currency }} USD</strong>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </form>
+</layout-checkout>

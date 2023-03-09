@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+    .viewport {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-circle {
+      width: 100px;
+      height: 100px;
+    }
+    .progress-circle circle,
+    .progress-circle .error {
+      fill: none;
+      stroke: transparent;
+      stroke-width: 5;
+      stroke-linecap: round;
+      transition: stroke .5s linear, fill .5s linear;
+    }
+    .progress-circle circle.value {
+      fill: #FFF;
+      stroke: #4A90E2;
+      stroke-dasharray: 10;
+      animation: circle-progress 4s linear infinite;
+      transform-origin: center;
+    }
+    .progress-circle .error {
+      stroke: #FFF;
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+    }
+    .progress-circle .error1 {
+      transition: stroke-dashoffset .2s ease-in-out .4s;
+    }
+    .progress-circle .error2 {
+      transition: stroke-dashoffset .2s ease-in-out .55s;
+    }
+    .progress-circle.danger circle.value {
+      stroke: transparent;
+      animation-duration: .1s;
+      fill: #f44336;
+    }
+    .progress-circle.danger circle.border {
+      stroke: #f44336;
+    }
+    .progress-circle.danger .error {
+      stroke-dashoffset: 0;
+    }
+    .label {
+      margin-top: 10px;
+      transition: color .2s;
+      color: #6c757d;
+    }
+
+    @keyframes circle-progress {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+  </style>
+  <title>Validando</title>
+</head>
+
+<body>
+  <div class="viewport">
+    <svg class="progress-circle" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" class="value" />
+      <circle cx="50" cy="50" r="46" class="border" />
+      <path class="error error1" d="M 36.48967,64.291499 63.510329,35.27084" />
+      <path class="error error2" d="M 63.510329,64.291499 36.489671,35.27084" />
+    </svg>
+    <div class="label">&nbsp;</div>
+    <div class="actions text-center mt-5 d-none">
+      <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script>
+    setTimeout(()=>$('.label').text('Validando identidad...'), 1000);
+    setTimeout(()=>$('.label').text('Validando crédito...'), 3000);
+    setTimeout(()=>$('.label').text('Validando reglas...'), 6000);
+    setTimeout(()=>{
+      $('.label').addClass('text-danger').text('El cliente no aplica para un préstamo');
+      $('.progress-circle').addClass('danger');
+    }, 8000);
+    setTimeout(()=>$('.actions').removeClass('d-none'), 8500);
+  </script>
+</body>
+
+</html>
