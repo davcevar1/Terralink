@@ -65,7 +65,7 @@
             </ul>
           </div>
           <div class="request-account" ng-show="currentStep==0">
-            <p>For more information about our accounts, <a href="#">click here</a></p>
+          <!--  <p>For more information about our accounts, <a href="#">click here</a></p>-->
             <div class="panel panel-default">
               <div class="panel-body">
                 <p class="text-right text-danger small">* Indicates required field</p>
@@ -87,7 +87,7 @@
                       </div>
                     </div>
                     <!--Yes-->
-                    <!--
+                  <!--
                     <div class="form-group wf-required" ng-if="request.hasAccount=='yes'">
                       <div class="control-label">Please type your Account Number</div>
                       <div class="wf-control">
@@ -95,9 +95,8 @@
                           ng-focus="setType($event, 'text')" ng-blur="setType($event, 'password')" />
                       </div>
                     </div>
-                  -->
-                   
-                    <!--NO------------------------------------------------------------------------>
+                    -->
+                    <!--NO---OR----YES----------------------------------------------------------------->
                     <div class="form-group wf-required" ng-if="request.hasAccount=='no'|| request.hasAccount=='yes' ">
                       <div class="control-label">How did you hear about us?</div>
                       <div class="wf-control">
@@ -168,7 +167,7 @@
                         </div>
                       </div>
                     </div>
-                    -->
+                   
                     <div class="form-group wf-required" ng-if="request.relationship=='business'">
                       <div class="control-label">Is the business registered within the US?</div>
                       <div class="wf-control">
@@ -184,6 +183,7 @@
                         </div>
                       </div>
                     </div>
+                     -->
                     <div class="form-group wf-required">
                       <div class="control-label">Would you like to apply for a:</div>
                       <div class="wf-control">
@@ -209,7 +209,7 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="form-group ">
-                        <div class="control-type-label" id="labelInformation">Enter your email and password to register.
+                        <div class="control-type-label" id="labelInformation">Enter your email to register.
                           Should you need more time to complete your request, come back anytime and complete your
                           application.</div>
                       </div>
@@ -228,6 +228,7 @@
                             data-original-title="" title=""></div>
                       </div>
                     </div>
+                    <!--
                     <div class="col-sm-6">
                       <div class="form-group wf-required">
                         <div class="control-label">Password<button class="btn btn-link btn-tooltip" tabindex="-1"
@@ -243,7 +244,8 @@
                         <div class="wf-control"><input class="form-control" id="confirmPassword" type="password"
                             data-original-title="" title=""></div>
                       </div>
-                    </div>
+                    </div>  
+                  -->
                   </div>
 
                 </div>
