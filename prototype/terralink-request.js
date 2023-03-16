@@ -302,9 +302,10 @@ define(function(require) {
             active: false
           }
         ];
+        //La siguiente funcino nos describe que si hay la palabra Yes se enviadirectamente a terralink confirm 
         $scope.steps = $scope.personalSteps;
         $scope.setStep = function(step) {
-          if ($scope.request.hasAccount == 'yes') {
+          if ($scope.request.hasAccount == 'yess') {
             $scope.goto('terralink-documents-confirm.html');
           } else if (($scope.request.relationship == 'personal' && step > 3) || ($scope.request.relationship == 'business' && step > 4)) {
             sessionStorage.shareholders = angular.toJson($scope.owners);
