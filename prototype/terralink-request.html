@@ -318,7 +318,7 @@
                           <div ng-if="person.ownershipPercentage>10 || request.relationship=='personal' || asSigner || check">
                             <div class="col-sm-3">
                               <div class="form-group">
-                                <div class="control-label">Social Security #</div>
+                                <div class="control-label">Social Security *</div>
                                 <div class="wf-control">
                                   <input type="text" class="form-control" ng-focus="setType($event, 'text')" ng-blur="setType($event, 'password')" kendo-masked-text-box k-mask="'999-99-9999'" />
                                 </div>
@@ -703,11 +703,10 @@
                 </div>
               </div>
             </div>
-            
-            
             <button type="button" class="btn btn-default" ng-click="addSigner()"><span class="fa fa-plus"></span> Add
               additional signer</button>
           </div>
+
           <div class="request-business" ng-show="currentStep==1 && request.relationship=='business'">
             <div class="panel panel-default">
               <div class="panel-body">
@@ -970,6 +969,44 @@
                     </div>
                     </div>
                   </div>
+                  <!--topclinets/vendos prueba-->
+                  <!--
+                     <div>  
+                       <div class="col-sm-6">
+                         <div class="form-group">
+                          <div class="control-label">Clients</div>
+                          <div class="small text-muted" style="margin-bottom:10px;">Provide the names of up to 5 of your top clients</div> 
+                          <div class="wf-control" style="margin-bottom:8px; position:relative;" ng-repeat="clientName in person.clientNames"><input type="text" class="form-control" />
+                            <div class="wf-control"><input class="form-control" type="text" />
+                             <button type="button" ng-show="person.clientNames.length>1" ng-click="removeItem(person.clientNames, clientName)" style="border:0; background:transparent; position: absolute; top: 0; right: 0; padding: 7px;"><span class="fa fa-times"></span></button>
+                            </div>
+                           </div>
+                          <button type="button" class="btn btn-default" ng-click="addclientName(person)"><span class="fa fa-plus"></span> Add additional</button>
+                         </div>
+                        </div>
+                      </div>
+                      -->
+                      <div class="col-sm-6">
+                        <div class="form-group wf-required">
+                          <div class="control-label">Clients</div>
+                          <div class="small text-muted" style="margin-bottom:10px;">Provide the names of up to 5 of your top clients</div>
+                           <div class="wf-control" style="margin-bottom:8px; position:relative ;"><input class="form-control" type="text" />
+                        </div>
+                        </div>
+                        <button type="button" class="btn btn-default" ng-click="addclientName(person)"><span class="fa fa-plus"></span> Add additional</button>
+                      </div>
+                    <div class="col-sm-6">
+                      <div class="form-group wf-required">
+                        <div class="control-label">Vendors</div>
+                        <div class="small text-muted" style="margin-bottom:10px;">Provide the names of up to 5 of your top clients</div>
+                        <div class="wf-control" style="margin-bottom:8px; position:relative ;"><input class="form-control" type="text" />  
+                      </div>
+                      </div>
+                      <button type="button" class="btn btn-default" ng-click="addclientName(person)"><span class="fa fa-plus"></span> Add additional</button>
+                    </div>
+                  
+                 
+                  
                   <!--Aqui se encuentran los anteriores botones-->
                   <!--
                   <div class="col-sm-6">
