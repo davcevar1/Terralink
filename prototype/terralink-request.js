@@ -273,11 +273,11 @@ define(function(require) {
             active: false
           },
           {
-            label: 'Adicional Information',
+            label: 'Additional Information',
             active: false
           },
           {
-            label: 'Products',
+            label: 'Additional Products',
             active: false
           }
         ];
