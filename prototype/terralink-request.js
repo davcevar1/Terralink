@@ -273,7 +273,7 @@ define(function(require) {
             active: false
           },
           {
-            label: 'Beneficiaries',
+            label: 'Adicional Information',
             active: false
           },
           {
