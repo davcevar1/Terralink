@@ -1741,6 +1741,21 @@
                             </div>
                           </div>
                         </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div class="form-group wf-required">
+                              <div class="control-label">Is the shareholder a</div>
+                              <div class="wf-control">
+                                <select class="form-control" name="state">
+                                    <option></option>
+                                    <option value="AL">Person</option>
+                                    <option value="AK">Non-Personal Entity</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div class="col-sm-8">
                           <div class="form-group">
                             <div class="control-label hidden-xs">&nbsp;</div>
@@ -1752,7 +1767,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      
                     </fieldset>
                     <div ng-include="'terralink-personal-info.html'"></div>
                     <div ng-include="'terralink-employment-info.html'"></div>
