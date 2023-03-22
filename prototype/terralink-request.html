@@ -3045,6 +3045,9 @@
                         </div>
                       </div>
                       -->
+                      <di class="col-sm-12">
+                        <hr>
+                      </di>
                       <div class="col-sm-6">
                         <div class="form-group wf-required">
                           <div class="control-label font-www">Clients</div>
@@ -3148,7 +3151,21 @@
                     <div class="panel-body">
                       <p class="text-right text-danger small">* Indicates required field</p>
                       <div class="row" ng-if="request.beneficiary=='yes'">
-                        <div class="col-sm-4">
+                        
+                          <div class="col-sm-3">
+                            <div class="form-group wf-required">
+                              <div class="control-label">Is the shareholder a</div>
+                              <div class="wf-control">
+                                <select class="form-control" name="state" ng-model="shareholderTyper">
+                                    <option></option>
+                                    <option value="persona">Person</option>
+                                    <option value="nonpersona">Non-Personal Entity</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        
+                        <div class="col-sm-3" ng-show="shareholderTyper == 'persona'">
                           <div class="form-group wf-required">
                             <div class="control-label">First Name</div>
                             <div class="wf-control">
@@ -3157,7 +3174,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3" ng-show="shareholderTyper == 'persona'">
                           <div class="form-group">
                             <div class="control-label">Middle Name</div>
                             <div class="wf-control">
@@ -3165,7 +3182,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3" ng-show="shareholderTyper == 'persona'">
                           <div class="form-group wf-required">
                             <div class="control-label">Last Name</div>
                             <div class="wf-control">
@@ -3174,11 +3191,20 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3" ng-show="shareholderTyper == 'persona'">
                           <div class="form-group wf-required">
                             <div class="control-label">Date of Birth</div>
                             <div class="wf-control">
                               <kendo-datepicker [(value)]="birthDate"></kendo-datepicker>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-9" ng-show="shareholderTyper == 'nonpersona'">
+                          <div class="form-group wf-required">
+                            <div class="control-label">Bussines Name</div>
+                            <div class="wf-control">
+                              <input name="lastName" type="text" class="form-control" ng-model="person.lastName"
+                                required />
                             </div>
                           </div>
                         </div>
@@ -3300,7 +3326,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="ro">
+                        <div class="row">
                           <div class="control-label">Is this signer a US Citizen or US Resident?</div>
                            <div class="wf-control">
                            <div class="radio">
@@ -3313,7 +3339,7 @@
                             <input type="radio" name="have-account" /> No
                           </label>
                         </div>
-                      </div>
+                        </div>
                         </div>
                         <div class="col-sm-8">
                           <div class="form-group">
@@ -3420,28 +3446,29 @@
                     </div>
                   </div>
                 </div>
-                <div class="form-group wf-required" ng-if="request.accessOnline">
+                <div class="form-group wf-required" ng-if="request.accessOnline" ng-show="request.accessOnline == 'yes'">
                   <div class="control-label" style="font-weight: normal;">Please confirm your email address</div>
                   <div class="wf-control">
                     <input type="text" class="form-control" style="max-width:300px;">
                   </div>
                 </div>
-                <div class="form-group wf-required">
+                <div class="form-group wf-required" >
                   <div class="control-label">Would you like to order a Debit Card?</div>
                   <div class="small text-muted">There is a cost of $35 for International mailings</div>
                   <div class="wf-control">
                     <div class="radio">
                       <label>
-                        <input type="radio" name="account" value="yes" ng-model="request.debitCard" /> Yes
+                        <input type="radio" name="account" value="yes1" ng-model="request.debitCard" /> Yes
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="account" value="no" ng-model="request.debitCard" /> No
+                        <input type="radio" name="account" value="no1" ng-model="request.debitCard" /> No
                       </label>
                     </div>
                   </div>
                 </div>
+              <div ng-show="request.debitCard == 'yes1'" >
                 <p class="small text-muted" ng-if="request.debitCard">Please confirm your mailing address for online purchases</p>
                 <div class="row" ng-if="request.debitCard">
                   <div class="col-sm-12">
@@ -3543,6 +3570,7 @@
                     </div>
                   </div>
                 </div>
+              </div>
                 <div class="form-group wf-required">
                   <div class="control-label">Would you like order a Checkbook?</div>
                   <div class="small text-muted">Checkbook have an estimated cost of $35 and a cost of $35 for
@@ -3560,8 +3588,8 @@
                     </div>
                   </div>
                 </div>
-                <p class="small text-muted" ng-if="request.checkbook">Please confirm your mailing address</p>
-                <div class="row" ng-if="request.checkbook">
+                <p class="small text-muted" ng-if="request.checkbook" ng-show="request.checkbook == 'yes'">Please confirm your mailing address</p>
+                <div class="row" ng-if="request.checkbook"  ng-show="request.checkbook == 'yes'">
                   <div class="col-sm-12">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Street Address</div>
@@ -3698,7 +3726,7 @@
                     </div>
                   </div>
                 </div>
-                <div ng-if="request.businessAccessOnline" style="margin-bottom:24px;">
+                <div ng-if="request.businessAccessOnline" style="margin-bottom:24px;"  ng-show="request.businessAccessOnline == 'yes'">
                   <table class="table">
                     <thead>
                       <tr><th>Signers</th><th class="text-center">View Only</th><th class="text-center">Full Access</th><th class="text-center">Admin</th></tr>
@@ -3726,8 +3754,8 @@
                     </div>
                   </div>
                 </div>
-                <p class="small text-muted" ng-if="request.businessDebitCard">Please confirm your mailing address for online purchases</p>
-                <div class="row" ng-if="request.businessDebitCard">
+                <p class="small text-muted" ng-if="request.businessDebitCard" ng-show="request.businessDebitCard == 'yes'">Please confirm your mailing address for online purchases</p>
+                <div class="row" ng-if="request.businessDebitCard" ng-show="request.businessDebitCard= 'yes'">
                   <div class="col-sm-12">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Street Address</div>
@@ -4087,8 +4115,8 @@
                     </div>
                   </div>
                 </div>
-                <p class="small text-muted" ng-if="request.businessCheckbook">Please confirm your mailing address</p>
-                <div class="row" ng-if="request.businessCheckbook">
+                <p class="small text-muted" ng-if="request.businessCheckbook" ng-show="request.businessCheckbook== 'yes'">Please confirm your mailing address</p>
+                <div class="row" ng-if="request.businessCheckbook" ng-show="request.businessCheckbook== 'yes'">
                   <div class="col-sm-12">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Street Address</div>
