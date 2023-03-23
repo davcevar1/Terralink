@@ -3019,7 +3019,7 @@
                     <div class="form-group wf-required">
                       <div class="control-label font-www">Business Annual Expenses</div>
                       <div class="wf-control input-group">
-                        <input class="form-control" type="text" id="my-revenue-input" />
+                        <input class="form-control" type="text" id="my-expenses-input" />
                         <div class="input-group-addon">USD</div>
                       </div>
                     </div>
@@ -3044,27 +3044,39 @@
                       </div>
                       -->
           
-                      <di class="col-sm-12">
+                      <div class="col-sm-12">
                         <hr>
-                      </di>
+                      </div>
+                      <!--Prueba clients-->
                       <div class="col-sm-6">
                         <div class="form-group wf-required">
                           <div class="control-label font-www">Clients</div>
                           <div class="small text-muted" style="margin-bottom:10px;">Provide the names of up to 5 of your top clients</div>
-                           <div class="wf-control" style="margin-bottom:8px; position:relative ;"><input class="form-control" type="text" />
+                          <div id="client-names-container">
+                            <div class="wf-control text-right" style="margin-bottom:8px; position:relative;">
+                              <input class="form-control" type="text" id="client-name-input-1" />
+                              <button type="button" class="btn-delete-client-name" onclick="deleteClientName('client-name-input-1')" style="position:absolute; top: 5px; right: 5px;"><span class="fa fa-times"></span></button>
+                            </div>
+                          </div>
+                          <button type="button" class="btn btn-default" onclick="addClientName()"><span class="fa fa-plus"></span> Add additional</button>
                         </div>
+                      </div>
+                      
+                      <div class="col-sm-6">
+                        <div class="form-group wf-required">
+                          <div class="control-label font-www">Vendors</div>
+                          <div class="small text-muted" style="margin-bottom:10px;">Provide the names of up to 5 of your top vendors</div>
+                          <div id="vendor-names-container">
+                            <div class="wf-control text-right" style="margin-bottom:8px; position:relative;">
+                              <input class="form-control" type="text" />
+                              <button type="button" class="btn-delete-client-name" ng-show="person.businessNames.length>1" ng-click="removeItem(person.businessNames, businessName)" style="position: absolute; top: 0; right: 0; "><span class="fa fa-times"></span></button>
+
+                            </div>
+                          </div>
+                          <button type="button" class="btn btn-default" onclick="addVendorName()"><span class="fa fa-plus"></span> Add additional</button>
                         </div>
-                        <button type="button" class="btn btn-default" ng-click="addclientName(person)"><span class="fa fa-plus"></span> Add additional</button>
                       </div>
-                    <div class="col-sm-6">
-                      <div class="form-group wf-required">
-                        <div class="control-label font-www">Vendors</div>
-                        <div class="small text-muted" style="margin-bottom:10px;">Provide the names of up to 5 of your top clients</div>
-                        <div class="wf-control" style="margin-bottom:8px; position:relative ;"><input class="form-control" type="text" />  
-                      </div>
-                      </div>
-                      <button type="button" class="btn btn-default" ng-click="addclientName(person)"><span class="fa fa-plus"></span> Add additional</button>
-                    </div>
+                      
                   
                   <!--Aqui se encuentran los anteriores botones-->
                   <!--
@@ -3154,7 +3166,7 @@
                         
                           <div class="col-sm-3">
                             <div class="form-group wf-required">
-                              <div class="control-label">Is the shareholder a</div>
+                              <div class="control-label font-www">Is the shareholder a</div>
                               <div class="wf-control">
                                 <select class="form-control" name="state" ng-model="shareholderTyper" >
                                     <option></option>
@@ -3167,7 +3179,7 @@
                         
                         <div class="col-sm-3" ng-show="shareholderTyper == 'persona'">
                           <div class="form-group wf-required">
-                            <div class="control-label">First Name</div>
+                            <div class="control-label font-www">First Name</div>
                             <div class="wf-control">
                               <input name="firstName" type="text" class="form-control" ng-model="person.firstName"
                                 required />
@@ -4321,8 +4333,10 @@
                       </div>
                       </div>
                 
-                        
-                          <legend>Employment information</legend>
+                        <div class="col-sm-12">
+                          <hr>
+                        </div>
+                          <legend class="font-www">Employment information</legend>
                            <!-- <div class="row"> -->
                             <div class="col-sm-4">
                               <div class="form-group wf-required">
@@ -5565,7 +5579,8 @@
                     <input type="text" class="form-control" style="max-width:300px;">
                   </div>
                 </div>
-                <div class="form-group wf-required" >
+                <!-- pruebas -->
+                <div class="form-group wf-required" ng-show="bussinesCampos == 'sik'" >
                   <div class="control-label">Would you like to order a Debit Card?</div>
                   <div class="small text-muted">There is a cost of $35 for International mailings</div>
                   <div class="wf-control">
@@ -5870,7 +5885,7 @@
                     </div>
                   </div>
                 </div>
-                <p class="small text-muted" ng-if="request.businessDebitCard" ng-show="request.businessDebitCard == 'yes'">Please confirm your mailing address for online purchases</p>
+                <p class="small text-muted" ng-if="request.businessDebitCard" >Please confirm your mailing address for online purchases</p>
                 <div class="row" ng-if="request.businessDebitCard" ng-show="request.businessDebitCard == 'yes'">
                   <div class="col-sm-12">
                     <div class="form-group wf-required">
