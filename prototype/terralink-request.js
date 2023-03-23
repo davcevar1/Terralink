@@ -302,6 +302,8 @@ define(function(require) {
             active: false
           }
         ];
+        //Aqui podemos encontrar como funciona el USD
+        
         //La siguiente funcino nos describe que si hay la palabra Yes se enviadirectamente a terralink confirm 
         $scope.steps = $scope.personalSteps;
         $scope.setStep = function(step) {

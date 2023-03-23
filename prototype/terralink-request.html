@@ -3009,25 +3009,23 @@
                   <div class="col-sm-6">
                     <div class="form-group wf-required">
                       <div class="control-label font-www">Business Annual Revenue</div>
-                          <div class="wf-control"><input class="form-control" type="number" />
-                        <!--  <div class="input-group-addon">
-                            USD
-                          </div>
-                          -->
-                    </div>
+                      <div class="wf-control input-group">
+                        <input class="form-control" type="text" id="my-revenue-input" />
+                        <div class="input-group-addon">USD</div>
+                      </div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group wf-required">
                       <div class="control-label font-www">Business Annual Expenses</div>
-                         <div class="wf-control"><input class="form-control" type="number" />
-                          <!-- <div class="input-group-addon">
-                            USD
-                          </div>
-                          -->
-                    </div>
+                      <div class="wf-control input-group">
+                        <input class="form-control" type="text" id="my-revenue-input" />
+                        <div class="input-group-addon">USD</div>
+                      </div>
                     </div>
                   </div>
+                    
+                  
                   <!--topclinets/vendos prueba-->
                   <!--
                      <div>  
@@ -5588,12 +5586,13 @@
                 <div class="row" ng-if="request.debitCard">
                   <div class="col-sm-12">
                     <div class="form-group wf-required">
-                      <div class="control-label" style="font-weight: normal;">Street Address</div>
+                      <div class="control-label" style="font-weight: normal;">Residential Address</div>
                       <div class="wf-control">
                         <input type="text" class="form-control">
                       </div>
                     </div>
                   </div>
+                  <!--
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">City</div>
@@ -5672,7 +5671,7 @@
                           data-role="maskedtextbox" autocomplete="off">
                       </div>
                     </div>
-                  </div>
+                  </div>-->
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Country</div>
@@ -5707,7 +5706,7 @@
                 <div class="row" ng-if="request.checkbook"  ng-show="request.checkbook == 'yes'">
                   <div class="col-sm-12">
                     <div class="form-group wf-required">
-                      <div class="control-label" style="font-weight: normal;">Street Address</div>
+                      <div class="control-label" style="font-weight: normal;">Resiential Address</div>
                       <div class="wf-control">
                         <input type="text" class="form-control">
                       </div>
@@ -5721,6 +5720,7 @@
                       </div>
                     </div>
                   </div>
+                  <!--
                   <div class="col-sm-3">
                     <div class="form-group">
                       <div class="control-label" style="font-weight: normal;">State</div>
@@ -5792,6 +5792,7 @@
                       </div>
                     </div>
                   </div>
+                -->
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Country</div>
@@ -5873,7 +5874,7 @@
                 <div class="row" ng-if="request.businessDebitCard" ng-show="request.businessDebitCard == 'yes'">
                   <div class="col-sm-12">
                     <div class="form-group wf-required">
-                      <div class="control-label" style="font-weight: normal;">Street Address</div>
+                      <div class="control-label" style="font-weight: normal;">Residential Address</div>
                       <div class="wf-control">
                         <input type="text" class="form-control">
                       </div>
@@ -5887,6 +5888,7 @@
                       </div>
                     </div>
                   </div>
+                  <!--
                   <div class="col-sm-3">
                     <div class="form-group">
                       <div class="control-label" style="font-weight: normal;">State</div>
@@ -5958,6 +5960,7 @@
                       </div>
                     </div>
                   </div>
+                  -->
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Country</div>
@@ -6248,6 +6251,7 @@
                       </div>
                     </div>
                   </div>
+                  <!--
                   <div class="col-sm-3">
                     <div class="form-group">
                       <div class="control-label" style="font-weight: normal;">State</div>
@@ -6319,6 +6323,7 @@
                       </div>
                     </div>
                   </div>
+                  -->
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Country</div>
@@ -6442,7 +6447,7 @@
       </div>
     </div>
   </div>
-
+  <script src="scriptsrevenue.js"></script>
   <script>
     var librariesUrl = 'libraries/';
   </script>
