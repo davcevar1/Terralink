@@ -87,3 +87,14 @@ function addClientName() {
 function addVendorName() {
   addName("vendor-names-container", "btn-delete-vendor-name");
 }
+
+// el siguientescript servira para enseñar el debit card 
+/*$scope.mostrarMensaje = function() {
+  if ($scope.request.mostrarCampos == 'sip') {
+    return true;
+  } else {
+    return false;
+  }
+}*/
+
+
