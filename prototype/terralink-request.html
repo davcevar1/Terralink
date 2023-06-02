@@ -277,13 +277,12 @@
                       <div class="wf-control">
                         <div class="radio">
                           <label>
-                            <!--Aqui cree mi funcion donde le doy un valor si al campo para que se pueda ver el init es para que se quede un campo constante-->
-                            <input type="radio" name="have-account-personal" ng-model="mostrarCampos" value="sip" ng-init="mostrarCampos = 'sip' "/> Yes
+                            <input type="radio" name="have-account-personals" ng-model="mostrarCampos" value="sip" ng-init="mostrarCampos = 'sip'"checked/> Yes
                           </label>
                         </div>
                         <div class="radio">
                           <label>
-                            <input type="radio" name="have-account-personal" ng-model="mostrarCampos" value="nop"/> No
+                            <input type="radio" name="have-account-personals" ng-model="mostrarCampos" value="nop"checked/> No
                           </label>
                         </div>
                       </div>
@@ -7794,7 +7793,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                 </div>
               
           
-                <div class="form-group wf-required" ng-show="mostrarCampos == 'sip'"  >
+                <div class="form-group wf-required" ng-show="mostrarCampos = 'sip'"  >
                   <div class="control-label">Would you like to order a Debit Card?</div>
                   <div class="small text-muted">There is a cost of $35 for International mailings </div>
                   <div class="wf-control">
