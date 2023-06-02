@@ -7770,7 +7770,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
             <div class="panel panel-default">
               <div class="panel-body">
                 <p class="text-right text-danger small">* Indicates required field</p>
-                <div class="form-group wf-required">
+                <!--<div class="form-group wf-required">
                   <div class="control-label">Would you like access to Online Banking?</div>
                   <div class="wf-control">
                     <div class="radio">
@@ -7784,16 +7784,17 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                       </label>
                     </div>
                   </div>
-                </div>
+                </div>-->
+                
                 <div class="form-group wf-required" ng-if="request.accessOnline" ng-show="request.accessOnline == 'yes'">
                   <div class="control-label" style="font-weight: normal;">Please confirm your email address</div>
                   <div class="wf-control">
                     <input type="text" class="form-control" style="max-width:300px;">
                   </div>
                 </div>
-               
+              
           
-                <div class="form-group wf-required"  >
+                <div class="form-group wf-required" ng-show="mostrarCampos == 'sip'"  >
                   <div class="control-label">Would you like to order a Debit Card?</div>
                   <div class="small text-muted">There is a cost of $35 for International mailings</div>
                   <div class="wf-control">
@@ -7809,7 +7810,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                     </div>
                   </div>
                 </div>
-              <div ng-show="request.debitCard == 'yes1'" >
+              <div ng-show="request.debitCard == 'yes1' " >
                 <p class="small text-muted" ng-if="request.debitCard">Please confirm your mailing address for online purchases</p>
                 <div class="row" ng-if="request.debitCard">
                   <div class="col-sm-12">
@@ -7820,7 +7821,15 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                       </div>
                     </div>
                   </div>
-                  <!--
+                  <div class="col-sm-3">
+                    <div class="form-group wf-required">
+                      <div class="control-label" style="font-weight: normal;">Apt/Suite</div>
+                      <div class="wf-control">
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <!--City y state si van-->
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">City</div>
@@ -7899,8 +7908,8 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                           data-role="maskedtextbox" autocomplete="off">
                       </div>
                     </div>
-                  </div>-->
-                  <div class="col-sm-3">
+                  </div>
+                  <!--<div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Country</div>
                       <div class="wf-control">
@@ -7910,10 +7919,10 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                         </select>
                       </div>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
               </div>
-                <div class="form-group wf-required">
+               <!-- <div class="form-group wf-required">
                   <div class="control-label">Would you like order a Checkbook?</div>
                   <div class="small text-muted">Checkbook have an estimated cost of $35 and a cost of $35 for
                     International mailings.</div>
@@ -7929,7 +7938,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                       </label>
                     </div>
                   </div>
-                </div>
+                </div>-->
                 <p class="small text-muted" ng-if="request.checkbook" ng-show="request.checkbook == 'yes'">Please confirm your mailing address</p>
                 <div class="row" ng-if="request.checkbook"  ng-show="request.checkbook == 'yes'">
                   <div class="col-sm-12">
@@ -8055,7 +8064,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
             <div class="panel panel-default">
               <div class="panel-body">
                 <p class="text-right text-danger small">* Indicates required field</p>
-                <div class="form-group wf-required">
+                <!--<div class="form-group wf-required">
                   <div class="control-label">Would you like access to Online Banking?</div>
                   <div class="wf-control">
                     <div class="radio">
@@ -8069,7 +8078,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                       </label>
                     </div>
                   </div>
-                </div>
+                </div>-->
                 <div ng-if="request.businessAccessOnline" style="margin-bottom:24px;"  ng-show="request.businessAccessOnline == 'yes'">
                   <table class="table">
                     <thead>
@@ -8112,13 +8121,21 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                   </div>
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
+                      <div class="control-label" style="font-weight: normal;">Suite/Apt</div>
+                      <div class="wf-control">
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">City</div>
                       <div class="wf-control">
                         <input type="text" class="form-control">
                       </div>
                     </div>
                   </div>
-                  <!--
+                  
                   <div class="col-sm-3">
                     <div class="form-group">
                       <div class="control-label" style="font-weight: normal;">State</div>
@@ -8190,7 +8207,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                       </div>
                     </div>
                   </div>
-                  -->
+                  <!--
                   <div class="col-sm-3">
                     <div class="form-group wf-required">
                       <div class="control-label" style="font-weight: normal;">Country</div>
@@ -8444,9 +8461,10 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                         </select>
                       </div>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
-                <div class="form-group wf-required">
+
+               <!--<div class="form-group wf-required">
                   <div class="control-label">Would you like to order a Checkbook?</div>
                   <div class="small text-muted">Checkbook have an estimated cost of $35 and a cost of $35 for
                     International mailings.</div>
@@ -8462,7 +8480,7 @@ Aqui tienes el perfil shareholders adentro de nonpersona
                       </label>
                     </div>
                   </div>
-                </div>
+                </div>-->
                 <p class="small text-muted" ng-if="request.businessCheckbook" ng-show="request.businessCheckbook== 'yes'">Please confirm your mailing address</p>
                 <div class="row" ng-if="request.businessCheckbook" ng-show="request.businessCheckbook== 'yes'">
                   <div class="col-sm-12">
